@@ -57,25 +57,6 @@ const vacation = [
   },
 ];
 
-/** FP Global's own role, which is why the property sits on this site at all. */
-const mandate = [
-  {
-    icon: "compass",
-    title: "Development",
-    body: "Site assembly, feasibility and brand negotiation through to technical services and handover — delivered as a single mandate rather than a chain of consultants.",
-  },
-  {
-    icon: "key",
-    title: "Pre-opening",
-    body: "Eighteen months of recruitment, systems implementation and training, sequenced against a critical path that protected the opening date without compressing readiness.",
-  },
-  {
-    icon: "concierge",
-    title: "Operations",
-    body: "Full operating management under Hyatt brand standards, with commercial strategy, revenue management and owner reporting run in-house.",
-  },
-];
-
 type Item = { icon: string; title: string; body: string };
 
 function Cards({ items }: { items: Item[] }) {
@@ -271,38 +252,7 @@ export default function HyattLahorePage() {
         </div>
       </section>
 
-      <section
-        data-reveal
-        className="border-t border-fg-2/10 bg-surface-2 py-20 lg:py-28"
-      >
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-            <div className="reveal">
-              <h3 className="font-display text-[clamp(1.5rem,2.6vw,2rem)] leading-tight tracking-tight text-fg">
-                What the mandate covered
-              </h3>
-              <p className="mt-5 max-w-xl leading-relaxed text-muted">
-                Three phases, run by one team, with the handover between them
-                happening inside the company rather than across a contract.
-              </p>
-            </div>
-
-            <div className="reveal-zoom relative aspect-[4/3] overflow-hidden rounded-3xl bg-surface">
-              <Image
-                src="/assets/images/hyatt-pool.jpg"
-                alt="The indoor pool and lobby lounge at Hyatt Regency Hotel & Club"
-                fill
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
-
-          <Cards items={mandate} />
-        </div>
-      </section>
-
-      <section data-reveal className="bg-surface py-20 lg:py-28">
+      <section data-reveal className="bg-surface pb-20 lg:pb-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <Spread
             src="/assets/images/hyatt-lahore/cultural-capital-web.jpg"
