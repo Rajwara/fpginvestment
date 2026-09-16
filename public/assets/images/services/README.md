@@ -6,23 +6,24 @@ Everything here is served under `/assets/images/services/` — a file named
 
 ## Where this is used
 
-Nothing yet — the folder was created ahead of the images.
+All six service lines now carry their own photography, wired up through
+`services` in `lib/site.ts`. Each folder holds one set:
 
-The six service lines are the likely home for these. Each currently draws on a
-banner in `../home/`, wired up through `services` in `lib/site.ts`:
-
-| Service line | Currently using |
+| Slot | Where it appears |
 | --- | --- |
-| Business Development & Advisory | `home/service-business-development.webp` |
-| Design & Construction | `home/service-design-construction.webp` |
-| Pre-Opening | `home/service-pre-opening.webp` |
-| Takeover & Turnaround | `home/service-takeover-turnaround.webp` |
-| Sales & Marketing | `home/service-sales-marketing.webp` |
-| Hotel Management & Operations | `home/service-hotel-management.webp` |
+| `banner` | the full-bleed page banner |
+| `image` | the 16:9 frame at the top of the article |
+| `gallery` | the two studies above "What this covers" |
+| `wide` | the wide image above "How we work on it" |
+| `enquiry` | the background of the enquiry band at the foot of the page |
 
-Name each upload after the service it belongs to and I will wire it up. Say so
-if they are for something else on the service pages instead — a hero, a
-section background — and I will place them there.
+`banner` and `enquiry` also accept `{ desktop, mobile }` when a set ships a
+separate portrait crop for phones — a landscape banner cropped to a phone keeps
+only its middle, which is rarely where the subject is. See
+`components/BackdropImage`.
+
+To replace a picture, drop the new file in the service's folder and say which
+slot it belongs to, or name it after that slot and it places itself.
 
 ## Format
 
