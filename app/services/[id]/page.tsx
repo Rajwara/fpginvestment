@@ -38,7 +38,7 @@ export default async function ServicePage({
       <PhotoPageHero
         title={service.name}
         crumb={service.short}
-        image={service.image}
+        image={service.banner}
       />
 
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
@@ -140,7 +140,7 @@ export default async function ServicePage({
         </div>
       </div>
 
-      <QuerySection />
+      <QuerySection image={service.enquiry} />
     </>
   );
 }

@@ -17,12 +17,25 @@ export const site = {
   ],
 };
 
-/** The six service lines. Drives the mega menu, the home grid and the footer. */
+/**
+ * The six service lines. Drives the mega menu, the home grid and the footer.
+ *
+ * `banner` and `enquiry` take either a path or { desktop, mobile } when a set
+ * ships a separate portrait crop for phones — see components/BackdropImage.
+ */
 export const services = [
   {
     id: "business-development",
     card: "/assets/images/home/service-business-development.webp",
-    image: "/assets/images/ProfessionalGuidanceimg-1.jpg",
+    image: "/assets/images/services/business-development/02-business-development-intro-1920x1080.webp",
+    banner: {
+      desktop: "/assets/images/services/business-development/01-business-development-hero-2400x960.webp",
+      mobile: "/assets/images/services/business-development/01b-business-development-hero-mobile-1080x1440.webp",
+    },
+    enquiry: {
+      desktop: "/assets/images/services/business-development/06-contact-enquiry-background-2400x1600.webp",
+      mobile: "/assets/images/services/business-development/06b-contact-enquiry-background-mobile-1200x1800.webp",
+    },
     name: "Business Development & Advisory",
     short: "Business Development",
     icon: "compass",
@@ -34,10 +47,10 @@ export const services = [
       "Return modelling and capital planning",
     ],
     gallery: [
-      "/assets/images/ProfessionalGuidanceimg-02.jpg",
-      "/assets/images/ProfessionalGuidanceimg-03.jpg",
+      "/assets/images/services/business-development/03-project-decisions-left-1600x1200.webp",
+      "/assets/images/services/business-development/04-project-decisions-right-1600x1200.webp",
     ],
-    wide: "/assets/images/MissionAndGoals-03.jpg",
+    wide: "/assets/images/services/business-development/05-outcomes-and-process-1920x1080.webp",
     sections: [
       {
         title: "Where a project is actually decided",
@@ -54,7 +67,9 @@ export const services = [
   {
     id: "design-construction",
     card: "/assets/images/home/service-design-construction.webp",
-    image: "/assets/images/ProfessionalGuidanceimg-02.jpg",
+    image: "/assets/images/services/design-construction/first-image-web.webp",
+    banner: "/assets/images/services/design-construction/hero-web.webp",
+    enquiry: "/assets/images/enquiry-bg-web.webp",
     name: "Design & Construction",
     short: "Design & Construction",
     icon: "blueprint",
@@ -66,10 +81,10 @@ export const services = [
       "Programme and cost control",
     ],
     gallery: [
-      "/assets/images/ProfessionalGuidanceimg-03.jpg",
-      "/assets/images/ProfessionalGuidanceimg-04.jpg",
+      "/assets/images/services/design-construction/what-this-covers-1-web.webp",
+      "/assets/images/services/design-construction/what-this-covers-2-web.webp",
     ],
-    wide: "/assets/images/MissionAndGoalsimg-04.jpg",
+    wide: "/assets/images/services/design-construction/how-we-work-on-it-web.webp",
     sections: [
       {
         title: "Design an operator can run",
@@ -86,7 +101,15 @@ export const services = [
   {
     id: "pre-opening",
     card: "/assets/images/home/service-pre-opening.webp",
-    image: "/assets/images/mega-feature-web.webp",
+    image: "/assets/images/services/pre-opening/pre-opening-intro-1600x900.webp",
+    banner: {
+      desktop: "/assets/images/services/pre-opening/pre-opening-hero-desktop-1920x768.webp",
+      mobile: "/assets/images/services/pre-opening/pre-opening-hero-mobile-960x1200.webp",
+    },
+    enquiry: {
+      desktop: "/assets/images/services/pre-opening/contact-background-desktop-1920x1280.webp",
+      mobile: "/assets/images/services/pre-opening/contact-background-mobile-1024x1536.webp",
+    },
     name: "Pre-Opening",
     short: "Pre-Opening",
     icon: "key",
@@ -98,10 +121,10 @@ export const services = [
       "Systems, FF&E and OS&E",
     ],
     gallery: [
-      "/assets/images/ProfessionalGuidanceimg-04.jpg",
-      "/assets/images/ProfessionalGuidanceimg-05.jpg",
+      "/assets/images/services/pre-opening/critical-path-planning-1200x900.webp",
+      "/assets/images/services/pre-opening/recruitment-training-systems-1200x900.webp",
     ],
-    wide: "/assets/images/MissionAndGoals-img2.jpg",
+    wide: "/assets/images/services/pre-opening/people-systems-supply-1600x900.webp",
     sections: [
       {
         title: "The critical path runs backwards",
@@ -119,6 +142,8 @@ export const services = [
     id: "takeover-turnaround",
     card: "/assets/images/home/service-takeover-turnaround.webp",
     image: "/assets/images/ProfessionalGuidanceimg-04.jpg",
+    banner: "/assets/images/ProfessionalGuidanceimg-04.jpg",
+    enquiry: "/assets/images/enquiry-bg-web.webp",
     name: "Takeover & Turnaround",
     short: "Takeover & Turnaround",
     icon: "refresh",
@@ -150,7 +175,9 @@ export const services = [
   {
     id: "sales-marketing",
     card: "/assets/images/home/service-sales-marketing.webp",
-    image: "/assets/images/ProfessionalGuidanceimg-05.jpg",
+    image: "/assets/images/services/sales-marketing/02-sales-marketing-introduction.webp",
+    banner: "/assets/images/services/sales-marketing/01-sales-marketing-hero-banner.webp",
+    enquiry: "/assets/images/services/sales-marketing/06-sales-marketing-contact-background.webp",
     name: "Sales & Marketing",
     short: "Sales & Marketing",
     icon: "megaphone",
@@ -162,10 +189,10 @@ export const services = [
       "Brand, digital and PR",
     ],
     gallery: [
-      "/assets/images/ProfessionalGuidanceimg-1.jpg",
-      "/assets/images/ProfessionalGuidanceimg-02.jpg",
+      "/assets/images/services/sales-marketing/03-revenue-management-and-pricing.webp",
+      "/assets/images/services/sales-marketing/04-channel-and-distribution-strategy.webp",
     ],
-    wide: "/assets/images/home-hayyat-regency.jpg",
+    wide: "/assets/images/services/sales-marketing/05-brand-digital-and-pr.webp",
     sections: [
       {
         title: "Rate is a decision, not a result",
@@ -182,7 +209,9 @@ export const services = [
   {
     id: "hotel-management",
     card: "/assets/images/home/service-hotel-management.webp",
-    image: "/assets/images/ProfessionalGuidanceimg-1.jpg",
+    image: "/assets/images/services/hotel-management/02-operating-the-asset-1920x1080.webp",
+    banner: "/assets/images/services/hotel-management/01-hotel-management-hero-2400x960.webp",
+    enquiry: "/assets/images/services/hotel-management/06-enquiry-background-2400x1600.webp",
     name: "Hotel Management & Operations",
     short: "Hotel Management",
     icon: "concierge",
@@ -194,10 +223,10 @@ export const services = [
       "Transparent owner reporting",
     ],
     gallery: [
-      "/assets/images/ProfessionalGuidanceimg-02.jpg",
-      "/assets/images/ProfessionalGuidanceimg-04.jpg",
+      "/assets/images/services/hotel-management/03-full-operating-management-1600x1200.webp",
+      "/assets/images/services/hotel-management/04-brand-standards-compliance-1600x1200.webp",
     ],
-    wide: "/assets/images/fpginvestment_banner_img1.jpg",
+    wide: "/assets/images/services/hotel-management/05-owner-reporting-1920x1080.webp",
     sections: [
       {
         title: "Operating the asset, not just staffing it",

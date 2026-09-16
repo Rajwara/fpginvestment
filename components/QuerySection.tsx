@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { site } from "@/lib/site";
+import BackdropImage, { type Backdrop } from "./BackdropImage";
 import ContactIcon from "./ContactIcon";
 import Eyebrow from "./Eyebrow";
 import QueryForm from "./QueryForm";
@@ -29,7 +29,10 @@ const channels: { icon: string; title: string; lines: Line[] }[] = [
   },
 ];
 
-export default function QuerySection() {
+/** The band takes the site background unless a page supplies its own. */
+const DEFAULT_BG = "/assets/images/enquiry-bg-web.webp";
+
+export default function QuerySection({ image = DEFAULT_BG }: { image?: Backdrop }) {
   return (
     <section
       id="enquiry"
@@ -39,13 +42,7 @@ export default function QuerySection() {
       {/* The photograph and its scrim are absolutely placed rather than
           clipped by the section: overflow-hidden here would stop the left
           column from sticking. */}
-      <Image
-        src="/assets/images/enquiry-bg-web.webp"
-        alt=""
-        fill
-        sizes="100vw"
-        className="-z-20 object-cover"
-      />
+      <BackdropImage image={image} className="-z-20 object-cover" />
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-gradient-to-br from-[#0d0b14]/92 via-[#0d0b14]/80 to-accent/45"

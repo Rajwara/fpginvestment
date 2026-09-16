@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import BackdropImage, { type Backdrop } from "./BackdropImage";
 
 /**
  * Full-bleed photographic page banner: the image runs behind the fixed header,
@@ -13,20 +13,13 @@ export default function PhotoPageHero({
   crumb,
 }: {
   title: string;
-  image: string;
+  image: Backdrop;
   /** Label for the current page in the breadcrumb; defaults to the title. */
   crumb?: string;
 }) {
   return (
     <section className="relative isolate flex min-h-[26rem] flex-col justify-end overflow-hidden pt-32 lg:min-h-[34rem] lg:pt-40">
-      <Image
-        src={image}
-        alt=""
-        fill
-        sizes="100vw"
-        preload
-        className="-z-20 object-cover"
-      />
+      <BackdropImage image={image} preload className="-z-20 object-cover" />
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 via-black/45 to-black/35"
