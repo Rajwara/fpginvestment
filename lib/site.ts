@@ -185,12 +185,14 @@ export const megaFeature = {
 };
 
 export const partners = [
-  { name: "FP Global", logo: "/assets/images/OurMission-logo1-trimmed.png" },
-  { name: "Hyatt Regency", logo: "/assets/images/OurMission-logo2-trimmed.png" },
-  { name: "DHA Lahore", logo: "/assets/images/OurMission-logo3-trimmed.png" },
+  { name: "AGT Middle East", logo: "/assets/images/brands/AGT.webp" },
+  { name: "DHA Lahore", logo: "/assets/images/brands/DHA%20LAGORE.webp" },
+  { name: "Hyatt Regency", logo: "/assets/images/brands/HAYAT%20REGENCY.webp" },
+  { name: "Meerab Properties", logo: "/assets/images/brands/MEERAB.webp" },
+  { name: "MGroup", logo: "/assets/images/brands/MGROUP.webp" },
   {
     name: "Valor Hospitality Partners",
-    logo: "/assets/images/OurMission-logo4-trimmed.png",
+    logo: "/assets/images/brands/VALOR.webp",
   },
 ];
 
