@@ -113,10 +113,10 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
           <span className="eyebrow text-subtle">Our Partners</span>
           {partners.map((p) => (
             <span
-              key={p}
+              key={p.name}
               className="font-display text-lg text-fg-2/55 transition-colors hover:text-fg-2/80"
             >
-              {p}
+              {p.name}
             </span>
           ))}
         </div>

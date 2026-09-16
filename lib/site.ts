@@ -9,6 +9,7 @@ export const site = {
   email: "info@fpginvestment.com",
   phone: "+971 55 843 7070",
   address: { line1: "DHA Phase 6", line2: "Lahore, Pakistan" },
+  hours: { open: "Mon–Sat: 09:00am–07:00pm", closed: "Sunday: Closed" },
   social: [
     { label: "LinkedIn", href: "https://linkedin.com" },
     { label: "Instagram", href: "https://instagram.com" },
@@ -99,11 +100,13 @@ export const megaFeature = {
 };
 
 export const partners = [
-  "Hyatt",
-  "Regency",
-  "Marriott",
-  "Accor",
-  "IHG",
+  { name: "FP Global", logo: "/assets/images/OurMission-logo1-trimmed.png" },
+  { name: "Hyatt Regency", logo: "/assets/images/OurMission-logo2-trimmed.png" },
+  { name: "DHA Lahore", logo: "/assets/images/OurMission-logo3-trimmed.png" },
+  {
+    name: "Valor Hospitality Partners",
+    logo: "/assets/images/OurMission-logo4-trimmed.png",
+  },
 ];
 
 export const metrics = [
@@ -345,7 +348,7 @@ export const offices: Office[] = [
 export const footerColumns = [
   {
     heading: "What We Do",
-    links: services.map((s) => ({ label: s.short, href: `/services/${s.id}` })),
+    links: services.map((s) => ({ label: s.name, href: `/services/${s.id}` })),
   },
   {
     heading: "Company",

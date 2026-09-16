@@ -4,8 +4,7 @@ import ServicesFlex from "@/components/ServicesFlex";
 import HyattFeature from "@/components/HyattFeature";
 import MissionStats from "@/components/MissionStats";
 import BlogShowcase from "@/components/BlogShowcase";
-import Approach from "@/components/Approach";
-import CTA from "@/components/CTA";
+import QuerySection from "@/components/QuerySection";
 
 export default function HomePage() {
   return (
@@ -16,8 +15,7 @@ export default function HomePage() {
       <HyattFeature />
       <MissionStats />
       <BlogShowcase />
-      <Approach />
-      <CTA />
+      <QuerySection />
     </>
   );
 }

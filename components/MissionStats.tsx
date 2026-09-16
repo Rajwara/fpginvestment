@@ -102,27 +102,40 @@ export default function MissionStats() {
         </p>
       </div>
 
-      {/* Partner marquee. Two identical tracks scroll as one loop. */}
-      <div
-        aria-hidden="true"
-        className="reveal marquee mt-8 flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]"
-      >
-        {[0, 1].map((copy) => (
-          <div key={copy} className="marquee-track flex shrink-0 gap-16 pr-16">
-            {partners.map((partner) => (
-              <span
-                key={`${copy}-${partner}`}
-                className="font-display text-2xl whitespace-nowrap text-fg-2/45 lg:text-3xl"
-              >
-                {partner}
-              </span>
-            ))}
-          </div>
-        ))}
+      {/* Partner logo slider. Two identical tracks scroll as one seamless loop;
+          each track repeats the set so the strip still spans a wide viewport. */}
+      <div className="reveal marquee mt-10 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+        <div className="flex w-max">
+          {[0, 1].map((copy) => (
+            <div
+              key={copy}
+              aria-hidden="true"
+              className="marquee-track flex shrink-0 gap-6 pr-6"
+            >
+              {[0, 1, 2].map((set) =>
+                partners.map((partner) => (
+                  <div
+                    key={`${copy}-${set}-${partner.name}`}
+                    className="flex h-24 w-52 shrink-0 items-center justify-center rounded-2xl bg-white px-7 shadow-lg shadow-fg/5 ring-1 ring-fg-2/5 sm:h-28 sm:w-60"
+                  >
+                    <Image
+                      src={partner.logo}
+                      alt=""
+                      width={240}
+                      height={140}
+                      className="h-14 w-full object-contain"
+                    />
+                  </div>
+                ))
+              )}
+            </div>
+          ))}
+        </div>
       </div>
       <p className="sr-only">
-        Partners: {partners.join(", ")}.
+        Partners: {partners.map((p) => p.name).join(", ")}.
       </p>
+
     </section>
   );
 }

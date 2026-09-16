@@ -330,3 +330,22 @@
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }
 }
+
+/* Faint dot field behind the enquiry section — a flat stand-in for the
+   dotted world map in the reference, drawn in CSS so it themes itself. */
+.dot-field {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 18px 18px;
+  color: var(--color-fg-2);
+  opacity: 0.08;
+  -webkit-mask-image: radial-gradient(
+    ellipse 65% 60% at 50% 45%,
+    #000 35%,
+    transparent 78%
+  );
+  mask-image: radial-gradient(
+    ellipse 65% 60% at 50% 45%,
+    #000 35%,
+    transparent 78%
+  );
+}
