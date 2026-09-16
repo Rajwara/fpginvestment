@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { insights } from "@/lib/site";
 import { formatDate } from "@/components/BlogTeaser";
+import MaskButton from "@/components/MaskButton";
 
 type Params = { slug: string };
 
@@ -69,12 +70,9 @@ export default async function BlogPage({
           If something here is relevant to a development or an operating asset
           you are working on, we are happy to go deeper.
         </p>
-        <Link
-          href="/contact"
-          className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-on-accent transition-colors hover:bg-accent-hover"
-        >
-          Get in touch <span aria-hidden="true">→</span>
-        </Link>
+        <MaskButton href="/contact" className="mt-6" arrow>
+          Get in touch
+        </MaskButton>
       </div>
     </article>
   );

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { metrics } from "@/lib/site";
+import MaskButton from "@/components/MaskButton";
 
 export default function Hero() {
   return (
@@ -40,24 +41,12 @@ export default function Hero() {
             className="animate-rise flex flex-wrap items-center gap-4"
             style={{ animationDelay: "220ms" }}
           >
-            <Link
-              href="/about"
-              className="group inline-flex items-center gap-2.5 rounded-full bg-accent px-7 py-3.5 text-sm font-medium text-on-accent transition-all duration-300 hover:bg-accent-hover"
-            >
+            <MaskButton href="/about" arrow>
               Explore our services
-              <span
-                aria-hidden="true"
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              >
-                →
-              </span>
-            </Link>
-            <Link
-              href="/hyatt-lahore"
-              className="inline-flex items-center gap-2.5 rounded-full border border-fg-2/20 px-7 py-3.5 text-sm text-fg-2 transition-all duration-300 hover:border-fg-2/50 hover:text-fg"
-            >
+            </MaskButton>
+            <MaskButton href="/hyatt-lahore" variant="secondary">
               Hyatt Regency Lahore
-            </Link>
+            </MaskButton>
           </div>
         </div>
 

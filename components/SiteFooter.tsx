@@ -2,6 +2,7 @@ import Link from "next/link";
 import { footerColumns, site } from "@/lib/site";
 import Logo from "./Logo";
 import SocialIcon from "./SocialIcon";
+import MaskButton from "@/components/MaskButton";
 
 export default function SiteFooter() {
   return (
@@ -18,18 +19,9 @@ export default function SiteFooter() {
               in mind?
             </p>
           </div>
-          <Link
-            href="/contact"
-            className="group inline-flex w-fit items-center gap-2.5 rounded-full bg-accent px-7 py-4 text-sm font-medium text-on-accent transition-colors hover:bg-accent-hover"
-          >
+          <MaskButton href="/contact" size="lg" className="w-fit" arrow>
             Start a Conversation
-            <span
-              aria-hidden="true"
-              className="transition-transform duration-300 group-hover:translate-x-1"
-            >
-              →
-            </span>
-          </Link>
+          </MaskButton>
         </div>
 
         <div className="grid gap-12 pt-14 lg:grid-cols-[1.4fr_repeat(3,1fr)]">

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { jobs, site } from "@/lib/site";
 import PageHero from "@/components/PageHero";
+import MaskButton from "@/components/MaskButton";
 
 type Params = { slug: string };
 
@@ -91,12 +92,13 @@ export default async function JobPage({
           <p className="mt-3 leading-relaxed text-muted">
             Send your CV and a short note about why this role interests you.
           </p>
-          <a
+          <MaskButton
             href={`mailto:${site.email}?subject=${encodeURIComponent(`Application — ${job.title}`)}`}
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-on-accent transition-colors hover:bg-accent-hover"
+            className="mt-6"
+            arrow
           >
-            Email your application <span aria-hidden="true">→</span>
-          </a>
+            Email your application
+          </MaskButton>
         </div>
       </article>
     </>

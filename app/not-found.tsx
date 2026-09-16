@@ -1,4 +1,4 @@
-import Link from "next/link";
+import MaskButton from "@/components/MaskButton";
 
 export default function NotFound() {
   return (
@@ -10,12 +10,9 @@ export default function NotFound() {
       <p className="mt-6 text-lg text-muted">
         The page you were looking for is not part of the site.
       </p>
-      <Link
-        href="/"
-        className="mt-10 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-medium text-on-accent transition-colors hover:bg-accent-hover"
-      >
-        Back to the homepage <span aria-hidden="true">→</span>
-      </Link>
+      <MaskButton href="/" className="mt-10" arrow>
+        Back to the homepage
+      </MaskButton>
     </div>
   );
 }

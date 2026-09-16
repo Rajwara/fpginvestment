@@ -1,5 +1,6 @@
-import Link from "next/link";
 import { site } from "@/lib/site";
+import MaskButton from "@/components/MaskButton";
+import Eyebrow from "@/components/Eyebrow";
 
 export default function CTA() {
   return (
@@ -15,7 +16,7 @@ export default function CTA() {
       </div>
 
       <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">
-        <p className="reveal eyebrow text-accent-fg">Work with us</p>
+        <Eyebrow className="reveal">Work with us</Eyebrow>
         <h2 className="reveal mt-6 font-display text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[1.02] tracking-[-0.02em] text-fg">
           Let&rsquo;s create something exceptional.
         </h2>
@@ -25,24 +26,16 @@ export default function CTA() {
         </p>
 
         <div className="reveal mt-10 flex flex-wrap items-center justify-center gap-4">
-          <Link
-            href="/contact"
-            className="group inline-flex items-center gap-2.5 rounded-full bg-accent px-8 py-4 text-sm font-medium text-on-accent transition-all duration-300 hover:bg-accent-hover"
-          >
+          <MaskButton href="/contact" size="lg" arrow>
             Start a Conversation
-            <span
-              aria-hidden="true"
-              className="transition-transform duration-300 group-hover:translate-x-1"
-            >
-              →
-            </span>
-          </Link>
-          <a
+          </MaskButton>
+          <MaskButton
             href={`mailto:${site.email}`}
-            className="inline-flex items-center rounded-full border border-fg-2/20 px-8 py-4 text-sm text-fg-2 transition-all duration-300 hover:border-fg-2/50 hover:text-fg"
+            variant="secondary"
+            size="lg"
           >
             {site.email}
-          </a>
+          </MaskButton>
         </div>
       </div>
     </section>

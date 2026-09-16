@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 import SiteHeader from "@/components/SiteHeader";
@@ -7,17 +7,18 @@ import SiteFooter from "@/components/SiteFooter";
 import Reveal from "@/components/Reveal";
 import { themeInitScript } from "@/lib/theme";
 
-const inter = Inter({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-plus-jakarta",
   display: "swap",
+  style: ["normal", "italic"],
 });
 
-const instrumentSerif = Instrument_Serif({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-instrument-serif",
+  variable: "--font-dm-sans",
   display: "swap",
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -44,7 +45,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="light"
-      className={`${inter.variable} ${instrumentSerif.variable}`}
+      className={`${plusJakartaSans.variable} ${dmSans.variable}`}
       suppressHydrationWarning
     >
       <head>

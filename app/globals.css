@@ -29,8 +29,8 @@
   --color-accent-fg: #604a9f;    /* 7.0:1 on white */
   --color-on-accent: #ffffff;    /* 7.0:1 on the fill */
 
-  --font-display: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 
@@ -121,6 +121,15 @@
   }
 }
 
+/*
+ * Headings are Plus Jakarta Sans. A sans display face needs weight to carry
+ * at large sizes where the previous serif carried on contrast alone, so the
+ * family utility sets it. Tracking stays on the individual headings.
+ */
+.font-display {
+  font-weight: 700;
+}
+
 @utility eyebrow {
   font-size: 0.6875rem;
   letter-spacing: 0.18em;
@@ -166,4 +175,80 @@
 :root[data-theme="dark"] .dark-hidden,
 :root:not([data-theme="dark"]) .light-hidden {
   display: none;
+}
+
+/*
+ * CSS-mask sweep buttons (components/MaskButton.tsx).
+ *
+ * public/assets/images/mask-sprite.svg is a filmstrip of 23 alpha frames, so
+ * the fill layer is scaled to 2300% and the mask position is stepped across
+ * it. A stepped transition is used rather than a pair of keyframe animations:
+ * it reverses by itself on pointer-out and nothing plays on page load.
+ */
+.mask-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  border-radius: 9999px;
+  overflow: hidden;
+  isolation: isolate;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 0.4s var(--ease-out-expo);
+}
+
+.mask-btn__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.mask-btn__fill {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-mask-image: url("/assets/images/mask-sprite.svg");
+  mask-image: url("/assets/images/mask-sprite.svg");
+  -webkit-mask-size: 2300% 100%;
+  mask-size: 2300% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: 0 0;
+  mask-position: 0 0;
+  transition:
+    -webkit-mask-position 0.7s steps(23, jump-none),
+    mask-position 0.7s steps(23, jump-none);
+}
+
+.mask-btn:hover .mask-btn__fill,
+.mask-btn:focus-visible .mask-btn__fill {
+  -webkit-mask-position: 100% 0;
+  mask-position: 100% 0;
+}
+
+.mask-btn--secondary:hover,
+.mask-btn--secondary:focus-visible {
+  border-color: transparent;
+}
+
+/* Without mask support the fill layer would cover the label permanently. */
+@supports not ((-webkit-mask-image: url("#m")) or (mask-image: url("#m"))) {
+  .mask-btn__fill {
+    display: none;
+  }
+  .mask-btn--secondary:hover,
+  .mask-btn--secondary:focus-visible {
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+    border-color: var(--color-accent);
+  }
+  .mask-btn--primary:hover,
+  .mask-btn--primary:focus-visible {
+    background-color: var(--color-accent-hover);
+  }
 }

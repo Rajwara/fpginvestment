@@ -64,7 +64,7 @@ Both themes share one set of role-based tokens, declared with Tailwind v4's
 | `accent` | A filled surface — buttons, swatches |
 | `on-accent` | Text sitting on an accent fill |
 | `accent-fg` | Accent-coloured text and icons on the page surface |
-| `font-display` / `font-sans` | Instrument Serif headlines / Inter body |
+| `font-display` / `font-sans` | Plus Jakarta Sans headings / DM Sans body |
 
 The accent is split by role rather than into a numeric ramp because purple
 needs opposite lightness depending on the job. On black, #604A9F only reaches
@@ -75,6 +75,34 @@ Every pairing above meets WCAG AA.
 Sections animate in on scroll: mark a container `data-reveal` and its children
 `reveal`. `components/Reveal.tsx` sets `data-shown` via `IntersectionObserver`,
 and the whole effect is disabled under `prefers-reduced-motion`.
+
+## Buttons
+
+`components/MaskButton.tsx` renders the CSS-mask sweep used for every call to
+action. `public/assets/images/mask-sprite.svg` is a filmstrip of 23 alpha
+frames; the fill layer is scaled to 2300% and its mask position is stepped
+across the strip, so the colour arrives as an organic wipe rather than a fade.
+
+Two details that matter if you edit it:
+
+- The sweep is a stepped **transition**, not a pair of keyframe animations. It
+  reverses by itself on pointer-out and nothing plays on page load.
+- The sprite carries `preserveAspectRatio="none"`. Without it the browser
+  scales the 2300x40 artwork uniformly inside the 2300%-wide mask box and
+  centres it, leaving the outer thirds empty — the fill then vanishes past
+  roughly 75% of the sweep.
+
+The label is rendered twice, once in the resting colour and once inside the
+masked layer, so the text is revealed along with the fill. The masked copy is
+`aria-hidden` so the accessible name is not duplicated.
+
+## Header
+
+`components/SiteHeader.tsx` floats as an inset glass pill at the top of the
+page and docks to a full-width bar once the page scrolls past 24px, animating
+max-width, radius, padding and background together. Opening the mega menu or
+the mobile menu docks it too, so the panels always have full width to lay out
+in.
 
 ## Logo
 

@@ -6,9 +6,9 @@ export const site = {
     "Redefining hospitality through thoughtful development, world-class management and exceptional guest experiences.",
   url: "https://fpginvestment.vercel.app",
   founded: 2009,
-  email: "hello@fpglobal.com",
-  phone: "+92 42 111 000 555",
-  address: { line1: "Gulberg III", line2: "Lahore, Pakistan" },
+  email: "info@fpginvestment.com",
+  phone: "+971 55 843 7070",
+  address: { line1: "DHA Phase 6", line2: "Lahore, Pakistan" },
   social: [
     { label: "LinkedIn", href: "https://linkedin.com" },
     { label: "Instagram", href: "https://instagram.com" },
