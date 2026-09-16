@@ -21,6 +21,7 @@ export const site = {
 export const services = [
   {
     id: "business-development",
+    card: "/assets/images/home/service-business-development.webp",
     image: "/assets/images/ProfessionalGuidanceimg-1.jpg",
     name: "Business Development & Advisory",
     short: "Business Development",
@@ -45,6 +46,7 @@ export const services = [
   },
   {
     id: "design-construction",
+    card: "/assets/images/home/service-design-construction.webp",
     image: "/assets/images/ProfessionalGuidanceimg-02.jpg",
     name: "Design & Construction",
     short: "Design & Construction",
@@ -69,6 +71,7 @@ export const services = [
   },
   {
     id: "pre-opening",
+    card: "/assets/images/home/service-pre-opening.webp",
     image: "/assets/images/ProfessionalGuidanceimg-03.jpg",
     name: "Pre-Opening",
     short: "Pre-Opening",
@@ -93,6 +96,7 @@ export const services = [
   },
   {
     id: "takeover-turnaround",
+    card: "/assets/images/home/service-takeover-turnaround.webp",
     image: "/assets/images/ProfessionalGuidanceimg-04.jpg",
     name: "Takeover & Turnaround",
     short: "Takeover & Turnaround",
@@ -117,6 +121,7 @@ export const services = [
   },
   {
     id: "sales-marketing",
+    card: "/assets/images/home/service-sales-marketing.webp",
     image: "/assets/images/ProfessionalGuidanceimg-05.jpg",
     name: "Sales & Marketing",
     short: "Sales & Marketing",
@@ -141,6 +146,7 @@ export const services = [
   },
   {
     id: "hotel-management",
+    card: "/assets/images/home/service-hotel-management.webp",
     image: "/assets/images/ProfessionalGuidanceimg-1.jpg",
     name: "Hotel Management & Operations",
     short: "Hotel Management",

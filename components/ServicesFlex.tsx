@@ -79,9 +79,11 @@ export default function ServicesFlex() {
                   <h3 className="mt-7 font-display text-[clamp(1.5rem,2.2vw,2rem)] leading-tight">
                     {service.name}
                   </h3>
-                  <div className="relative mt-7 aspect-[16/9] w-full overflow-hidden rounded-xl">
+                  {/* The card banners are 61/19; a 16/9 crop would cut the
+                      left of each one, where the subject usually sits. */}
+                  <div className="relative mt-7 aspect-[61/19] w-full overflow-hidden rounded-xl">
                     <Image
-                      src={service.image}
+                      src={service.card}
                       alt=""
                       fill
                       sizes="(max-width: 1024px) 90vw, 40vw"
@@ -157,9 +159,9 @@ export default function ServicesFlex() {
                 >
                   <div className="overflow-hidden">
                     <div className="px-5 pb-6">
-                      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl">
+                      <div className="relative aspect-[61/19] w-full overflow-hidden rounded-xl">
                         <Image
-                          src={service.image}
+                          src={service.card}
                           alt=""
                           fill
                           sizes="90vw"
