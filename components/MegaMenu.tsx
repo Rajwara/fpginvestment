@@ -16,7 +16,7 @@ import Button from "@/components/Button";
  */
 export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
   return (
-    <div className="grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.5fr)_minmax(0,0.75fr)]">
+    <div className="grid lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.35fr)_minmax(0,0.75fr)]">
       {/* Left — who we are */}
       <div className="border-fg-2/10 p-8 lg:border-r lg:p-10">
         <p className="eyebrow flex items-center gap-2.5 text-accent-fg">
@@ -40,10 +40,13 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
         <p className="mt-3 text-sm leading-relaxed text-muted">
           {megaFeature.body}
         </p>
-        <div className="mt-6 flex flex-wrap gap-3">
+        {/* Side by side, so the compact size — the column is not wide
+            enough for two buttons at the default padding. */}
+        <div className="mt-6 flex flex-wrap gap-2.5">
           <Button
             href={megaFeature.href}
             variant="secondary"
+            size="sm"
             onClick={onNavigate}
             className="inline-flex"
             arrow
@@ -53,6 +56,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
           <Button
             href={megaFeature.secondaryHref}
             variant="secondary"
+            size="sm"
             onClick={onNavigate}
             className="inline-flex"
             arrow

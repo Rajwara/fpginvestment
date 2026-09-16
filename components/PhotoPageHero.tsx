@@ -32,11 +32,6 @@ export default function PhotoPageHero({
         className="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 via-black/45 to-black/35"
       />
 
-      {/* Rule runs wider than the copy, as in the reference. */}
-      <div className="mx-auto w-full max-w-[120rem] px-6 lg:px-10">
-        <div className="h-px w-full bg-white/25" />
-      </div>
-
       <div className="mx-auto w-full max-w-7xl px-6 pt-6 pb-14 lg:px-10 lg:pt-8 lg:pb-20">
         <nav aria-label="Breadcrumb">
           <ol className="flex items-center gap-3 text-sm text-white/70">

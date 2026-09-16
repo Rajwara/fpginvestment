@@ -6,7 +6,7 @@ import type {
 } from "react";
 
 type Variant = "primary" | "secondary" | "onAccent" | "light";
-type Size = "md" | "lg";
+type Size = "sm" | "md" | "lg";
 
 /**
  * `--trace` is the colour the border highlight runs in, so it has to read
@@ -29,6 +29,8 @@ const variants: Record<Variant, string> = {
 };
 
 const sizes: Record<Size, string> = {
+  // Narrow columns where two buttons have to sit side by side.
+  sm: "px-4 py-2.5 text-xs",
   md: "px-7 py-3.5 text-sm",
   lg: "px-8 py-4 text-sm",
 };
