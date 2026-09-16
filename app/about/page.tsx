@@ -3,7 +3,6 @@ import PhotoPageHero from "@/components/PhotoPageHero";
 import ServicesFlex from "@/components/ServicesFlex";
 import MissionSection from "@/components/MissionSection";
 import TeamGrid from "@/components/TeamGrid";
-import Journey from "@/components/Journey";
 import QuerySection from "@/components/QuerySection";
 
 export const metadata: Metadata = {
@@ -25,8 +24,6 @@ export default function AboutPage() {
       <MissionSection />
 
       <TeamGrid />
-
-      <Journey />
 
       <QuerySection />
     </>
