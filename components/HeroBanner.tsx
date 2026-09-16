@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Eyebrow from "./Eyebrow";
 import Button from "./Button";
 
 const slides = [
@@ -70,11 +69,9 @@ export default function HeroBanner() {
       </div>
 
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
-        <Eyebrow tone="hero" className="animate-fade">
-          Hospitality Development &amp; Management
-        </Eyebrow>
-
-        <h1 className="animate-rise mt-7 max-w-4xl font-display text-[clamp(2.5rem,6.5vw,5rem)] leading-[1.02] tracking-[-0.02em] text-white">
+        {/* The headline opens the page directly; the eyebrow that used to sit
+            above it came off. */}
+        <h1 className="animate-rise max-w-4xl font-display text-[clamp(2.5rem,6.5vw,5rem)] leading-[1.02] tracking-[-0.02em] text-white">
           Full-Service{" "}
           <span className="text-hero-accent">Hospitality</span>
           <br className="hidden sm:block" /> &amp; Hotel Management

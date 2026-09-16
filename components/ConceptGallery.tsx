@@ -253,8 +253,16 @@ export default function ConceptGallery() {
               priority
               style={
                 shot.height >= shot.width
-                  ? { height: "min(64vh, 34rem)", width: "auto", maxWidth: "100%" }
-                  : { width: "min(92vw, 42rem)", height: "auto", maxHeight: "64vh" }
+                  ? {
+                      height: `min(64vh, 34rem, ${Math.round(shot.height * 1.4)}px)`,
+                      width: "auto",
+                      maxWidth: "100%",
+                    }
+                  : {
+                      width: `min(92vw, 42rem, ${Math.round(shot.width * 1.4)}px)`,
+                      height: "auto",
+                      maxHeight: "64vh",
+                    }
               }
               className="lightbox-frame rounded-2xl object-contain shadow-2xl shadow-black/60"
             />

@@ -872,9 +872,11 @@ export const conceptBoards = [
 
 /**
  * The Concept Gallery. Intrinsic dimensions travel with each entry because the
- * grid is a masonry: every tile keeps its own proportions rather than being
- * cropped to a shared ratio, so the browser needs the real numbers to reserve
- * the space before the file lands.
+ * grid reads them: a landscape study spans two columns, a portrait one, and
+ * the order below sets the rhythm the page is laid out on — wide left, two
+ * tall, then two tall and wide right, alternating down the block. Four rows of
+ * three at desktop. Changing this order changes the layout, so keep the
+ * landscape studies at positions 1, 6, 7 and 12.
  */
 export type ConceptShot = {
   id: string;
@@ -886,6 +888,7 @@ export type ConceptShot = {
 };
 
 export const conceptGallery: ConceptShot[] = [
+  /* Row one — wide left */
   {
     id: "water-garden",
     title: "The water garden",
@@ -910,6 +913,8 @@ export const conceptGallery: ConceptShot[] = [
     width: 308,
     height: 400,
   },
+
+  /* Row two — wide right */
   {
     id: "spa-pool",
     title: "The spa pool",
@@ -934,6 +939,16 @@ export const conceptGallery: ConceptShot[] = [
     width: 636,
     height: 401,
   },
+
+  /* Row three — wide left */
+  {
+    id: "colonnade",
+    title: "The colonnade",
+    caption: "A fluted screen along the water, drawn to catch the last of the light.",
+    image: "/assets/images/concept-and-design/colonnade-web.webp",
+    width: 636,
+    height: 400,
+  },
   {
     id: "atrium-lobby",
     title: "The atrium",
@@ -950,14 +965,8 @@ export const conceptGallery: ConceptShot[] = [
     width: 308,
     height: 401,
   },
-  {
-    id: "colonnade",
-    title: "The colonnade",
-    caption: "A fluted screen along the water, drawn to catch the last of the light.",
-    image: "/assets/images/concept-and-design/colonnade-web.webp",
-    width: 636,
-    height: 400,
-  },
+
+  /* Row four — wide right */
   {
     id: "courts",
     title: "The courts",
@@ -973,5 +982,13 @@ export const conceptGallery: ConceptShot[] = [
     image: "/assets/images/concept-and-design/lounge-web.webp",
     width: 308,
     height: 401,
+  },
+  {
+    id: "water-terraces",
+    title: "The water terraces",
+    caption: "The same garden read close: stepped black pools, a lit lip on every edge.",
+    image: "/assets/images/concept-and-design/water-terraces-web.webp",
+    width: 380,
+    height: 240,
   },
 ];
