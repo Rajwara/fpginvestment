@@ -27,7 +27,7 @@ export const services = [
     short: "Business Development",
     icon: "compass",
     summary:
-      "Feasibility, positioning and brand selection \u2014 the work that decides whether a project is worth building before a single foundation is poured.",
+      "Feasibility, market positioning, concept development and brand strategy designed to establish a commercially sound foundation before development begins.",
     points: ["Market and feasibility studies", "Brand selection and negotiation", "Return modelling and capital planning"],
     gallery: ["/assets/images/ProfessionalGuidanceimg-02.jpg", "/assets/images/ProfessionalGuidanceimg-03.jpg"],
     wide: "/assets/images/MissionAndGoals-03.jpg",
@@ -52,7 +52,7 @@ export const services = [
     short: "Design & Construction",
     icon: "blueprint",
     summary:
-      "Technical services from concept design through handover, holding the line on brand standards, programme and cost at every stage.",
+      "Hospitality-focused design and technical oversight from concept through completion, ensuring brand standards, operational functionality, quality, programme and cost remain aligned.",
     points: ["Concept and technical design review", "Contractor procurement", "Programme and cost control"],
     gallery: ["/assets/images/ProfessionalGuidanceimg-03.jpg", "/assets/images/ProfessionalGuidanceimg-04.jpg"],
     wide: "/assets/images/MissionAndGoalsimg-04.jpg",
@@ -77,7 +77,7 @@ export const services = [
     short: "Pre-Opening",
     icon: "key",
     summary:
-      "The eighteen months that determine a hotel\u2019s first year. Recruitment, systems, supply chain and the critical path to a confident opening day.",
+      "Comprehensive pre-opening management covering recruitment, training, systems, procurement, operational readiness and launch planning for a confident transition into operations.",
     points: ["Critical path and budget", "Recruitment and training", "Systems, FF&E and OS&E"],
     gallery: ["/assets/images/ProfessionalGuidanceimg-04.jpg", "/assets/images/ProfessionalGuidanceimg-05.jpg"],
     wide: "/assets/images/MissionAndGoals-img2.jpg",
@@ -102,7 +102,7 @@ export const services = [
     short: "Takeover & Turnaround",
     icon: "refresh",
     summary:
-      "Assets that underperform rarely lack potential \u2014 they lack operating discipline. We take over, stabilise and rebuild the P&L.",
+      "Structured intervention for underperforming hospitality assets, focused on operational stability, cost control, service improvement, revenue performance and long-term profitability.",
     points: ["Rapid operational diagnostic", "Cost and revenue restructuring", "Repositioning and rebranding"],
     gallery: ["/assets/images/ProfessionalGuidanceimg-05.jpg", "/assets/images/ProfessionalGuidanceimg-1.jpg"],
     wide: "/assets/images/MissionAndGoals-03.jpg",
@@ -127,7 +127,7 @@ export const services = [
     short: "Sales & Marketing",
     icon: "megaphone",
     summary:
-      "Commercial strategy that fills rooms at the right rate: segmentation, channel mix, revenue management and a brand people actually remember.",
+      "Integrated commercial strategy across positioning, sales, distribution, revenue management and marketing to strengthen demand, optimise rate and grow market share.",
     points: ["Revenue management and pricing", "Channel and distribution strategy", "Brand, digital and PR"],
     gallery: ["/assets/images/ProfessionalGuidanceimg-1.jpg", "/assets/images/ProfessionalGuidanceimg-02.jpg"],
     wide: "/assets/images/home-hayyat-regency.jpg",
@@ -152,7 +152,7 @@ export const services = [
     short: "Hotel Management",
     icon: "concierge",
     summary:
-      "Full operating management under international brand standards, with owner reporting that tells you what is actually happening in your asset.",
+      "End-to-end hotel management focused on service excellence, operational discipline, commercial performance, brand compliance and transparent owner reporting.",
     points: ["Full operating management", "Brand standards compliance", "Transparent owner reporting"],
     gallery: ["/assets/images/ProfessionalGuidanceimg-02.jpg", "/assets/images/ProfessionalGuidanceimg-04.jpg"],
     wide: "/assets/images/fpginvestment_banner_img1.jpg",
@@ -393,40 +393,40 @@ export const missionTabs = [
   {
     id: "who-we-are",
     label: "Who we are",
-    body: "FP Global is a hotel and hospitality management company, working across development, opening and operation since 2009. We are operators first — the people who advise on a project are the people who end up running it.",
+    body: "FP Global is a full-service hospitality development and management company, supporting hotel owners and investors across the entire property lifecycle \u2014 from early-stage development and design through pre-opening, operations, commercial strategy and long-term asset performance.",
     points: [
-      "Founded in 2009",
-      "Development, opening and operation",
-      "Six service lines, one team",
-      "Based in Lahore, Pakistan",
-      "Developer and operator, not adviser",
-      "Accountable after handover",
+      "Hospitality expertise since 2009",
+      "End-to-end development & management",
+      "Business development & advisory",
+      "Pre-opening & operational management",
+      "Sales & commercial strategy",
+      "Headquartered in Lahore, Pakistan",
     ],
   },
   {
     id: "vision",
     label: "Vision",
-    body: "To be the partner owners turn to when a hotel has to be built properly and run properly — and, in doing it often enough, to raise what a guest in this region takes for granted.",
+    body: "To become Pakistan\u2019s most trusted hospitality group, setting new benchmarks for service, guest experience and responsible growth while bringing the warmth and character of Pakistani hospitality to properties built to international standards.",
     points: [
-      "A regional benchmark for service",
-      "Hotels that hold their value",
-      "Deeper Pakistani hospitality talent",
-      "Long-view owners and brands",
-      "Standards that travel between properties",
-      "Assets still competitive in twenty years",
+      "Set new benchmarks in hospitality",
+      "Celebrate authentic Pakistani hospitality",
+      "Deliver world-class guest experiences",
+      "Develop sustainable, future-ready properties",
+      "Build long-term value for owners",
+      "Strengthen Pakistan\u2019s hospitality landscape",
     ],
   },
   {
     id: "mission",
     label: "Mission",
-    body: "To develop, open and operate hotels that perform for owners and are remembered by guests — keeping one accountable team across every stage, so nothing of value is lost in a handover.",
+    body: "To develop, open and manage high-performing hospitality properties through disciplined planning, operational excellence and guest-focused service \u2014 creating memorable experiences for guests and sustainable value for owners and investors.",
     points: [
-      "Decide the hard things early",
-      "One team across every stage",
-      "Design an operator can run",
-      "Measured against the original case",
-      "Transparent monthly owner reporting",
-      "Service worth remembering",
+      "Plan with operations in mind",
+      "Execute seamless pre-openings",
+      "Operate to international standards",
+      "Elevate every guest touchpoint",
+      "Drive commercial performance",
+      "Create lasting value for stakeholders",
     ],
   },
 ];
@@ -461,9 +461,9 @@ export const missionCollage = [
 
 /** Counters in the "Our Mission" band. */
 export const missionStats = [
-  { to: 20, suffix: "+", label: "Years in hospitality" },
+  { to: 20, suffix: "+", label: "Years of hospitality expertise" },
   { to: 1400, suffix: "+", label: "Keys developed" },
-  { to: 6, suffix: "", label: "Service lines" },
+  { to: 6, suffix: "", label: "Integrated service lines" },
   { to: 94, suffix: "%", label: "Guest satisfaction" },
 ];
 

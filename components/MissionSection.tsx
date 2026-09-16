@@ -115,7 +115,7 @@ export default function MissionSection() {
         <div className="reveal-right">
           <Eyebrow>Who We Are</Eyebrow>
           <h2 className="mt-6 font-display text-[clamp(2rem,4.2vw,3.25rem)] leading-[1.08] tracking-[-0.02em] text-fg">
-            What we are, and what we are working towards.
+            Who we are, and where we&rsquo;re going.
           </h2>
 
           <div

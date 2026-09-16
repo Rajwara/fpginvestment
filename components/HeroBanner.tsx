@@ -75,17 +75,19 @@ export default function HeroBanner() {
         </Eyebrow>
 
         <h1 className="animate-rise mt-7 max-w-4xl font-display text-[clamp(2.5rem,6.5vw,5rem)] leading-[1.02] tracking-[-0.02em] text-white">
-          Redefining <span className="text-hero-accent">hospitality</span>,
-          <br className="hidden sm:block" /> end to end.
+          Full-Service{" "}
+          <span className="text-hero-accent">Hospitality</span>
+          <br className="hidden sm:block" /> &amp; Hotel Management
         </h1>
 
         <p
           className="animate-rise mt-7 max-w-xl text-lg leading-relaxed text-white/80"
           style={{ animationDelay: "120ms" }}
         >
-          From feasibility and design through pre-opening and daily operations,
-          FP Global develops and manages hotels that perform for owners and are
-          remembered by guests. Including Hyatt Regency Lahore.
+          FP Global partners with hotel owners, investors and developers
+          across the complete hospitality lifecycle &mdash; from development
+          advisory and design coordination to pre-opening, operations,
+          commercial strategy and long-term asset performance.
         </p>
 
         <div
@@ -93,7 +95,7 @@ export default function HeroBanner() {
           style={{ animationDelay: "220ms" }}
         >
           <Button href="/contact" size="lg" arrow>
-            Free Consultation
+            Discuss Your Project
           </Button>
           <Button
             href="/hyatt-lahore"
@@ -101,7 +103,7 @@ export default function HeroBanner() {
             size="lg"
             className="!border-white/35 !text-white"
           >
-            Hyatt Regency Lahore
+            Explore Hyatt Regency Lahore
           </Button>
         </div>
 

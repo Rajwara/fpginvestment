@@ -66,14 +66,14 @@ export default function MissionStats() {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="reveal flex flex-col items-center text-center">
-          <Eyebrow>Our Mission</Eyebrow>
+          <Eyebrow>Our Impact</Eyebrow>
 
           <h2 className="mt-7 max-w-4xl font-display text-[clamp(1.6rem,3.4vw,2.75rem)] leading-[1.3] tracking-[-0.015em] text-fg">
-            Our team develops
-            <InlineImage src={missionInline[0]} />, opens and{" "}
-            <span className="text-accent-fg">operates hotels</span>
-            <InlineImage src={missionInline[1]} /> that perform for owners
-            <InlineImage src={missionInline[2]} /> and are remembered by guests.
+            Developing and operating
+            <InlineImage src={missionInline[0]} />{" "}
+            <span className="text-accent-fg">hotels that perform</span>
+            <InlineImage src={missionInline[1]} /> for owners &mdash; and stay
+            <InlineImage src={missionInline[2]} /> memorable for guests.
           </h2>
         </div>
 
@@ -99,7 +99,8 @@ export default function MissionStats() {
         </div>
 
         <p className="reveal mx-auto mt-16 max-w-2xl text-center text-sm text-subtle">
-          Working alongside the brands and operators our owners already trust.
+          Creating stronger hospitality assets through disciplined
+          development, operational excellence and guest-focused management.
         </p>
       </div>
 

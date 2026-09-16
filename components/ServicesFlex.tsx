@@ -21,11 +21,13 @@ export default function ServicesFlex() {
         <div className="reveal flex flex-col items-center text-center">
           <Eyebrow>Professional Guidance</Eyebrow>
           <h2 className="mt-6 max-w-3xl font-display text-[clamp(2rem,4.2vw,3.25rem)] leading-[1.08] tracking-[-0.02em] text-fg">
-            Precision tailored services
+            Integrated Hospitality Services
           </h2>
           <p className="mt-4 max-w-2xl leading-relaxed text-muted">
-            Six service lines, engaged together or one at a time. Open any panel
-            to see what it covers.
+            Six specialist service lines supporting every stage of the
+            hospitality lifecycle &mdash; from early development through
+            opening, operations, commercial performance and asset
+            repositioning.
           </p>
         </div>
 

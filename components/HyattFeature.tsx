@@ -23,17 +23,19 @@ export default function HyattFeature() {
         <div className="reveal-right">
           <Eyebrow>Developed. Opened. Operated.</Eyebrow>
           <h2 className="mt-6 font-display text-[clamp(2rem,4.2vw,3.25rem)] leading-[1.08] tracking-[-0.02em] text-fg">
-            Hyatt Regency Lahore, concept to operating asset.
+            Hyatt Regency Lahore &mdash; From Concept to Operation
           </h2>
           <p className="mt-5 max-w-xl leading-relaxed text-muted">
-            Our flagship mandate ran through every one of our six service lines
-            — site assembly and brand negotiation, technical services and
-            handover, eighteen months of pre-opening, and the daily operation
-            that followed. It is the clearest answer to what FP Global does.
+            Hyatt Regency Lahore reflects FP Global&rsquo;s end-to-end approach
+            to hospitality development and management. From project
+            development, brand coordination and technical oversight to
+            pre-opening readiness and ongoing hotel operations, the project
+            brings our full-service capabilities together under one integrated
+            mandate.
           </p>
 
           <Button href="/hyatt-lahore" size="lg" className="mt-8" arrow>
-            Explore the Property
+            Explore Hyatt Regency Lahore
           </Button>
         </div>
       </div>
