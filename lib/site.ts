@@ -278,7 +278,7 @@ export const amenityPanels = [
     eyebrow: "Active Living",
     title: "Courts for every game",
     body: "Three squash courts, two tennis courts, paddle and badminton \u2014 floodlit and open late.",
-    image: "/assets/images/amenities/parallax-1-web.webp",
+    image: "/assets/images/amenities/active-living-web.webp",
   },
   {
     id: "fitness",
