@@ -7,14 +7,6 @@ import CheckIcon from "./CheckIcon";
 import Eyebrow from "./Eyebrow";
 import MaskButton from "./MaskButton";
 
-/** Offsets that stagger the collage, as in the reference. */
-const tileClasses = [
-  "lg:mt-16",
-  "",
-  "lg:-mt-4",
-  "lg:mt-8",
-];
-
 export default function MissionSection() {
   const [active, setActive] = useState(0);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -43,11 +35,11 @@ export default function MissionSection() {
       <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-2 lg:items-center lg:gap-20 lg:px-10">
         {/* Collage */}
         <div className="reveal relative">
-          <div className="grid grid-cols-2 gap-4 lg:gap-5">
-            {missionCollage.map((tile, i) => (
+          <div className="grid grid-cols-2 gap-5">
+            {missionCollage.map((tile) => (
               <div
                 key={tile.id}
-                className={`relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface-2 ${tileClasses[i] ?? ""}`}
+                className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface-2"
               >
                 {tile.src ? (
                   <Image
@@ -90,10 +82,14 @@ export default function MissionSection() {
                 </textPath>
               </text>
             </svg>
-            <span className="relative flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-accent-2">
-              <svg viewBox="0 0 36 36" className="h-7 w-7">
-                <path d="M6 32a12 12 0 0 1 24 0Z" className="fill-on-accent" />
-              </svg>
+            <span className="relative h-14 w-14 overflow-hidden rounded-full">
+              <Image
+                src="/assets/images/MissionAndGoals-img2.jpg"
+                alt=""
+                fill
+                sizes="56px"
+                className="object-cover"
+              />
             </span>
           </div>
         </div>
