@@ -96,14 +96,14 @@ export default function MissionSection() {
 
         {/* Copy and tabs */}
         <div className="reveal">
-          <Eyebrow>Mission and Goals</Eyebrow>
+          <Eyebrow>Who We Are</Eyebrow>
           <h2 className="mt-6 font-display text-[clamp(2rem,4.2vw,3.25rem)] leading-[1.08] tracking-[-0.02em] text-fg">
-            Achieving success through clear operating goals.
+            What we are, and what we are working towards.
           </h2>
 
           <div
             role="tablist"
-            aria-label="How we work"
+            aria-label="Who we are, our vision and our mission"
             onKeyDown={onKeyDown}
             className="mt-10 flex gap-8 border-b border-fg-2/10"
           >
