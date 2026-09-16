@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { services } from "@/lib/site";
-import PageHero from "@/components/PageHero";
-import CTA from "@/components/CTA";
-import ServiceIcon from "@/components/ServiceIcon";
+import PhotoPageHero from "@/components/PhotoPageHero";
+import ServiceSidebar from "@/components/ServiceSidebar";
+import QuerySection from "@/components/QuerySection";
+import CheckIcon from "@/components/CheckIcon";
 
 type Params = { id: string };
 
@@ -32,68 +33,72 @@ export default async function ServicePage({
   const service = services.find((s) => s.id === id);
   if (!service) notFound();
 
-  const others = services.filter((s) => s.id !== service.id);
-
   return (
     <>
-      <PageHero
-        eyebrow="What we do"
+      <PhotoPageHero
         title={service.name}
-        lede={service.summary}
+        crumb={service.short}
+        image={service.image}
       />
 
-      <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
-        <div data-reveal className="grid gap-16 lg:grid-cols-[1fr_1.4fr] lg:gap-24">
-          <div className="reveal">
-            <span className="flex h-14 w-14 items-center justify-center rounded-lg border border-accent-fg/30 text-accent-fg">
-              <ServiceIcon name={service.icon} className="h-6 w-6" />
-            </span>
-            <h2 className="mt-6 font-display text-3xl leading-tight text-fg">
-              What this covers
+      <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
+        <div
+          data-reveal
+          className="grid items-start gap-12 lg:grid-cols-[1.55fr_0.95fr] lg:gap-16"
+        >
+          <article className="reveal">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-surface-2">
+              <Image
+                src={service.image}
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 60vw, 100vw"
+                preload
+                className="object-cover"
+              />
+            </div>
+
+            <h2 className="mt-10 font-display text-[clamp(1.6rem,2.6vw,2.25rem)] leading-tight tracking-tight text-fg">
+              {service.name}
             </h2>
-            <p className="mt-4 leading-relaxed text-muted">
+            <p className="mt-4 text-lg leading-relaxed text-muted">
+              {service.summary}
+            </p>
+
+            <h3 className="mt-12 font-display text-2xl leading-tight text-fg">
+              What this covers
+            </h3>
+            <p className="mt-3 leading-relaxed text-muted">
               Every engagement is scoped to the asset. These are the components
               that appear in most of them.
             </p>
-          </div>
 
-          <div className="reveal">
-            <ul className="grid gap-px overflow-hidden rounded-xl border border-fg-2/10 bg-fg-2/10">
-              {service.points.map((p, i) => (
-                <li key={p} className="bg-surface p-8">
-                  <span className="font-display text-xl text-accent-fg/70">
-                    {String(i + 1).padStart(2, "0")}
+            <ul className="mt-8 space-y-4">
+              {service.points.map((p) => (
+                <li key={p} className="flex gap-4">
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/12 text-accent-fg">
+                    <CheckIcon className="h-3.5 w-3.5" />
                   </span>
-                  <p className="mt-3 text-lg text-fg">{p}</p>
+                  <span className="leading-relaxed text-fg-2">{p}</span>
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
 
-        <div data-reveal className="mt-24 border-t border-fg-2/10 pt-16">
-          <h2 className="reveal eyebrow text-subtle">Other service lines</h2>
-          <ul className="reveal mt-8 grid gap-px overflow-hidden rounded-xl border border-fg-2/10 bg-fg-2/10 sm:grid-cols-2 lg:grid-cols-5">
-            {others.map((s) => (
-              <li key={s.id}>
-                <Link
-                  href={`/services/${s.id}`}
-                  className="group flex h-full flex-col gap-4 bg-surface p-6 transition-colors hover:bg-surface-2"
-                >
-                  <span className="text-accent-fg">
-                    <ServiceIcon name={s.icon} className="h-5 w-5" />
-                  </span>
-                  <span className="text-sm leading-snug text-fg transition-colors group-hover:text-accent-fg">
-                    {s.short}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+            <h3 className="mt-12 font-display text-2xl leading-tight text-fg">
+              How we work on it
+            </h3>
+            <p className="mt-3 leading-relaxed text-muted">
+              One accountable team from first study to daily operations. We take
+              the whole line or a single stage of it, and either way the people
+              advising on your project have run one themselves.
+            </p>
+          </article>
+
+          <ServiceSidebar currentId={service.id} />
         </div>
       </div>
 
-      <CTA />
+      <QuerySection />
     </>
   );
 }
