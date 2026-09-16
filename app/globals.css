@@ -72,6 +72,14 @@
     background-color: var(--color-surface);
     color: var(--color-fg-2);
     font-family: var(--font-sans);
+    /*
+      reveal-left / reveal-right sit translated sideways until the observer
+      fires, which widens the document and shows a horizontal scrollbar on
+      first paint. `clip` rather than `hidden`: hidden would make this a
+      scroll container and stop position:sticky working for the amenities
+      stacking panels.
+    */
+    overflow-x: clip;
     transition:
       background-color 0.4s var(--ease-out-expo),
       color 0.4s var(--ease-out-expo);
@@ -188,6 +196,19 @@
   transition:
     clip-path 0.9s var(--ease-out-expo),
     transform 0.9s var(--ease-out-expo);
+}
+
+/*
+  On a phone the copy column fills the viewport, so a 40px side-shift always
+  pokes past the edge while it waits to be revealed (clipped by the body, but
+  still worth avoiding) — and a sideways slide reads as cramped at that width.
+  Fall back to the same vertical rise as .reveal.
+*/
+@media (max-width: 640px) {
+  .reveal-left,
+  .reveal-right {
+    transform: translateY(22px);
+  }
 }
 
 [data-shown="true"].reveal-left,
