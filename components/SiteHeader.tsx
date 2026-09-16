@@ -149,7 +149,7 @@ export default function SiteHeader() {
                       {item.label}
                       <span
                         aria-hidden="true"
-                        className={`text-[0.6rem] transition-transform duration-300 ${
+                        className={`text-[0.8rem] transition-transform duration-300 ${
                           megaOpen ? "rotate-180" : ""
                         }`}
                       >
