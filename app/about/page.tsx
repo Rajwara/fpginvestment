@@ -4,6 +4,7 @@ import ServicesFlex from "@/components/ServicesFlex";
 import MissionSection from "@/components/MissionSection";
 import TeamGrid from "@/components/TeamGrid";
 import Journey from "@/components/Journey";
+import QuerySection from "@/components/QuerySection";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -26,6 +27,8 @@ export default function AboutPage() {
       <TeamGrid />
 
       <Journey />
+
+      <QuerySection />
     </>
   );
 }
