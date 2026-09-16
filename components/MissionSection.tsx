@@ -93,7 +93,7 @@ export default function MissionSection() {
                   startOffset="75%"
                   textAnchor="middle"
                 >
-                  M Group
+                  mgroupintl
                 </textPath>
               </text>
             </svg>

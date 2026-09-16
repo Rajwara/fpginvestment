@@ -50,12 +50,21 @@ export default function QuerySection() {
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-gradient-to-br from-[#0d0b14]/92 via-[#0d0b14]/80 to-accent/45"
       />
-      {/* The footer below has rounded top corners over a black ground, and
-          the photograph was showing through them. Settle the foot of this
-          section into the same black so the join is invisible. */}
+      {/* Settle the foot of this section into the black the footer uses. */}
       <div
         aria-hidden="true"
         className="absolute inset-x-0 bottom-0 -z-10 h-56 bg-gradient-to-b from-transparent to-black"
+      />
+      {/*
+        The footer's rounded top corners cut away to whatever is behind them,
+        which is the white page background — two white notches against this
+        dark band. Paint the strip below this section black so the corners
+        reveal that instead. It sits inside the footer's own height, so it
+        adds nothing to the page.
+      */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-full -z-10 h-16 bg-black"
       />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
