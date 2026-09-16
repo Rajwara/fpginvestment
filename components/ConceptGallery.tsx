@@ -98,16 +98,19 @@ export default function ConceptGallery() {
        lock removes, otherwise the page jumps sideways as the dialog opens. */
     const { body, documentElement } = document;
     const bar = window.innerWidth - documentElement.clientWidth;
-    const prevOverflow = body.style.overflow;
+    /* overflowY, not the shorthand: overflow-x on body is `clip` in
+       globals.css and has to stay that way, or the page can be dragged
+       sideways while the lightbox is up. */
+    const prevOverflow = body.style.overflowY;
     const prevPad = body.style.paddingRight;
-    body.style.overflow = "hidden";
+    body.style.overflowY = "hidden";
     if (bar > 0) body.style.paddingRight = `${bar}px`;
 
     dialogRef.current?.focus();
 
     return () => {
       document.removeEventListener("keydown", onKey);
-      body.style.overflow = prevOverflow;
+      body.style.overflowY = prevOverflow;
       body.style.paddingRight = prevPad;
     };
   }, [open, close, step, count]);

@@ -164,7 +164,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
               <a
                 href={`tel:${site.phone.replace(/\s/g, "")}`}
                 onClick={onNavigate}
-                className="mt-1 block text-sm text-white/70 transition-colors hover:text-white"
+                className="mt-1 inline-block py-0.5 text-sm text-white/70 transition-colors hover:text-white"
               >
                 {site.phone}
               </a>
@@ -183,7 +183,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
               <a
                 href={`mailto:${site.email}`}
                 onClick={onNavigate}
-                className="mt-1 block truncate text-sm text-white/70 transition-colors hover:text-white"
+                className="mt-1 block truncate py-0.5 text-sm text-white/70 transition-colors hover:text-white"
               >
                 {site.email}
               </a>

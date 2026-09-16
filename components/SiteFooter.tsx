@@ -81,12 +81,14 @@ export default function SiteFooter() {
           {footerColumns.map((col) => (
             <div key={col.heading}>
               <h3 className="font-display text-lg text-white">{col.heading}</h3>
-              <ul className="mt-5 space-y-3">
+              {/* inline-block with vertical padding: a 14px link is an 18px
+                  line box, under the 24px a thumb needs. */}
+              <ul className="mt-4 space-y-1">
                 {col.links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-white/60 transition-colors hover:text-white"
+                      className="inline-block py-1.5 text-sm text-white/60 transition-colors hover:text-white"
                     >
                       {link.label}
                     </Link>
@@ -108,7 +110,7 @@ export default function SiteFooter() {
               <li>
                 <a
                   href={`mailto:${site.email}`}
-                  className="text-white/60 transition-colors hover:text-white"
+                  className="inline-block py-1 text-white/60 transition-colors hover:text-white"
                 >
                   {site.email}
                 </a>
@@ -116,7 +118,7 @@ export default function SiteFooter() {
               <li>
                 <a
                   href={`tel:${site.phone.replace(/\s/g, "")}`}
-                  className="text-white/60 transition-colors hover:text-white"
+                  className="inline-block py-1 text-white/60 transition-colors hover:text-white"
                 >
                   {site.phone}
                 </a>
@@ -126,7 +128,7 @@ export default function SiteFooter() {
                   href={site.social[0].href}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="text-white/60 transition-colors hover:text-white"
+                  className="inline-block py-1 text-white/60 transition-colors hover:text-white"
                 >
                   LinkedIn
                 </a>
@@ -140,13 +142,19 @@ export default function SiteFooter() {
             © {new Date().getFullYear()} {site.name}. All Rights Reserved.
           </p>
           <p className="flex items-center gap-3">
-            <Link href="/privacy" className="transition-colors hover:text-white">
+            <Link
+              href="/privacy"
+              className="inline-block py-1.5 transition-colors hover:text-white"
+            >
               Privacy Policy
             </Link>
             <span aria-hidden="true" className="text-white/25">
               |
             </span>
-            <Link href="/terms" className="transition-colors hover:text-white">
+            <Link
+              href="/terms"
+              className="inline-block py-1.5 transition-colors hover:text-white"
+            >
               Terms &amp; Conditions
             </Link>
           </p>

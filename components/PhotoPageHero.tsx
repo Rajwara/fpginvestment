@@ -38,7 +38,7 @@ export default function PhotoPageHero({
             <li>
               <Link
                 href="/"
-                className="transition-colors hover:text-white"
+                className="inline-block py-1 transition-colors hover:text-white"
               >
                 Home
               </Link>

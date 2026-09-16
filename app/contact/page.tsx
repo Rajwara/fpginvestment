@@ -135,7 +135,7 @@ export default function ContactPage() {
                 Call us at{" "}
                 <a
                   href={`tel:${site.phone.replace(/\s/g, "")}`}
-                  className="text-fg underline decoration-accent-fg/40 underline-offset-4 transition-colors hover:text-accent-fg"
+                  className="inline-block py-1 text-fg underline decoration-accent-fg/40 underline-offset-4 transition-colors hover:text-accent-fg"
                 >
                   {site.phone}
                 </a>{" "}
@@ -180,7 +180,7 @@ export default function ContactPage() {
                 {headOffice.phone ? (
                   <a
                     href={`tel:${headOffice.phone.replace(/\s/g, "")}`}
-                    className="flex items-center gap-2.5 text-sm text-fg-2 transition-colors hover:text-accent-fg"
+                    className="flex items-center gap-2.5 py-1 text-sm text-fg-2 transition-colors hover:text-accent-fg"
                   >
                     <ContactIcon name="phone" className="h-4 w-4 text-accent-fg" />
                     {headOffice.phone}
@@ -189,7 +189,7 @@ export default function ContactPage() {
                 {headOffice.email ? (
                   <a
                     href={`mailto:${headOffice.email}`}
-                    className="flex items-center gap-2.5 text-sm text-fg-2 transition-colors hover:text-accent-fg"
+                    className="flex items-center gap-2.5 py-1 text-sm text-fg-2 transition-colors hover:text-accent-fg"
                   >
                     <ContactIcon name="mail" className="h-4 w-4 text-accent-fg" />
                     {headOffice.email}

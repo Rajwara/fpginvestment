@@ -48,19 +48,18 @@ export default function LegalPage({
           className="mt-10 rounded-2xl border border-fg-2/10 bg-surface-2 p-6 lg:p-8"
         >
           <p className="eyebrow text-subtle">On This Page</p>
-          <ol className="mt-4 grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
+          <ol className="mt-3 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
             {sections.map((s, i) => (
-              <li key={s.heading} className="flex gap-3 text-sm">
-                <span
-                  aria-hidden="true"
-                  className="tabular-nums text-accent-fg/70"
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
+              <li key={s.heading} className="text-sm">
+                {/* The number sits inside the link so the whole row is one
+                    target, padded to a tappable height. */}
                 <a
                   href={`#${slug(s.heading)}`}
-                  className="text-fg-2 transition-colors hover:text-accent-fg"
+                  className="flex gap-3 py-1.5 text-fg-2 transition-colors hover:text-accent-fg"
                 >
+                  <span aria-hidden="true" className="tabular-nums text-accent-fg/70">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   {s.heading}
                 </a>
               </li>

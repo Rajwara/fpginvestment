@@ -96,7 +96,7 @@ export default function QuerySection() {
                           {l.href ? (
                             <a
                               href={l.href}
-                              className="transition-colors hover:text-white"
+                              className="inline-block py-0.5 transition-colors hover:text-white"
                             >
                               {l.text}
                             </a>

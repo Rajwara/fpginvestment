@@ -81,16 +81,34 @@
     color: var(--color-fg-2);
     font-family: var(--font-sans);
     /*
-      reveal-left / reveal-right sit translated sideways until the observer
-      fires, which widens the document and shows a horizontal scrollbar on
-      first paint. `clip` rather than `hidden`: hidden would make this a
-      scroll container and stop position:sticky working for the amenities
-      stacking panels.
+      See the clip on main/footer below — body keeps this as a belt-and-braces
+      measure, but it is not what does the work.
     */
     overflow-x: clip;
     transition:
       background-color 0.4s var(--ease-out-expo),
       color 0.4s var(--ease-out-expo);
+  }
+
+  /*
+    reveal-left / reveal-right sit translated sideways until the observer
+    fires, and reveal-zoom sits at scale(1.12); a section below the fold holds
+    that transform until it is scrolled to. That widens the document, and at
+    tablet widths the page could be dragged ~19px sideways.
+
+    The clip has to sit here rather than only on body: Chromium does not
+    propagate `clip` from body up to the viewport the way it propagates
+    `hidden`, so the body rule alone never actually contained anything. On a
+    normal element it does.
+
+    `clip` rather than `hidden` because hidden would make these scroll
+    containers and break position:sticky — the amenities stacking panels and
+    the enquiry band's sticky column both depend on it. Pairing clip on one
+    axis with visible on the other is allowed and keeps y unclipped.
+  */
+  main,
+  footer {
+    overflow-x: clip;
   }
 
   ::selection {

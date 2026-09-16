@@ -46,10 +46,16 @@ export default function SiteHeader() {
     setDropOpen(null);
   }, [pathname]);
 
+  /*
+    Lock the vertical axis only. The `overflow` shorthand would also set
+    overflow-x, overriding the `clip` globals.css puts on body — which is what
+    holds the reveal transforms in. Setting the shorthand here re-exposed that
+    overflow and let the page be dragged sideways while the drawer was open.
+  */
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    document.body.style.overflowY = mobileOpen ? "hidden" : "";
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflowY = "";
     };
   }, [mobileOpen]);
 

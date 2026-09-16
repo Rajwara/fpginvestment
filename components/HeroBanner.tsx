@@ -105,7 +105,12 @@ export default function HeroBanner() {
         </div>
 
         {/* Slide indicators */}
-        <div className="mt-12 flex items-center gap-2.5">
+        {/*
+          The visible mark is a 6px bar, which is far too small to tap. The
+          button is a 28px-tall box with the bar drawn inside it, so the hit
+          area clears the 24px minimum while the design stays a thin rule.
+        */}
+        <div className="-my-2 mt-10 flex items-center">
           {slides.map((slide, i) => (
             <button
               key={slide.src}
@@ -113,10 +118,17 @@ export default function HeroBanner() {
               onClick={() => setActive(i)}
               aria-label={`Show background image ${i + 1}`}
               aria-pressed={i === active}
-              className={`h-1.5 rounded-full transition-all duration-500 ${
-                i === active ? "w-10 bg-hero-accent" : "w-4 bg-white/40 hover:bg-white/70"
-              }`}
-            />
+              className="group flex h-7 items-center px-1.5 first:pl-0"
+            >
+              <span
+                aria-hidden="true"
+                className={`block h-1.5 rounded-full transition-all duration-500 ${
+                  i === active
+                    ? "w-10 bg-hero-accent"
+                    : "w-4 bg-white/40 group-hover:bg-white/70"
+                }`}
+              />
+            </button>
           ))}
         </div>
       </div>
