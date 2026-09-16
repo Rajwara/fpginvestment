@@ -45,7 +45,6 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
         <div className="mt-6 flex flex-wrap gap-2.5">
           <Button
             href={megaFeature.href}
-            variant="secondary"
             size="sm"
             onClick={onNavigate}
             className="inline-flex"
@@ -55,7 +54,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
           </Button>
           <Button
             href={megaFeature.secondaryHref}
-            variant="secondary"
+            variant="outline"
             size="sm"
             onClick={onNavigate}
             className="inline-flex"

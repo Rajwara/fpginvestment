@@ -5,7 +5,7 @@ import type {
   ReactNode,
 } from "react";
 
-type Variant = "primary" | "secondary" | "onAccent" | "light";
+type Variant = "primary" | "secondary" | "outline" | "onAccent" | "light";
 type Size = "sm" | "md" | "lg";
 
 /**
@@ -20,6 +20,9 @@ const variants: Record<Variant, string> = {
     "bg-gradient-to-r from-accent to-accent-2 text-on-accent [--trace:var(--color-on-accent)] [--trace-inset:0px] [--trace-radius:0.875rem] [--trace-width:3px]",
   secondary:
     "trace-btn--outline border border-fg-2/20 bg-surface text-fg-2 [--trace:var(--color-accent)]",
+  // Like secondary but with no fill, so whatever is behind shows through.
+  outline:
+    "trace-btn--outline border border-fg-2/25 bg-transparent text-fg-2 [--trace:var(--color-accent)]",
   onAccent:
     "trace-btn--outline border border-on-accent/40 text-on-accent [--trace:var(--color-on-accent)]",
   // Solid white on an accent card. The ring is drawn just outside the button,

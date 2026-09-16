@@ -13,6 +13,7 @@ export const photoHeroRoutes = [
   "/blogs",
   "/hyatt-lahore",
   "/premium-luxury",
+  "/concept-and-design",
   "/amenities",
 ];
 

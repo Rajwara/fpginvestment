@@ -190,6 +190,7 @@ export const nav: NavItem[] = [
     href: "/hyatt-lahore",
     dropdown: [
       { label: "Hyatt Regency Lahore", href: "/hyatt-lahore" },
+      { label: "Concept & Design", href: "/concept-and-design" },
       { label: "Amenities", href: "/amenities" },
     ],
   },
@@ -877,4 +878,75 @@ export const footerColumns = [
       { label: "Hyatt Lahore", href: "/hyatt-lahore" },
     ],
   },
+];
+
+/**
+ * Concept & Design. The boards are the mood and materials studies that sit
+ * behind the property, so several reuse the same artwork the Premium & Luxury
+ * and Amenities pages draw on.
+ */
+export const designPrinciples = [
+  {
+    id: "clean-lines",
+    title: "Clean lines",
+    body: "Form kept deliberately quiet, so proportion and material do the work rather than ornament.",
+  },
+  {
+    id: "refined-aesthetics",
+    title: "Refined aesthetics",
+    body: "A restrained palette of stone, timber and brushed metal, chosen to age well rather than date to a season.",
+  },
+  {
+    id: "intuitive-experience",
+    title: "An intuitive experience",
+    body: "Layouts a guest reads without thinking — arrival, orientation and circulation resolved before decoration begins.",
+  },
+  {
+    id: "trust",
+    title: "Trust",
+    body: "Decisions an owner can follow and question, documented from concept through to handover.",
+  },
+  {
+    id: "transparency",
+    title: "Transparency",
+    body: "Cost, programme and specification visible at every stage, including where a compromise has been made and why.",
+  },
+  {
+    id: "local-expertise",
+    title: "Local expertise",
+    body: "International standards delivered by a team that knows how building actually works in Lahore.",
+  },
+];
+
+export const conceptBoards = [
+  {
+    id: "architectural-mood",
+    eyebrow: "Architectural mood",
+    title: "The shape of the thing, before the foundation.",
+    body: "Massing, light and the way a building meets its street — settled in study form while every option is still open and nothing has been poured.",
+    image: "/assets/images/premium-luxury/exclusive-web.webp",
+  },
+  {
+    id: "interior-textures",
+    eyebrow: "Interior textures",
+    title: "Material studies, not swatches.",
+    body: "Stone, veneer, weave and metal tested together under the light they will actually live in, so the palette holds from lobby to guest room.",
+    image: "/assets/images/premium-luxury/banner-web.webp",
+  },
+  {
+    id: "lifestyle-aesthetics",
+    eyebrow: "Lifestyle aesthetics",
+    title: "How the spaces are meant to be used.",
+    body: "The lounge someone settles into, the table a family takes for the evening — the daily patterns a plan has to earn before it is worth building.",
+    image: "/assets/images/amenities/parallax-3-web.webp",
+  },
+];
+
+export const conceptGallery = [
+  { title: "Arrival and lobby", image: "/assets/images/amenities/elegant-lobby-web.webp" },
+  { title: "Opulent detail", image: "/assets/images/premium-luxury/opulent-web.webp" },
+  { title: "Refined interiors", image: "/assets/images/premium-luxury/refined-web.webp" },
+  { title: "Majlis and lounge", image: "/assets/images/amenities/majlis-web.webp" },
+  { title: "Intricate artistry", image: "/assets/images/premium-luxury/intricate-artistry-web.webp" },
+  { title: "Scenic outlook", image: "/assets/images/premium-luxury/scenic-web.webp" },
 ];
