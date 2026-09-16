@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import { services } from "@/lib/site";
+import Button from "./Button";
 import Eyebrow from "./Eyebrow";
 
 const num = (i: number) => String(i + 1).padStart(2, "0");
@@ -91,19 +91,15 @@ export default function ServicesFlex() {
                   <p className="mt-6 mb-5 max-w-lg text-sm leading-relaxed text-on-accent">
                     {service.summary}
                   </p>
-                  <Link
+                  <Button
                     href={`/services/${service.id}`}
+                    variant="light"
                     tabIndex={isActive ? 0 : -1}
-                    className="group mt-auto inline-flex w-fit items-center gap-2.5 rounded-xl bg-surface px-6 py-3 text-sm font-medium text-accent-fg transition-opacity hover:opacity-90"
+                    className="mt-auto w-fit"
+                    arrow
                   >
                     Know More
-                    <span
-                      aria-hidden="true"
-                      className="transition-transform duration-300 group-hover:translate-x-1"
-                    >
-                      →
-                    </span>
-                  </Link>
+                  </Button>
                 </div>
               </div>
             );
@@ -173,13 +169,15 @@ export default function ServicesFlex() {
                       <p className="mt-4 text-sm leading-relaxed text-on-accent">
                         {service.summary}
                       </p>
-                      <Link
+                      <Button
                         href={`/services/${service.id}`}
+                        variant="light"
                         tabIndex={isActive ? 0 : -1}
-                        className="mt-5 inline-flex items-center gap-2 rounded-xl bg-surface px-5 py-2.5 text-sm font-medium text-accent-fg"
+                        className="mt-5"
+                        arrow
                       >
-                        Know More <span aria-hidden="true">→</span>
-                      </Link>
+                        Know More
+                      </Button>
                     </div>
                   </div>
                 </div>
