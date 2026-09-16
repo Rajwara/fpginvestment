@@ -93,6 +93,7 @@ export const nav = [
 /** Left panel of the About Us mega menu. */
 export const megaFeature = {
   eyebrow: "Who We Are",
+  image: "/assets/images/ProfessionalGuidanceimg-03.jpg",
   title: "A hospitality company built by operators.",
   body: "Two decades of developing, opening and running hotels across Pakistan and the region.",
   href: "/about",

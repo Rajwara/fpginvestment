@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { megaFeature, partners, services, site } from "@/lib/site";
 import ServiceIcon from "./ServiceIcon";
@@ -23,41 +24,14 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
           {megaFeature.eyebrow}
         </p>
 
-        <div className="mt-5 aspect-[4/3] overflow-hidden rounded-lg border border-fg-2/10 bg-surface-2">
-          {/* Placeholder scene — swap for a real property photograph. */}
-          <svg
-            viewBox="0 0 400 300"
-            className="h-full w-full"
-            role="img"
-            aria-label="FP Global property"
-          >
-            <defs>
-              <linearGradient id="mm-sky" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="var(--color-accent)" stopOpacity="0.20" />
-                <stop offset="100%" stopColor="var(--color-accent-hover)" stopOpacity="0.05" />
-              </linearGradient>
-            </defs>
-            <rect width="400" height="300" fill="url(#mm-sky)" />
-            <g fill="var(--color-fg)" opacity="0.10">
-              <rect x="40" y="110" width="70" height="190" />
-              <rect x="128" y="60" width="96" height="240" />
-              <rect x="242" y="140" width="58" height="160" />
-              <rect x="316" y="96" width="46" height="204" />
-            </g>
-            <g fill="var(--color-accent-fg)" opacity="0.45">
-              {Array.from({ length: 7 }).map((_, row) =>
-                Array.from({ length: 4 }).map((__, col) => (
-                  <rect
-                    key={`${row}-${col}`}
-                    x={140 + col * 22}
-                    y={78 + row * 30}
-                    width="10"
-                    height="14"
-                  />
-                ))
-              )}
-            </g>
-          </svg>
+        <div className="relative mt-5 aspect-[4/3] overflow-hidden rounded-lg border border-fg-2/10 bg-surface-2">
+          <Image
+            src={megaFeature.image}
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 24rem, 90vw"
+            className="object-cover"
+          />
         </div>
 
         <h3 className="mt-6 font-display text-2xl leading-snug text-fg">
