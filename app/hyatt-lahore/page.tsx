@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Button from "@/components/Button";
 import DarkPageHero from "@/components/DarkPageHero";
 import Eyebrow from "@/components/Eyebrow";
 import QuerySection from "@/components/QuerySection";
@@ -258,6 +259,20 @@ export default function HyattLahorePage() {
             src="/assets/images/hyatt-lahore/cultural-capital-web.jpg"
             alt="Mughal architecture in Lahore"
           />
+
+          <div className="reveal mt-16 flex flex-col items-center text-center">
+            <h3 className="max-w-2xl font-display text-[clamp(1.5rem,2.6vw,2rem)] leading-tight tracking-tight text-fg">
+              See it before the foundation
+            </h3>
+            <p className="mt-4 max-w-xl leading-relaxed text-muted">
+              The architectural mood, the interior textures and the lifestyle
+              this property was drawn around &mdash; collected in the Concept
+              Gallery.
+            </p>
+            <Button href="/concept-and-design" size="lg" className="mt-8" arrow>
+              View the Concept Gallery
+            </Button>
+          </div>
         </div>
       </section>
 

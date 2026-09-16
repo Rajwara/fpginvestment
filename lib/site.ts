@@ -870,11 +870,108 @@ export const conceptBoards = [
   },
 ];
 
-export const conceptGallery = [
-  { title: "Arrival and lobby", image: "/assets/images/amenities/elegant-lobby-web.webp" },
-  { title: "Opulent detail", image: "/assets/images/premium-luxury/opulent-web.webp" },
-  { title: "Refined interiors", image: "/assets/images/premium-luxury/refined-web.webp" },
-  { title: "Majlis and lounge", image: "/assets/images/amenities/majlis-web.webp" },
-  { title: "Intricate artistry", image: "/assets/images/premium-luxury/intricate-artistry-web.webp" },
-  { title: "Scenic outlook", image: "/assets/images/premium-luxury/scenic-web.webp" },
+/**
+ * The Concept Gallery. Intrinsic dimensions travel with each entry because the
+ * grid is a masonry: every tile keeps its own proportions rather than being
+ * cropped to a shared ratio, so the browser needs the real numbers to reserve
+ * the space before the file lands.
+ */
+export type ConceptShot = {
+  id: string;
+  title: string;
+  caption: string;
+  image: string;
+  width: number;
+  height: number;
+};
+
+export const conceptGallery: ConceptShot[] = [
+  {
+    id: "water-garden",
+    title: "The water garden",
+    caption: "Still water cut through planting, lit low so the line of it reads after dark.",
+    image: "/assets/images/concept-and-design/water-garden-web.webp",
+    width: 636,
+    height: 401,
+  },
+  {
+    id: "sculpture-court",
+    title: "Sculpture court",
+    caption: "Polished stone against river pebble — a material study resolved at full size.",
+    image: "/assets/images/concept-and-design/sculpture-court-web.webp",
+    width: 308,
+    height: 400,
+  },
+  {
+    id: "garden-walk",
+    title: "The evening walk",
+    caption: "Circulation treated as an experience: warm light at ankle height, planting at the shoulder.",
+    image: "/assets/images/concept-and-design/garden-walk-web.webp",
+    width: 308,
+    height: 400,
+  },
+  {
+    id: "spa-pool",
+    title: "The spa pool",
+    caption: "A backlit screen and candlelight, sized for quiet rather than for capacity.",
+    image: "/assets/images/concept-and-design/spa-pool-web.webp",
+    width: 308,
+    height: 401,
+  },
+  {
+    id: "water-canal",
+    title: "The canal",
+    caption: "The landscape spine, curved so no stretch of it is visible from end to end.",
+    image: "/assets/images/concept-and-design/water-canal-web.webp",
+    width: 308,
+    height: 401,
+  },
+  {
+    id: "spa-retreat",
+    title: "Inside the retreat",
+    caption: "Timber, dark stone and a single wash of light — the palette that carries the wellness floor.",
+    image: "/assets/images/concept-and-design/spa-retreat-web.webp",
+    width: 636,
+    height: 401,
+  },
+  {
+    id: "atrium-lobby",
+    title: "The atrium",
+    caption: "Arrival under full-height glass, with planting brought inside to soften the volume.",
+    image: "/assets/images/concept-and-design/atrium-lobby-web.webp",
+    width: 308,
+    height: 401,
+  },
+  {
+    id: "celebration",
+    title: "A day worth marking",
+    caption: "The lifestyle the plan is written for — the occasions a property is remembered by.",
+    image: "/assets/images/concept-and-design/celebration-web.webp",
+    width: 308,
+    height: 401,
+  },
+  {
+    id: "colonnade",
+    title: "The colonnade",
+    caption: "A fluted screen along the water, drawn to catch the last of the light.",
+    image: "/assets/images/concept-and-design/colonnade-web.webp",
+    width: 636,
+    height: 400,
+  },
+  {
+    id: "courts",
+    title: "The courts",
+    caption: "Active living kept in view of the residences rather than pushed to the boundary.",
+    image: "/assets/images/concept-and-design/courts-web.webp",
+    width: 308,
+    height: 401,
+  },
+  {
+    id: "lounge",
+    title: "The lounge",
+    caption: "Softer seating, marble tops and greenery at the window — the everyday end of the brief.",
+    image: "/assets/images/concept-and-design/lounge-web.webp",
+    width: 308,
+    height: 401,
+  },
 ];

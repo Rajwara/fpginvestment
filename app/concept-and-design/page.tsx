@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ConceptGallery from "@/components/ConceptGallery";
 import DarkPageHero from "@/components/DarkPageHero";
 import Eyebrow from "@/components/Eyebrow";
 
@@ -23,12 +24,9 @@ export default function ConceptAndDesignPage() {
         image="/assets/images/premium-luxury/banner-web.webp"
       />
 
-      {/*
-        The gallery boards, the design principles and the enquiry band all
-        came off this page while the photography is being gathered. The
-        artwork goes in public/assets/images/concept-and-design/.
-      */}
-      <section data-reveal className="bg-surface py-20 lg:py-28">
+      {/* The design principles and the enquiry band came off this page; the
+          gallery below carries the studies themselves. */}
+      <section data-reveal className="bg-surface pb-16 pt-20 lg:pb-20 lg:pt-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20">
             <div className="reveal">
@@ -53,6 +51,8 @@ export default function ConceptAndDesignPage() {
           </div>
         </div>
       </section>
+
+      <ConceptGallery />
     </>
   );
 }
