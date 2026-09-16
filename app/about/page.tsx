@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { site, metrics, principles, services } from "@/lib/site";
-import PageHero from "@/components/PageHero";
+import PhotoPageHero from "@/components/PhotoPageHero";
 import CTA from "@/components/CTA";
 import { Section, SectionHeading } from "@/components/Section";
 import ServiceIcon from "@/components/ServiceIcon";
@@ -23,13 +23,19 @@ const milestones = [
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Who we are"
-        title="A hospitality company built by operators."
-        lede={`Founded in ${site.founded}, ${site.name} develops, opens and runs hotels. We work across six service lines so an owner can hand over a site and take back an operating asset — or bring us in for one stage of it.`}
+      <PhotoPageHero
+        title="About Us"
+        image="/assets/images/fpginvestment_banner_img1.jpg"
       />
 
       <Section>
+        <p className="reveal mb-14 max-w-3xl font-display text-[clamp(1.35rem,2.4vw,1.9rem)] leading-[1.45] tracking-[-0.01em] text-fg">
+          Founded in {site.founded}, {site.name} develops, opens and runs
+          hotels. We work across six service lines so an owner can hand over a
+          site and take back an operating asset — or bring us in for one stage
+          of it.
+        </p>
+
         <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-fg-2/10 bg-fg-2/10 lg:grid-cols-4">
           {metrics.map((m) => (
             <div key={m.label} className="reveal bg-surface p-8">
