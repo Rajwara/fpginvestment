@@ -3,6 +3,7 @@ import { site, metrics, principles } from "@/lib/site";
 import PhotoPageHero from "@/components/PhotoPageHero";
 import ServicesFlex from "@/components/ServicesFlex";
 import MissionSection from "@/components/MissionSection";
+import TeamGrid from "@/components/TeamGrid";
 import CTA from "@/components/CTA";
 import { Section, SectionHeading } from "@/components/Section";
 
@@ -32,6 +33,8 @@ export default function AboutPage() {
       <ServicesFlex />
 
       <MissionSection />
+
+      <TeamGrid />
 
       <Section>
         <p className="reveal mb-14 max-w-3xl font-display text-[clamp(1.35rem,2.4vw,1.9rem)] leading-[1.45] tracking-[-0.01em] text-fg">

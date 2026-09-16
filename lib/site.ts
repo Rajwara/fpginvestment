@@ -273,9 +273,35 @@ export const insights = [
 ];
 
 export const team = [
-  { name: "Faisal Pervaiz", role: "Chairman", prior: "Two decades in hospitality development", initials: "FP" },
-  { name: "Ayesha Rahman", role: "Chief Operating Officer", prior: "Previously Hyatt International", initials: "AR" },
-  { name: "Omar Siddiqui", role: "Director, Development", prior: "Previously Accor South Asia", initials: "OS" },
+  {
+    name: "Faisal Pervaiz",
+    role: "Chairman",
+    prior: "Two decades in hospitality development",
+    initials: "FP",
+    /** Portraits to follow; the card falls back to initials until then. */
+    photo: "",
+  },
+  {
+    name: "Ayesha Rahman",
+    role: "Chief Operating Officer",
+    prior: "Previously Hyatt International",
+    initials: "AR",
+    photo: "",
+  },
+  {
+    name: "Omar Siddiqui",
+    role: "Director, Development",
+    prior: "Previously Accor South Asia",
+    initials: "OS",
+    photo: "",
+  },
+  {
+    name: "Sana Iqbal",
+    role: "Director, Sales & Marketing",
+    prior: "Previously IHG South West Asia",
+    initials: "SI",
+    photo: "",
+  },
 ];
 
 export const faqs = [
