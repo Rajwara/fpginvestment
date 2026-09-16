@@ -18,7 +18,8 @@ export default function Eyebrow({
         <span className="h-px w-5 bg-accent-fg" />
       </span>
       {children}
-      <span aria-hidden="true" className="flex items-center gap-1.5">
+      {/* Dropped on narrow screens, where a wrapping label strands it. */}
+      <span aria-hidden="true" className="hidden items-center gap-1.5 sm:flex">
         <span className="h-px w-5 bg-accent-fg" />
         <span className="h-1.5 w-1.5 rounded-full bg-accent-fg" />
       </span>

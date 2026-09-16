@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { nav, services } from "@/lib/site";
+import { isPhotoHeroRoute } from "@/lib/heroRoutes";
 import Logo from "./Logo";
 import MegaMenu from "./MegaMenu";
 import ThemeToggle from "./ThemeToggle";
@@ -75,6 +76,9 @@ export default function SiteHeader() {
   // full-width bar once the page scrolls. Opening a menu docks it too, so the
   // panels always have the full width to lay out in.
   const docked = scrolled || mobileOpen || megaOpen;
+  // Over a photo hero the bar is glass on the image, so it goes dark with
+  // light text; once docked it returns to the themed surface.
+  const overHero = isPhotoHeroRoute(pathname) && !docked;
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -84,14 +88,16 @@ export default function SiteHeader() {
         }`}
       >
         <div
-          className={`mx-auto overflow-hidden border-fg-2/10 bg-surface/70 backdrop-blur-xl transition-[max-width,border-radius,background-color,box-shadow] duration-500 ease-[var(--ease-out-expo)] ${
+          className={`mx-auto overflow-hidden backdrop-blur-xl transition-[max-width,border-radius,background-color,border-color,box-shadow] duration-500 ease-[var(--ease-out-expo)] ${
             docked
-              ? "max-w-none rounded-none border-b bg-surface/85 shadow-none"
-              : "max-w-7xl rounded-2xl border shadow-lg shadow-fg/5"
+              ? "max-w-none rounded-none border-b border-fg-2/10 bg-surface/85 shadow-none"
+              : overHero
+                ? "max-w-7xl rounded-2xl border border-white/20 bg-black/25 shadow-lg shadow-black/20"
+                : "max-w-7xl rounded-2xl border border-fg-2/10 bg-surface/70 shadow-lg shadow-fg/5"
           }`}
         >
           <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-6 px-6 lg:px-10">
-            <Logo />
+            <Logo forceOnDark={overHero} />
 
             <nav
               aria-label="Primary"
@@ -114,8 +120,12 @@ export default function SiteHeader() {
                       onFocus={openMega}
                       className={`group relative flex items-center gap-1.5 text-sm transition-colors ${
                         isActive(item.href) || megaOpen
-                          ? "text-accent-fg"
-                          : "text-fg-2 hover:text-fg"
+                          ? overHero
+                            ? "text-hero-accent"
+                            : "text-accent-fg"
+                          : overHero
+                            ? "text-white/85 hover:text-white"
+                            : "text-fg-2 hover:text-fg"
                       }`}
                     >
                       {item.label}
@@ -127,7 +137,7 @@ export default function SiteHeader() {
                       >
                         ▾
                       </span>
-                      <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-accent transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:w-full" />
+                      <span className={`absolute -bottom-1.5 left-0 h-px w-0 transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:w-full ${overHero ? "bg-hero-accent" : "bg-accent"}`} />
                     </button>
                   </div>
                 ) : (
@@ -136,29 +146,33 @@ export default function SiteHeader() {
                     href={item.href}
                     className={`group relative flex items-center gap-2 text-sm transition-colors ${
                       isActive(item.href)
-                        ? "text-accent-fg"
-                        : "text-fg-2 hover:text-fg"
+                        ? overHero
+                          ? "text-hero-accent"
+                          : "text-accent-fg"
+                        : overHero
+                          ? "text-white/85 hover:text-white"
+                          : "text-fg-2 hover:text-fg"
                     }`}
                   >
                     {isActive(item.href) ? (
                       <span
                         aria-hidden="true"
-                        className="h-1.5 w-1.5 rounded-full bg-accent"
+                        className={`h-1.5 w-1.5 rounded-full ${overHero ? "bg-hero-accent" : "bg-accent"}`}
                       />
                     ) : null}
                     {item.label}
-                    <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-accent transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:w-full" />
+                    <span className={`absolute -bottom-1.5 left-0 h-px w-0 transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:w-full ${overHero ? "bg-hero-accent" : "bg-accent"}`} />
                   </Link>
                 ),
               )}
             </nav>
 
             <div className="hidden items-center gap-3 xl:flex">
-              <ThemeToggle />
+              <ThemeToggle overHero={overHero} />
               <MaskButton
                 href="/contact"
-                variant="secondary"
-                className="!px-5 !py-2.5"
+                variant={overHero ? "onAccent" : "secondary"}
+                className={`!px-5 !py-2.5 ${overHero ? "!border-white/35 !text-white" : ""}`}
                 arrow
               >
                 Start a Conversation
@@ -166,14 +180,14 @@ export default function SiteHeader() {
             </div>
 
             <div className="flex items-center gap-2 xl:hidden">
-              <ThemeToggle />
+              <ThemeToggle overHero={overHero} />
               <button
                 type="button"
                 onClick={() => setMobileOpen((v) => !v)}
                 aria-expanded={mobileOpen}
                 aria-controls="mobile-nav"
                 aria-label={mobileOpen ? "Close menu" : "Open menu"}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-fg-2/15"
+                className={`flex h-10 w-10 items-center justify-center rounded-full border ${overHero ? "border-white/25" : "border-fg-2/15"}`}
               >
                 <span className="relative block h-3 w-4">
                   <span

@@ -12,8 +12,11 @@ function readTheme(): Theme {
 
 export default function ThemeToggle({
   className = "",
+  overHero = false,
 }: {
   className?: string;
+  /** Over a photo hero the toggle sits on the image, so it goes light. */
+  overHero?: boolean;
 }) {
   // Server-render the default so markup matches; sync to the real value on mount.
   const [theme, setTheme] = useState<Theme>(DEFAULT_THEME);
@@ -43,7 +46,11 @@ export default function ThemeToggle({
       onClick={toggle}
       aria-label={label}
       title={label}
-      className={`flex h-10 w-10 items-center justify-center rounded-full border border-fg-2/15 text-fg-2 transition-colors duration-300 hover:border-accent-fg/60 hover:text-accent-fg ${className}`}
+      className={`flex h-10 w-10 items-center justify-center rounded-full border transition-colors duration-300 ${
+        overHero
+          ? "border-white/25 text-white hover:border-white/60"
+          : "border-fg-2/15 text-fg-2 hover:border-accent-fg/60 hover:text-accent-fg"
+      } ${className}`}
     >
       {/* Until mounted the icon would be guesswork, so render neither. */}
       <span

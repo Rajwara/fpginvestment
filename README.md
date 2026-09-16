@@ -100,6 +100,18 @@ The label is rendered twice, once in the resting colour and once inside the
 masked layer, so the text is revealed along with the fill. The masked copy is
 `aria-hidden` so the accessible name is not duplicated.
 
+## Hero banner
+
+`components/HeroBanner.tsx` is the homepage banner: the two photographs in
+`public/assets/images/` crossfade every 7s and drift slowly behind fixed copy,
+so only the background moves. A two-layer scrim plus a grid overlay keeps the
+white text readable over any frame, and the banner ends in a curved lip that
+the next section sits behind. It holds still under `prefers-reduced-motion`,
+and the dot indicators let a visitor pick a frame.
+
+The accent used here (`--hero-accent`) is fixed rather than themed — it always
+sits on a darkened photograph, never on the page surface.
+
 ## Header
 
 `components/SiteHeader.tsx` floats as an inset glass pill at the top of the
@@ -107,6 +119,10 @@ page and docks to a full-width bar once the page scrolls past 24px, animating
 max-width, radius, padding and background together. Opening the mega menu or
 the mobile menu docks it too, so the panels always have full width to lay out
 in.
+
+On routes listed in `lib/heroRoutes.ts` the undocked bar sits over a
+photograph, so it switches to dark glass with white text and the white-ink
+logo; docking returns it to the themed surface.
 
 ## Office locations
 

@@ -7,7 +7,14 @@ import { site } from "@/lib/site";
  * correct one is painted on first frame with no flash and no hydration gap.
  * Named for the background they sit on: the white-ink lockup goes on dark.
  */
-export default function Logo({ className = "" }: { className?: string }) {
+export default function Logo({
+  className = "",
+  forceOnDark = false,
+}: {
+  className?: string;
+  /** Over a photo hero the lockup must be the white-ink one whatever the theme. */
+  forceOnDark?: boolean;
+}) {
   return (
     <Link
       href="/"
@@ -20,7 +27,7 @@ export default function Logo({ className = "" }: { className?: string }) {
         width={151}
         height={38}
         priority
-        className="h-9 w-auto transition-opacity duration-300 group-hover:opacity-80 dark-hidden"
+        className={`h-9 w-auto transition-opacity duration-300 group-hover:opacity-80 ${forceOnDark ? "hidden" : "dark-hidden"}`}
       />
       <Image
         src="/assets/images/logo-on-dark.webp"
@@ -29,7 +36,7 @@ export default function Logo({ className = "" }: { className?: string }) {
         width={151}
         height={38}
         priority
-        className="h-9 w-auto transition-opacity duration-300 group-hover:opacity-80 light-hidden"
+        className={`h-9 w-auto transition-opacity duration-300 group-hover:opacity-80 ${forceOnDark ? "" : "light-hidden"}`}
       />
     </Link>
   );
