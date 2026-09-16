@@ -50,6 +50,13 @@ export default function QuerySection() {
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-gradient-to-br from-[#0d0b14]/92 via-[#0d0b14]/80 to-accent/45"
       />
+      {/* The footer below has rounded top corners over a black ground, and
+          the photograph was showing through them. Settle the foot of this
+          section into the same black so the join is invisible. */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 -z-10 h-56 bg-gradient-to-b from-transparent to-black"
+      />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid gap-14 lg:grid-cols-[1.06fr_0.94fr] lg:gap-16">

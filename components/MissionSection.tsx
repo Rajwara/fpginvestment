@@ -65,7 +65,7 @@ export default function MissionSection() {
           {/* Rotating seal */}
           <div
             aria-hidden="true"
-            className="absolute left-1/2 top-1/2 hidden h-32 w-32 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-fg-2/10 bg-surface shadow-lg shadow-fg/10 lg:flex"
+            className="absolute left-1/2 top-1/2 hidden h-36 w-36 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-fg-2/10 bg-surface shadow-lg shadow-fg/10 lg:flex"
           >
             <svg viewBox="0 0 120 120" className="seal-spin absolute h-full w-full">
               <defs>
@@ -80,7 +80,7 @@ export default function MissionSection() {
                 one is. A single string would space them by character count
                 instead, which put the two names lopsided.
               */}
-              <text className="fill-fg-2 text-[10px] font-semibold uppercase tracking-[0.1em]">
+              <text className="fill-fg-2 text-[9px] font-semibold uppercase tracking-[0.16em]">
                 <textPath
                   href="#seal-path"
                   startOffset="25%"
@@ -99,12 +99,12 @@ export default function MissionSection() {
             </svg>
             {/* Smaller than the old photo crop: a logo needs clear space
                 between the mark and the ring text. */}
-            <span className="relative h-11 w-11">
+            <span className="relative h-12 w-12">
               <Image
                 src="/assets/images/home/seal-logo-web.webp"
                 alt=""
                 fill
-                sizes="44px"
+                sizes="48px"
                 className="object-contain"
               />
             </span>
