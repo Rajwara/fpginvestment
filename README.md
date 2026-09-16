@@ -135,6 +135,17 @@ To open a location: flip `status` to `"open"`, fill in `city`, `lines`,
 `phone` and `mapUrl`, and give it a real `tag`. To drop a slot, delete the
 entry — the grid and the "N open / N in planning" count both follow the data.
 
+## Mission section
+
+`components/MissionSection.tsx` sits under the banner: a staggered collage on
+the left with a rotating seal, and Inspection / Approach / Performance tabs on
+the right. The tabs are a real tablist — arrow keys, Home and End move between
+them and only the selected tab is in the tab order.
+
+Content lives in `missionTabs` and `missionCollage` in `lib/site.ts`. A collage
+entry without a `src` renders as a brand tile carrying a stat; give it a `src`
+to swap it for a photograph.
+
 ## Logo
 
 `public/assets/images/` holds both lockups, named for the background they sit

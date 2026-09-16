@@ -81,7 +81,6 @@ export const nav = [
   { label: "Blogs", href: "/blogs" },
   { label: "Careers", href: "/careers" },
   { label: "Hyatt Lahore", href: "/hyatt-lahore" },
-  { label: "Contact Us", href: "/contact" },
 ];
 
 /** Left panel of the About Us mega menu. */
@@ -106,6 +105,61 @@ export const metrics = [
   { value: "1,400+", label: "Keys developed", note: "Across the region" },
   { value: "6", label: "Service lines", note: "Concept to operations" },
   { value: "94%", label: "Guest satisfaction", note: "Portfolio average" },
+];
+
+/** Tabs in the "Mission and goals" section under the homepage banner. */
+export const missionTabs = [
+  {
+    id: "inspection",
+    label: "Inspection",
+    body: "Before we commit to anything we walk the asset, read the numbers and talk to the people running it. What comes back is an honest picture of where a property stands — not the one the last report promised.",
+    points: [
+      "Full operational diagnostic",
+      "Brand standards audit",
+      "P&L and cost-base review",
+      "Guest experience walkthrough",
+      "Capex and condition survey",
+      "Market and competitor position",
+    ],
+  },
+  {
+    id: "approach",
+    label: "Approach",
+    body: "We work as operators, not advisers at a distance. That means our teams sit inside the project, own the critical path and stay accountable for what happens after handover.",
+    points: [
+      "Operators inside the project",
+      "One accountable team",
+      "Design reviewed for operations",
+      "Transparent owner reporting",
+      "Programme and cost control",
+      "Decisions made on site",
+    ],
+  },
+  {
+    id: "performance",
+    label: "Performance",
+    body: "A hotel is judged every night. We manage to the numbers that move — rate, occupancy, cost per occupied room and the guest scores that drive all three over time.",
+    points: [
+      "Revenue and rate strategy",
+      "Cost per occupied room",
+      "Guest satisfaction tracking",
+      "Channel and distribution mix",
+      "Labour productivity",
+      "Month-end owner reporting",
+    ],
+  },
+];
+
+/**
+ * Collage beside the mission tabs. An entry without `src` renders as a
+ * placeholder tile — drop a photograph into public/assets/images/ and add its
+ * path here to fill it.
+ */
+export const missionCollage = [
+  { id: "c1", src: "/assets/images/fpginvestment_banner_img1.jpg", alt: "Hotel lobby", stat: "", statLabel: "" },
+  { id: "c2", src: "/assets/images/fpginvestment_banner_img2.jpg", alt: "Pool and spa", stat: "", statLabel: "" },
+  { id: "c3", src: null, alt: "", stat: "20 yrs", statLabel: "In hospitality" },
+  { id: "c4", src: null, alt: "", stat: "1,400+", statLabel: "Keys developed" },
 ];
 
 export const principles = [

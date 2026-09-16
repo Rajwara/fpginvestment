@@ -70,7 +70,7 @@ export default function HeroBanner() {
       </div>
 
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
-        <Eyebrow className="animate-fade !text-hero-accent">
+        <Eyebrow tone="hero" className="animate-fade">
           Hospitality Development &amp; Management
         </Eyebrow>
 

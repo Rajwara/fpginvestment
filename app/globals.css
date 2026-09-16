@@ -298,3 +298,17 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-drift { animation: none; }
 }
+
+/* Rotating seal in the mission collage. */
+@keyframes seal-spin {
+  to { transform: rotate(360deg); }
+}
+
+.seal-spin {
+  animation: seal-spin 24s linear infinite;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seal-spin { animation: none; }
+}

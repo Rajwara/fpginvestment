@@ -175,7 +175,7 @@ export default function SiteHeader() {
                 className={`!px-5 !py-2.5 ${overHero ? "!border-white/35 !text-white" : ""}`}
                 arrow
               >
-                Start a Conversation
+                Contact Us
               </MaskButton>
             </div>
 
@@ -290,7 +290,7 @@ export default function SiteHeader() {
                 ))}
               </ul>
               <MaskButton href="/contact" className="mt-6 flex w-full">
-                Start a Conversation
+                Contact Us
               </MaskButton>
             </nav>
           </div>
