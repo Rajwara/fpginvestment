@@ -61,7 +61,7 @@ Both themes share one set of role-based tokens, declared with Tailwind v4's
 | `surface`, `surface-2` | Page background and alternating sections (`surface-2` is a pale tint of the brand purple in light, a purple-black in dark) |
 | `fg`, `fg-2` | Headings and body text (`fg-2` also bases the hairlines) |
 | `muted`, `subtle` | Secondary prose and captions |
-| `accent` | A filled surface — buttons, swatches |
+| `accent`, `accent-2` | Filled surfaces — the two ends of the button gradient |
 | `on-accent` | Text sitting on an accent fill |
 | `accent-fg` | Accent-coloured text and icons on the page surface |
 | `font-display` / `font-sans` | Plus Jakarta Sans headings / DM Sans body |
@@ -79,7 +79,11 @@ and the whole effect is disabled under `prefers-reduced-motion`.
 ## Buttons
 
 `components/MaskButton.tsx` renders the CSS-mask sweep used for every call to
-action. `public/assets/images/mask-sprite.svg` is a filmstrip of 23 alpha
+action. Buttons are rounded rectangles (12px), filled with a left-to-right
+brand gradient from `accent` to `accent-2`; the mask sweeps a deeper gradient
+over it. White text clears 4.5:1 against both ends of both themes' gradients.
+The `onAccent` variant exists for buttons sitting on an accent-filled surface,
+where a purple fill would vanish. `public/assets/images/mask-sprite.svg` is a filmstrip of 23 alpha
 frames; the fill layer is scaled to 2300% and its mask position is stepped
 across the strip, so the colour arrives as an organic wipe rather than a fade.
 

@@ -287,9 +287,9 @@ export default function ContactPage() {
             </div>
             <MaskButton
               href={`mailto:${site.email}?subject=${encodeURIComponent("Consultation request")}`}
-              variant="secondary"
+              variant="onAccent"
               size="lg"
-              className="w-fit !border-on-accent/40 !text-on-accent"
+              className="w-fit"
               arrow
             >
               Book a Consultation

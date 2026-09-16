@@ -1,19 +1,24 @@
 import Link from "next/link";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
-type Variant = "primary" | "secondary";
+type Variant = "primary" | "secondary" | "onAccent";
 type Size = "md" | "lg";
 
 const variants: Record<Variant, { base: string; fill: string }> = {
-  // Resting fill is the brand purple; the mask sweeps a deeper purple over it.
+  // Rests as the brand gradient; the mask sweeps a deeper one over it.
   primary: {
-    base: "mask-btn--primary bg-accent text-on-accent",
-    fill: "bg-accent-hover text-on-accent",
+    base: "mask-btn--primary bg-gradient-to-r from-accent to-accent-2 text-on-accent",
+    fill: "bg-gradient-to-r from-accent-hover to-accent text-on-accent",
   },
-  // Rests as an outline and the mask sweeps the solid fill in, as in MASK1.
+  // Rests as an outline and the mask sweeps the gradient in, as in MASK1.
   secondary: {
     base: "mask-btn--secondary border border-fg-2/20 text-fg-2",
-    fill: "bg-accent text-on-accent",
+    fill: "bg-gradient-to-r from-accent to-accent-2 text-on-accent",
+  },
+  // For use on an accent-filled surface, where a purple fill would vanish.
+  onAccent: {
+    base: "mask-btn--secondary border border-on-accent/40 text-on-accent",
+    fill: "bg-on-accent text-accent",
   },
 };
 
