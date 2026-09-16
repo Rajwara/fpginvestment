@@ -37,4 +37,4 @@ slot it belongs to, or name it after that slot and it places itself.
 ## Uploading from GitHub
 
 Open this folder → **Add file → Upload files** → drag the files in → Commit to
-`claude/gallant-dijkstra-eqjoyy`.
+`main`.

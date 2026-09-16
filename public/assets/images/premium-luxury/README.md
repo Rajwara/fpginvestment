@@ -45,4 +45,4 @@ cards without anyone having to say which was which.
 ## Uploading from GitHub
 
 Open this folder → **Add file → Upload files** → drag the files in → Commit to
-`claude/gallant-dijkstra-eqjoyy`.
+`main`.

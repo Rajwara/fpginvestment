@@ -49,4 +49,4 @@ loaded.
 ## Uploading from GitHub
 
 Open this folder → **Add file → Upload files** → drag the file in → Commit to
-`claude/gallant-dijkstra-eqjoyy`.
+`main`.

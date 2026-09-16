@@ -41,4 +41,4 @@ both the homepage slider and the mega menu.
 ## Uploading from GitHub
 
 Open this folder → **Add file → Upload files** → drag the files in → Commit to
-`claude/gallant-dijkstra-eqjoyy`.
+`main`.

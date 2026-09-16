@@ -31,4 +31,4 @@ where you can — a 1600px JPEG at that quality is usually 150–250KB.
 ## Uploading from GitHub
 
 Open this folder → **Add file → Upload files** → drag the files in → Commit to
-`claude/gallant-dijkstra-eqjoyy`.
+`main`.
