@@ -75,20 +75,23 @@ export default function MissionSection() {
                 />
               </defs>
               {/* Kept short: the ~276-unit circumference only fits about 38
-                  characters at this size, and a longer string overlaps itself. */}
+                  characters at this size, and a longer string overlaps
+                  itself. This is 35. */}
               <text className="fill-muted text-[10px] uppercase tracking-[0.18em]">
                 <textPath href="#seal-path" startOffset="2%">
-                  FP Global · Hospitality ·
+                  FP Global · M Group · Hospitality ·
                 </textPath>
               </text>
             </svg>
-            <span className="relative h-14 w-14 overflow-hidden rounded-full">
+            {/* Smaller than the old photo crop: a logo needs clear space
+                between the mark and the ring text. */}
+            <span className="relative h-11 w-11">
               <Image
-                src="/assets/images/home/who-we-are-1.webp"
+                src="/assets/images/home/seal-logo-web.webp"
                 alt=""
                 fill
-                sizes="56px"
-                className="object-cover"
+                sizes="44px"
+                className="object-contain"
               />
             </span>
           </div>

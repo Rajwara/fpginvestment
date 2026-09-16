@@ -439,22 +439,22 @@ export const missionCollage = [
   {
     id: "c1",
     src: "/assets/images/home/who-we-are-1.webp",
-    alt: "A member of the FP Global team",
+    alt: "A hotel lobby lounge at FP Global",
   },
   {
     id: "c2",
     src: "/assets/images/home/who-we-are-2.webp",
-    alt: "Reviewing plans and performance figures",
+    alt: "A hotel porte-cochère lit at dusk",
   },
   {
     id: "c3",
     src: "/assets/images/home/who-we-are-3.webp",
-    alt: "Working on an owner report",
+    alt: "A landscaped pool terrace",
   },
   {
     id: "c4",
     src: "/assets/images/home/who-we-are-4.webp",
-    alt: "Closing a partnership agreement",
+    alt: "A guest room with a garden outlook",
   },
 ];
 
