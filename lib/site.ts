@@ -171,13 +171,69 @@ export const services = [
   },
 ];
 
-export const nav = [
+type NavItem = {
+  label: string;
+  href: string;
+  /** Opens the full About Us mega panel. */
+  mega?: boolean;
+  /** Opens a small dropdown of sub-pages. */
+  dropdown?: { label: string; href: string }[];
+};
+
+export const nav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about", mega: true },
   { label: "Our Team", href: "/team" },
   { label: "Blogs", href: "/blogs" },
   { label: "Careers", href: "/careers" },
-  { label: "Hyatt Lahore", href: "/hyatt-lahore" },
+  {
+    label: "Hyatt Lahore",
+    href: "/hyatt-lahore",
+    dropdown: [
+      { label: "Hyatt Regency Lahore", href: "/hyatt-lahore" },
+      { label: "Premium & Luxury", href: "/premium-luxury" },
+    ],
+  },
+];
+
+/** The Premium & Luxury division's six qualities, in page order. */
+export const luxuryPillars = [
+  {
+    id: "exclusive",
+    title: "Exclusive",
+    body: "Captures the feeling of privileged access — where guests enjoy personalised service, private spaces, and a sense of belonging to an elite experience not available to everyone.",
+    image: "/assets/images/premium-luxury/exclusive-web.webp",
+  },
+  {
+    id: "world-class",
+    title: "World-Class",
+    body: "Positions the brand on a global stage, offering exceptional standards, internationally recognised hospitality, and memorable experiences that rival the best in the world.",
+    image: "/assets/images/premium-luxury/world-class-web.webp",
+  },
+  {
+    id: "opulent",
+    title: "Opulent",
+    body: "Reflects lavish interiors, rich textures, and extravagant surroundings that offer guests a sense of indulgence and splendour the moment they arrive.",
+    image: "/assets/images/premium-luxury/opulent-web.webp",
+  },
+  {
+    id: "refined",
+    title: "Refined",
+    body: "Speaks to the elegance in every detail — from the curated decor to the service style — showcasing taste, sophistication and timeless quality throughout the guest journey.",
+    image: "/assets/images/premium-luxury/refined-web.webp",
+  },
+  {
+    id: "scenic",
+    title: "Scenic",
+    body: "Step into a home surrounded by lush green lawns that enhance both beauty and serenity.",
+    image: "/assets/images/premium-luxury/scenic-web.webp",
+  },
+  {
+    id: "intricate-artistry",
+    title: "Intricate artistry",
+    body: "Every corner of our space is a testament to intricate artistry, where timeless design meets masterful craftsmanship.",
+    image: "/assets/images/premium-luxury/intricate-artistry-web.webp",
+  },
 ];
 
 /** Left panel of the About Us mega menu. */

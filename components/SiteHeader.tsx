@@ -16,8 +16,10 @@ export default function SiteHeader() {
   const [megaOpen, setMegaOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [darkHeroFlag, setDarkHeroFlag] = useState(false);
+  const [dropOpen, setDropOpen] = useState<string | null>(null);
   const pathname = usePathname();
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const dropTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const megaRef = useRef<HTMLDivElement>(null);
 
   // not-found.tsx renders at an unmatched URL, so it raises a flag instead of
@@ -41,6 +43,7 @@ export default function SiteHeader() {
   useEffect(() => {
     setMobileOpen(false);
     setMegaOpen(false);
+    setDropOpen(null);
   }, [pathname]);
 
   useEffect(() => {
@@ -66,6 +69,7 @@ export default function SiteHeader() {
   useEffect(
     () => () => {
       if (closeTimer.current) clearTimeout(closeTimer.current);
+      if (dropTimer.current) clearTimeout(dropTimer.current);
     },
     [],
   );
@@ -73,11 +77,23 @@ export default function SiteHeader() {
   // A small grace period stops the panel closing as the pointer crosses the gap.
   const openMega = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
+    setDropOpen(null);
     setMegaOpen(true);
   };
   const scheduleCloseMega = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
     closeTimer.current = setTimeout(() => setMegaOpen(false), 180);
+  };
+
+  // Same grace period as the mega panel, so the pointer can cross the gap.
+  const openDrop = (href: string) => {
+    if (dropTimer.current) clearTimeout(dropTimer.current);
+    setMegaOpen(false);
+    setDropOpen(href);
+  };
+  const scheduleCloseDrop = () => {
+    if (dropTimer.current) clearTimeout(dropTimer.current);
+    dropTimer.current = setTimeout(() => setDropOpen(null), 180);
   };
 
   const isActive = (href: string) =>
@@ -104,7 +120,9 @@ export default function SiteHeader() {
         }`}
       >
         <div
-          className={`mx-auto overflow-hidden backdrop-blur-xl transition-[max-width,border-radius,background-color,border-color,box-shadow] duration-500 ease-[var(--ease-out-expo)] ${
+          className={`mx-auto backdrop-blur-xl transition-[max-width,border-radius,background-color,border-color,box-shadow] duration-500 ease-[var(--ease-out-expo)] ${
+            dropOpen ? "" : "overflow-hidden"
+          } ${
             docked
               ? "max-w-none rounded-none border-b border-fg-2/10 bg-surface/85 shadow-none"
               : overHero
@@ -157,6 +175,68 @@ export default function SiteHeader() {
                       </span>
                       <span className={`absolute -bottom-1.5 left-0 h-px w-0 transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:w-full ${overHero ? "bg-hero-accent" : "bg-accent"}`} />
                     </button>
+                  </div>
+                ) : item.dropdown ? (
+                  <div
+                    key={item.href}
+                    className="relative"
+                    onMouseEnter={() => openDrop(item.href)}
+                    onMouseLeave={scheduleCloseDrop}
+                  >
+                    <button
+                      type="button"
+                      aria-expanded={dropOpen === item.href}
+                      aria-haspopup="true"
+                      onClick={() =>
+                        setDropOpen((v) => (v === item.href ? null : item.href))
+                      }
+                      onFocus={() => openDrop(item.href)}
+                      className={`group relative flex items-center gap-1.5 text-base font-medium transition-colors ${
+                        isActive(item.href)
+                          ? overHero
+                            ? "text-hero-accent"
+                            : "text-accent-fg"
+                          : overHero
+                            ? "text-white/85 hover:text-white"
+                            : "text-fg-2 hover:text-fg"
+                      }`}
+                    >
+                      {item.label}
+                      <span
+                        aria-hidden="true"
+                        className={`text-[1.15rem] transition-transform duration-300 ${
+                          dropOpen === item.href ? "rotate-180" : ""
+                        }`}
+                      >
+                        ▾
+                      </span>
+                      <span className={`absolute -bottom-1.5 left-0 h-px w-0 transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:w-full ${overHero ? "bg-hero-accent" : "bg-accent"}`} />
+                    </button>
+
+                    <div
+                      hidden={dropOpen !== item.href}
+                      className="absolute left-1/2 top-full z-50 w-60 -translate-x-1/2 pt-4"
+                    >
+                      <ul className="overflow-hidden rounded-2xl border border-fg-2/10 bg-surface py-2 shadow-xl shadow-fg/10">
+                        {item.dropdown.map((child) => (
+                          <li key={child.href}>
+                            <Link
+                              href={child.href}
+                              aria-current={
+                                pathname === child.href ? "page" : undefined
+                              }
+                              className={`block px-5 py-2.5 text-sm transition-colors hover:bg-surface-2 ${
+                                pathname === child.href
+                                  ? "text-accent-fg"
+                                  : "text-fg-2 hover:text-fg"
+                              }`}
+                            >
+                              {child.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 ) : (
                   <Link
@@ -284,6 +364,33 @@ export default function SiteHeader() {
                             ))}
                           </ul>
                         ) : null}
+                      </>
+                    ) : item.dropdown ? (
+                      <>
+                        <Link
+                          href={item.href}
+                          onClick={() => setMobileOpen(false)}
+                          className="flex items-center justify-between py-4 font-display text-2xl text-fg"
+                        >
+                          {item.label}
+                          <span aria-hidden="true" className="text-accent-fg">
+                            →
+                          </span>
+                        </Link>
+                        {/* Always open: two entries do not earn a toggle. */}
+                        <ul className="mb-4 space-y-1 border-l border-fg-2/10 pl-4">
+                          {item.dropdown.map((child) => (
+                            <li key={child.href}>
+                              <Link
+                                href={child.href}
+                                onClick={() => setMobileOpen(false)}
+                                className="block py-2 text-sm text-muted transition-colors hover:text-accent-fg"
+                              >
+                                {child.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
                       </>
                     ) : (
                       <Link
