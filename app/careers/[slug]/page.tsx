@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { hiringFaqs, jobs, site } from "@/lib/site";
 import PhotoPageHero from "@/components/PhotoPageHero";
 import ContactSidebar from "@/components/ContactSidebar";
-import Button from "@/components/Button";
+import ApplySection from "@/components/ApplySection";
 import CheckIcon from "@/components/CheckIcon";
 
 type Params = { slug: string };
@@ -156,27 +156,13 @@ export default async function JobPage({
                 </li>
               ))}
             </ul>
-
-            <div className="mt-12 rounded-2xl bg-surface-2 p-8">
-              <h3 className="font-display text-2xl text-fg">
-                Apply for this role
-              </h3>
-              <p className="mt-3 leading-relaxed text-muted">
-                Send your CV and a short note about why this role interests you.
-              </p>
-              <Button
-                href={`mailto:${site.email}?subject=${encodeURIComponent(`Application — ${job.title}`)}`}
-                className="mt-6"
-                arrow
-              >
-                Email your application
-              </Button>
-            </div>
           </article>
 
           <ContactSidebar />
         </div>
       </div>
+
+      <ApplySection role={job.title} />
     </>
   );
 }
