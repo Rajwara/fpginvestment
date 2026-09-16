@@ -60,18 +60,10 @@ export default function MissionSection() {
                 ) : (
                   /* Brand tile until a photograph lands — give the entry a
                      `src` in missionCollage to swap it for one. */
-                  <div className="flex h-full w-full flex-col justify-between bg-gradient-to-br from-accent to-accent-2 p-5 text-on-accent">
-                    <svg viewBox="0 0 36 36" className="h-8 w-8" aria-hidden="true">
+                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-accent to-accent-2 text-on-accent">
+                    <svg viewBox="0 0 36 36" className="h-10 w-10" aria-hidden="true">
                       <path d="M6 32a12 12 0 0 1 24 0Z" className="fill-on-accent" />
                     </svg>
-                    <div>
-                      <p className="font-display text-2xl leading-none">
-                        {tile.stat}
-                      </p>
-                      <p className="mt-1.5 text-xs text-on-accent/75">
-                        {tile.statLabel}
-                      </p>
-                    </div>
                   </div>
                 )}
               </div>
@@ -90,9 +82,11 @@ export default function MissionSection() {
                   d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"
                 />
               </defs>
-              <text className="fill-muted text-[10px] uppercase tracking-[0.22em]">
-                <textPath href="#seal-path">
-                  FP Global · Hospitality · FP Global · Hospitality ·
+              {/* Kept short: the ~276-unit circumference only fits about 38
+                  characters at this size, and a longer string overlaps itself. */}
+              <text className="fill-muted text-[10px] uppercase tracking-[0.18em]">
+                <textPath href="#seal-path" startOffset="2%">
+                  FP Global · Hospitality ·
                 </textPath>
               </text>
             </svg>

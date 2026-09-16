@@ -156,10 +156,26 @@ export const missionTabs = [
  * path here to fill it.
  */
 export const missionCollage = [
-  { id: "c1", src: "/assets/images/fpginvestment_banner_img1.jpg", alt: "Hotel lobby", stat: "", statLabel: "" },
-  { id: "c2", src: "/assets/images/fpginvestment_banner_img2.jpg", alt: "Pool and spa", stat: "", statLabel: "" },
-  { id: "c3", src: null, alt: "", stat: "20 yrs", statLabel: "In hospitality" },
-  { id: "c4", src: null, alt: "", stat: "1,400+", statLabel: "Keys developed" },
+  {
+    id: "c1",
+    src: "/assets/images/MissionAndGoals-img1.jpg",
+    alt: "Reviewing performance figures",
+  },
+  {
+    id: "c2",
+    src: "/assets/images/MissionAndGoals-img2.jpg",
+    alt: "A member of the FP Global team",
+  },
+  {
+    id: "c3",
+    src: "/assets/images/MissionAndGoals-03.jpg",
+    alt: "Working on an owner report",
+  },
+  {
+    id: "c4",
+    src: "/assets/images/MissionAndGoalsimg-04.jpg",
+    alt: "Closing a partnership agreement",
+  },
 ];
 
 export const principles = [
