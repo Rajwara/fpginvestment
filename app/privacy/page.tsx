@@ -12,6 +12,7 @@ export default function PrivacyPage() {
       eyebrow="Legal"
       title="Privacy Policy"
       lede="How we collect, use and protect the information you share with us."
+      image="/assets/images/fpginvestment_banner_img1.jpg"
       updated="1 September 2026"
       sections={[
         { heading: "Information we collect", body: "Placeholder. Describe the personal data collected through enquiry forms, job applications and website analytics." },

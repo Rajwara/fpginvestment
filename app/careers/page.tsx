@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { jobs } from "@/lib/site";
-import PageHero from "@/components/PageHero";
+import DarkPageHero from "@/components/DarkPageHero";
 import ContactSidebar from "@/components/ContactSidebar";
 import Eyebrow from "@/components/Eyebrow";
 
@@ -14,10 +14,16 @@ export const metadata: Metadata = {
 export default function CareersPage() {
   return (
     <>
-      <PageHero
+      <DarkPageHero
         eyebrow="Careers"
-        title="Build hotels people remember."
+        title={
+          <>
+            Build hotels people{" "}
+            <span className="text-hero-accent">remember</span>
+          </>
+        }
         lede="We hire people who have stood behind a desk at 2am and still cared about the guest in front of them. If that is you, we would like to talk."
+        image="/assets/images/fpginvestment_banner_img1.jpg"
       />
 
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">

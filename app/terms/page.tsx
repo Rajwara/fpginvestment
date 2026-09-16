@@ -12,6 +12,7 @@ export default function TermsPage() {
       eyebrow="Legal"
       title="Terms & Conditions"
       lede="The terms on which you may use this website and the material published on it."
+      image="/assets/images/fpginvestment_banner_img2.jpg"
       updated="1 September 2026"
       sections={[
         { heading: "Acceptance of terms", body: "Placeholder. State that use of the site constitutes acceptance of these terms." },

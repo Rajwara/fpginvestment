@@ -345,6 +345,16 @@ export const insights = [
       "What we look at, in what order, when taking over an underperforming asset — and why revenue management usually comes before any renovation conversation.",
   },
   {
+    slug: "brand-or-independent",
+    category: "Development",
+    date: "2025-11-06",
+    readTime: "8 min",
+    image: "/assets/images/ProfessionalGuidanceimg-02.jpg",
+    title: "When a brand is worth its fee, and when it is not",
+    excerpt:
+      "A flag brings distribution, standards and a lender's confidence. It also takes a share of the top line for the life of the agreement. The arithmetic is not the same in every market.",
+  },
+  {
     slug: "reading-a-hotel-pl",
     category: "Asset Management",
     date: "2026-01-28",
@@ -478,10 +488,126 @@ export const faqs = [
 ];
 
 export const jobs = [
-  { slug: "acquisition-advisor", title: "Acquisition Advisor", location: "Lahore, Pakistan", type: "Full time", team: "Development" },
-  { slug: "pre-opening-manager", title: "Pre-Opening Manager", location: "Lahore, Pakistan", type: "Full time", team: "Operations" },
-  { slug: "revenue-analyst", title: "Revenue Analyst", location: "Lahore, Pakistan", type: "Full time", team: "Commercial" },
-  { slug: "project-architect", title: "Project Architect", location: "Karachi, Pakistan", type: "Contract", team: "Design & Construction" },
+  {
+    slug: "acquisition-advisor",
+    title: "Acquisition Advisor",
+    location: "Lahore, Pakistan",
+    type: "Full time",
+    team: "Development",
+    intro:
+      "You will look at sites and opportunities before anyone commits capital to them, and say honestly which ones are worth pursuing.",
+    responsibilities: [
+      "Source and screen sites and acquisition opportunities across Pakistan",
+      "Build the first-pass feasibility: demand, competitor set and outline pro forma",
+      "Prepare investment papers and present recommendations to the board",
+      "Run due diligence alongside legal, technical and commercial advisers",
+      "Keep relationships warm with landowners, brokers and brand development teams",
+    ],
+    requirements: [
+      "Five or more years in hotel development, real estate investment or transaction advisory",
+      "Comfortable building and defending an operating pro forma",
+      "Familiar with the Pakistan market and its regulatory environment",
+      "Willing to travel for site visits at short notice",
+    ],
+    offer:
+      "A seat in the room where projects are decided, direct access to the chairman and managing director, and the chance to follow an asset you sourced all the way through to opening.",
+  },
+  {
+    slug: "pre-opening-manager",
+    title: "Pre-Opening Manager",
+    location: "Lahore, Pakistan",
+    type: "Full time",
+    team: "Operations",
+    intro:
+      "You will run the critical path for a hotel opening, from the org chart to the first guest through the door.",
+    responsibilities: [
+      "Own the pre-opening critical path and budget against the target opening date",
+      "Build the org chart and run recruitment with the department heads",
+      "Coordinate FF&E and OS&E specification, procurement and delivery",
+      "Stand up PMS, POS and back-office systems, and train the team on them",
+      "Run the countdown: mock services, snagging and handover from construction",
+    ],
+    requirements: [
+      "Pre-opening experience on at least one branded hotel",
+      "A firm grip on budgets, procurement and critical-path planning",
+      "Able to hold contractors, consultants and suppliers to a date",
+      "Rooms or F&B operations background",
+    ],
+    offer:
+      "A full opening to run rather than a slice of one, with the team and the authority to run it.",
+  },
+  {
+    slug: "revenue-analyst",
+    title: "Revenue Analyst",
+    location: "Lahore, Pakistan",
+    type: "Full time",
+    team: "Commercial",
+    intro:
+      "You will own the numbers behind pricing and distribution, and turn them into decisions the commercial team can act on this week.",
+    responsibilities: [
+      "Build and maintain the forecast, budget and pace reporting",
+      "Analyse segmentation, channel cost and rate performance against the comp set",
+      "Recommend pricing and inventory actions, then measure what they did",
+      "Keep the channel manager, PMS and rate parity clean across every channel",
+      "Prepare the commercial pack for owner and management reporting",
+    ],
+    requirements: [
+      "Two or more years in revenue management or commercial analysis in hotels",
+      "Fluent in Excel and comfortable with PMS and channel manager data",
+      "Able to put a recommendation on one slide for a non-analyst",
+      "A revenue management certification is welcome, not required",
+    ],
+    offer:
+      "Ownership of a real P&L line from your first month, and a direct line to the people who act on your recommendations.",
+  },
+  {
+    slug: "project-architect",
+    title: "Project Architect",
+    location: "Karachi, Pakistan",
+    type: "Contract",
+    team: "Design & Construction",
+    intro:
+      "You will review and develop hotel design so that what gets built can actually be operated.",
+    responsibilities: [
+      "Review concept and technical design against brand standards and operating needs",
+      "Coordinate consultants across architecture, MEP, interiors and kitchen design",
+      "Track the drawing register and close out RFIs against the construction programme",
+      "Attend site to verify that what is built matches what was approved",
+      "Flag the value-engineering proposals that cost more to operate than they save",
+    ],
+    requirements: [
+      "Registered architect with hotel or hospitality project experience",
+      "Comfortable reading MEP and kitchen drawings alongside architectural sets",
+      "Experience coordinating a multi-discipline consultant team",
+      "Based in, or able to work from, Karachi for the project duration",
+    ],
+    offer:
+      "A contract tied to a live project with a defined scope and end date, on a team that treats operability as a design requirement rather than an afterthought.",
+  },
+];
+
+/** Shown on every role page \u2014 the process is the same whichever one you apply for. */
+export const hiringFaqs = [
+  {
+    q: "How long does the process take?",
+    a: "Usually two to three weeks. A first conversation, a task or case relevant to the role, then a meeting with the people you would actually work with.",
+  },
+  {
+    q: "Do you consider candidates outside Pakistan?",
+    a: "Yes, where the role allows it and you are able to relocate. Most of our positions are based on the ground with the asset.",
+  },
+  {
+    q: "Would I work on one property or several?",
+    a: "Development and commercial roles work across the portfolio. Pre-opening and operations roles are attached to a property for the length of the mandate.",
+  },
+  {
+    q: "What happens after a project opens?",
+    a: "Pre-opening roles usually move into the operating team or on to the next opening. We would rather keep people than rehire.",
+  },
+  {
+    q: "Can I apply if none of these roles fit?",
+    a: "Yes. Send your CV with a note about what you do. We keep it on file and come back when something matches.",
+  },
 ];
 
 export type Office = {

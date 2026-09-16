@@ -1,4 +1,4 @@
-import PageHero from "@/components/PageHero";
+import DarkPageHero from "@/components/DarkPageHero";
 
 /** Shared layout for Privacy Policy and Terms & Conditions. */
 export default function LegalPage({
@@ -7,16 +7,23 @@ export default function LegalPage({
   lede,
   updated,
   sections,
+  image,
 }: {
   eyebrow: string;
   title: string;
   lede: string;
   updated: string;
   sections: { heading: string; body: string }[];
+  image: string;
 }) {
   return (
     <>
-      <PageHero eyebrow={eyebrow} title={title} lede={lede} />
+      <DarkPageHero
+        eyebrow={eyebrow}
+        title={title}
+        lede={lede}
+        image={image}
+      />
 
       <article className="mx-auto max-w-3xl px-6 py-20 lg:py-28">
         <p className="eyebrow text-subtle">Last updated {updated}</p>
