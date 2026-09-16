@@ -7,7 +7,7 @@ import { nav, services } from "@/lib/site";
 import { isPhotoHeroRoute } from "@/lib/heroRoutes";
 import Logo from "./Logo";
 import MegaMenu from "./MegaMenu";
-import MaskButton from "@/components/MaskButton";
+import Button from "@/components/Button";
 
 export default function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -167,14 +167,14 @@ export default function SiteHeader() {
             </nav>
 
             <div className="hidden items-center gap-3 xl:flex">
-              <MaskButton
+              <Button
                 href="/contact"
                 variant={overHero ? "onAccent" : "secondary"}
                 className={`!px-5 !py-2.5 ${overHero ? "!border-white/35 !text-white" : ""}`}
                 arrow
               >
                 Contact Us
-              </MaskButton>
+              </Button>
             </div>
 
             <div className="flex items-center gap-2 xl:hidden">
@@ -286,9 +286,9 @@ export default function SiteHeader() {
                   </li>
                 ))}
               </ul>
-              <MaskButton href="/contact" className="mt-6 flex w-full">
+              <Button href="/contact" className="mt-6 flex w-full">
                 Contact Us
-              </MaskButton>
+              </Button>
             </nav>
           </div>
         </div>

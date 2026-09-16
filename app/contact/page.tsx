@@ -3,7 +3,7 @@ import { site, offices } from "@/lib/site";
 import ContactForm from "@/components/ContactForm";
 import ContactIcon from "@/components/ContactIcon";
 import Eyebrow from "@/components/Eyebrow";
-import MaskButton from "@/components/MaskButton";
+import Button from "@/components/Button";
 
 export const metadata: Metadata = {
   title: "Contact Us",

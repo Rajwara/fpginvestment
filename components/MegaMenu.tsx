@@ -5,7 +5,7 @@ import Link from "next/link";
 import { megaFeature, partners, services, site } from "@/lib/site";
 import ServiceIcon from "./ServiceIcon";
 import SocialIcon from "./SocialIcon";
-import MaskButton from "@/components/MaskButton";
+import Button from "@/components/Button";
 
 /**
  * About Us mega menu. Three zones, per the layout doc:
@@ -169,9 +169,9 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
           ))}
         </div>
 
-        <MaskButton href="/contact" className="mt-8 flex w-full" arrow>
+        <Button href="/contact" className="mt-8 flex w-full" arrow>
           Start a Conversation
-        </MaskButton>
+        </Button>
       </div>
     </div>
   );

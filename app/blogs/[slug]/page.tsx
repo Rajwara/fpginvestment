@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { insights } from "@/lib/site";
 import { formatDate } from "@/lib/format";
-import MaskButton from "@/components/MaskButton";
+import Button from "@/components/Button";
 
 type Params = { slug: string };
 
@@ -70,9 +70,9 @@ export default async function BlogPage({
           If something here is relevant to a development or an operating asset
           you are working on, we are happy to go deeper.
         </p>
-        <MaskButton href="/contact" className="mt-6" arrow>
+        <Button href="/contact" className="mt-6" arrow>
           Get in touch
-        </MaskButton>
+        </Button>
       </div>
     </article>
   );

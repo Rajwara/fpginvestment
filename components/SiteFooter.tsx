@@ -2,7 +2,7 @@ import Link from "next/link";
 import { footerColumns, site } from "@/lib/site";
 import Logo from "./Logo";
 import SocialIcon from "./SocialIcon";
-import MaskButton from "./MaskButton";
+import Button from "./Button";
 
 /** Flowing line-art backdrop, drawn rather than shipped as an image. */
 function WaveField() {
@@ -46,9 +46,9 @@ export default function SiteFooter() {
               in mind?
             </p>
           </div>
-          <MaskButton href="/contact" size="lg" className="w-fit" arrow>
+          <Button href="/contact" size="lg" className="w-fit" arrow>
             Start a Conversation
-          </MaskButton>
+          </Button>
         </div>
 
         <div className="grid gap-12 pt-14 lg:grid-cols-[1.4fr_repeat(3,1fr)] lg:gap-10">

@@ -295,13 +295,6 @@ export const team = [
     initials: "OS",
     photo: "",
   },
-  {
-    name: "Sana Iqbal",
-    role: "Director, Sales & Marketing",
-    prior: "Previously IHG South West Asia",
-    initials: "SI",
-    photo: "",
-  },
 ];
 
 export const faqs = [

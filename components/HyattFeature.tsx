@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Eyebrow from "./Eyebrow";
-import MaskButton from "./MaskButton";
+import Button from "./Button";
 
 /** Flagship property feature: image left, copy right. */
 export default function HyattFeature() {
@@ -32,9 +32,9 @@ export default function HyattFeature() {
             that followed. It is the clearest answer to what FP Global does.
           </p>
 
-          <MaskButton href="/hyatt-lahore" size="lg" className="mt-8" arrow>
+          <Button href="/hyatt-lahore" size="lg" className="mt-8" arrow>
             Explore the Property
-          </MaskButton>
+          </Button>
         </div>
       </div>
     </section>

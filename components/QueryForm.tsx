@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { services } from "@/lib/site";
-import MaskButton from "./MaskButton";
+import Button from "./Button";
 
 const field =
   "w-full rounded-xl border border-transparent bg-surface-2 px-5 py-4 text-fg placeholder:text-subtle transition-colors focus:border-accent-fg/50 focus:outline-none";
@@ -120,9 +120,9 @@ export default function QueryForm() {
         />
       </div>
 
-      <MaskButton type="submit" size="lg" arrow className="mt-2">
+      <Button type="submit" size="lg" arrow className="mt-2">
         Submit
-      </MaskButton>
+      </Button>
 
       <p className="text-xs leading-relaxed text-subtle">
         Demo form — submissions are handled in the browser and are not sent

@@ -1,4 +1,4 @@
-import MaskButton from "@/components/MaskButton";
+import Button from "@/components/Button";
 
 export default function NotFound() {
   return (
@@ -10,9 +10,9 @@ export default function NotFound() {
       <p className="mt-6 text-lg text-muted">
         The page you were looking for is not part of the site.
       </p>
-      <MaskButton href="/" className="mt-10" arrow>
+      <Button href="/" className="mt-10" arrow>
         Back to the homepage
-      </MaskButton>
+      </Button>
     </div>
   );
 }

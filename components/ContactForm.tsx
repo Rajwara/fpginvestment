@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import MaskButton from "@/components/MaskButton";
+import Button from "@/components/Button";
 
 const enquiryTypes = [
   "New hotel development",
@@ -137,14 +137,14 @@ export default function ContactForm() {
         />
       </div>
 
-      <MaskButton
+      <Button
         type="submit"
         size="lg"
         className="flex w-full sm:inline-flex sm:w-auto"
         arrow
       >
         Send enquiry
-      </MaskButton>
+      </Button>
 
       <p className="text-xs leading-relaxed text-subtle">
         Demo form — submissions are handled in the browser and are not sent

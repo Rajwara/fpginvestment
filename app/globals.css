@@ -149,86 +149,117 @@
 }
 
 /*
- * CSS-mask sweep buttons (components/MaskButton.tsx).
+ * Traced-border buttons (components/Button.tsx).
  *
- * public/assets/images/mask-sprite.svg is a filmstrip of 23 alpha frames, so
- * the fill layer is scaled to 2300% and the mask position is stepped across
- * it. A stepped transition is used rather than a pair of keyframe animations:
- * it reverses by itself on pointer-out and nothing plays on page load.
+ * A conic gradient is masked down to a 2px ring and its start angle spun on
+ * hover, so a highlight runs around the edge. --angle is registered so it can
+ * be animated at all; --trace lets each variant pick a colour that reads
+ * against its own fill.
  */
-.mask-btn {
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.trace-btn {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.625rem;
-  border-radius: 0.75rem;
-  overflow: hidden;
+  border-radius: 0.875rem;
   isolation: isolate;
   font-weight: 500;
   white-space: nowrap;
   cursor: pointer;
-  transition: border-color 0.4s var(--ease-out-expo);
-}
-
-.mask-btn__label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.625rem;
-}
-
-.mask-btn__fill {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  -webkit-mask-image: url("/assets/images/mask-sprite.svg");
-  mask-image: url("/assets/images/mask-sprite.svg");
-  -webkit-mask-size: 2300% 100%;
-  mask-size: 2300% 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: 0 0;
-  mask-position: 0 0;
   transition:
-    -webkit-mask-position 0.7s steps(23, jump-none),
-    mask-position 0.7s steps(23, jump-none);
+    color 0.3s ease,
+    transform 0.25s ease,
+    box-shadow 0.3s ease;
 }
 
-.mask-btn:hover .mask-btn__fill,
-.mask-btn:focus-visible .mask-btn__fill {
-  -webkit-mask-position: 100% 0;
-  mask-position: 100% 0;
+.trace-btn::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  padding: 2px;
+  border-radius: 1rem;
+  background: conic-gradient(
+    from var(--angle),
+    transparent 0%,
+    transparent 58%,
+    color-mix(in srgb, var(--trace, var(--color-accent)) 35%, transparent) 72%,
+    var(--trace, var(--color-accent)) 86%,
+    transparent 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.25s ease;
 }
 
-.mask-btn--secondary:hover,
-.mask-btn--secondary:focus-visible {
-  border-color: transparent;
+.trace-btn:hover,
+.trace-btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(20, 20, 25, 0.08);
 }
 
-/* Without mask support the fill layer would cover the label permanently. */
-@supports not ((-webkit-mask-image: url("#m")) or (mask-image: url("#m"))) {
-  .mask-btn__fill {
-    display: none;
+.trace-btn:hover::before,
+.trace-btn:focus-visible::before {
+  opacity: 1;
+  animation: trace-border 1.15s linear infinite;
+}
+
+/* Only the outline variants recolour their label; a filled one keeps it. */
+.trace-btn--outline:hover,
+.trace-btn--outline:focus-visible {
+  color: var(--trace, var(--color-accent));
+}
+
+.trace-btn__arrow {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.trace-btn:hover .trace-btn__arrow {
+  transform: translateX(4px);
+}
+
+.trace-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.trace-btn:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-accent) 22%, transparent);
+  outline-offset: 4px;
+}
+
+@keyframes trace-border {
+  to { --angle: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trace-btn,
+  .trace-btn::before,
+  .trace-btn__arrow {
+    transition: none;
+    animation: none;
   }
-  .mask-btn--secondary:hover,
-  .mask-btn--secondary:focus-visible {
-    background-image: linear-gradient(
-      to right,
-      var(--color-accent),
-      var(--color-accent-2)
-    );
-    color: var(--color-on-accent);
-    border-color: transparent;
+  .trace-btn:hover,
+  .trace-btn:focus-visible {
+    transform: none;
   }
-  .mask-btn--primary:hover,
-  .mask-btn--primary:focus-visible {
-    background-image: linear-gradient(
-      to right,
-      var(--color-accent-hover),
-      var(--color-accent)
-    );
+  .trace-btn:hover::before,
+  .trace-btn:focus-visible::before {
+    opacity: 1;
   }
 }
 

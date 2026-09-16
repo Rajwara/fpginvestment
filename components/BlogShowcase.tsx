@@ -3,7 +3,7 @@ import Link from "next/link";
 import { insights } from "@/lib/site";
 import { formatDate } from "@/lib/format";
 import Eyebrow from "./Eyebrow";
-import MaskButton from "./MaskButton";
+import Button from "./Button";
 
 /** Category · date line shared by both card shapes. */
 function Meta({ category, date }: { category: string; date: string }) {
@@ -46,9 +46,9 @@ export default function BlogShowcase() {
               Latest Business Insights
             </h2>
           </div>
-          <MaskButton href="/blogs" arrow>
+          <Button href="/blogs" arrow>
             View All Blogs
-          </MaskButton>
+          </Button>
         </div>
 
         <div className="mt-14 grid gap-12 lg:grid-cols-2 lg:gap-14">

@@ -1,5 +1,5 @@
 import { site } from "@/lib/site";
-import MaskButton from "@/components/MaskButton";
+import Button from "@/components/Button";
 import Eyebrow from "@/components/Eyebrow";
 
 export default function CTA() {
@@ -26,16 +26,16 @@ export default function CTA() {
         </p>
 
         <div className="reveal mt-10 flex flex-wrap items-center justify-center gap-4">
-          <MaskButton href="/contact" size="lg" arrow>
+          <Button href="/contact" size="lg" arrow>
             Start a Conversation
-          </MaskButton>
-          <MaskButton
+          </Button>
+          <Button
             href={`mailto:${site.email}`}
             variant="secondary"
             size="lg"
           >
             {site.email}
-          </MaskButton>
+          </Button>
         </div>
       </div>
     </section>

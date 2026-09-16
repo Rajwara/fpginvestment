@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 import { missionCollage, missionTabs } from "@/lib/site";
 import CheckIcon from "./CheckIcon";
 import Eyebrow from "./Eyebrow";
-import MaskButton from "./MaskButton";
+import Button from "./Button";
 
 export default function MissionSection() {
   const [active, setActive] = useState(0);
@@ -155,9 +155,9 @@ export default function MissionSection() {
             </ul>
           </div>
 
-          <MaskButton href="/about" size="lg" className="mt-10" arrow>
+          <Button href="/about" size="lg" className="mt-10" arrow>
             Get Started
-          </MaskButton>
+          </Button>
         </div>
       </div>
     </section>

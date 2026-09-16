@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Eyebrow from "./Eyebrow";
-import MaskButton from "./MaskButton";
+import Button from "./Button";
 
 const slides = [
   { src: "/assets/images/fpginvestment_banner_img1.jpg" },
@@ -92,17 +92,17 @@ export default function HeroBanner() {
           className="animate-rise mt-10 flex flex-wrap items-center gap-4"
           style={{ animationDelay: "220ms" }}
         >
-          <MaskButton href="/contact" size="lg" arrow>
+          <Button href="/contact" size="lg" arrow>
             Free Consultation
-          </MaskButton>
-          <MaskButton
+          </Button>
+          <Button
             href="/hyatt-lahore"
             variant="onAccent"
             size="lg"
             className="!border-white/35 !text-white"
           >
             Hyatt Regency Lahore
-          </MaskButton>
+          </Button>
         </div>
 
         {/* Slide indicators */}
