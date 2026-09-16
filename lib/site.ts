@@ -141,8 +141,8 @@ export const services = [
   {
     id: "takeover-turnaround",
     card: "/assets/images/home/service-takeover-turnaround.webp",
-    image: "/assets/images/ProfessionalGuidanceimg-04.jpg",
-    banner: "/assets/images/ProfessionalGuidanceimg-04.jpg",
+    image: "/assets/images/services/takeover-turnaround/first-image-web.webp",
+    banner: "/assets/images/services/takeover-turnaround/hero-web.webp",
     enquiry: "/assets/images/enquiry-bg-web.webp",
     name: "Takeover & Turnaround",
     short: "Takeover & Turnaround",
@@ -155,10 +155,10 @@ export const services = [
       "Repositioning and rebranding",
     ],
     gallery: [
-      "/assets/images/ProfessionalGuidanceimg-05.jpg",
-      "/assets/images/ProfessionalGuidanceimg-1.jpg",
+      "/assets/images/services/takeover-turnaround/what-this-covers-1-web.webp",
+      "/assets/images/services/takeover-turnaround/what-this-covers-2-web.webp",
     ],
-    wide: "/assets/images/MissionAndGoals-03.jpg",
+    wide: "/assets/images/services/takeover-turnaround/how-we-work-on-it-web.webp",
     sections: [
       {
         title: "Diagnose before you spend",
