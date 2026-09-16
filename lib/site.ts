@@ -272,6 +272,39 @@ export const insights = [
   },
 ];
 
+export const milestones = [
+  {
+    year: "2009",
+    label: "Founded",
+    event: "Founded in Lahore as a hospitality development advisory.",
+  },
+  {
+    year: "2013",
+    label: "First Pre-Opening",
+    event: "First full pre-opening mandate delivered on programme.",
+  },
+  {
+    year: "2017",
+    label: "Technical Services",
+    event: "Technical services and construction management brought in-house.",
+  },
+  {
+    year: "2021",
+    label: "Hotel Management",
+    event: "Hotel management division launched under international brand standards.",
+  },
+  {
+    year: "2024",
+    label: "Hyatt Regency Lahore",
+    event: "Hyatt Regency Lahore opens — developed and operated by FP Global.",
+  },
+  {
+    year: "2026",
+    label: "Six Service Lines",
+    event: "Six service lines covering concept through daily operations.",
+  },
+];
+
 export const team = [
   {
     name: "Faisal Pervaiz",

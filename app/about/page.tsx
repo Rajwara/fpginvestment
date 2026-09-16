@@ -4,6 +4,7 @@ import PhotoPageHero from "@/components/PhotoPageHero";
 import ServicesFlex from "@/components/ServicesFlex";
 import MissionSection from "@/components/MissionSection";
 import TeamGrid from "@/components/TeamGrid";
+import Journey from "@/components/Journey";
 import CTA from "@/components/CTA";
 import { Section, SectionHeading } from "@/components/Section";
 
@@ -12,15 +13,6 @@ export const metadata: Metadata = {
   description:
     "FP Global develops, opens and operates hotels — six service lines under one accountable team.",
 };
-
-const milestones = [
-  { year: "2009", event: "Founded in Lahore as a hospitality development advisory." },
-  { year: "2013", event: "First full pre-opening mandate delivered on programme." },
-  { year: "2017", event: "Technical services and construction management brought in-house." },
-  { year: "2021", event: "Hotel management division launched under international brand standards." },
-  { year: "2024", event: "Hyatt Regency Lahore opens — developed and operated by FP Global." },
-  { year: "2026", event: "Six service lines covering concept through daily operations." },
-];
 
 export default function AboutPage() {
   return (
@@ -60,35 +52,7 @@ export default function AboutPage() {
         </dl>
       </Section>
 
-      <Section className="border-t border-fg-2/10">
-        <div className="grid gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
-          <SectionHeading
-            eyebrow="History"
-            title="Seventeen years, one direction."
-            lede="Each capability was added because a project needed it, not because a plan called for it."
-          />
-          <ol className="relative border-l border-fg-2/15 pl-8">
-            {milestones.map((m, i) => (
-              <li
-                key={m.year}
-                className="reveal relative pb-10 last:pb-0"
-                style={{ transitionDelay: `${i * 60}ms` }}
-              >
-                <span
-                  aria-hidden="true"
-                  className="absolute -left-[2.25rem] top-2 h-2 w-2 rounded-full bg-accent"
-                />
-                <span className="font-display text-2xl text-accent-fg">
-                  {m.year}
-                </span>
-                <p className="mt-2 max-w-xl leading-relaxed text-muted">
-                  {m.event}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </Section>
+      <Journey />
 
       <Section className="border-t border-fg-2/10 bg-surface-2">
         <SectionHeading eyebrow="Principles" title="What does not change." />

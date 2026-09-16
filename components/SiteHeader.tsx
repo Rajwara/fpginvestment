@@ -167,12 +167,7 @@ export default function SiteHeader() {
             </nav>
 
             <div className="hidden items-center gap-3 xl:flex">
-              <Button
-                href="/contact"
-                variant={overHero ? "onAccent" : "secondary"}
-                className={`!px-5 !py-2.5 ${overHero ? "!border-white/35 !text-white" : ""}`}
-                arrow
-              >
+              <Button href="/contact" className="!px-6 !py-3" arrow>
                 Contact Us
               </Button>
             </div>

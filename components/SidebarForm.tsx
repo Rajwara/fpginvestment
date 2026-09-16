@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Button from "./Button";
 
 const field =
   "w-full rounded-xl border border-fg-2/15 bg-surface px-4 py-3 text-sm text-fg placeholder:text-subtle transition-colors focus:border-accent/60 focus:outline-none";
@@ -98,18 +99,9 @@ export default function SidebarForm() {
         />
       </div>
 
-      <button
-        type="submit"
-        className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-accent to-accent-2 px-5 py-3 text-sm font-medium text-on-accent transition-opacity hover:opacity-90"
-      >
+      <Button type="submit" className="!px-5 !py-3" arrow>
         Send Message
-        <span
-          aria-hidden="true"
-          className="transition-transform duration-300 group-hover:translate-x-1"
-        >
-          →
-        </span>
-      </button>
+      </Button>
 
       <p className="text-[0.6875rem] leading-relaxed text-subtle">
         Demo form — handled in the browser, not sent anywhere yet.

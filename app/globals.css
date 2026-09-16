@@ -349,3 +349,18 @@
     transparent 78%
   );
 }
+
+/* Timeline rail: draws left to right when its section reveals. */
+.draw-line {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.1s var(--ease-out-expo);
+}
+
+[data-shown="true"] .draw-line {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .draw-line { transform: none; transition: none; }
+}
