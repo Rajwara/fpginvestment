@@ -307,26 +307,54 @@ export const milestones = [
 
 export const team = [
   {
-    name: "Faisal Pervaiz",
+    name: "Pervez Iqbal Shahid",
     role: "Chairman",
-    prior: "Two decades in hospitality development",
-    initials: "FP",
-    /** Portraits to follow; the card falls back to initials until then. */
+    initials: "PS",
+    tagline: "Entrepreneurial vision. Lasting presence.",
+    /** Portraits and personal profile links to follow. */
     photo: "",
+    linkedin: "",
+    bio: [
+      "Pervaiz Iqbal Shahid journey to become the Chairman initiated in November 2013, having entrepreneurship skills and utmost dedication, it was a challenging task to take the first step and mold the company into a functional organization. He always carried a vision to shine in Dubai\u2019s vibrant real estate sector, worked tirelessly and consistently over the years to grow, strengthen and make his company\u2019s presence noticeable in Dubai\u2019s flamboyant real estate market.",
+      "Mr. Pervaiz always accept marginal risk factors offering opportunities to hold significant share between the competitors that helped expand company\u2019s operations and presence in the market. His work algorithm, commitment and installed competent team assured Meerab Properties to expand and stand tall as a known brokerage and investment entity in residential, commercial, off-plan properties and in multiple ventures adding value to company\u2019s growth.",
+      "His strong belief is to always approach to challenging tasks and find measures out of the box to distinguish his enterprise from competitors. His qualification as Graduate in Business Administration & Commerce and holding DREI Certification extends him a strong base to continue this journey with much larger opportunities on hand that shall ensure his visionary foot prints to expand further locally and globally.",
+    ],
+    highlights: [] as string[],
   },
   {
-    name: "Ayesha Rahman",
-    role: "Chief Operating Officer",
-    prior: "Previously Hyatt International",
-    initials: "AR",
+    name: "Abid Yousaf",
+    role: "Managing Partner",
+    initials: "AY",
+    tagline: "Three decades of management. Global alliances.",
     photo: "",
+    linkedin: "",
+    bio: [
+      "Abid Yousaf carries over three decades of experience in Management covering areas of corporate strategy formulation, financial management, projects feasibility study, budgeting and business development, as well as product design, distribution, public relations, and human resources. Throughout his career, he developed businesses, grown market share, and improved operations. His key accomplishments include:",
+      "As a Senior Expert on various dimensions of Financial Management, he has been responsible for providing visionary leadership to numerous high-budget projects with International Organizations. Over the past years, his hands-on ability to work with government and the private sector resulted in numerous successful partnerships and in expanding top investment groups globally.",
+      "Being qualified as an ACA, FLMI, ACS, DBA and being a U.A.E. resident for more than two decades having worked for almost all parts of MENA and Pakistan, he is aware of the cultural intricacies and sensitivities and ready to take up a challenging role to establish innovative ideas to accomplish the raison d\u2019\u00EAtre new intervention areas for future focus of businesses in UAE particularly M GROUP.",
+    ],
+    /** Rendered after the first paragraph, which introduces them. */
+    highlights: [
+      "Developing long-term business partnerships and forging strategic global alliances.",
+      "Brand ambassador, public advocate, and expert franchise contract negotiator.",
+      "Leadership in financial management, accounting controls, reporting and budgeting.",
+      "In-depth knowledge of current market trends, regulations and cultural aspects of served regions.",
+      "Building and retaining large numbers of high-performing staff and fostering positive work environment.",
+    ],
   },
   {
-    name: "Omar Siddiqui",
-    role: "Director, Development",
-    prior: "Previously Accor South Asia",
-    initials: "OS",
+    name: "Saeed Ahmed",
+    role: "Managing Director",
+    initials: "SA",
+    tagline: "Four decades of command. Delivery at scale.",
     photo: "",
+    linkedin: "",
+    bio: [
+      "Brigadier Saeed Ahmed (Retd), SI (M) brings over four decades of distinguished service with a military background, specializing in project management, supply chain operations, and logistics management. During his service, he held directorial roles at critical military and government institutions, overseeing the execution and operations of key strategic infrastructures projects and supply networks at national scale.",
+      "His international assignments portfolio includes a significant tenure in global operational role at United Nations. He also worked with the German Defence Forces in a multinational setup during his tenure as Brigadier. These assignments allowed him to work seamlessly across diverse international teams, gaining valuable exposure to global best practices and cross-cultural operational frameworks.",
+      "In the corporate sector, Brigadier Saeed served as Director at the Defence Housing Authority (DHA), Pakistan\u2019s largest and most prestigious urban development organization, where he led a portfolio of hospitality ventures and high-end amenity projects over multiple years. Presently he is Managing Director at FP Global (Pvt) Ltd.",
+    ],
+    highlights: [] as string[],
   },
 ];
 

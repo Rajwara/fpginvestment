@@ -3,7 +3,7 @@
  * switches to dark glass with light text, since it sits over the image rather
  * than over the page surface.
  */
-export const photoHeroRoutes = ["/", "/about"];
+export const photoHeroRoutes = ["/", "/about", "/team"];
 
 /** Static export adds a trailing slash, so compare on a normalised path. */
 export const isPhotoHeroRoute = (pathname: string) => {

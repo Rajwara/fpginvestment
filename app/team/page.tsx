@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { team } from "@/lib/site";
-import PageHero from "@/components/PageHero";
-import CTA from "@/components/CTA";
-import { Section, SectionHeading } from "@/components/Section";
+import Button from "@/components/Button";
+import Eyebrow from "@/components/Eyebrow";
+import TeamProfiles from "@/components/TeamProfiles";
+import QuerySection from "@/components/QuerySection";
 
 export const metadata: Metadata = {
   title: "Our Team",
@@ -13,41 +13,49 @@ export const metadata: Metadata = {
 export default function TeamPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Our team"
-        title="Operators first."
-        lede="Everyone who advises on an FP Global project has run one. That is the whole hiring policy."
-      />
-
-      <Section>
-        <SectionHeading
-          eyebrow="Leadership"
-          title="The people accountable for every project."
+      {/* Dark opener, so the header sits on it as light-on-dark glass */}
+      <section className="relative isolate overflow-hidden bg-black pt-36 pb-20 text-center lg:pt-44 lg:pb-24">
+        <div
+          aria-hidden="true"
+          className="hero-grid pointer-events-none absolute inset-0 opacity-40"
         />
-        <ul className="mt-14 grid gap-px overflow-hidden rounded-xl border border-fg-2/10 bg-fg-2/10 lg:grid-cols-3">
-          {team.map((person, i) => (
-            <li
-              key={person.name}
-              className="reveal bg-surface p-8 lg:p-10"
-              style={{ transitionDelay: `${i * 70}ms` }}
-            >
-              <span
-                aria-hidden="true"
-                className="flex h-16 w-16 items-center justify-center rounded-full border border-accent-fg/30 font-display text-xl text-accent-fg"
-              >
-                {person.initials}
-              </span>
-              <h3 className="mt-6 font-display text-2xl text-fg">
-                {person.name}
-              </h3>
-              <p className="mt-2 text-sm text-muted">{person.role}</p>
-              <p className="mt-4 text-sm text-subtle">{person.prior}</p>
-            </li>
-          ))}
-        </ul>
-      </Section>
+        <div className="relative mx-auto max-w-3xl px-6">
+          <div className="flex justify-center">
+            <Eyebrow tone="hero">Our Team</Eyebrow>
+          </div>
+          <h1 className="animate-rise mt-6 font-display text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.08] tracking-[-0.02em] text-white">
+            Guidance backed by{" "}
+            <span className="text-hero-accent">real people</span>
+          </h1>
+          <p
+            className="animate-rise mx-auto mt-5 max-w-xl leading-relaxed text-white/65"
+            style={{ animationDelay: "120ms" }}
+          >
+            Meet the people behind FP Global. Everyone who advises on a project
+            has run one.
+          </p>
+        </div>
+      </section>
 
-      <CTA />
+      <TeamProfiles />
+
+      {/* Closing band, as in the reference */}
+      <section className="bg-black">
+        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-16 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-20">
+          <div>
+            <p className="eyebrow text-white/50">Ready to work with us?</p>
+            <h2 className="mt-3 max-w-xl font-display text-[clamp(1.6rem,3vw,2.5rem)] leading-tight tracking-tight text-white">
+              Let&rsquo;s build something exceptional{" "}
+              <span className="text-hero-accent">together</span>.
+            </h2>
+          </div>
+          <Button href="/contact" size="lg" className="w-fit" arrow>
+            Contact Our Team
+          </Button>
+        </div>
+      </section>
+
+      <QuerySection />
     </>
   );
 }
