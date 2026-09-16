@@ -104,6 +104,17 @@ max-width, radius, padding and background together. Opening the mega menu or
 the mobile menu docks it too, so the panels always have full width to lay out
 in.
 
+## Office locations
+
+`/contact` renders `offices` from `lib/site.ts`. Entries with `status: "open"`
+get a full card; `status: "planned"` entries render as dashed empty slots that
+carry no city or address, so the page never announces an office that does not
+exist yet.
+
+To open a location: flip `status` to `"open"`, fill in `city`, `lines`,
+`phone` and `mapUrl`, and give it a real `tag`. To drop a slot, delete the
+entry — the grid and the "N open / N in planning" count both follow the data.
+
 ## Logo
 
 `public/assets/images/` holds both lockups, named for the background they sit

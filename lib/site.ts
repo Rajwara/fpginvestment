@@ -197,6 +197,44 @@ export const jobs = [
   { slug: "project-architect", title: "Project Architect", location: "Karachi, Pakistan", type: "Contract", team: "Design & Construction" },
 ];
 
+export type Office = {
+  id: string;
+  /** "open" renders a full card; "planned" renders an empty slot. */
+  status: "open" | "planned";
+  tag: string;
+  city: string;
+  lines: string[];
+  phone?: string;
+  email?: string;
+  mapUrl?: string;
+};
+
+/**
+ * Office locations shown on /contact.
+ *
+ * To open a new location: set `status` to "open", fill in `city`, `lines`,
+ * `phone` and `mapUrl`, and give it a real `tag`. To remove a slot entirely,
+ * delete the entry — the grid reflows on its own.
+ *
+ * Planned entries deliberately carry no city or address. They read as empty
+ * slots rather than announcing offices that do not exist yet.
+ */
+export const offices: Office[] = [
+  {
+    id: "lahore",
+    status: "open",
+    tag: "Headquarters",
+    city: "Lahore",
+    lines: [site.address.line1, "Lahore, Pakistan"],
+    phone: site.phone,
+    email: site.email,
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=DHA+Phase+6+Lahore+Pakistan",
+  },
+  { id: "slot-2", status: "planned", tag: "Coming Soon", city: "", lines: [] },
+  { id: "slot-3", status: "planned", tag: "Coming Soon", city: "", lines: [] },
+  { id: "slot-4", status: "planned", tag: "Coming Soon", city: "", lines: [] },
+];
+
 export const footerColumns = [
   {
     heading: "What We Do",

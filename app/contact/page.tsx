@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { site } from "@/lib/site";
+import { site, offices } from "@/lib/site";
 import ContactForm from "@/components/ContactForm";
 import ContactIcon from "@/components/ContactIcon";
 import Eyebrow from "@/components/Eyebrow";
@@ -31,32 +31,10 @@ const channels = [
   },
 ];
 
-const routes = [
-  {
-    featured: true,
-    tag: "Headquarters",
-    title: "FP Global",
-    lines: [site.address.line1, site.address.line2],
-    contact: site.phone,
-    contactHref: `tel:${site.phone.replace(/\s/g, "")}`,
-  },
-  {
-    tag: "Enquiries",
-    title: "New Projects",
-    lines: ["Development, management", "and partnership enquiries"],
-    contact: site.email,
-    contactHref: `mailto:${site.email}`,
-  },
-  {
-    tag: "Careers",
-    title: "Join the Team",
-    lines: ["Applications and", "recruitment questions"],
-    contact: site.email,
-    contactHref: `mailto:${site.email}`,
-  },
-];
-
 export default function ContactPage() {
+  const openOffices = offices.filter((o) => o.status === "open").length;
+  const plannedOffices = offices.length - openOffices;
+
   return (
     <>
       {/* Hero */}
@@ -192,58 +170,84 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Where to reach us */}
+      {/* Offices */}
       <section data-reveal className="mx-auto max-w-7xl px-6 pb-16 lg:px-10 lg:pb-24">
-        <h2 className="reveal font-display text-[clamp(1.75rem,3.5vw,2.5rem)] tracking-[-0.015em] text-fg">
-          Where to Reach Us
-        </h2>
-        <div className="mt-8 grid gap-6 lg:grid-cols-3">
-          {routes.map((r, i) => (
-            <div
-              key={r.title}
-              className={`reveal flex flex-col rounded-2xl border p-8 ${
-                r.featured
-                  ? "border-transparent bg-accent text-on-accent"
-                  : "border-fg-2/10 bg-surface-2"
-              }`}
-              style={{ transitionDelay: `${i * 70}ms` }}
-            >
-              <span
-                className={`eyebrow w-fit rounded-full border px-3 py-1.5 ${
-                  r.featured
-                    ? "border-on-accent/35 text-on-accent"
-                    : "border-fg-2/15 text-subtle"
-                }`}
-              >
-                {r.tag}
-              </span>
-              <h3
-                className={`mt-6 font-display text-2xl ${
-                  r.featured ? "text-on-accent" : "text-fg"
-                }`}
-              >
-                {r.title}
-              </h3>
+        <div className="reveal flex flex-wrap items-end justify-between gap-4">
+          <h2 className="font-display text-[clamp(1.75rem,3.5vw,2.5rem)] tracking-[-0.015em] text-fg">
+            Office Locations
+          </h2>
+          <p className="text-sm text-subtle">
+            {openOffices} open · {plannedOffices} in planning
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {offices.map((office, i) =>
+            office.status === "open" ? (
               <div
-                className={`mt-3 space-y-0.5 text-sm ${
-                  r.featured ? "text-on-accent/80" : "text-muted"
-                }`}
+                key={office.id}
+                className="reveal flex flex-col rounded-2xl bg-accent p-7 text-on-accent"
+                style={{ transitionDelay: `${i * 60}ms` }}
               >
-                {r.lines.map((l) => (
-                  <p key={l}>{l}</p>
-                ))}
+                <span className="eyebrow w-fit rounded-full border border-on-accent/35 px-3 py-1.5">
+                  {office.tag}
+                </span>
+                <h3 className="mt-6 font-display text-2xl">{office.city}</h3>
+                <div className="mt-3 space-y-0.5 text-sm text-on-accent/80">
+                  {office.lines.map((l) => (
+                    <p key={l}>{l}</p>
+                  ))}
+                </div>
+                {office.phone ? (
+                  <a
+                    href={`tel:${office.phone.replace(/\s/g, "")}`}
+                    className="mt-4 flex items-center gap-2.5 text-sm transition-opacity hover:opacity-80"
+                  >
+                    <ContactIcon name="phone" className="h-4 w-4" />
+                    {office.phone}
+                  </a>
+                ) : null}
+                {office.mapUrl ? (
+                  <a
+                    href={office.mapUrl}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="mt-auto inline-flex items-center gap-2 pt-8 text-sm transition-opacity hover:opacity-80"
+                  >
+                    Get direction
+                    <span
+                      aria-hidden="true"
+                      className="flex h-7 w-7 items-center justify-center rounded-full bg-on-accent/15"
+                    >
+                      ↗
+                    </span>
+                  </a>
+                ) : null}
               </div>
-              <a
-                href={r.contactHref}
-                className={`mt-8 inline-flex items-center gap-2 text-sm transition-opacity hover:opacity-80 ${
-                  r.featured ? "text-on-accent" : "text-accent-fg"
-                }`}
+            ) : (
+              <div
+                key={office.id}
+                className="reveal flex min-h-[15rem] flex-col rounded-2xl border border-dashed border-fg-2/25 p-7"
+                style={{ transitionDelay: `${i * 60}ms` }}
               >
-                {r.contact}
-                <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          ))}
+                <span className="eyebrow w-fit rounded-full border border-fg-2/20 px-3 py-1.5 text-subtle">
+                  {office.tag}
+                </span>
+                <h3 className="mt-6 font-display text-2xl text-fg-2/45">
+                  New Location
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-subtle">
+                  Reserved for an upcoming office. Details to follow.
+                </p>
+                <span
+                  aria-hidden="true"
+                  className="mt-auto flex h-7 w-7 items-center justify-center rounded-full border border-dashed border-fg-2/25 text-fg-2/40"
+                >
+                  +
+                </span>
+              </div>
+            )
+          )}
         </div>
       </section>
 
