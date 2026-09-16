@@ -82,17 +82,44 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
           ))}
         </ul>
 
-        {/* Partners strip */}
-        <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-fg-2/10 pt-6">
-          <span className="eyebrow text-subtle">Our Partners</span>
-          {partners.map((p) => (
-            <span
-              key={p.name}
-              className="font-display text-lg text-fg-2/55 transition-colors hover:text-fg-2/80"
-            >
-              {p.name}
-            </span>
-          ))}
+        {/* Partners strip — the same logo slider as the Our Mission band */}
+        <div className="mt-8 border-t border-fg-2/10 pt-6">
+          <p className="eyebrow text-subtle">Our Partners</p>
+          <p className="mt-2 text-sm text-muted">
+            Working alongside the brands and operators our owners already trust.
+          </p>
+
+          <div className="marquee mt-5 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+            <div className="flex w-max">
+              {[0, 1].map((copy) => (
+                <div
+                  key={copy}
+                  aria-hidden="true"
+                  className="marquee-track flex shrink-0 gap-3 pr-3"
+                >
+                  {[0, 1].map((set) =>
+                    partners.map((partner) => (
+                      <div
+                        key={`${copy}-${set}-${partner.name}`}
+                        className="flex h-16 w-32 shrink-0 items-center justify-center rounded-xl bg-white px-4 ring-1 ring-fg-2/10"
+                      >
+                        <Image
+                          src={partner.logo}
+                          alt=""
+                          width={160}
+                          height={72}
+                          className="h-8 w-full object-contain"
+                        />
+                      </div>
+                    ))
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          <p className="sr-only">
+            Partners: {partners.map((p) => p.name).join(", ")}.
+          </p>
         </div>
       </div>
 
