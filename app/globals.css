@@ -62,8 +62,16 @@
     color-scheme: light;
   }
 
+  /*
+    No scroll-behavior here on purpose. `smooth` on html applies to the
+    App Router's own scroll reset too, so clicking a link from halfway down a
+    long page left the viewport gliding for over a second — arriving on the
+    new page part-scrolled, past sections that reveal on scroll and so had not
+    revealed yet. That reads as a page whose content failed to load. The one
+    place the site wants a smooth in-page scroll is the back-to-top control,
+    which asks for it explicitly; see components/BackToTop.
+  */
   html {
-    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -97,7 +105,6 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
