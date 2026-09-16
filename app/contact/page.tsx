@@ -62,17 +62,17 @@ export default function ContactPage() {
 
       {/* Channel strip */}
       <section className="border-b border-fg-2/10 bg-surface-2">
-        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-12 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-12 lg:grid-cols-3 lg:px-10 lg:py-14">
           {channels.map((c) => {
             const body = (
               <>
                 <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 text-on-accent lg:h-[4.5rem] lg:w-[4.5rem]">
                   <ContactIcon name={c.icon} className="h-7 w-7 lg:h-8 lg:w-8" />
                 </span>
-                <span>
+                <span className="min-w-0">
                   <span className="block text-sm text-subtle">{c.label}</span>
                   {c.lines.map((l) => (
-                    <span key={l} className="block text-lg text-fg-2">
+                    <span key={l} className="block break-words text-lg text-fg-2">
                       {l}
                     </span>
                   ))}

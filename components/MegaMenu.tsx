@@ -40,15 +40,26 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
         <p className="mt-3 text-sm leading-relaxed text-muted">
           {megaFeature.body}
         </p>
-        <Button
-          href={megaFeature.href}
-          variant="secondary"
-          onClick={onNavigate}
-          className="mt-6 inline-flex"
-          arrow
-        >
-          {megaFeature.cta}
-        </Button>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Button
+            href={megaFeature.href}
+            variant="secondary"
+            onClick={onNavigate}
+            className="inline-flex"
+            arrow
+          >
+            {megaFeature.cta}
+          </Button>
+          <Button
+            href={megaFeature.secondaryHref}
+            variant="secondary"
+            onClick={onNavigate}
+            className="inline-flex"
+            arrow
+          >
+            {megaFeature.secondaryCta}
+          </Button>
+        </div>
       </div>
 
       {/* Middle — the six services, three per column */}
@@ -122,22 +133,35 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
       </div>
 
       {/* Right — contact panel */}
-      <div className="bg-surface-2 p-8 lg:p-10">
-        <p className="eyebrow text-subtle">Get In Touch</p>
+      <div className="relative isolate overflow-hidden p-8 lg:p-10">
+        {/* Photograph and scrim, clipped by the panel itself. */}
+        <Image
+          src="/assets/images/contact-lobby-web.webp"
+          alt=""
+          fill
+          sizes="(min-width: 1024px) 20rem, 100vw"
+          className="-z-20 object-cover"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0d0b14]/92 via-[#0d0b14]/85 to-accent/50"
+        />
+
+        <p className="eyebrow text-white/50">Get In Touch</p>
 
         <div className="mt-6 space-y-6">
           <div className="flex items-start gap-3.5">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-accent-fg/12 text-accent-fg">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-white/15 text-white">
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                 <path d="M4.5 5.5c0 7.5 6.5 14 14 14l2-3.5-4-2-2 2a14 14 0 0 1-6.5-6.5l2-2-2-4-3.5 2Z" />
               </svg>
             </span>
             <div>
-              <p className="text-sm text-fg">Talk To Us</p>
+              <p className="text-sm text-white">Talk To Us</p>
               <a
                 href={`tel:${site.phone.replace(/\s/g, "")}`}
                 onClick={onNavigate}
-                className="mt-1 block text-sm text-muted transition-colors hover:text-accent-fg"
+                className="mt-1 block text-sm text-white/70 transition-colors hover:text-white"
               >
                 {site.phone}
               </a>
@@ -145,18 +169,18 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
           </div>
 
           <div className="flex items-start gap-3.5">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-accent-fg/12 text-accent-fg">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-white/15 text-white">
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                 <rect x="3" y="5.5" width="18" height="13" rx="2" />
                 <path d="m3.5 7 8.5 6 8.5-6" />
               </svg>
             </span>
             <div className="min-w-0">
-              <p className="text-sm text-fg">Email Us</p>
+              <p className="text-sm text-white">Email Us</p>
               <a
                 href={`mailto:${site.email}`}
                 onClick={onNavigate}
-                className="mt-1 block truncate text-sm text-muted transition-colors hover:text-accent-fg"
+                className="mt-1 block truncate text-sm text-white/70 transition-colors hover:text-white"
               >
                 {site.email}
               </a>
@@ -164,21 +188,21 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
           </div>
 
           <div className="flex items-start gap-3.5">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-accent-fg/12 text-accent-fg">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-white/15 text-white">
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                 <path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z" />
                 <circle cx="12" cy="10" r="2.5" />
               </svg>
             </span>
             <div>
-              <p className="text-sm text-fg">Visit Us</p>
-              <p className="mt-1 text-sm text-muted">{site.address.line1}</p>
-              <p className="text-sm text-muted">{site.address.line2}</p>
+              <p className="text-sm text-white">Visit Us</p>
+              <p className="mt-1 text-sm text-white/70">{site.address.line1}</p>
+              <p className="text-sm text-white/70">{site.address.line2}</p>
             </div>
           </div>
         </div>
 
-        <p className="eyebrow mt-8 text-subtle">Follow Us</p>
+        <p className="eyebrow mt-8 text-white/50">Follow Us</p>
         <div className="mt-4 flex gap-2.5">
           {site.social.map((s) => (
             <a
@@ -187,14 +211,14 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
               target="_blank"
               rel="noreferrer noopener"
               aria-label={s.label}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-fg-2/15 text-fg-2 transition-colors hover:border-accent hover:bg-accent hover:text-on-accent"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 text-white/80 transition-colors hover:border-white hover:bg-white hover:text-accent"
             >
               <SocialIcon name={s.label} />
             </a>
           ))}
         </div>
 
-        <Button href="/contact" onClick={onNavigate} className="mt-8 flex w-full" arrow>
+        <Button href="/contact" variant="light" onClick={onNavigate} className="mt-8 flex w-full justify-center" arrow>
           Start a Conversation
         </Button>
       </div>

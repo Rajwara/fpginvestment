@@ -65,21 +65,35 @@ export default function MissionSection() {
           {/* Rotating seal */}
           <div
             aria-hidden="true"
-            className="absolute left-1/2 top-1/2 hidden h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-fg-2/10 bg-surface shadow-lg shadow-fg/10 lg:flex"
+            className="absolute left-1/2 top-1/2 hidden h-32 w-32 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-fg-2/10 bg-surface shadow-lg shadow-fg/10 lg:flex"
           >
             <svg viewBox="0 0 120 120" className="seal-spin absolute h-full w-full">
               <defs>
                 <path
                   id="seal-path"
-                  d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"
+                  d="M60,60 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"
                 />
               </defs>
-              {/* Kept short: the ~276-unit circumference only fits about 38
-                  characters at this size, and a longer string overlaps
-                  itself. This is 35. */}
-              <text className="fill-muted text-[10px] uppercase tracking-[0.18em]">
-                <textPath href="#seal-path" startOffset="2%">
-                  FP Global · M Group · Hospitality ·
+              {/*
+                Two runs anchored at the quarter and three-quarter points, so
+                the names sit exactly opposite each other however long each
+                one is. A single string would space them by character count
+                instead, which put the two names lopsided.
+              */}
+              <text className="fill-fg-2 text-[10px] font-semibold uppercase tracking-[0.1em]">
+                <textPath
+                  href="#seal-path"
+                  startOffset="25%"
+                  textAnchor="middle"
+                >
+                  FP Global Hospitality
+                </textPath>
+                <textPath
+                  href="#seal-path"
+                  startOffset="75%"
+                  textAnchor="middle"
+                >
+                  M Group
                 </textPath>
               </text>
             </svg>

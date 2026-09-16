@@ -5,7 +5,7 @@ import { services } from "@/lib/site";
 import Button from "./Button";
 
 const field =
-  "w-full rounded-xl border border-transparent bg-surface-2 px-5 py-4 text-fg placeholder:text-subtle transition-colors focus:border-accent-fg/50 focus:outline-none";
+  "w-full rounded-xl border border-white/20 bg-white/10 px-5 py-4 text-white placeholder:text-white/55 transition-colors focus:border-white/60 focus:bg-white/15 focus:outline-none";
 
 /** Placeholder doubles as the visible label, so the real one is screen-reader only. */
 function Field({
@@ -28,23 +28,23 @@ export default function QueryForm() {
 
   if (sent) {
     return (
-      <div role="status" className="mt-8 rounded-xl bg-surface-2 p-8 text-center">
+      <div role="status" className="mt-8 rounded-xl bg-white/10 p-8 text-center ring-1 ring-white/15">
         <span
           aria-hidden="true"
           className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 text-on-accent"
         >
           ✓
         </span>
-        <p className="mt-5 font-display text-xl text-fg">
+        <p className="mt-5 font-display text-xl text-white">
           Thank you — your request is with us.
         </p>
-        <p className="mt-2 text-sm text-muted">
+        <p className="mt-2 text-sm text-white/70">
           We will confirm your consultation within two business days.
         </p>
         <button
           type="button"
           onClick={() => setSent(false)}
-          className="mt-5 text-sm text-fg-2 underline decoration-accent-fg/40 underline-offset-4 transition-colors hover:text-accent-fg"
+          className="mt-5 text-sm text-white/80 underline decoration-white/40 underline-offset-4 transition-colors hover:text-white"
         >
           Send another request
         </button>
@@ -89,7 +89,7 @@ export default function QueryForm() {
             name="service"
             required
             defaultValue=""
-            className={`appearance-none bg-[length:0.7rem] bg-[right_1.25rem_center] bg-no-repeat pr-11 ${field} invalid:text-subtle`}
+            className={`appearance-none bg-[length:0.7rem] bg-[right_1.25rem_center] bg-no-repeat pr-11 ${field} invalid:text-white/55`}
             style={{
               backgroundImage:
                 "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%237c8089' stroke-width='1.5'/%3E%3C/svg%3E\")",

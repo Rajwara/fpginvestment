@@ -30,14 +30,21 @@ function LinkedInPill({
 
 function Portrait({ person, align }: { person: Person; align: "left" | "right" }) {
   return (
-    <div className="relative flex min-h-[22rem] items-center justify-center bg-accent lg:min-h-[40rem]">
+    /*
+      Below lg the column is full width, so a fixed height turned this into a
+      letterbox — at 768px it was 768x352 and object-cover took 54% off the
+      top and bottom, beheading the subject. An aspect ratio keeps the frame
+      portrait at any width; lg and up the height comes from the copy beside
+      it, which is always taller than square.
+    */
+    <div className="relative flex aspect-[4/5] items-center justify-center bg-accent sm:aspect-[4/3] lg:aspect-auto lg:min-h-[40rem]">
       {person.photo ? (
         <Image
           src={person.photo}
           alt=""
           fill
           sizes="(min-width: 1024px) 50vw, 100vw"
-          className="object-cover"
+          className="object-cover object-top"
         />
       ) : (
         <span

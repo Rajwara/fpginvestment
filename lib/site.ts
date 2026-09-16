@@ -72,7 +72,7 @@ export const services = [
   {
     id: "pre-opening",
     card: "/assets/images/home/service-pre-opening.webp",
-    image: "/assets/images/ProfessionalGuidanceimg-03.jpg",
+    image: "/assets/images/mega-feature-web.webp",
     name: "Pre-Opening",
     short: "Pre-Opening",
     icon: "key",
@@ -191,7 +191,6 @@ export const nav: NavItem[] = [
     href: "/hyatt-lahore",
     dropdown: [
       { label: "Hyatt Regency Lahore", href: "/hyatt-lahore" },
-      { label: "Premium & Luxury", href: "/premium-luxury" },
       { label: "Amenities", href: "/amenities" },
     ],
   },
@@ -361,11 +360,13 @@ export const luxuryPillars = [
 /** Left panel of the About Us mega menu. */
 export const megaFeature = {
   eyebrow: "Who We Are",
-  image: "/assets/images/ProfessionalGuidanceimg-03.jpg",
+  image: "/assets/images/mega-feature-web.webp",
   title: "A hospitality company built by operators.",
   body: "Two decades of developing, opening and running hotels across Pakistan and the region.",
   href: "/about",
   cta: "About FP Global",
+  secondaryHref: "/premium-luxury",
+  secondaryCta: "Premium & Luxury",
 };
 
 export const partners = [
@@ -875,7 +876,6 @@ export const footerColumns = [
       { label: "News & Insights", href: "/blogs" },
       { label: "FAQs", href: "/faq" },
       { label: "Hyatt Lahore", href: "/hyatt-lahore" },
-      { label: "Contact Us", href: "/contact" },
     ],
   },
 ];
