@@ -312,3 +312,21 @@
 @media (prefers-reduced-motion: reduce) {
   .seal-spin { animation: none; }
 }
+
+/* Partner marquee: two identical tracks, the pair translated by half its width. */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}

@@ -184,6 +184,24 @@ export const missionCollage = [
   },
 ];
 
+/** Counters in the "Our Mission" band. */
+export const missionStats = [
+  { to: 20, suffix: "+", label: "Years in hospitality" },
+  { to: 1400, suffix: "+", label: "Keys developed" },
+  { to: 6, suffix: "", label: "Service lines" },
+  { to: 94, suffix: "%", label: "Guest satisfaction" },
+];
+
+/**
+ * Inline images set into the mission statement. Small circular crops, so any
+ * photograph with a clear subject works.
+ */
+export const missionInline = [
+  "/assets/images/ProfessionalGuidanceimg-03.jpg",
+  "/assets/images/MissionAndGoalsimg-04.jpg",
+  "/assets/images/ProfessionalGuidanceimg-05.jpg",
+];
+
 export const principles = [
   {
     number: "01",
