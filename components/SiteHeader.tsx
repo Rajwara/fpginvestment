@@ -86,10 +86,15 @@ export default function SiteHeader() {
   // Floats as an inset glass pill at the top of the page and docks to a
   // full-width bar once the page scrolls. Opening a menu docks it too, so the
   // panels always have the full width to lay out in.
-  const docked = scrolled || mobileOpen || megaOpen;
+  // Geometry only. Opening the mega panel must NOT dock the bar: the nav would
+  // shift out from under the pointer, firing mouseleave, which closes the panel,
+  // which undocks the bar and puts the nav back under the pointer — a loop.
+  const docked = scrolled || mobileOpen;
+  // The panel below is opaque, so the bar takes the solid surface with it.
+  const solid = docked || megaOpen;
   // Over a photo hero the bar is glass on the image, so it goes dark with
-  // light text; once docked it returns to the themed surface.
-  const overHero = (isPhotoHeroRoute(pathname) || darkHeroFlag) && !docked;
+  // light text; once solid it returns to the themed surface.
+  const overHero = (isPhotoHeroRoute(pathname) || darkHeroFlag) && !solid;
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -104,7 +109,9 @@ export default function SiteHeader() {
               ? "max-w-none rounded-none border-b border-fg-2/10 bg-surface/85 shadow-none"
               : overHero
                 ? "max-w-7xl rounded-2xl border border-white/20 bg-black/25 shadow-lg shadow-black/20"
-                : "max-w-7xl rounded-2xl border border-fg-2/10 bg-surface/70 shadow-lg shadow-fg/5"
+                : `max-w-7xl rounded-2xl border border-fg-2/10 shadow-lg shadow-fg/5 ${
+                    megaOpen ? "bg-surface" : "bg-surface/70"
+                  }`
           }`}
         >
           <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-6 px-6 lg:px-10">
@@ -129,7 +136,7 @@ export default function SiteHeader() {
                       aria-haspopup="true"
                       onClick={() => setMegaOpen((v) => !v)}
                       onFocus={openMega}
-                      className={`group relative flex items-center gap-1.5 text-sm transition-colors ${
+                      className={`group relative flex items-center gap-1.5 text-base font-medium transition-colors ${
                         isActive(item.href) || megaOpen
                           ? overHero
                             ? "text-hero-accent"
@@ -155,7 +162,7 @@ export default function SiteHeader() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`group relative flex items-center gap-2 text-sm transition-colors ${
+                    className={`group relative flex items-center gap-2 text-base font-medium transition-colors ${
                       isActive(item.href)
                         ? overHero
                           ? "text-hero-accent"

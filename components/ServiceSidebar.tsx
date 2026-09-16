@@ -111,11 +111,7 @@ export default function ServiceSidebar({ currentId }: { currentId: string }) {
 
       <div className="mt-6 rounded-2xl bg-surface-2 p-6">
         <h2 className="mb-4 font-display text-xl text-fg">Say, Hello!</h2>
-        <MiniForm />
-        <p className="mt-4 text-[0.6875rem] leading-relaxed text-subtle">
-          Demo form — handled in the browser, not sent anywhere yet.
-        </p>
-      </div>
+        <MiniForm />      </div>
     </aside>
   );
 }

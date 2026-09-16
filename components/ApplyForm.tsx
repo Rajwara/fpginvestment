@@ -178,11 +178,6 @@ export default function ApplyForm({ role }: { role: string }) {
           Submit
         </Button>
       </div>
-
-      <p className="text-xs leading-relaxed text-subtle">
-        Demo form — submissions are handled in the browser and are not sent
-        anywhere yet.
-      </p>
     </form>
   );
 }

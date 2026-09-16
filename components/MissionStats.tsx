@@ -82,7 +82,8 @@ export default function MissionStats() {
           {missionStats.map((stat, i) => (
             <div
               key={stat.label}
-              className={`flex aspect-square w-[10.5rem] flex-col items-center justify-center rounded-full bg-surface px-6 text-center shadow-xl shadow-fg/5 ring-1 ring-fg-2/5 sm:w-[12.5rem] lg:w-[14.5rem] ${
+              tabIndex={0}
+              className={`trace-ring flex aspect-square w-[10.5rem] flex-col items-center justify-center rounded-full bg-surface px-6 text-center shadow-xl shadow-fg/5 ring-1 ring-fg-2/5 transition-transform duration-300 ease-[var(--ease-out-expo)] [--trace-radius:9999px] [--trace:var(--color-accent)] hover:-translate-y-1.5 focus-visible:-translate-y-1.5 focus-visible:outline-none sm:w-[12.5rem] lg:w-[14.5rem] ${
                 i > 0 ? "sm:-ml-6 lg:-ml-8" : ""
               }`}
               style={{ zIndex: missionStats.length - i }}

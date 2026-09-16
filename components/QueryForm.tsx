@@ -123,11 +123,6 @@ export default function QueryForm() {
       <Button type="submit" size="lg" arrow className="mt-2">
         Submit
       </Button>
-
-      <p className="text-xs leading-relaxed text-subtle">
-        Demo form — submissions are handled in the browser and are not sent
-        anywhere yet.
-      </p>
     </form>
   );
 }

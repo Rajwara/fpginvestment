@@ -179,12 +179,27 @@
     box-shadow 0.3s ease;
 }
 
-.trace-btn::before {
+/*
+ * The travelling ring. `.trace-ring` is the effect on its own, for elements
+ * that bring their own box styling (the stat circles); `.trace-btn` adds the
+ * button's fill, lift and label colour on top.
+ *   --trace-inset   0 draws the ring inside the element, for a filled button
+ *                   whose white ring would otherwise vanish against the page
+ *   --trace-radius  match the element's own corner
+ *   --trace-width   ring thickness; an inside ring needs a touch more
+ */
+.trace-ring {
+  position: relative;
+  isolation: isolate;
+}
+
+.trace-btn::before,
+.trace-ring::before {
   content: "";
   position: absolute;
-  inset: -2px;
-  padding: 2px;
-  border-radius: 1rem;
+  inset: var(--trace-inset, -2px);
+  padding: var(--trace-width, 2px);
+  border-radius: var(--trace-radius, 1rem);
   background: conic-gradient(
     from var(--angle),
     transparent 0%,
@@ -213,7 +228,9 @@
 }
 
 .trace-btn:hover::before,
-.trace-btn:focus-visible::before {
+.trace-btn:focus-visible::before,
+.trace-ring:hover::before,
+.trace-ring:focus-within::before {
   opacity: 1;
   animation: trace-border 1.15s linear infinite;
 }

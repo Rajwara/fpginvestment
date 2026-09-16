@@ -102,10 +102,6 @@ export default function SidebarForm() {
       <Button type="submit" className="!px-5 !py-3" arrow>
         Send Message
       </Button>
-
-      <p className="text-[0.6875rem] leading-relaxed text-subtle">
-        Demo form — handled in the browser, not sent anywhere yet.
-      </p>
     </form>
   );
 }

@@ -10,8 +10,10 @@ type Size = "md" | "lg";
  * brand purple on an outline sitting on the page surface.
  */
 const variants: Record<Variant, string> = {
+  // Filled and sitting on the page surface, so the ring runs INSIDE the button:
+  // a white ring just outside it is invisible against a white section.
   primary:
-    "bg-gradient-to-r from-accent to-accent-2 text-on-accent [--trace:var(--color-on-accent)]",
+    "bg-gradient-to-r from-accent to-accent-2 text-on-accent [--trace:var(--color-on-accent)] [--trace-inset:0px] [--trace-radius:0.875rem] [--trace-width:3px]",
   secondary:
     "trace-btn--outline border border-fg-2/20 bg-surface text-fg-2 [--trace:var(--color-accent)]",
   onAccent:

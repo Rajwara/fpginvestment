@@ -145,11 +145,6 @@ export default function ContactForm() {
       >
         Send enquiry
       </Button>
-
-      <p className="text-xs leading-relaxed text-subtle">
-        Demo form — submissions are handled in the browser and are not sent
-        anywhere. Wire this to your CRM or an API route before going live.
-      </p>
     </form>
   );
 }
