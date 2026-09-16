@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { insights } from "@/lib/site";
@@ -48,7 +49,27 @@ export default async function BlogPage({
         {formatDate(post.date)} · {post.readTime} read
       </p>
 
-      <div className="mt-12 space-y-6 border-t border-fg-2/10 pt-12 text-lg leading-relaxed text-muted">
+      {/*
+        Pulled wider than the 3xl prose column so the banner reads as artwork
+        rather than an inline figure, and clamped back at small widths.
+      */}
+      <div
+        data-reveal
+        className="mt-12 lg:-mx-16 xl:-mx-24"
+      >
+        <div className="reveal-wipe relative aspect-[16/9] overflow-hidden rounded-2xl bg-surface-2 sm:aspect-[3/1]">
+          <Image
+            src={post.banner}
+            alt=""
+            fill
+            sizes="(min-width: 1280px) 56rem, (min-width: 1024px) 50rem, 100vw"
+            className="object-cover"
+            preload
+          />
+        </div>
+      </div>
+
+      <div className="mt-12 space-y-6 text-lg leading-relaxed text-muted">
         <p className="text-xl text-fg-2">{post.excerpt}</p>
         <p>
           This is placeholder body copy standing in for the full article. The
