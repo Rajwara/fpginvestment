@@ -36,6 +36,15 @@ export const metadata: Metadata = {
     type: "website",
   },
   robots: { index: true, follow: true },
+  // The supplied mark is WebP, which the app/icon file convention does not
+  // accept, so both it and an SVG fallback are declared here.
+  icons: {
+    icon: [
+      { url: "/assets/images/fp-global-favicon.webp", type: "image/webp" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/assets/images/fp-global-favicon.webp",
+  },
 };
 
 export default function RootLayout({
