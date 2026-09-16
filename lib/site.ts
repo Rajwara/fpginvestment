@@ -769,10 +769,12 @@ export const faqs = [
   },
 ];
 
+/** Open roles. `image` fills the 16:9 frame at the top of the job page. */
 export const jobs = [
   {
     slug: "financial-accountant",
     title: "Financial Accountant",
+    image: "/assets/images/careers/03-financial-accountant-1920x1080.webp",
     location: "Lahore, Pakistan",
     type: "Full time",
     team: "Finance",
@@ -799,6 +801,7 @@ export const jobs = [
   {
     slug: "acquisition-advisor",
     title: "Acquisition Advisor",
+    image: "/assets/images/careers/02-acquisition-advisor-1920x1080.webp",
     location: "Lahore, Pakistan",
     type: "Full time",
     team: "Development",

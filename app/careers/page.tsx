@@ -23,7 +23,7 @@ export default function CareersPage() {
           </>
         }
         lede="We hire people who have stood behind a desk at 2am and still cared about the guest in front of them. If that is you, we would like to talk."
-        image="/assets/images/fpginvestment_banner_img1.jpg"
+        image="/assets/images/careers/01-careers-page-hero-2400x960.webp"
       />
 
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">

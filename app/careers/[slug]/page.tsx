@@ -41,7 +41,7 @@ export default async function JobPage({
       <PhotoPageHero
         title={job.title}
         crumb={job.title}
-        image="/assets/images/ProfessionalGuidanceimg-03.jpg"
+        image="/assets/images/careers/01-careers-page-hero-2400x960.webp"
       />
 
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
@@ -52,7 +52,7 @@ export default async function JobPage({
           <article className="reveal">
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-surface-2">
               <Image
-                src="/assets/images/ProfessionalGuidanceimg-05.jpg"
+                src={job.image}
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 60vw, 100vw"
