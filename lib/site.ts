@@ -254,22 +254,22 @@ export const missionTabs = [
 export const missionCollage = [
   {
     id: "c1",
-    src: "/assets/images/MissionAndGoals-img1.jpg",
-    alt: "Reviewing performance figures",
-  },
-  {
-    id: "c2",
-    src: "/assets/images/MissionAndGoals-img2.jpg",
+    src: "/assets/images/home/who-we-are-1.webp",
     alt: "A member of the FP Global team",
   },
   {
+    id: "c2",
+    src: "/assets/images/home/who-we-are-2.webp",
+    alt: "Reviewing plans and performance figures",
+  },
+  {
     id: "c3",
-    src: "/assets/images/MissionAndGoals-03.jpg",
+    src: "/assets/images/home/who-we-are-3.webp",
     alt: "Working on an owner report",
   },
   {
     id: "c4",
-    src: "/assets/images/MissionAndGoalsimg-04.jpg",
+    src: "/assets/images/home/who-we-are-4.webp",
     alt: "Closing a partnership agreement",
   },
 ];

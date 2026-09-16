@@ -84,7 +84,7 @@ export default function MissionSection() {
             </svg>
             <span className="relative h-14 w-14 overflow-hidden rounded-full">
               <Image
-                src="/assets/images/MissionAndGoals-img2.jpg"
+                src="/assets/images/home/who-we-are-1.webp"
                 alt=""
                 fill
                 sizes="56px"
