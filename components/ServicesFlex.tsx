@@ -88,7 +88,7 @@ export default function ServicesFlex() {
                       className="object-cover"
                     />
                   </div>
-                  <p className="mt-6 max-w-lg text-sm leading-relaxed text-on-accent/85">
+                  <p className="mt-6 mb-5 max-w-lg text-sm leading-relaxed text-on-accent/85">
                     {service.summary}
                   </p>
                   <Link
