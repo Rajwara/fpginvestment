@@ -10,8 +10,24 @@ in a path has to be percent-encoded everywhere it is referenced
 
 ## Where this is used
 
-Nothing yet — the folder was created ahead of the images. Tell me which
-section these belong to and I will wire them up.
+`banner-web.webp` is the page banner on /premium-luxury, and also the banner
+on /concept-and-design. Leave it in place.
+
+The six quality sections below it are waiting on a new set. Each one wants a
+single landscape image; drop them in here named after the quality and I will
+wire them up:
+
+| Section | File to upload |
+| --- | --- |
+| 01 Exclusive | `exclusive.jpg` |
+| 02 World-Class | `world-class.jpg` |
+| 03 Opulent | `opulent.jpg` |
+| 04 Refined | `refined.jpg` |
+| 05 Scenic | `scenic.jpg` |
+| 06 Intricate artistry | `intricate-artistry.jpg` |
+
+Until they land the page draws a brand tile in each slot, so it still reads
+end to end.
 
 ## Format
 

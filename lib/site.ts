@@ -317,43 +317,50 @@ export const amenitySpaces = [
   { title: "Outdoor Park", image: "/assets/images/amenities/outdoor-park-web.webp" },
 ];
 
-/** The Premium & Luxury division's six qualities, in page order. */
+/**
+ * The Premium & Luxury division's six qualities, in page order.
+ *
+ * The artwork came off while a new set is prepared, so `image` is empty and
+ * the page draws a brand tile in its place. Put the path back on each entry
+ * as the files land in public/assets/images/premium-luxury/ — the page picks
+ * them up with no other change.
+ */
 export const luxuryPillars = [
   {
     id: "exclusive",
     title: "Exclusive",
     body: "Captures the feeling of privileged access — where guests enjoy personalised service, private spaces, and a sense of belonging to an elite experience not available to everyone.",
-    image: "/assets/images/premium-luxury/exclusive-web.webp",
+    image: "",
   },
   {
     id: "world-class",
     title: "World-Class",
     body: "Positions the brand on a global stage, offering exceptional standards, internationally recognised hospitality, and memorable experiences that rival the best in the world.",
-    image: "/assets/images/premium-luxury/world-class-web.webp",
+    image: "",
   },
   {
     id: "opulent",
     title: "Opulent",
     body: "Reflects lavish interiors, rich textures, and extravagant surroundings that offer guests a sense of indulgence and splendour the moment they arrive.",
-    image: "/assets/images/premium-luxury/opulent-web.webp",
+    image: "",
   },
   {
     id: "refined",
     title: "Refined",
     body: "Speaks to the elegance in every detail — from the curated decor to the service style — showcasing taste, sophistication and timeless quality throughout the guest journey.",
-    image: "/assets/images/premium-luxury/refined-web.webp",
+    image: "",
   },
   {
     id: "scenic",
     title: "Scenic",
     body: "Step into a home surrounded by lush green lawns that enhance both beauty and serenity.",
-    image: "/assets/images/premium-luxury/scenic-web.webp",
+    image: "",
   },
   {
     id: "intricate-artistry",
     title: "Intricate artistry",
     body: "Every corner of our space is a testament to intricate artistry, where timeless design meets masterful craftsmanship.",
-    image: "/assets/images/premium-luxury/intricate-artistry-web.webp",
+    image: "",
   },
 ];
 
@@ -852,7 +859,7 @@ export const conceptBoards = [
     eyebrow: "Architectural mood",
     title: "The shape of the thing, before the foundation.",
     body: "Massing, light and the way a building meets its street — settled in study form while every option is still open and nothing has been poured.",
-    image: "/assets/images/premium-luxury/exclusive-web.webp",
+    image: "/assets/images/amenities/elegant-lobby-web.webp",
   },
   {
     id: "interior-textures",

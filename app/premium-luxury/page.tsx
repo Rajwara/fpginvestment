@@ -47,13 +47,23 @@ export default function PremiumLuxuryPage() {
                       : "bg-surface-2 lg:order-1"
                   }`}
                 >
-                  <Image
-                    src={pillar.image}
-                    alt=""
-                    fill
-                    sizes="(min-width: 1024px) 45vw, 100vw"
-                    className="object-cover"
-                  />
+                  {pillar.image ? (
+                    <Image
+                      src={pillar.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 45vw, 100vw"
+                      className="object-cover"
+                    />
+                  ) : (
+                    /* Brand tile until the photograph lands — give the entry
+                       an `image` in luxuryPillars to swap it for one. */
+                    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-accent-deep via-accent to-accent-2 text-on-accent">
+                      <svg viewBox="0 0 36 36" className="h-16 w-16 opacity-40" aria-hidden="true">
+                        <path d="M6 32a12 12 0 0 1 24 0Z" className="fill-on-accent" />
+                      </svg>
+                    </div>
+                  )}
                 </div>
 
                 <div
