@@ -135,6 +135,18 @@ To open a location: flip `status` to `"open"`, fill in `city`, `lines`,
 `phone` and `mapUrl`, and give it a real `tag`. To drop a slot, delete the
 entry — the grid and the "N open / N in planning" count both follow the data.
 
+## Services section
+
+`components/ServicesFlex.tsx` replaces the old services grid with the
+expanding panel banner. On large screens the panels share a row and animate
+their `flex-grow`, so opening one pushes the rest into narrow bars with
+vertical titles. Below `lg` the same panels become a stacked accordion, whose
+height animates from `grid-rows-[0fr]` to `[1fr]` so the content decides its
+own height.
+
+Each service carries an `image` in `lib/site.ts`. Those are currently reused
+from the banner and mission sets — swap them for service photography.
+
 ## Mission section
 
 `components/MissionSection.tsx` sits under the banner: a staggered collage on

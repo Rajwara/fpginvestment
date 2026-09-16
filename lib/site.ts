@@ -20,6 +20,8 @@ export const site = {
 export const services = [
   {
     id: "business-development",
+    /* Interim image — swap for service photography. */
+    image: "/assets/images/MissionAndGoals-img1.jpg",
     name: "Business Development & Advisory",
     short: "Business Development",
     icon: "compass",
@@ -29,6 +31,8 @@ export const services = [
   },
   {
     id: "design-construction",
+    /* Interim image — swap for service photography. */
+    image: "/assets/images/fpginvestment_banner_img1.jpg",
     name: "Design & Construction",
     short: "Design & Construction",
     icon: "blueprint",
@@ -38,6 +42,8 @@ export const services = [
   },
   {
     id: "pre-opening",
+    /* Interim image — swap for service photography. */
+    image: "/assets/images/MissionAndGoals-03.jpg",
     name: "Pre-Opening",
     short: "Pre-Opening",
     icon: "key",
@@ -47,6 +53,8 @@ export const services = [
   },
   {
     id: "takeover-turnaround",
+    /* Interim image — swap for service photography. */
+    image: "/assets/images/MissionAndGoalsimg-04.jpg",
     name: "Takeover & Turnaround",
     short: "Takeover & Turnaround",
     icon: "refresh",
@@ -56,6 +64,8 @@ export const services = [
   },
   {
     id: "sales-marketing",
+    /* Interim image — swap for service photography. */
+    image: "/assets/images/MissionAndGoals-img2.jpg",
     name: "Sales & Marketing",
     short: "Sales & Marketing",
     icon: "megaphone",
@@ -65,6 +75,8 @@ export const services = [
   },
   {
     id: "hotel-management",
+    /* Interim image — swap for service photography. */
+    image: "/assets/images/fpginvestment_banner_img2.jpg",
     name: "Hotel Management & Operations",
     short: "Hotel Management",
     icon: "concierge",
