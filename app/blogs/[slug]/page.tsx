@@ -1,9 +1,12 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { insights } from "@/lib/site";
 import { formatDate } from "@/lib/format";
+import ArticleBody from "@/components/ArticleBody";
 import Button from "@/components/Button";
 
 type Params = { slug: string };
@@ -31,6 +34,13 @@ export default async function BlogPage({
   const { slug } = await params;
   const post = insights.find((p) => p.slug === slug);
   if (!post) notFound();
+
+  /* Read at build time — every one of these pages is prerendered through
+     generateStaticParams, so nothing here runs on a request. */
+  const markdown = await readFile(
+    path.join(process.cwd(), "content", "blogs", `${post.slug}.md`),
+    "utf8"
+  );
 
   return (
     <article className="mx-auto max-w-3xl px-6 pt-36 pb-24 lg:pt-44 lg:pb-36">
@@ -69,19 +79,11 @@ export default async function BlogPage({
         </div>
       </div>
 
-      <div className="mt-12 space-y-6 text-lg leading-relaxed text-muted">
-        <p className="text-xl text-fg-2">{post.excerpt}</p>
-        <p>
-          This is placeholder body copy standing in for the full article. The
-          published version works through the project detail, the decisions
-          taken and what we would do differently next time.
-        </p>
-        <p>
-          Everything we publish comes out of a live project. That is the only
-          filter — if we have not done it ourselves on an operating asset, we
-          do not write about it.
-        </p>
-      </div>
+      <p className="mt-12 border-l-2 border-accent/40 pl-6 text-xl leading-relaxed text-fg-2">
+        {post.excerpt}
+      </p>
+
+      <ArticleBody markdown={markdown} />
 
       <div className="mt-16 rounded-xl border border-fg-2/10 bg-surface-2 p-8 lg:p-10">
         <h2 className="font-display text-2xl text-fg">

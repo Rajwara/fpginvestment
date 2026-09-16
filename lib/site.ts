@@ -28,8 +28,15 @@ export const services = [
     icon: "compass",
     summary:
       "Feasibility, market positioning, concept development and brand strategy designed to establish a commercially sound foundation before development begins.",
-    points: ["Market and feasibility studies", "Brand selection and negotiation", "Return modelling and capital planning"],
-    gallery: ["/assets/images/ProfessionalGuidanceimg-02.jpg", "/assets/images/ProfessionalGuidanceimg-03.jpg"],
+    points: [
+      "Market and feasibility studies",
+      "Brand selection and negotiation",
+      "Return modelling and capital planning",
+    ],
+    gallery: [
+      "/assets/images/ProfessionalGuidanceimg-02.jpg",
+      "/assets/images/ProfessionalGuidanceimg-03.jpg",
+    ],
     wide: "/assets/images/MissionAndGoals-03.jpg",
     sections: [
       {
@@ -53,8 +60,15 @@ export const services = [
     icon: "blueprint",
     summary:
       "Hospitality-focused design and technical oversight from concept through completion, ensuring brand standards, operational functionality, quality, programme and cost remain aligned.",
-    points: ["Concept and technical design review", "Contractor procurement", "Programme and cost control"],
-    gallery: ["/assets/images/ProfessionalGuidanceimg-03.jpg", "/assets/images/ProfessionalGuidanceimg-04.jpg"],
+    points: [
+      "Concept and technical design review",
+      "Contractor procurement",
+      "Programme and cost control",
+    ],
+    gallery: [
+      "/assets/images/ProfessionalGuidanceimg-03.jpg",
+      "/assets/images/ProfessionalGuidanceimg-04.jpg",
+    ],
     wide: "/assets/images/MissionAndGoalsimg-04.jpg",
     sections: [
       {
@@ -78,8 +92,15 @@ export const services = [
     icon: "key",
     summary:
       "Comprehensive pre-opening management covering recruitment, training, systems, procurement, operational readiness and launch planning for a confident transition into operations.",
-    points: ["Critical path and budget", "Recruitment and training", "Systems, FF&E and OS&E"],
-    gallery: ["/assets/images/ProfessionalGuidanceimg-04.jpg", "/assets/images/ProfessionalGuidanceimg-05.jpg"],
+    points: [
+      "Critical path and budget",
+      "Recruitment and training",
+      "Systems, FF&E and OS&E",
+    ],
+    gallery: [
+      "/assets/images/ProfessionalGuidanceimg-04.jpg",
+      "/assets/images/ProfessionalGuidanceimg-05.jpg",
+    ],
     wide: "/assets/images/MissionAndGoals-img2.jpg",
     sections: [
       {
@@ -103,8 +124,15 @@ export const services = [
     icon: "refresh",
     summary:
       "Structured intervention for underperforming hospitality assets, focused on operational stability, cost control, service improvement, revenue performance and long-term profitability.",
-    points: ["Rapid operational diagnostic", "Cost and revenue restructuring", "Repositioning and rebranding"],
-    gallery: ["/assets/images/ProfessionalGuidanceimg-05.jpg", "/assets/images/ProfessionalGuidanceimg-1.jpg"],
+    points: [
+      "Rapid operational diagnostic",
+      "Cost and revenue restructuring",
+      "Repositioning and rebranding",
+    ],
+    gallery: [
+      "/assets/images/ProfessionalGuidanceimg-05.jpg",
+      "/assets/images/ProfessionalGuidanceimg-1.jpg",
+    ],
     wide: "/assets/images/MissionAndGoals-03.jpg",
     sections: [
       {
@@ -128,8 +156,15 @@ export const services = [
     icon: "megaphone",
     summary:
       "Integrated commercial strategy across positioning, sales, distribution, revenue management and marketing to strengthen demand, optimise rate and grow market share.",
-    points: ["Revenue management and pricing", "Channel and distribution strategy", "Brand, digital and PR"],
-    gallery: ["/assets/images/ProfessionalGuidanceimg-1.jpg", "/assets/images/ProfessionalGuidanceimg-02.jpg"],
+    points: [
+      "Revenue management and pricing",
+      "Channel and distribution strategy",
+      "Brand, digital and PR",
+    ],
+    gallery: [
+      "/assets/images/ProfessionalGuidanceimg-1.jpg",
+      "/assets/images/ProfessionalGuidanceimg-02.jpg",
+    ],
     wide: "/assets/images/home-hayyat-regency.jpg",
     sections: [
       {
@@ -153,8 +188,15 @@ export const services = [
     icon: "concierge",
     summary:
       "End-to-end hotel management focused on service excellence, operational discipline, commercial performance, brand compliance and transparent owner reporting.",
-    points: ["Full operating management", "Brand standards compliance", "Transparent owner reporting"],
-    gallery: ["/assets/images/ProfessionalGuidanceimg-02.jpg", "/assets/images/ProfessionalGuidanceimg-04.jpg"],
+    points: [
+      "Full operating management",
+      "Brand standards compliance",
+      "Transparent owner reporting",
+    ],
+    gallery: [
+      "/assets/images/ProfessionalGuidanceimg-02.jpg",
+      "/assets/images/ProfessionalGuidanceimg-04.jpg",
+    ],
     wide: "/assets/images/fpginvestment_banner_img1.jpg",
     sections: [
       {
@@ -305,8 +347,14 @@ export const amenityPanels = [
 
 /** The spaces themselves, shown as a gallery. */
 export const amenitySpaces = [
-  { title: "Elegant Lobby", image: "/assets/images/amenities/elegant-lobby-web.webp" },
-  { title: "Coffee Lounge", image: "/assets/images/amenities/coffee-lounge-web.webp" },
+  {
+    title: "Elegant Lobby",
+    image: "/assets/images/amenities/elegant-lobby-web.webp",
+  },
+  {
+    title: "Coffee Lounge",
+    image: "/assets/images/amenities/coffee-lounge-web.webp",
+  },
   { title: "Majlis", image: "/assets/images/amenities/majlis-web.webp" },
   { title: "Clubhouse", image: "/assets/images/amenities/clubhouse-web.webp" },
   { title: "Offices", image: "/assets/images/amenities/offices-web.webp" },
@@ -314,7 +362,10 @@ export const amenitySpaces = [
   { title: "Spa", image: "/assets/images/amenities/spa-web.webp" },
   { title: "Sauna", image: "/assets/images/amenities/sauna-web.webp" },
   { title: "Landscape", image: "/assets/images/amenities/landscape-web.webp" },
-  { title: "Outdoor Park", image: "/assets/images/amenities/outdoor-park-web.webp" },
+  {
+    title: "Outdoor Park",
+    image: "/assets/images/amenities/outdoor-park-web.webp",
+  },
 ];
 
 /**
@@ -506,61 +557,65 @@ export const principles = [
   },
 ];
 
+/**
+ * News & Insights. Each post's body is the Markdown in content/blogs/,
+ * named after the slug — read at build time and rendered by ArticleBody.
+ */
 export const insights = [
   {
     slug: "pre-opening-critical-path",
     category: "Operations",
     date: "2026-08-14",
-    readTime: "6 min",
+    readTime: "7–8 min",
     image: "/assets/images/blogs/pre-opening-critical-path-web.webp",
     banner: "/assets/images/blogs/pre-opening-critical-path-wide-web.webp",
     title: "The pre-opening decisions that quietly cost you year one",
     excerpt:
-      "Most opening-year underperformance is set in motion eighteen months earlier. A look at the five critical-path items owners consistently compress — and what each one costs later.",
+      "A hotel rarely has an opening-day problem. It has a twelve-months-before-opening problem that only becomes visible on opening day. Five pre-opening decisions deserve more time than owners usually give them.",
   },
   {
     slug: "designing-for-operators",
     category: "Development",
     date: "2026-06-02",
-    readTime: "9 min",
+    readTime: "8–9 min",
     image: "/assets/images/blogs/designing-for-operators-web.webp",
     banner: "/assets/images/blogs/designing-for-operators-wide-web.webp",
     title: "Why back-of-house should be designed first",
     excerpt:
-      "Service corridors, loading and staff flow shape labour cost for the life of the building. They are also the first things value-engineered out of a drawing set.",
+      "Guests may never see the loading dock, service lifts or housekeeping stores. They feel their design every day. Back-of-house planning determines how far staff walk, how quickly rooms turn and how reliably service reaches the guest.",
   },
   {
     slug: "turnaround-first-90-days",
     category: "Turnaround",
     date: "2026-03-21",
-    readTime: "11 min",
+    readTime: "9–10 min",
     image: "/assets/images/blogs/turnaround-first-90-days-web.webp",
     banner: "/assets/images/blogs/turnaround-first-90-days-wide-web.webp",
     title: "The first ninety days of a hotel turnaround",
     excerpt:
-      "What we look at, in what order, when taking over an underperforming asset — and why revenue management usually comes before any renovation conversation.",
+      "An underperforming hotel does not automatically need a renovation. The first ninety days should establish where value is leaking, stabilise the operation and separate problems that need management action from those that genuinely need capital.",
   },
   {
     slug: "brand-or-independent",
     category: "Development",
     date: "2025-11-06",
-    readTime: "8 min",
+    readTime: "8–9 min",
     image: "/assets/images/blogs/brand-or-independent-web.webp",
     banner: "/assets/images/blogs/brand-or-independent-wide-web.webp",
     title: "When a brand is worth its fee, and when it is not",
     excerpt:
-      "A flag brings distribution, standards and a lender's confidence. It also takes a share of the top line for the life of the agreement. The arithmetic is not the same in every market.",
+      "A hotel flag can bring distribution, standards, systems, loyalty and credibility. It can also add recurring fees and capital obligations. The right decision is not branded versus independent; it is whether the brand creates more value than it consumes for this asset, in this market.",
   },
   {
     slug: "reading-a-hotel-pl",
     category: "Asset Management",
     date: "2026-01-28",
-    readTime: "7 min",
+    readTime: "8–9 min",
     image: "/assets/images/blogs/reading-a-hotel-pl-web.webp",
     banner: "/assets/images/blogs/reading-a-hotel-pl-wide-web.webp",
     title: "Reading a hotel P&L the way an operator reads it",
     excerpt:
-      "GOP tells you what happened. Flow-through, payroll per occupied room and out-of-order nights tell you why — and which of them you can still change this quarter.",
+      "GOP tells you where the month ended. An operator wants to know how it got there. Read a hotel P&L through revenue quality, departmental margins, labour productivity, flow-through and the operational facts sitting behind each variance.",
   },
 ];
 
@@ -583,7 +638,8 @@ export const milestones = [
   {
     year: "2021",
     label: "Hotel Management",
-    event: "Hotel management division launched under international brand standards.",
+    event:
+      "Hotel management division launched under international brand standards.",
   },
   {
     year: "2024",
@@ -792,7 +848,8 @@ export const offices: Office[] = [
     lines: [site.address.line1, "Lahore, Pakistan"],
     phone: site.phone,
     email: site.email,
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=DHA+Phase+6+Lahore+Pakistan",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=DHA+Phase+6+Lahore+Pakistan",
   },
 ];
 
@@ -898,7 +955,8 @@ export const conceptGallery: ConceptShot[] = [
   {
     id: "water-garden",
     title: "The water garden",
-    caption: "Still water cut through planting, lit low so the line of it reads after dark.",
+    caption:
+      "Still water cut through planting, lit low so the line of it reads after dark.",
     image: "/assets/images/concept-and-design/water-garden-web.webp",
     width: 636,
     height: 401,
@@ -906,7 +964,8 @@ export const conceptGallery: ConceptShot[] = [
   {
     id: "sculpture-court",
     title: "Sculpture court",
-    caption: "Polished stone against river pebble — a material study resolved at full size.",
+    caption:
+      "Polished stone against river pebble — a material study resolved at full size.",
     image: "/assets/images/concept-and-design/sculpture-court-web.webp",
     width: 308,
     height: 400,
@@ -914,7 +973,8 @@ export const conceptGallery: ConceptShot[] = [
   {
     id: "garden-walk",
     title: "The evening walk",
-    caption: "Circulation treated as an experience: warm light at ankle height, planting at the shoulder.",
+    caption:
+      "Circulation treated as an experience: warm light at ankle height, planting at the shoulder.",
     image: "/assets/images/concept-and-design/garden-walk-web.webp",
     width: 308,
     height: 400,
@@ -924,7 +984,8 @@ export const conceptGallery: ConceptShot[] = [
   {
     id: "spa-pool",
     title: "The spa pool",
-    caption: "A backlit screen and candlelight, sized for quiet rather than for capacity.",
+    caption:
+      "A backlit screen and candlelight, sized for quiet rather than for capacity.",
     image: "/assets/images/concept-and-design/spa-pool-web.webp",
     width: 308,
     height: 401,
@@ -932,7 +993,8 @@ export const conceptGallery: ConceptShot[] = [
   {
     id: "water-canal",
     title: "The canal",
-    caption: "The landscape spine, curved so no stretch of it is visible from end to end.",
+    caption:
+      "The landscape spine, curved so no stretch of it is visible from end to end.",
     image: "/assets/images/concept-and-design/water-canal-web.webp",
     width: 308,
     height: 401,
@@ -940,7 +1002,8 @@ export const conceptGallery: ConceptShot[] = [
   {
     id: "spa-retreat",
     title: "Inside the retreat",
-    caption: "Timber, dark stone and a single wash of light — the palette that carries the wellness floor.",
+    caption:
+      "Timber, dark stone and a single wash of light — the palette that carries the wellness floor.",
     image: "/assets/images/concept-and-design/spa-retreat-web.webp",
     width: 636,
     height: 401,
@@ -950,7 +1013,8 @@ export const conceptGallery: ConceptShot[] = [
   {
     id: "colonnade",
     title: "The colonnade",
-    caption: "A fluted screen along the water, drawn to catch the last of the light.",
+    caption:
+      "A fluted screen along the water, drawn to catch the last of the light.",
     image: "/assets/images/concept-and-design/colonnade-web.webp",
     width: 636,
     height: 400,
@@ -958,7 +1022,8 @@ export const conceptGallery: ConceptShot[] = [
   {
     id: "atrium-lobby",
     title: "The atrium",
-    caption: "Arrival under full-height glass, with planting brought inside to soften the volume.",
+    caption:
+      "Arrival under full-height glass, with planting brought inside to soften the volume.",
     image: "/assets/images/concept-and-design/atrium-lobby-web.webp",
     width: 308,
     height: 401,
@@ -966,7 +1031,8 @@ export const conceptGallery: ConceptShot[] = [
   {
     id: "celebration",
     title: "A day worth marking",
-    caption: "The lifestyle the plan is written for — the occasions a property is remembered by.",
+    caption:
+      "The lifestyle the plan is written for — the occasions a property is remembered by.",
     image: "/assets/images/concept-and-design/celebration-web.webp",
     width: 308,
     height: 401,
@@ -976,7 +1042,8 @@ export const conceptGallery: ConceptShot[] = [
   {
     id: "courts",
     title: "The courts",
-    caption: "Active living kept in view of the residences rather than pushed to the boundary.",
+    caption:
+      "Active living kept in view of the residences rather than pushed to the boundary.",
     image: "/assets/images/concept-and-design/courts-web.webp",
     width: 308,
     height: 401,
@@ -984,7 +1051,8 @@ export const conceptGallery: ConceptShot[] = [
   {
     id: "lounge",
     title: "The lounge",
-    caption: "Softer seating, marble tops and greenery at the window — the everyday end of the brief.",
+    caption:
+      "Softer seating, marble tops and greenery at the window — the everyday end of the brief.",
     image: "/assets/images/concept-and-design/lounge-web.webp",
     width: 308,
     height: 401,
@@ -992,7 +1060,8 @@ export const conceptGallery: ConceptShot[] = [
   {
     id: "water-terraces",
     title: "The water terraces",
-    caption: "The same garden read close: stepped black pools, a lit lip on every edge.",
+    caption:
+      "The same garden read close: stepped black pools, a lit lip on every edge.",
     image: "/assets/images/concept-and-design/water-terraces-web.webp",
     width: 380,
     height: 240,
