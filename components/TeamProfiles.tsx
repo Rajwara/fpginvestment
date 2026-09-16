@@ -30,19 +30,19 @@ function LinkedInPill({
 
 function Portrait({ person, align }: { person: Person; align: "left" | "right" }) {
   return (
-    <div className="relative min-h-[22rem] bg-fg-2/[0.07] lg:min-h-[40rem]">
+    <div className="relative flex min-h-[22rem] items-center justify-center bg-accent lg:min-h-[40rem]">
       {person.photo ? (
         <Image
           src={person.photo}
           alt=""
-          fill
-          sizes="(min-width: 1024px) 50vw, 100vw"
-          className="object-cover"
+          width={385}
+          height={365}
+          className="h-auto w-full max-w-[26rem]"
         />
       ) : (
         <span
           aria-hidden="true"
-          className="absolute inset-0 flex items-center justify-center font-display text-7xl text-accent-fg/30"
+          className="font-display text-7xl text-on-accent/35"
         >
           {person.initials}
         </span>

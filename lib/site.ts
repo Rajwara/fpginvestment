@@ -26,8 +26,22 @@ export const services = [
     short: "Business Development",
     icon: "compass",
     summary:
-      "Feasibility, positioning and brand selection — the work that decides whether a project is worth building before a single foundation is poured.",
+      "Feasibility, positioning and brand selection \u2014 the work that decides whether a project is worth building before a single foundation is poured.",
     points: ["Market and feasibility studies", "Brand selection and negotiation", "Return modelling and capital planning"],
+    gallery: ["/assets/images/ProfessionalGuidanceimg-02.jpg", "/assets/images/ProfessionalGuidanceimg-03.jpg"],
+    wide: "/assets/images/MissionAndGoals-03.jpg",
+    sections: [
+      {
+        title: "Where a project is actually decided",
+        body: "Most of the money in a hotel is committed long before anyone breaks ground. Site, brand, key count and room mix set the ceiling on what the asset can ever earn, and each one is difficult to unwind later. We work those decisions through with an operator\u2019s eye: what the market will pay, what it costs to serve, and what is left once the brand has taken its share.",
+      },
+      {
+        title: "What you get out of it",
+        body: "A feasibility case you can put in front of a lender or a board \u2014 demand and competitor analysis, a positioning recommendation, an operating pro forma, and a view on which brand, if any, is worth its fee. Where the answer is that the project does not work in its current shape, we would rather say so early than be proved right on opening day.",
+      },
+    ],
+    closing:
+      "Engagements usually start with a short scoping study and carry on into design and pre-opening, where it helps to have the same team holding the original assumptions.",
   },
   {
     id: "design-construction",
@@ -38,6 +52,20 @@ export const services = [
     summary:
       "Technical services from concept design through handover, holding the line on brand standards, programme and cost at every stage.",
     points: ["Concept and technical design review", "Contractor procurement", "Programme and cost control"],
+    gallery: ["/assets/images/ProfessionalGuidanceimg-03.jpg", "/assets/images/ProfessionalGuidanceimg-04.jpg"],
+    wide: "/assets/images/MissionAndGoalsimg-04.jpg",
+    sections: [
+      {
+        title: "Design an operator can run",
+        body: "Service corridors, back-of-house circulation, loading and storage decide labour cost for the life of the building \u2014 and they are the first things value-engineered out of a drawing set. We review the design as the people who will have to staff it, not only as the people who have to build it.",
+      },
+      {
+        title: "Holding programme and cost",
+        body: "We sit on the owner\u2019s side of the table through procurement and construction: reviewing tenders, tracking the programme against the opening date, and flagging the variations that quietly move both. Brand standards get checked against the drawings before they are checked on site, where fixing them costs real money.",
+      },
+    ],
+    closing:
+      "We take the technical services mandate end to end, or come in for design review alone where a consultant and contractor team is already appointed.",
   },
   {
     id: "pre-opening",
@@ -46,8 +74,22 @@ export const services = [
     short: "Pre-Opening",
     icon: "key",
     summary:
-      "The eighteen months that determine a hotel's first year. Recruitment, systems, supply chain and the critical path to a confident opening day.",
+      "The eighteen months that determine a hotel\u2019s first year. Recruitment, systems, supply chain and the critical path to a confident opening day.",
     points: ["Critical path and budget", "Recruitment and training", "Systems, FF&E and OS&E"],
+    gallery: ["/assets/images/ProfessionalGuidanceimg-04.jpg", "/assets/images/ProfessionalGuidanceimg-05.jpg"],
+    wide: "/assets/images/MissionAndGoals-img2.jpg",
+    sections: [
+      {
+        title: "The critical path runs backwards",
+        body: "A confident opening day is planned back from the date, not forward from today. Recruitment, licensing, systems, supply chain and training each carry their own lead time, and the ones that get compressed are almost always the ones that surface again in the first year\u2019s guest scores.",
+      },
+      {
+        title: "People, systems and supply",
+        body: "We build the org chart and the hiring plan, run the recruitment, and train to the brand\u2019s standards. In parallel we specify and procure FF&E and OS&E, stand up PMS, POS and the back office, and contract the supply chain before the rooms are ready \u2014 so the hotel opens operating rather than rehearsing.",
+      },
+    ],
+    closing:
+      "Mandates typically begin twelve to eighteen months out from the target opening and run through to a stabilised first quarter.",
   },
   {
     id: "takeover-turnaround",
@@ -56,8 +98,22 @@ export const services = [
     short: "Takeover & Turnaround",
     icon: "refresh",
     summary:
-      "Assets that underperform rarely lack potential — they lack operating discipline. We take over, stabilise and rebuild the P&L.",
+      "Assets that underperform rarely lack potential \u2014 they lack operating discipline. We take over, stabilise and rebuild the P&L.",
     points: ["Rapid operational diagnostic", "Cost and revenue restructuring", "Repositioning and rebranding"],
+    gallery: ["/assets/images/ProfessionalGuidanceimg-05.jpg", "/assets/images/ProfessionalGuidanceimg-1.jpg"],
+    wide: "/assets/images/MissionAndGoals-03.jpg",
+    sections: [
+      {
+        title: "Diagnose before you spend",
+        body: "An underperforming asset rarely needs a renovation first. It needs someone to work out whether the problem is rate, mix, cost, service, or all four \u2014 and in what order. The first thing we do is read the P&L and the market against each other.",
+      },
+      {
+        title: "Stabilise, then rebuild",
+        body: "The early weeks are about stopping the leaks: payroll per occupied room, out-of-order inventory, channel cost, and the contracts nobody has renegotiated in years. Repositioning, refurbishment or a change of brand come afterwards, once the operating base is sound and there is something worth investing behind.",
+      },
+    ],
+    closing:
+      "We take over management outright, or work alongside an incumbent team through the stabilisation period.",
   },
   {
     id: "sales-marketing",
@@ -68,6 +124,20 @@ export const services = [
     summary:
       "Commercial strategy that fills rooms at the right rate: segmentation, channel mix, revenue management and a brand people actually remember.",
     points: ["Revenue management and pricing", "Channel and distribution strategy", "Brand, digital and PR"],
+    gallery: ["/assets/images/ProfessionalGuidanceimg-1.jpg", "/assets/images/ProfessionalGuidanceimg-02.jpg"],
+    wide: "/assets/images/home-hayyat-regency.jpg",
+    sections: [
+      {
+        title: "Rate is a decision, not a result",
+        body: "Filling rooms is straightforward; filling them at the right rate is the job. We start with segmentation and the true cost of each channel, then set a pricing and distribution strategy the commercial team can actually run day to day rather than admire in a deck.",
+      },
+      {
+        title: "A brand people remember",
+        body: "Digital presence, content, PR and partnerships built around what the property genuinely is, rather than the category it happens to sit in. The measure we work to is repeat business and direct share, not impressions.",
+      },
+    ],
+    closing:
+      "Available as a standalone commercial mandate, or as part of a full management agreement.",
   },
   {
     id: "hotel-management",
@@ -78,6 +148,20 @@ export const services = [
     summary:
       "Full operating management under international brand standards, with owner reporting that tells you what is actually happening in your asset.",
     points: ["Full operating management", "Brand standards compliance", "Transparent owner reporting"],
+    gallery: ["/assets/images/ProfessionalGuidanceimg-02.jpg", "/assets/images/ProfessionalGuidanceimg-04.jpg"],
+    wide: "/assets/images/fpginvestment_banner_img1.jpg",
+    sections: [
+      {
+        title: "Operating the asset, not just staffing it",
+        body: "Full management under international brand standards: the operating team, the procedures, the controls and the audits behind them. The day to day runs to a standard, and the standard is checked rather than assumed.",
+      },
+      {
+        title: "Reporting an owner can use",
+        body: "Monthly reporting that says what actually happened in your asset \u2014 flow-through, payroll per occupied room, segment performance and the variances that matter \u2014 with commentary that explains them rather than restating them.",
+      },
+    ],
+    closing:
+      "Management agreements are structured around the asset and the owner\u2019s horizon. We are equally comfortable operating under a brand or independently.",
   },
 ];
 
@@ -312,7 +396,7 @@ export const team = [
     initials: "PS",
     tagline: "Entrepreneurial vision. Lasting presence.",
     /** Portraits and personal profile links to follow. */
-    photo: "",
+    photo: "/assets/images/about_Pervez%20Iqbal.webp",
     linkedin: "",
     bio: [
       "Pervaiz Iqbal Shahid journey to become the Chairman initiated in November 2013, having entrepreneurship skills and utmost dedication, it was a challenging task to take the first step and mold the company into a functional organization. He always carried a vision to shine in Dubai\u2019s vibrant real estate sector, worked tirelessly and consistently over the years to grow, strengthen and make his company\u2019s presence noticeable in Dubai\u2019s flamboyant real estate market.",
@@ -326,7 +410,7 @@ export const team = [
     role: "Managing Partner",
     initials: "AY",
     tagline: "Three decades of management. Global alliances.",
-    photo: "",
+    photo: "/assets/images/about_Abid%20Yousaf.webp",
     linkedin: "",
     bio: [
       "Abid Yousaf carries over three decades of experience in Management covering areas of corporate strategy formulation, financial management, projects feasibility study, budgeting and business development, as well as product design, distribution, public relations, and human resources. Throughout his career, he developed businesses, grown market share, and improved operations. His key accomplishments include:",
@@ -347,7 +431,7 @@ export const team = [
     role: "Managing Director",
     initials: "SA",
     tagline: "Four decades of command. Delivery at scale.",
-    photo: "",
+    photo: "/assets/images/about_Saeed%20Ahmed.webp",
     linkedin: "",
     bio: [
       "Brigadier Saeed Ahmed (Retd), SI (M) brings over four decades of distinguished service with a military background, specializing in project management, supply chain operations, and logistics management. During his service, he held directorial roles at critical military and government institutions, overseeing the execution and operations of key strategic infrastructures projects and supply networks at national scale.",
@@ -378,6 +462,18 @@ export const faqs = [
   {
     q: "Do you take over hotels that are already operating?",
     a: "Yes — takeover and turnaround is one of our six service lines. We can assume management of an operating asset with a structured transition plan.",
+  },
+  {
+    q: "Can you take one stage rather than the whole project?",
+    a: "Yes. The six service lines are engaged together or one at a time. Plenty of owners bring us in for pre-opening alone, or for a commercial mandate on an asset that is already trading.",
+  },
+  {
+    q: "How are your fees structured?",
+    a: "Advisory work is scoped and priced per stage. Management agreements are a base fee on revenue plus an incentive fee tied to profit, so what we earn moves with what the asset earns.",
+  },
+  {
+    q: "Which markets do you work in?",
+    a: "Lahore and Pakistan are our base, and the team\u2019s experience runs across the MENA region. We look at projects elsewhere where the brief fits what we actually do.",
   },
 ];
 
@@ -438,6 +534,7 @@ export const footerColumns = [
       { label: "Our Team", href: "/team" },
       { label: "Careers", href: "/careers" },
       { label: "News & Insights", href: "/blogs" },
+      { label: "FAQs", href: "/faq" },
       { label: "Hyatt Lahore", href: "/hyatt-lahore" },
       { label: "Contact Us", href: "/contact" },
     ],

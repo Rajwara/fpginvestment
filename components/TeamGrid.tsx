@@ -29,7 +29,7 @@ export default function TeamGrid() {
               className="reveal group overflow-hidden rounded-2xl bg-surface shadow-lg shadow-fg/5 ring-1 ring-fg-2/5"
               style={{ transitionDelay: `${i * 70}ms` }}
             >
-              <div className="relative aspect-[600/570] overflow-hidden bg-fg-2/[0.07]">
+              <div className="relative aspect-[385/365] overflow-hidden bg-accent">
                 {person.photo ? (
                   <Image
                     src={person.photo}
@@ -41,7 +41,7 @@ export default function TeamGrid() {
                 ) : (
                   <span
                     aria-hidden="true"
-                    className="absolute inset-0 flex items-center justify-center font-display text-5xl text-accent-fg/35"
+                    className="absolute inset-0 flex items-center justify-center font-display text-5xl text-on-accent/40"
                   >
                     {person.initials}
                   </span>

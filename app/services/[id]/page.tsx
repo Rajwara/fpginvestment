@@ -66,6 +66,30 @@ export default async function ServicePage({
             </p>
 
             <h3 className="mt-12 font-display text-2xl leading-tight text-fg">
+              {service.sections[0].title}
+            </h3>
+            <p className="mt-4 leading-relaxed text-muted">
+              {service.sections[0].body}
+            </p>
+
+            <div className="mt-10 grid gap-5 sm:grid-cols-2">
+              {service.gallery.map((src) => (
+                <div
+                  key={src}
+                  className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-surface-2"
+                >
+                  <Image
+                    src={src}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 30vw, 45vw"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+
+            <h3 className="mt-12 font-display text-2xl leading-tight text-fg">
               What this covers
             </h3>
             <p className="mt-3 leading-relaxed text-muted">
@@ -85,13 +109,31 @@ export default async function ServicePage({
             </ul>
 
             <h3 className="mt-12 font-display text-2xl leading-tight text-fg">
+              {service.sections[1].title}
+            </h3>
+            <p className="mt-4 leading-relaxed text-muted">
+              {service.sections[1].body}
+            </p>
+
+            <div className="relative mt-10 aspect-[16/9] overflow-hidden rounded-2xl bg-surface-2">
+              <Image
+                src={service.wide}
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 60vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+
+            <h3 className="mt-12 font-display text-2xl leading-tight text-fg">
               How we work on it
             </h3>
-            <p className="mt-3 leading-relaxed text-muted">
+            <p className="mt-4 leading-relaxed text-muted">
               One accountable team from first study to daily operations. We take
               the whole line or a single stage of it, and either way the people
               advising on your project have run one themselves.
             </p>
+            <p className="mt-4 leading-relaxed text-muted">{service.closing}</p>
           </article>
 
           <ServiceSidebar currentId={service.id} />
