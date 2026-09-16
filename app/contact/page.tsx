@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { site, offices } from "@/lib/site";
 import ContactForm from "@/components/ContactForm";
 import ContactIcon from "@/components/ContactIcon";
@@ -32,8 +33,7 @@ const channels = [
 ];
 
 export default function ContactPage() {
-  const openOffices = offices.filter((o) => o.status === "open").length;
-  const plannedOffices = offices.length - openOffices;
+  const headOffice = offices.find((o) => o.status === "open") ?? offices[0];
 
   return (
     <>
@@ -114,41 +114,18 @@ export default function ContactPage() {
           </div>
 
           <div className="relative min-h-[22rem] bg-surface lg:min-h-0">
-            {/* Placeholder scene — swap for a photograph of the office or a property. */}
-            <svg
-              viewBox="0 0 600 700"
-              preserveAspectRatio="xMidYMid slice"
-              className="h-full w-full"
-              role="img"
-              aria-label="FP Global office"
-            >
-              <defs>
-                <linearGradient id="ct-bg" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="var(--color-accent)" stopOpacity="0.24" />
-                  <stop offset="100%" stopColor="var(--color-accent)" stopOpacity="0.06" />
-                </linearGradient>
-              </defs>
-              <rect width="600" height="700" fill="url(#ct-bg)" />
-              <g fill="var(--color-fg)" opacity="0.08">
-                <rect x="60" y="250" width="110" height="450" />
-                <rect x="200" y="140" width="150" height="560" />
-                <rect x="380" y="320" width="90" height="380" />
-                <rect x="500" y="210" width="70" height="490" />
-              </g>
-              <g fill="var(--color-accent)" opacity="0.5">
-                {Array.from({ length: 9 }).map((_, row) =>
-                  Array.from({ length: 5 }).map((__, col) => (
-                    <rect
-                      key={`${row}-${col}`}
-                      x={216 + col * 26}
-                      y={166 + row * 56}
-                      width="13"
-                      height="22"
-                    />
-                  ))
-                )}
-              </g>
-            </svg>
+            <Image
+              src="/assets/images/contact-lobby-web.webp"
+              alt="The reception desk in the Hyatt Regency Lahore lobby"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
+            {/* Keeps the call-out card below legible over a bright photograph. */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/45 to-transparent"
+            />
 
             <div className="absolute inset-x-6 bottom-6 flex items-center gap-4 rounded-xl border border-fg-2/10 bg-surface/90 p-4 backdrop-blur-sm lg:inset-x-8 lg:bottom-8">
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 text-on-accent">
@@ -170,84 +147,93 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Offices */}
+      {/* Where to find us */}
       <section data-reveal className="mx-auto max-w-7xl px-6 pb-16 lg:px-10 lg:pb-24">
         <div className="reveal flex flex-wrap items-end justify-between gap-4">
           <h2 className="font-display text-[clamp(1.75rem,3.5vw,2.5rem)] tracking-[-0.015em] text-fg">
-            Office Locations
+            Where to Find Us
           </h2>
           <p className="text-sm text-subtle">
-            {openOffices} open · {plannedOffices} in planning
+            {headOffice.tag} · {headOffice.city}
           </p>
         </div>
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {offices.map((office, i) =>
-            office.status === "open" ? (
-              <div
-                key={office.id}
-                className="reveal flex flex-col rounded-2xl bg-accent p-7 text-on-accent"
-                style={{ transitionDelay: `${i * 60}ms` }}
-              >
-                <span className="eyebrow w-fit rounded-full border border-on-accent/35 px-3 py-1.5">
-                  {office.tag}
+        <div className="reveal mt-8 overflow-hidden rounded-2xl border border-fg-2/10 bg-surface-2">
+          <div className="grid lg:grid-cols-[1fr_1.75fr]">
+            {/* Address panel */}
+            <div className="flex flex-col justify-center gap-6 p-8 lg:p-10">
+              <div>
+                <span className="eyebrow w-fit rounded-full bg-accent px-3 py-1.5 text-on-accent">
+                  {headOffice.tag}
                 </span>
-                <h3 className="mt-6 font-display text-2xl">{office.city}</h3>
-                <div className="mt-3 space-y-0.5 text-sm text-on-accent/80">
-                  {office.lines.map((l) => (
+                <h3 className="mt-5 font-display text-2xl text-fg">
+                  {headOffice.city}
+                </h3>
+                <div className="mt-3 space-y-0.5 text-sm leading-relaxed text-muted">
+                  {headOffice.lines.map((l) => (
                     <p key={l}>{l}</p>
                   ))}
                 </div>
-                {office.phone ? (
+              </div>
+
+              <div className="space-y-3">
+                {headOffice.phone ? (
                   <a
-                    href={`tel:${office.phone.replace(/\s/g, "")}`}
-                    className="mt-4 flex items-center gap-2.5 text-sm transition-opacity hover:opacity-80"
+                    href={`tel:${headOffice.phone.replace(/\s/g, "")}`}
+                    className="flex items-center gap-2.5 text-sm text-fg-2 transition-colors hover:text-accent-fg"
                   >
-                    <ContactIcon name="phone" className="h-4 w-4" />
-                    {office.phone}
+                    <ContactIcon name="phone" className="h-4 w-4 text-accent-fg" />
+                    {headOffice.phone}
                   </a>
                 ) : null}
-                {office.mapUrl ? (
+                {headOffice.email ? (
                   <a
-                    href={office.mapUrl}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="mt-auto inline-flex items-center gap-2 pt-8 text-sm transition-opacity hover:opacity-80"
+                    href={`mailto:${headOffice.email}`}
+                    className="flex items-center gap-2.5 text-sm text-fg-2 transition-colors hover:text-accent-fg"
                   >
-                    Get direction
-                    <span
-                      aria-hidden="true"
-                      className="flex h-7 w-7 items-center justify-center rounded-full bg-on-accent/15"
-                    >
-                      ↗
-                    </span>
+                    <ContactIcon name="mail" className="h-4 w-4 text-accent-fg" />
+                    {headOffice.email}
                   </a>
                 ) : null}
               </div>
-            ) : (
-              <div
-                key={office.id}
-                className="reveal flex min-h-[15rem] flex-col rounded-2xl border border-dashed border-fg-2/25 p-7"
-                style={{ transitionDelay: `${i * 60}ms` }}
-              >
-                <span className="eyebrow w-fit rounded-full border border-fg-2/20 px-3 py-1.5 text-subtle">
-                  {office.tag}
-                </span>
-                <h3 className="mt-6 font-display text-2xl text-fg-2/45">
-                  New Location
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-subtle">
-                  Reserved for an upcoming office. Details to follow.
-                </p>
-                <span
-                  aria-hidden="true"
-                  className="mt-auto flex h-7 w-7 items-center justify-center rounded-full border border-dashed border-fg-2/25 text-fg-2/40"
+
+              {headOffice.mapUrl ? (
+                <Button
+                  href={headOffice.mapUrl}
+                  variant="secondary"
+                  className="w-fit"
+                  arrow
                 >
-                  +
+                  Get Directions
+                </Button>
+              ) : null}
+            </div>
+
+            {/* Map. The embed endpoint needs no API key, and `loading="lazy"`
+                keeps the third-party frame off the critical path. */}
+            <div className="relative min-h-[20rem] border-t border-fg-2/10 bg-surface lg:min-h-[26rem] lg:border-l lg:border-t-0">
+              {/* Shows through while the third-party frame is still loading,
+                  so the panel is never an empty grey rectangle. */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-accent/5 text-center"
+              >
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-on-accent">
+                  <ContactIcon name="pin" className="h-5 w-5" />
                 </span>
+                <p className="text-sm text-subtle">
+                  {headOffice.lines.join(", ")}
+                </p>
               </div>
-            )
-          )}
+              <iframe
+                title={`Map of the FP Global office in ${headOffice.city}`}
+                src="https://www.google.com/maps?q=DHA%20Phase%206%2C%20Lahore%2C%20Pakistan&z=14&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 h-full w-full border-0"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -255,23 +241,15 @@ export default function ContactPage() {
       <section data-reveal className="mx-auto max-w-7xl px-6 pb-20 lg:px-10 lg:pb-28">
         <div className="reveal grid gap-6 lg:grid-cols-[1.6fr_1fr]">
           <div className="min-h-[18rem] overflow-hidden rounded-2xl bg-surface-2 lg:min-h-[26rem]">
-            {/* Placeholder scene — swap for a photograph of the team at work. */}
-            <svg
-              viewBox="0 0 600 400"
-              preserveAspectRatio="xMidYMid slice"
-              className="h-full w-full"
-              role="img"
-              aria-label="Meeting at FP Global"
-            >
-              <rect width="600" height="400" fill="var(--color-surface-2)" />
-              <g fill="var(--color-accent)" opacity="0.18">
-                <circle cx="210" cy="150" r="52" />
-                <path d="M120 400c0-56 40-96 90-96s90 40 90 96Z" />
-                <circle cx="390" cy="165" r="44" />
-                <path d="M312 400c0-48 35-82 78-82s78 34 78 82Z" />
-              </g>
-              <rect y="300" width="600" height="100" fill="var(--color-accent)" opacity="0.1" />
-            </svg>
+            <div className="relative h-full w-full">
+              <Image
+                src="/assets/images/contact-office-web.webp"
+                alt="An FP Global meeting room"
+                fill
+                sizes="(min-width: 1024px) 62vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
 
           <div className="flex flex-col justify-between gap-10 rounded-2xl bg-gradient-to-br from-accent to-accent-2 p-8 text-on-accent lg:p-10">

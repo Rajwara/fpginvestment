@@ -40,19 +40,15 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
         <p className="mt-3 text-sm leading-relaxed text-muted">
           {megaFeature.body}
         </p>
-        <Link
+        <Button
           href={megaFeature.href}
+          variant="secondary"
           onClick={onNavigate}
-          className="group mt-5 inline-flex items-center gap-2 text-sm text-fg-2 transition-colors hover:text-accent-fg"
+          className="mt-6 inline-flex"
+          arrow
         >
           {megaFeature.cta}
-          <span
-            aria-hidden="true"
-            className="transition-transform duration-300 group-hover:translate-x-1"
-          >
-            →
-          </span>
-        </Link>
+        </Button>
       </div>
 
       {/* Middle — the six services, three per column */}
@@ -198,7 +194,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
           ))}
         </div>
 
-        <Button href="/contact" className="mt-8 flex w-full" arrow>
+        <Button href="/contact" onClick={onNavigate} className="mt-8 flex w-full" arrow>
           Start a Conversation
         </Button>
       </div>

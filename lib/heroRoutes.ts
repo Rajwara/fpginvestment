@@ -13,6 +13,7 @@ export const photoHeroRoutes = [
   "/blogs",
   "/hyatt-lahore",
   "/premium-luxury",
+  "/amenities",
 ];
 
 /** Section roots whose children all use a dark hero. */

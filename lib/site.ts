@@ -192,8 +192,73 @@ export const nav: NavItem[] = [
     dropdown: [
       { label: "Hyatt Regency Lahore", href: "/hyatt-lahore" },
       { label: "Premium & Luxury", href: "/premium-luxury" },
+      { label: "Amenities", href: "/amenities" },
     ],
   },
+];
+
+/** Club amenities, as listed in the brochure. */
+export const amenities = [
+  { title: "Jogging Tracks", body: "Scenic tracks will have you sprinting with a smile." },
+  { title: "2 Separate Fitness Centers", body: "Gains and good vibes hand in hand." },
+  { title: "Yoga Studios", body: "Learn postures that create mindful moments." },
+  { title: "Walled City Tours", body: "Explore the city\u2019s secrets through the eyes of our guides." },
+  { title: "Wellness Retreats", body: "Nourish to flourish." },
+  { title: "Cigar Lounge", body: "Let the rich aroma of exquisite cigars make the introductions." },
+  { title: "Health Caf\u00e9", body: "Stop resisting the temptation and conquer the health game." },
+  { title: "Billiard Lounge", body: "Designed for classy shots and vibrant vibes." },
+  { title: "Board Game Lounge", body: "Laughter and excitement echoes through these walls." },
+  { title: "Personal Training", body: "The architects of your body transformation." },
+  {
+    title: "Outdoor Sports Facilities",
+    body: "With 3 squash courts, 2 tennis courts, paddle and badminton courts, we have your game.",
+  },
+];
+
+/** Full-height panels that stack as you scroll the amenities page. */
+export const amenityPanels = [
+  {
+    id: "active-living",
+    eyebrow: "Active Living",
+    title: "Courts for every game",
+    body: "Three squash courts, two tennis courts, paddle and badminton \u2014 floodlit and open late.",
+    image: "/assets/images/amenities/parallax-1-web.webp",
+  },
+  {
+    id: "fitness",
+    eyebrow: "Fitness",
+    title: "Two centres, one standard",
+    body: "Separate fitness centres with personal training on hand, so the room is never the reason to skip a session.",
+    image: "/assets/images/amenities/parallax-2-web.webp",
+  },
+  {
+    id: "interiors",
+    eyebrow: "Interiors",
+    title: "Detail you can feel",
+    body: "Materials chosen to be touched as much as seen \u2014 stone, timber, brass and textile, specified together.",
+    image: "/assets/images/amenities/parallax-3-web.webp",
+  },
+  {
+    id: "work",
+    eyebrow: "Work",
+    title: "Room to get things done",
+    body: "Offices and a sales and meeting hub for the days that need a door, a table and quiet.",
+    image: "/assets/images/amenities/parallax-4-web.webp",
+  },
+];
+
+/** The spaces themselves, shown as a gallery. */
+export const amenitySpaces = [
+  { title: "Elegant Lobby", image: "/assets/images/amenities/elegant-lobby-web.webp" },
+  { title: "Coffee Lounge", image: "/assets/images/amenities/coffee-lounge-web.webp" },
+  { title: "Majlis", image: "/assets/images/amenities/majlis-web.webp" },
+  { title: "Clubhouse", image: "/assets/images/amenities/clubhouse-web.webp" },
+  { title: "Offices", image: "/assets/images/amenities/offices-web.webp" },
+  { title: "Gym", image: "/assets/images/amenities/gym-web.webp" },
+  { title: "Spa", image: "/assets/images/amenities/spa-web.webp" },
+  { title: "Sauna", image: "/assets/images/amenities/sauna-web.webp" },
+  { title: "Landscape", image: "/assets/images/amenities/landscape-web.webp" },
+  { title: "Outdoor Park", image: "/assets/images/amenities/outdoor-park-web.webp" },
 ];
 
 /** The Premium & Luxury division's six qualities, in page order. */
@@ -732,9 +797,6 @@ export const offices: Office[] = [
     email: site.email,
     mapUrl: "https://www.google.com/maps/search/?api=1&query=DHA+Phase+6+Lahore+Pakistan",
   },
-  { id: "slot-2", status: "planned", tag: "Coming Soon", city: "", lines: [] },
-  { id: "slot-3", status: "planned", tag: "Coming Soon", city: "", lines: [] },
-  { id: "slot-4", status: "planned", tag: "Coming Soon", city: "", lines: [] },
 ];
 
 export const footerColumns = [

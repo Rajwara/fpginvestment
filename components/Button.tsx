@@ -1,5 +1,9 @@
 import Link from "next/link";
-import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import type {
+  ComponentPropsWithoutRef,
+  MouseEventHandler,
+  ReactNode,
+} from "react";
 
 type Variant = "primary" | "secondary" | "onAccent" | "light";
 type Size = "md" | "lg";
@@ -38,7 +42,15 @@ type Props = {
   className?: string;
   /** Applies to the link forms too, so collapsed panels can drop out of tab order. */
   tabIndex?: number;
-} & Omit<ComponentPropsWithoutRef<"button">, "children" | "className" | "tabIndex">;
+  /**
+   * Typed on HTMLElement rather than HTMLButtonElement so the same handler
+   * fits all three renderings — button, Link and plain anchor.
+   */
+  onClick?: MouseEventHandler<HTMLElement>;
+} & Omit<
+  ComponentPropsWithoutRef<"button">,
+  "children" | "className" | "tabIndex" | "onClick"
+>;
 
 /**
  * On hover a conic-gradient ring is spun around the edge, the button lifts a
@@ -52,6 +64,7 @@ export default function Button({
   arrow = false,
   className = "",
   tabIndex,
+  onClick,
   ...rest
 }: Props) {
   const classes = `trace-btn ${variants[variant]} ${sizes[size]} ${className}`;
@@ -71,20 +84,20 @@ export default function Button({
     const external = /^(https?:|mailto:|tel:)/.test(href);
     if (external) {
       return (
-        <a href={href} className={classes} tabIndex={tabIndex}>
+        <a href={href} className={classes} tabIndex={tabIndex} onClick={onClick}>
           {inner}
         </a>
       );
     }
     return (
-      <Link href={href} className={classes} tabIndex={tabIndex}>
+      <Link href={href} className={classes} tabIndex={tabIndex} onClick={onClick}>
         {inner}
       </Link>
     );
   }
 
   return (
-    <button className={classes} tabIndex={tabIndex} {...rest}>
+    <button className={classes} tabIndex={tabIndex} onClick={onClick} {...rest}>
       {inner}
     </button>
   );
