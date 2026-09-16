@@ -12,8 +12,8 @@ export default function HyattFeature() {
       <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2 lg:items-center lg:gap-20 lg:px-10">
         <div className="reveal relative aspect-[4/3] overflow-hidden rounded-2xl bg-surface-2">
           <Image
-            src="/assets/images/home-hayyat-regency.jpg"
-            alt="The FP Global team at Hyatt Regency Lahore"
+            src="/assets/images/home/developed-opened-operated-web.webp"
+            alt="The landscaped water feature and forecourt at Hyatt Regency Lahore"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover"
