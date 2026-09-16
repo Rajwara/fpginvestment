@@ -3,7 +3,16 @@
  * floating header switches to dark glass with light text, since it sits over
  * the image rather than over the page surface.
  */
-export const photoHeroRoutes = ["/", "/about", "/team", "/faq", "/privacy", "/terms", "/blogs"];
+export const photoHeroRoutes = [
+  "/",
+  "/about",
+  "/team",
+  "/faq",
+  "/privacy",
+  "/terms",
+  "/blogs",
+  "/hyatt-lahore",
+];
 
 /** Section roots whose children all use a dark hero. */
 const photoHeroPrefixes = ["/services/", "/careers"];

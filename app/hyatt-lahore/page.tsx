@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageHero from "@/components/PageHero";
+import DarkPageHero from "@/components/DarkPageHero";
 import CTA from "@/components/CTA";
 import { Section, SectionHeading } from "@/components/Section";
 
@@ -35,10 +35,15 @@ const highlights = [
 export default function HyattLahorePage() {
   return (
     <>
-      <PageHero
-        eyebrow="Flagship property"
-        title="Hyatt Regency Lahore"
+      <DarkPageHero
+        eyebrow="Flagship Property"
+        title={
+          <>
+            Hyatt Regency <span className="text-hero-accent">Lahore</span>
+          </>
+        }
         lede="Our flagship mandate and the clearest expression of what FP Global does — a property we developed, opened and operate."
+        image="/assets/images/fpginvestment_banner_img1.jpg"
       />
 
       <Section>
