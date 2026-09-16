@@ -41,7 +41,7 @@ export default function PremiumLuxuryPage() {
             <div className="mx-auto max-w-7xl px-6 lg:px-10">
               <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
                 <div
-                  className={`reveal relative aspect-[4/3] overflow-hidden rounded-3xl ${
+                  className={`reveal-zoom relative aspect-[4/3] overflow-hidden rounded-3xl ${
                     flipped
                       ? "bg-surface lg:order-2"
                       : "bg-surface-2 lg:order-1"
@@ -57,7 +57,7 @@ export default function PremiumLuxuryPage() {
                 </div>
 
                 <div
-                  className={`reveal ${flipped ? "lg:order-1" : "lg:order-2"}`}
+                  className={`${flipped ? "reveal-right lg:order-1" : "reveal-left lg:order-2"}`}
                   style={{ transitionDelay: "90ms" }}
                 >
                   <Eyebrow>{`0${i + 1}`}</Eyebrow>

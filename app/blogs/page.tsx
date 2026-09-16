@@ -92,7 +92,7 @@ export default function BlogsPage() {
             lede="The pieces we point owners at most often, on the decisions that move an asset's first year the most."
           />
 
-          <div className="mt-12 grid gap-10 sm:grid-cols-2">
+          <div className="stagger mt-12 grid gap-10 sm:grid-cols-2">
             {featured.map((post, i) => (
               <article
                 key={post.slug}
@@ -131,7 +131,7 @@ export default function BlogsPage() {
             lede="Written by the people doing the work, on live projects rather than in theory."
           />
 
-          <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="stagger mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {rest.map((post, i) => (
               <article
                 key={post.slug}

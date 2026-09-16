@@ -17,7 +17,7 @@ export default function CTA() {
 
       <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">
         <Eyebrow className="reveal">Work with us</Eyebrow>
-        <h2 className="reveal mt-6 font-display text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[1.02] tracking-[-0.02em] text-fg">
+        <h2 className="reveal-line mt-6 font-display text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[1.02] tracking-[-0.02em] text-fg">
           Let&rsquo;s create something exceptional.
         </h2>
         <p className="reveal mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted">

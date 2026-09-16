@@ -29,7 +29,7 @@ export default function AmenitiesPage() {
       <section data-reveal className="bg-surface py-20 lg:py-28">
         <div className="reveal mx-auto max-w-7xl px-6 lg:px-10">
           <Eyebrow>What You Get</Eyebrow>
-          <h2 className="mt-6 max-w-4xl font-display text-[clamp(2rem,4.2vw,3.25rem)] leading-[1.08] tracking-[-0.02em] text-fg">
+          <h2 className="reveal-line mt-6 max-w-4xl font-display text-[clamp(2rem,4.2vw,3.25rem)] leading-[1.08] tracking-[-0.02em] text-fg">
             Every element crafted for comfort, sophistication and memorable
             experiences.
           </h2>
@@ -39,7 +39,7 @@ export default function AmenitiesPage() {
             embody elegance and prestige.
           </p>
 
-          <ul className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="stagger mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {amenities.map((a, i) => (
               <li
                 key={a.title}
@@ -48,7 +48,7 @@ export default function AmenitiesPage() {
                   and its scrim inside the card's own stacking context so the
                   rounded corners clip them.
                 */
-                className="group relative isolate flex min-h-[17rem] flex-col overflow-hidden rounded-2xl bg-[#14121c] p-8 ring-1 ring-white/10 transition-shadow duration-500 hover:shadow-2xl hover:shadow-accent/25"
+                className="reveal group relative isolate flex min-h-[17rem] flex-col overflow-hidden rounded-2xl bg-[#14121c] p-8 ring-1 ring-white/10 hover:shadow-2xl hover:shadow-accent/25"
               >
                 <Image
                   src={a.image}
@@ -135,17 +135,16 @@ export default function AmenitiesPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="reveal max-w-3xl">
             <Eyebrow>The Spaces</Eyebrow>
-            <h2 className="mt-6 font-display text-[clamp(2rem,4.2vw,3.25rem)] leading-[1.08] tracking-[-0.02em] text-fg">
+            <h2 className="reveal-line mt-6 font-display text-[clamp(2rem,4.2vw,3.25rem)] leading-[1.08] tracking-[-0.02em] text-fg">
               Room by room
             </h2>
           </div>
 
-          <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {amenitySpaces.map((space, i) => (
+          <ul className="stagger mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {amenitySpaces.map((space) => (
               <li
                 key={space.title}
                 className="reveal group relative aspect-[4/3] overflow-hidden rounded-2xl bg-surface"
-                style={{ transitionDelay: `${(i % 3) * 70}ms` }}
               >
                 <Image
                   src={space.image}

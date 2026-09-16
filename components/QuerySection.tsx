@@ -44,7 +44,7 @@ export default function QuerySection() {
           {/* Stays in place while the form scrolls past it. */}
           <div className="reveal lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Let&rsquo;s Start Talking</Eyebrow>
-            <h2 className="mt-6 font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05] tracking-[-0.015em] text-fg">
+            <h2 className="reveal-line mt-6 font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05] tracking-[-0.015em] text-fg">
               Send Us Your Query
             </h2>
             <p className="mt-6 max-w-lg leading-relaxed text-muted">

@@ -80,12 +80,11 @@ type Item = { icon: string; title: string; body: string };
 
 function Cards({ items }: { items: Item[] }) {
   return (
-    <div className="mt-12 grid gap-6 sm:grid-cols-3 lg:mt-16">
-      {items.map((item, i) => (
+    <div className="stagger mt-12 grid gap-6 sm:grid-cols-3 lg:mt-16">
+      {items.map((item) => (
         <div
           key={item.title}
           className="reveal rounded-2xl bg-surface p-8 shadow-lg shadow-fg/5 ring-1 ring-fg-2/5"
-          style={{ transitionDelay: `${i * 70}ms` }}
         >
           <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-accent to-accent-2 text-on-accent">
             <ServiceIcon name={item.icon} className="h-7 w-7" />
@@ -105,7 +104,7 @@ function Cards({ items }: { items: Item[] }) {
  */
 function Spread({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="reveal relative aspect-[16/6] overflow-hidden rounded-3xl bg-surface-2">
+    <div className="reveal-wipe relative aspect-[16/6] overflow-hidden rounded-3xl bg-surface-2">
       <Image
         src={src}
         alt={alt}
@@ -180,7 +179,7 @@ export default function HyattLahorePage() {
       <section data-reveal className="bg-surface pb-16 lg:pb-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
-            <div className="reveal relative aspect-[4/3] overflow-hidden rounded-3xl bg-surface-2">
+            <div className="reveal-zoom relative aspect-[4/3] overflow-hidden rounded-3xl bg-surface-2">
               <Image
                 src="/assets/images/hyatt-terrace.jpg"
                 alt="The pool terrace at Hyatt Regency Hotel & Club"
@@ -288,7 +287,7 @@ export default function HyattLahorePage() {
               </p>
             </div>
 
-            <div className="reveal relative aspect-[4/3] overflow-hidden rounded-3xl bg-surface">
+            <div className="reveal-zoom relative aspect-[4/3] overflow-hidden rounded-3xl bg-surface">
               <Image
                 src="/assets/images/hyatt-pool.jpg"
                 alt="The indoor pool and lobby lounge at Hyatt Regency Hotel & Club"

@@ -34,7 +34,7 @@ export default function MissionSection() {
     >
       <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-2 lg:items-center lg:gap-20 lg:px-10">
         {/* Collage */}
-        <div className="reveal relative">
+        <div className="reveal-zoom relative">
           <div className="grid grid-cols-2 gap-5">
             {missionCollage.map((tile) => (
               <div
@@ -95,7 +95,7 @@ export default function MissionSection() {
         </div>
 
         {/* Copy and tabs */}
-        <div className="reveal">
+        <div className="reveal-right">
           <Eyebrow>Who We Are</Eyebrow>
           <h2 className="mt-6 font-display text-[clamp(2rem,4.2vw,3.25rem)] leading-[1.08] tracking-[-0.02em] text-fg">
             What we are, and what we are working towards.
