@@ -148,6 +148,12 @@ Each service carries an `image` in `lib/site.ts`, drawn from the
 `ProfessionalGuidanceimg-*` set. Only five were supplied for six services, so
 Hotel Management reuses the first; give it its own path when one exists.
 
+## Hyatt feature
+
+`components/HyattFeature.tsx` follows the services banner: the property
+photograph on the left, eyebrow, heading, copy and a link through to
+/hyatt-lahore on the right.
+
 ## Mission section
 
 `components/MissionSection.tsx` sits under the banner: a staggered collage on
