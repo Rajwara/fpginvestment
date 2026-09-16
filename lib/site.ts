@@ -198,20 +198,77 @@ export const nav: NavItem[] = [
 ];
 
 /** Club amenities, as listed in the brochure. */
+/**
+ * `image` is the photograph that fades in behind the card on hover. The set of
+ * uploads is smaller than the set of amenities, so a few are shared — the
+ * closest room for each, rather than a literal one-to-one.
+ */
 export const amenities = [
-  { title: "Jogging Tracks", body: "Scenic tracks will have you sprinting with a smile." },
-  { title: "2 Separate Fitness Centers", body: "Gains and good vibes hand in hand." },
-  { title: "Yoga Studios", body: "Learn postures that create mindful moments." },
-  { title: "Walled City Tours", body: "Explore the city\u2019s secrets through the eyes of our guides." },
-  { title: "Wellness Retreats", body: "Nourish to flourish." },
-  { title: "Cigar Lounge", body: "Let the rich aroma of exquisite cigars make the introductions." },
-  { title: "Health Caf\u00e9", body: "Stop resisting the temptation and conquer the health game." },
-  { title: "Billiard Lounge", body: "Designed for classy shots and vibrant vibes." },
-  { title: "Board Game Lounge", body: "Laughter and excitement echoes through these walls." },
-  { title: "Personal Training", body: "The architects of your body transformation." },
+  {
+    title: "Jogging Tracks",
+    body: "Scenic tracks will have you sprinting with a smile.",
+    icon: "track",
+    image: "/assets/images/amenities/landscape-web.webp",
+  },
+  {
+    title: "2 Separate Fitness Centers",
+    body: "Gains and good vibes hand in hand.",
+    icon: "dumbbell",
+    image: "/assets/images/amenities/gym-web.webp",
+  },
+  {
+    title: "Yoga Studios",
+    body: "Learn postures that create mindful moments.",
+    icon: "yoga",
+    image: "/assets/images/amenities/spa-web.webp",
+  },
+  {
+    title: "Walled City Tours",
+    body: "Explore the city\u2019s secrets through the eyes of our guides.",
+    icon: "gate",
+    image: "/assets/images/hyatt-lahore/cultural-capital-web.jpg",
+  },
+  {
+    title: "Wellness Retreats",
+    body: "Nourish to flourish.",
+    icon: "leaf",
+    image: "/assets/images/amenities/sauna-web.webp",
+  },
+  {
+    title: "Cigar Lounge",
+    body: "Let the rich aroma of exquisite cigars make the introductions.",
+    icon: "cigar",
+    image: "/assets/images/amenities/clubhouse-web.webp",
+  },
+  {
+    title: "Health Caf\u00e9",
+    body: "Stop resisting the temptation and conquer the health game.",
+    icon: "cup",
+    image: "/assets/images/amenities/coffee-lounge-web.webp",
+  },
+  {
+    title: "Billiard Lounge",
+    body: "Designed for classy shots and vibrant vibes.",
+    icon: "billiard",
+    image: "/assets/images/amenities/parallax-1-web.webp",
+  },
+  {
+    title: "Board Game Lounge",
+    body: "Laughter and excitement echoes through these walls.",
+    icon: "dice",
+    image: "/assets/images/amenities/majlis-web.webp",
+  },
+  {
+    title: "Personal Training",
+    body: "The architects of your body transformation.",
+    icon: "stopwatch",
+    image: "/assets/images/amenities/parallax-3-web.webp",
+  },
   {
     title: "Outdoor Sports Facilities",
     body: "With 3 squash courts, 2 tennis courts, paddle and badminton courts, we have your game.",
+    icon: "racket",
+    image: "/assets/images/amenities/outdoor-park-web.webp",
   },
 ];
 

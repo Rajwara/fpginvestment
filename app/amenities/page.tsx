@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import DarkPageHero from "@/components/DarkPageHero";
+import AmenityIcon from "@/components/AmenityIcon";
 import Eyebrow from "@/components/Eyebrow";
 import QuerySection from "@/components/QuerySection";
 import { amenities, amenityPanels, amenitySpaces } from "@/lib/site";
@@ -38,24 +39,49 @@ export default function AmenitiesPage() {
             embody elegance and prestige.
           </p>
 
-          <ul className="mt-16 grid gap-px overflow-hidden rounded-2xl bg-fg-2/10 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {amenities.map((a, i) => (
               <li
                 key={a.title}
-                className="group bg-surface p-8 transition-colors hover:bg-surface-2"
+                /*
+                  Dark card, photograph underneath. `isolate` keeps the image
+                  and its scrim inside the card's own stacking context so the
+                  rounded corners clip them.
+                */
+                className="group relative isolate flex min-h-[17rem] flex-col overflow-hidden rounded-2xl bg-[#14121c] p-8 ring-1 ring-white/10 transition-shadow duration-500 hover:shadow-2xl hover:shadow-accent/25"
               >
-                <span className="eyebrow text-subtle">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-4 font-display text-xl leading-tight text-fg">
+                <Image
+                  src={a.image}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="-z-20 scale-110 object-cover opacity-0 brightness-110 transition-all duration-700 ease-[var(--ease-out-expo)] group-hover:scale-100 group-hover:opacity-100 [@media(hover:none)]:scale-100 [@media(hover:none)]:opacity-45"
+                />
+                {/* Bottom-weighted, so the copy stays legible while the top of the
+                    photograph comes through at nearly full strength. */}
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 -z-10 bg-gradient-to-t from-[#14121c] via-[#14121c]/75 to-[#14121c]/15 opacity-0 transition-opacity duration-700 group-hover:opacity-100 [@media(hover:none)]:opacity-100"
+                />
+
+                <div className="flex items-start justify-between gap-4">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-white ring-1 ring-white/15 transition-colors duration-500 group-hover:bg-accent group-hover:ring-accent">
+                    <AmenityIcon name={a.icon} className="h-6 w-6" />
+                  </span>
+                  <span className="eyebrow text-white/35">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+
+                <h3 className="mt-auto pt-10 font-display text-xl leading-tight text-white">
                   {a.title}
                 </h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-muted">
+                <p className="mt-2.5 text-sm leading-relaxed text-white/60">
                   {a.body}
                 </p>
                 <span
                   aria-hidden="true"
-                  className="mt-6 block h-px w-10 bg-accent/30 transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:w-20 group-hover:bg-accent"
+                  className="mt-6 block h-px w-10 bg-white/25 transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:w-20 group-hover:bg-accent-2"
                 />
               </li>
             ))}
