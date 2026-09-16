@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { nav, services } from "@/lib/site";
 import { isPhotoHeroRoute } from "@/lib/heroRoutes";
+import { DARK_HERO_EVENT } from "./DarkHeroFlag";
 import Logo from "./Logo";
 import MegaMenu from "./MegaMenu";
 import Button from "@/components/Button";
@@ -14,9 +15,20 @@ export default function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [darkHeroFlag, setDarkHeroFlag] = useState(false);
   const pathname = usePathname();
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const megaRef = useRef<HTMLDivElement>(null);
+
+  // not-found.tsx renders at an unmatched URL, so it raises a flag instead of
+  // being matched by path. See components/DarkHeroFlag.
+  useEffect(() => {
+    const sync = () =>
+      setDarkHeroFlag(document.documentElement.dataset.darkHero === "true");
+    sync();
+    window.addEventListener(DARK_HERO_EVENT, sync);
+    return () => window.removeEventListener(DARK_HERO_EVENT, sync);
+  }, [pathname]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -77,7 +89,7 @@ export default function SiteHeader() {
   const docked = scrolled || mobileOpen || megaOpen;
   // Over a photo hero the bar is glass on the image, so it goes dark with
   // light text; once docked it returns to the themed surface.
-  const overHero = isPhotoHeroRoute(pathname) && !docked;
+  const overHero = (isPhotoHeroRoute(pathname) || darkHeroFlag) && !docked;
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
