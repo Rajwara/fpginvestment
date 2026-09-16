@@ -493,6 +493,32 @@ export const faqs = [
 
 export const jobs = [
   {
+    slug: "financial-accountant",
+    title: "Financial Accountant",
+    location: "Lahore, Pakistan",
+    type: "Full time",
+    team: "Finance",
+    intro:
+      "You will manage the daily financial transactions, keep the records accurate, and produce the monthly and annual statements the business is run on \u2014 in full compliance with FBR regulations and local tax law.",
+    responsibilities: [
+      "Financial records: manage day-to-day accounting operations, general ledger maintenance, and accounts payable and receivable",
+      "Financial reporting: prepare accurate monthly, quarterly and annual financial statements, including balance sheets and profit-and-loss statements",
+      "Tax compliance: ensure full compliance with FBR tax regulations, sales tax, income tax filings, and withholding tax obligations",
+      "Reconciliation: conduct regular bank and vendor reconciliations to identify and resolve discrepancies",
+      "Budgeting and forecasting: assist management in preparing annual budgets, monitoring departmental costs, and forecasting revenues",
+      "Audit support: coordinate with internal and external auditors during annual financial audits",
+    ],
+    requirements: [
+      "Education: bachelor\u2019s degree in accounting or finance, with ACCA or CA articles completed or intermediate qualified",
+      "Experience: two to five years of proven corporate accounting experience",
+      "Technical skills: advanced proficiency in Microsoft Excel (pivot tables and database structuring) and local accounting software such as QuickBooks, Peachtree or Oracle",
+      "Knowledge: strong grasp of International Financial Reporting Standards (IFRS) and local Pakistani tax laws",
+      "Soft skills: strong analytical thinking, high integrity, a positive attitude and effective communication",
+    ],
+    offer:
+      "A finance seat close to the decisions, working directly with the managing director on the numbers behind every project, in a company small enough that your reporting is read rather than filed.",
+  },
+  {
     slug: "acquisition-advisor",
     title: "Acquisition Advisor",
     location: "Lahore, Pakistan",
