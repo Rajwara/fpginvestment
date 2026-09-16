@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { insights } from "@/lib/site";
 import PageHero from "@/components/PageHero";
-import { formatDate } from "@/components/BlogTeaser";
+import { formatDate } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Blogs",

@@ -231,6 +231,7 @@ export const insights = [
     category: "Operations",
     date: "2026-08-14",
     readTime: "6 min",
+    image: "/assets/images/ProfessionalGuidanceimg-02.jpg",
     title: "The pre-opening decisions that quietly cost you year one",
     excerpt:
       "Most opening-year underperformance is set in motion eighteen months earlier. A look at the five critical-path items owners consistently compress — and what each one costs later.",
@@ -240,6 +241,7 @@ export const insights = [
     category: "Development",
     date: "2026-06-02",
     readTime: "9 min",
+    image: "/assets/images/MissionAndGoals-03.jpg",
     title: "Why back-of-house should be designed first",
     excerpt:
       "Service corridors, loading and staff flow shape labour cost for the life of the building. They are also the first things value-engineered out of a drawing set.",
@@ -249,9 +251,20 @@ export const insights = [
     category: "Turnaround",
     date: "2026-03-21",
     readTime: "11 min",
+    image: "/assets/images/ProfessionalGuidanceimg-04.jpg",
     title: "The first ninety days of a hotel turnaround",
     excerpt:
       "What we look at, in what order, when taking over an underperforming asset — and why revenue management usually comes before any renovation conversation.",
+  },
+  {
+    slug: "reading-a-hotel-pl",
+    category: "Asset Management",
+    date: "2026-01-28",
+    readTime: "7 min",
+    image: "/assets/images/MissionAndGoalsimg-04.jpg",
+    title: "Reading a hotel P&L the way an operator reads it",
+    excerpt:
+      "GOP tells you what happened. Flow-through, payroll per occupied room and out-of-order nights tell you why — and which of them you can still change this quarter.",
   },
 ];
 

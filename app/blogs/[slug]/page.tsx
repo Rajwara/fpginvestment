@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { insights } from "@/lib/site";
-import { formatDate } from "@/components/BlogTeaser";
+import { formatDate } from "@/lib/format";
 import MaskButton from "@/components/MaskButton";
 
 type Params = { slug: string };
