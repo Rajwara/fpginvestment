@@ -5,7 +5,6 @@ import { site } from "@/lib/site";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import Reveal from "@/components/Reveal";
-import { themeInitScript } from "@/lib/theme";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -53,14 +52,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-theme="light"
       className={`${plusJakartaSans.variable} ${dmSans.variable}`}
-      suppressHydrationWarning
     >
-      <head>
-        {/* Applies the stored theme before first paint to avoid a flash. */}
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-      </head>
       <body className="min-h-screen bg-surface text-fg-2 antialiased">
         <a
           href="#main"

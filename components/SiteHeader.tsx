@@ -7,7 +7,6 @@ import { nav, services } from "@/lib/site";
 import { isPhotoHeroRoute } from "@/lib/heroRoutes";
 import Logo from "./Logo";
 import MegaMenu from "./MegaMenu";
-import ThemeToggle from "./ThemeToggle";
 import MaskButton from "@/components/MaskButton";
 
 export default function SiteHeader() {
@@ -97,7 +96,7 @@ export default function SiteHeader() {
           }`}
         >
           <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-6 px-6 lg:px-10">
-            <Logo forceOnDark={overHero} />
+            <Logo onDark={overHero} />
 
             <nav
               aria-label="Primary"
@@ -168,7 +167,6 @@ export default function SiteHeader() {
             </nav>
 
             <div className="hidden items-center gap-3 xl:flex">
-              <ThemeToggle overHero={overHero} />
               <MaskButton
                 href="/contact"
                 variant={overHero ? "onAccent" : "secondary"}
@@ -180,7 +178,6 @@ export default function SiteHeader() {
             </div>
 
             <div className="flex items-center gap-2 xl:hidden">
-              <ThemeToggle overHero={overHero} />
               <button
                 type="button"
                 onClick={() => setMobileOpen((v) => !v)}

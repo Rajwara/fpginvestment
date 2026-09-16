@@ -3,17 +3,17 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 
 /**
- * Both logo files are shipped and swapped with CSS rather than JS, so the
- * correct one is painted on first frame with no flash and no hydration gap.
- * Named for the background they sit on: the white-ink lockup goes on dark.
+ * Two lockups ship: the dark-ink one for light surfaces and the white-ink one
+ * for dark surfaces (the footer panel, the header over a photo hero). Named
+ * for the background it sits on.
  */
 export default function Logo({
   className = "",
-  forceOnDark = false,
+  onDark = false,
 }: {
   className?: string;
-  /** Over a photo hero the lockup must be the white-ink one whatever the theme. */
-  forceOnDark?: boolean;
+  /** Set on a dark surface, where the dark-ink lockup would disappear. */
+  onDark?: boolean;
 }) {
   return (
     <Link
@@ -22,21 +22,16 @@ export default function Logo({
       className={`group inline-flex items-center ${className}`}
     >
       <Image
-        src="/assets/images/logo-on-light.webp"
+        src={
+          onDark
+            ? "/assets/images/logo-on-dark.webp"
+            : "/assets/images/logo-on-light.webp"
+        }
         alt={site.name}
         width={151}
         height={38}
-        priority
-        className={`h-9 w-auto transition-opacity duration-300 group-hover:opacity-80 ${forceOnDark ? "hidden" : "dark-hidden"}`}
-      />
-      <Image
-        src="/assets/images/logo-on-dark.webp"
-        alt=""
-        aria-hidden="true"
-        width={151}
-        height={38}
-        priority
-        className={`h-9 w-auto transition-opacity duration-300 group-hover:opacity-80 ${forceOnDark ? "" : "light-hidden"}`}
+        preload
+        className="h-9 w-auto transition-opacity duration-300 group-hover:opacity-80"
       />
     </Link>
   );

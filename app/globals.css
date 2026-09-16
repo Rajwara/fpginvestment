@@ -26,6 +26,7 @@
 
   --color-accent: #604a9f;       /* brand purple — gradient start */
   --color-accent-2: #7b62c0;     /* gradient end; white on it is 4.8:1 */
+  --color-accent-deep: #4e3c82;  /* gradient start; white on it is 9.2:1 */
   --color-accent-hover: #4e3c82;
   --color-accent-fg: #604a9f;    /* 7.0:1 on white */
   --color-on-accent: #ffffff;    /* 7.0:1 on the fill */
@@ -39,34 +40,12 @@
   --animate-fade: fade 1.2s var(--ease-out-expo) both;
 }
 
-:root[data-theme="dark"] {
-  --color-surface: #000000;      /* brand black */
-  --color-surface-2: #0d0a14;    /* black carrying a trace of the purple */
-  --color-fg: #ffffff;
-  --color-fg-2: #d9d5e2;
-  --color-muted: #9d98aa;
-  --color-subtle: #6f6b7c;
-
-  --color-accent: #6e56b5;       /* 3.7:1 against black, so the fill reads */
-  --color-accent-2: #7f67c2;     /* gradient end; white on it is 4.5:1 */
-  --color-accent-hover: #7a61c0;
-  --color-accent-fg: #a896d0;    /* 7.9:1 on black */
-  --color-on-accent: #ffffff;    /* 5.7:1 on the fill */
-}
-
 /* Ambient glows are painted, not tinted, so they need per-theme values. */
 :root {
   --glow-warm: rgba(96, 74, 159, 0.16);
   --glow-cool: rgba(96, 74, 159, 0.08);
   --glow-cta: rgba(96, 74, 159, 0.13);
   --grid-line: rgba(42, 39, 51, 0.06);
-}
-
-:root[data-theme="dark"] {
-  --glow-warm: rgba(110, 86, 181, 0.26);
-  --glow-cool: rgba(60, 48, 100, 0.34);
-  --glow-cta: rgba(110, 86, 181, 0.2);
-  --grid-line: rgba(217, 213, 226, 0.05);
 }
 
 @keyframes rise {
@@ -81,10 +60,6 @@
 @layer base {
   :root {
     color-scheme: light;
-  }
-
-  :root[data-theme="dark"] {
-    color-scheme: dark;
   }
 
   html {
@@ -171,12 +146,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; }
-}
-
-/* Theme-swapped assets: ship both, let CSS pick, so there is no flash. */
-:root[data-theme="dark"] .dark-hidden,
-:root:not([data-theme="dark"]) .light-hidden {
-  display: none;
 }
 
 /*

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { site, metrics, principles, services } from "@/lib/site";
+import { site, metrics, principles } from "@/lib/site";
 import PhotoPageHero from "@/components/PhotoPageHero";
+import ServicesFlex from "@/components/ServicesFlex";
+import MissionSection from "@/components/MissionSection";
 import CTA from "@/components/CTA";
 import { Section, SectionHeading } from "@/components/Section";
-import ServiceIcon from "@/components/ServiceIcon";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -28,6 +29,10 @@ export default function AboutPage() {
         image="/assets/images/fpginvestment_banner_img1.jpg"
       />
 
+      <ServicesFlex />
+
+      <MissionSection />
+
       <Section>
         <p className="reveal mb-14 max-w-3xl font-display text-[clamp(1.35rem,2.4vw,1.9rem)] leading-[1.45] tracking-[-0.01em] text-fg">
           Founded in {site.founded}, {site.name} develops, opens and runs
@@ -50,33 +55,6 @@ export default function AboutPage() {
             </div>
           ))}
         </dl>
-      </Section>
-
-      <Section className="border-t border-fg-2/10 bg-surface-2">
-        <SectionHeading
-          eyebrow="What we do"
-          title="Six service lines."
-          lede="Engaged together or one at a time, depending on where a project needs help."
-        />
-        <ul className="mt-14 grid gap-px overflow-hidden rounded-xl border border-fg-2/10 bg-fg-2/10 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, i) => (
-            <li
-              key={service.id}
-              className="reveal bg-surface-2 p-8"
-              style={{ transitionDelay: `${i * 60}ms` }}
-            >
-              <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-fg-2/12 text-accent-fg">
-                <ServiceIcon name={service.icon} className="h-5 w-5" />
-              </span>
-              <h3 className="mt-5 font-display text-xl text-fg">
-                {service.name}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
-                {service.summary}
-              </p>
-            </li>
-          ))}
-        </ul>
       </Section>
 
       <Section className="border-t border-fg-2/10">

@@ -38,7 +38,7 @@ export default function ServicesFlex() {
                 key={service.id}
                 className={`relative overflow-hidden rounded-2xl transition-[flex-grow] duration-700 ease-[var(--ease-out-expo)] ${
                   isActive
-                    ? "flex-grow-[4] bg-gradient-to-br from-accent to-accent-2"
+                    ? "flex-grow-[4] bg-gradient-to-br from-accent-deep via-accent to-accent-2"
                     : "flex-grow-[0.5] bg-surface-2"
                 }`}
                 style={{ flexBasis: 0 }}
@@ -76,7 +76,7 @@ export default function ServicesFlex() {
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-on-accent/40 text-xs">
                     {num(i)}
                   </span>
-                  <h3 className="mt-7 border-l-2 border-on-accent pl-4 font-display text-[clamp(1.5rem,2.2vw,2rem)] leading-tight">
+                  <h3 className="mt-7 font-display text-[clamp(1.5rem,2.2vw,2rem)] leading-tight">
                     {service.name}
                   </h3>
                   <div className="relative mt-7 aspect-[16/9] w-full overflow-hidden rounded-xl">
@@ -88,7 +88,7 @@ export default function ServicesFlex() {
                       className="object-cover"
                     />
                   </div>
-                  <p className="mt-6 mb-5 max-w-lg text-sm leading-relaxed text-on-accent/85">
+                  <p className="mt-6 mb-5 max-w-lg text-sm leading-relaxed text-on-accent">
                     {service.summary}
                   </p>
                   <Link
@@ -119,7 +119,7 @@ export default function ServicesFlex() {
                 key={service.id}
                 className={`overflow-hidden rounded-2xl transition-colors duration-500 ${
                   isActive
-                    ? "bg-gradient-to-br from-accent to-accent-2 text-on-accent"
+                    ? "bg-gradient-to-br from-accent-deep via-accent to-accent-2 text-on-accent"
                     : "bg-surface-2"
                 }`}
               >
@@ -170,7 +170,7 @@ export default function ServicesFlex() {
                           className="object-cover"
                         />
                       </div>
-                      <p className="mt-4 text-sm leading-relaxed text-on-accent/85">
+                      <p className="mt-4 text-sm leading-relaxed text-on-accent">
                         {service.summary}
                       </p>
                       <Link

@@ -54,7 +54,7 @@ export default function SiteFooter() {
         <div className="grid gap-12 pt-14 lg:grid-cols-[1.4fr_repeat(3,1fr)] lg:gap-10">
           {/* Column 1 — FP Global */}
           <div>
-            <Logo forceOnDark />
+            <Logo onDark />
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-white/60">
               {site.description}
             </p>
