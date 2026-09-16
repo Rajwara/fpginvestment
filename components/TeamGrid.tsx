@@ -4,6 +4,9 @@ import Eyebrow from "./Eyebrow";
 import SocialIcon from "./SocialIcon";
 
 export default function TeamGrid() {
+  const companyLinkedIn =
+    site.social.find((s) => s.label === "LinkedIn")?.href ?? "#";
+
   return (
     <section
       id="team"
@@ -47,20 +50,21 @@ export default function TeamGrid() {
                   </span>
                 )}
 
-                {/* Rises over the portrait on hover, as in the reference. */}
-                <div className="absolute inset-x-0 bottom-4 flex translate-y-3 justify-center gap-2 opacity-0 transition-all duration-400 ease-[var(--ease-out-expo)] group-hover:translate-y-0 group-hover:opacity-100">
-                  {site.social.map((s) => (
-                    <a
-                      key={s.label}
-                      href={s.href}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      aria-label={`${person.name} on ${s.label}`}
-                      className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 text-on-accent transition-opacity hover:opacity-90"
-                    >
-                      <SocialIcon name={s.label} />
-                    </a>
-                  ))}
+                {/* Rises over the portrait on hover, as in the reference.
+                    LinkedIn only: the other two networks were the company's
+                    own accounts, which is not what a portrait card promises.
+                    Falls back to the company page until each person's own
+                    profile URL lands in `team`. */}
+                <div className="absolute inset-x-0 bottom-4 flex translate-y-3 justify-center opacity-0 transition-all duration-400 ease-[var(--ease-out-expo)] group-hover:translate-y-0 group-hover:opacity-100">
+                  <a
+                    href={person.linkedin || companyLinkedIn}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label={`${person.name} on LinkedIn`}
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 text-on-accent transition-opacity hover:opacity-90"
+                  >
+                    <SocialIcon name="LinkedIn" />
+                  </a>
                 </div>
               </div>
 

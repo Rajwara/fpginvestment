@@ -18,13 +18,13 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <div className="grid lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.35fr)_minmax(0,0.75fr)]">
       {/* Left — who we are */}
-      <div className="border-fg-2/10 p-8 lg:border-r lg:p-10">
+      <div className="border-fg-2/10 p-7 lg:border-r lg:p-8">
         <p className="eyebrow flex items-center gap-2.5 text-accent-fg">
           <span aria-hidden="true" className="h-px w-6 bg-accent-fg/50" />
           {megaFeature.eyebrow}
         </p>
 
-        <div className="relative mt-5 aspect-[4/3] overflow-hidden rounded-lg border border-fg-2/10 bg-surface-2">
+        <div className="relative mt-4 aspect-[16/9] overflow-hidden rounded-lg border border-fg-2/10 bg-surface-2">
           <Image
             src={megaFeature.image}
             alt=""
@@ -34,15 +34,15 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
           />
         </div>
 
-        <h3 className="mt-6 font-display text-2xl leading-snug text-fg">
+        <h3 className="mt-5 font-display text-xl leading-snug text-fg">
           {megaFeature.title}
         </h3>
-        <p className="mt-3 text-sm leading-relaxed text-muted">
+        <p className="mt-2.5 text-sm leading-relaxed text-muted">
           {megaFeature.body}
         </p>
         {/* Side by side, so the compact size — the column is not wide
             enough for two buttons at the default padding. */}
-        <div className="mt-6 flex flex-wrap gap-2.5">
+        <div className="mt-5 flex flex-wrap gap-2.5">
           <Button
             href={megaFeature.href}
             size="sm"
@@ -66,15 +66,15 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
       </div>
 
       {/* Middle — the six services, three per column */}
-      <div className="border-fg-2/10 p-8 lg:border-r lg:p-10">
+      <div className="border-fg-2/10 p-7 lg:border-r lg:p-8">
         <p className="eyebrow text-subtle">What We Do</p>
-        <ul className="mt-5 grid gap-x-8 gap-y-1 sm:grid-cols-2">
+        <ul className="mt-4 grid gap-x-8 gap-y-0.5 sm:grid-cols-2">
           {services.map((s) => (
             <li key={s.id}>
               <Link
                 href={`/services/${s.id}`}
                 onClick={onNavigate}
-                className="group flex items-start gap-3.5 rounded-lg px-3 py-3 transition-colors hover:bg-fg-2/5"
+                className="group flex items-start gap-3.5 rounded-lg px-3 py-2.5 transition-colors hover:bg-fg-2/5"
               >
                 <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-fg-2/12 text-accent-fg transition-colors group-hover:border-accent-fg/50 group-hover:bg-accent-fg/10">
                   <ServiceIcon name={s.icon} />
@@ -93,13 +93,13 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
         </ul>
 
         {/* Partners strip — the same logo slider as the Our Mission band */}
-        <div className="mt-8 border-t border-fg-2/10 pt-6">
+        <div className="mt-6 border-t border-fg-2/10 pt-5">
           <p className="eyebrow text-subtle">Our Partners</p>
           <p className="mt-2 text-sm text-muted">
             Working alongside the brands and operators our owners already trust.
           </p>
 
-          <div className="marquee mt-5 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+          <div className="marquee mt-4 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
             <div className="flex w-max">
               {[0, 1].map((copy) => (
                 <div
@@ -113,14 +113,14 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
                         key={`${copy}-${set}-${partner.name}`}
                         // Sized so three tiles fill the strip: any smaller and
                         // the wordmarks stop being readable.
-                        className="flex h-24 w-40 shrink-0 items-center justify-center rounded-xl bg-white px-5 ring-1 ring-fg-2/10"
+                        className="flex h-[4.5rem] w-32 shrink-0 items-center justify-center rounded-xl bg-white px-4 ring-1 ring-fg-2/10"
                       >
                         <Image
                           src={partner.logo}
                           alt=""
                           width={180}
                           height={80}
-                          className="h-14 w-full object-contain"
+                          className="h-10 w-full object-contain"
                         />
                       </div>
                     ))
@@ -136,7 +136,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
       </div>
 
       {/* Right — contact panel */}
-      <div className="relative isolate overflow-hidden p-8 lg:p-10">
+      <div className="relative isolate overflow-hidden p-7 lg:p-8">
         {/* Photograph and scrim, clipped by the panel itself. */}
         <Image
           src="/assets/images/contact-lobby-web.webp"
@@ -152,7 +152,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
 
         <p className="eyebrow text-white/50">Get In Touch</p>
 
-        <div className="mt-6 space-y-6">
+        <div className="mt-5 space-y-5">
           <div className="flex items-start gap-3.5">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-white/15 text-white">
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
@@ -205,8 +205,8 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
           </div>
         </div>
 
-        <p className="eyebrow mt-8 text-white/50">Follow Us</p>
-        <div className="mt-4 flex gap-2.5">
+        <p className="eyebrow mt-6 text-white/50">Follow Us</p>
+        <div className="mt-3.5 flex gap-2.5">
           {site.social.map((s) => (
             <a
               key={s.label}
@@ -221,7 +221,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
           ))}
         </div>
 
-        <Button href="/contact" variant="light" onClick={onNavigate} className="mt-8 flex w-full justify-center" arrow>
+        <Button href="/contact" variant="light" onClick={onNavigate} className="mt-6 flex w-full justify-center" arrow>
           Start a Conversation
         </Button>
       </div>
