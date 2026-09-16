@@ -31,15 +31,15 @@ export function SectionHeading({
 }) {
   return (
     <div className="reveal max-w-3xl">
-      <p className="eyebrow flex items-center gap-3 text-gold-400">
-        <span aria-hidden="true" className="h-px w-8 bg-gold-400/50" />
+      <p className="eyebrow flex items-center gap-3 text-accent-400">
+        <span aria-hidden="true" className="h-px w-8 bg-accent-400/50" />
         {eyebrow}
       </p>
-      <h2 className="mt-6 font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05] tracking-[-0.015em] text-bone-50">
+      <h2 className="mt-6 font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05] tracking-[-0.015em] text-fg">
         {title}
       </h2>
       {lede ? (
-        <p className="mt-6 text-lg leading-relaxed text-bone-400">{lede}</p>
+        <p className="mt-6 text-lg leading-relaxed text-muted">{lede}</p>
       ) : null}
     </div>
   );

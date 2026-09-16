@@ -9,31 +9,31 @@ export default function Hero() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10"
       >
-        <div className="absolute left-1/2 top-[-18rem] h-[42rem] w-[42rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(207,174,87,0.13),transparent_65%)] blur-2xl" />
-        <div className="absolute bottom-[-10rem] right-[-8rem] h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(40,70,110,0.28),transparent_65%)] blur-2xl" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(214,210,200,0.045)_1px,transparent_1px)] bg-[size:88px_100%] [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
+        <div className="absolute left-1/2 top-[-18rem] h-[42rem] w-[42rem] -translate-x-1/2 rounded-full glow-warm blur-2xl" />
+        <div className="absolute bottom-[-10rem] right-[-8rem] h-[28rem] w-[28rem] rounded-full glow-cool blur-2xl" />
+        <div className="absolute inset-0 grid-lines [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
       </div>
 
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <p className="eyebrow animate-fade text-gold-400">
-          Multi-strategy asset management · Est. 2009
+        <p className="eyebrow animate-fade text-accent-400">
+          Hospitality development &amp; management · Lahore
         </p>
 
-        <h1 className="animate-rise mt-8 max-w-4xl font-display text-[clamp(2.75rem,8vw,6.5rem)] leading-[0.95] tracking-[-0.02em] text-bone-50">
-          Disciplined capital,
+        <h1 className="animate-rise mt-8 max-w-4xl font-display text-[clamp(2.75rem,8vw,6.5rem)] leading-[0.95] tracking-[-0.02em] text-fg">
+          Redefining
           <br />
-          <span className="text-gold-300 italic">compounded</span> patiently.
+          <span className="text-accent-300 italic">hospitality</span>, end to end.
         </h1>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-end">
           <p
-            className="animate-rise max-w-xl text-lg leading-relaxed text-bone-400 lg:text-xl"
+            className="animate-rise max-w-xl text-lg leading-relaxed text-muted lg:text-xl"
             style={{ animationDelay: "120ms" }}
           >
-            We invest across public and private markets for institutions,
-            endowments and families who measure results in decades. No
-            benchmarks to hug, no quarters to defend — only capital placed
-            where the arithmetic works.
+            From feasibility and design through pre-opening and daily
+            operations, FP Global develops and manages hotels that perform for
+            owners and are remembered by guests. Including Hyatt Regency
+            Lahore.
           </p>
 
           <div
@@ -41,10 +41,10 @@ export default function Hero() {
             style={{ animationDelay: "220ms" }}
           >
             <Link
-              href="/strategies"
-              className="group inline-flex items-center gap-2.5 rounded-full bg-gold-400 px-7 py-3.5 text-sm font-medium text-ink-950 transition-all duration-300 hover:bg-gold-300"
+              href="/about"
+              className="group inline-flex items-center gap-2.5 rounded-full bg-accent-400 px-7 py-3.5 text-sm font-medium text-surface transition-all duration-300 hover:bg-accent-300"
             >
-              Explore strategies
+              Explore our services
               <span
                 aria-hidden="true"
                 className="transition-transform duration-300 group-hover:translate-x-1"
@@ -53,30 +53,30 @@ export default function Hero() {
               </span>
             </Link>
             <Link
-              href="/#approach"
-              className="inline-flex items-center gap-2.5 rounded-full border border-bone-200/20 px-7 py-3.5 text-sm text-bone-200 transition-all duration-300 hover:border-bone-200/50 hover:text-bone-50"
+              href="/hyatt-lahore"
+              className="inline-flex items-center gap-2.5 rounded-full border border-fg-2/20 px-7 py-3.5 text-sm text-fg-2 transition-all duration-300 hover:border-fg-2/50 hover:text-fg"
             >
-              How we invest
+              Hyatt Regency Lahore
             </Link>
           </div>
         </div>
 
         {/* Metric bar */}
         <dl
-          className="animate-rise mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-bone-200/10 bg-bone-200/10 lg:mt-28 lg:grid-cols-4"
+          className="animate-rise mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-fg-2/10 bg-fg-2/10 lg:mt-28 lg:grid-cols-4"
           style={{ animationDelay: "320ms" }}
         >
           {metrics.map((m) => (
-            <div key={m.label} className="bg-ink-950 px-6 py-8 lg:px-8 lg:py-10">
+            <div key={m.label} className="bg-surface px-6 py-8 lg:px-8 lg:py-10">
               <dt className="sr-only">{m.label}</dt>
               <dd>
-                <span className="block font-display text-4xl tracking-tight text-bone-50 lg:text-5xl">
+                <span className="block font-display text-4xl tracking-tight text-fg lg:text-5xl">
                   {m.value}
                 </span>
-                <span className="mt-3 block text-sm text-bone-200">
+                <span className="mt-3 block text-sm text-fg-2">
                   {m.label}
                 </span>
-                <span className="mt-1 block text-xs text-bone-500">
+                <span className="mt-1 block text-xs text-subtle">
                   {m.note}
                 </span>
               </dd>

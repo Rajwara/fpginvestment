@@ -1,152 +1,216 @@
 export const site = {
-  name: "FPG Investment",
+  name: "FP Global",
   shortName: "FPG",
-  tagline: "Disciplined capital, compounded patiently.",
+  tagline: "Redefining hospitality.",
   description:
-    "FPG Investment is a multi-strategy asset manager investing across public and private markets on behalf of institutions, endowments and family offices.",
+    "Redefining hospitality through thoughtful development, world-class management and exceptional guest experiences.",
   url: "https://fpginvestment.vercel.app",
   founded: 2009,
-  email: "investors@fpginvestment.com",
-  phone: "+1 (212) 555-0142",
-  address: {
-    line1: "One Bryant Park, 42nd Floor",
-    line2: "New York, NY 10036",
-  },
+  email: "hello@fpglobal.com",
+  phone: "+92 42 111 000 555",
+  address: { line1: "Gulberg III", line2: "Lahore, Pakistan" },
+  social: [
+    { label: "LinkedIn", href: "https://linkedin.com" },
+    { label: "Instagram", href: "https://instagram.com" },
+    { label: "Facebook", href: "https://facebook.com" },
+  ],
 };
 
+/** The six service lines. Drives the mega menu, the home grid and the footer. */
+export const services = [
+  {
+    id: "business-development",
+    name: "Business Development & Advisory",
+    short: "Business Development",
+    icon: "compass",
+    summary:
+      "Feasibility, positioning and brand selection — the work that decides whether a project is worth building before a single foundation is poured.",
+    points: ["Market and feasibility studies", "Brand selection and negotiation", "Return modelling and capital planning"],
+  },
+  {
+    id: "design-construction",
+    name: "Design & Construction",
+    short: "Design & Construction",
+    icon: "blueprint",
+    summary:
+      "Technical services from concept design through handover, holding the line on brand standards, programme and cost at every stage.",
+    points: ["Concept and technical design review", "Contractor procurement", "Programme and cost control"],
+  },
+  {
+    id: "pre-opening",
+    name: "Pre-Opening",
+    short: "Pre-Opening",
+    icon: "key",
+    summary:
+      "The eighteen months that determine a hotel's first year. Recruitment, systems, supply chain and the critical path to a confident opening day.",
+    points: ["Critical path and budget", "Recruitment and training", "Systems, FF&E and OS&E"],
+  },
+  {
+    id: "takeover-turnaround",
+    name: "Takeover & Turnaround",
+    short: "Takeover & Turnaround",
+    icon: "refresh",
+    summary:
+      "Assets that underperform rarely lack potential — they lack operating discipline. We take over, stabilise and rebuild the P&L.",
+    points: ["Rapid operational diagnostic", "Cost and revenue restructuring", "Repositioning and rebranding"],
+  },
+  {
+    id: "sales-marketing",
+    name: "Sales & Marketing",
+    short: "Sales & Marketing",
+    icon: "megaphone",
+    summary:
+      "Commercial strategy that fills rooms at the right rate: segmentation, channel mix, revenue management and a brand people actually remember.",
+    points: ["Revenue management and pricing", "Channel and distribution strategy", "Brand, digital and PR"],
+  },
+  {
+    id: "hotel-management",
+    name: "Hotel Management & Operations",
+    short: "Hotel Management",
+    icon: "concierge",
+    summary:
+      "Full operating management under international brand standards, with owner reporting that tells you what is actually happening in your asset.",
+    points: ["Full operating management", "Brand standards compliance", "Transparent owner reporting"],
+  },
+];
+
 export const nav = [
-  { label: "Strategies", href: "/strategies" },
-  { label: "Approach", href: "/#approach" },
-  { label: "Insights", href: "/insights" },
-  { label: "Firm", href: "/firm" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about", mega: true },
+  { label: "Our Team", href: "/team" },
+  { label: "Blogs", href: "/blogs" },
+  { label: "Careers", href: "/careers" },
+  { label: "Hyatt Lahore", href: "/hyatt-lahore" },
+  { label: "Contact Us", href: "/contact" },
+];
+
+/** Left panel of the About Us mega menu. */
+export const megaFeature = {
+  eyebrow: "Who We Are",
+  title: "A hospitality company built by operators.",
+  body: "Two decades of developing, opening and running hotels across Pakistan and the region.",
+  href: "/about",
+  cta: "About FP Global",
+};
+
+export const partners = [
+  "Hyatt",
+  "Regency",
+  "Marriott",
+  "Accor",
+  "IHG",
 ];
 
 export const metrics = [
-  { value: "$14.2B", label: "Assets under management", note: "As of 31 Dec 2025" },
-  { value: "16 yrs", label: "Investing through cycles", note: "Founded 2009" },
-  { value: "11.4%", label: "Net annualised return", note: "Flagship, since inception" },
-  { value: "180+", label: "Institutional partners", note: "Across 14 countries" },
-];
-
-export const strategies = [
-  {
-    id: "public-equities",
-    name: "Global Equities",
-    allocation: "42%",
-    horizon: "5–10 year holds",
-    summary:
-      "A concentrated book of 25–35 businesses with durable pricing power, bought when the market is distracted by the next two quarters.",
-    points: [
-      "Concentrated, low-turnover portfolio",
-      "Fundamental, bottom-up underwriting",
-      "Valuation discipline over narrative",
-    ],
-  },
-  {
-    id: "private-credit",
-    name: "Private Credit",
-    allocation: "27%",
-    horizon: "3–6 year duration",
-    summary:
-      "Senior secured lending to profitable mid-market companies that banks have stepped away from — structured with covenants that actually bite.",
-    points: [
-      "First-lien, floating-rate exposure",
-      "Direct origination, no syndicate risk",
-      "Documented downside protection",
-    ],
-  },
-  {
-    id: "real-assets",
-    name: "Real Assets",
-    allocation: "19%",
-    horizon: "7–15 year holds",
-    summary:
-      "Infrastructure and income-producing property with contracted cash flows, inflation linkage and a clear path to operational improvement.",
-    points: [
-      "Contracted or regulated revenue",
-      "Inflation-linked escalators",
-      "Operator-led value creation",
-    ],
-  },
-  {
-    id: "opportunistic",
-    name: "Opportunistic",
-    allocation: "12%",
-    horizon: "Event-driven",
-    summary:
-      "Capital held deliberately in reserve, deployed into dislocations — forced sellers, complex situations and markets nobody wants to underwrite.",
-    points: [
-      "Dry powder by design",
-      "Complexity and illiquidity premia",
-      "Concentrated, high-conviction sizing",
-    ],
-  },
+  { value: "20 yrs", label: "In hospitality", note: "Founded 2009" },
+  { value: "1,400+", label: "Keys developed", note: "Across the region" },
+  { value: "6", label: "Service lines", note: "Concept to operations" },
+  { value: "94%", label: "Guest satisfaction", note: "Portfolio average" },
 ];
 
 export const principles = [
   {
     number: "01",
-    title: "Underwrite the downside first",
-    body: "Every position begins with the question of what we lose if we are wrong. Return is what remains after risk has been priced honestly.",
+    title: "Own the outcome, not the scope",
+    body: "We are judged on how the asset performs after opening, not on whether a deliverable was filed on time. That standard shapes every decision before it.",
   },
   {
     number: "02",
-    title: "Concentrate where we have an edge",
-    body: "We would rather own thirty businesses we understand completely than three hundred we understand partially. Diversification is not a substitute for judgement.",
+    title: "Design for the operator",
+    body: "Beautiful hotels that cost a fortune to run are a failure of design, not of management. We bring operations into the room while the drawings are still changeable.",
   },
   {
     number: "03",
-    title: "Let time do the compounding",
-    body: "Our average holding period is measured in years, not quarters. Turnover is a cost; patience is the only edge that has never been arbitraged away.",
+    title: "Protect the guest experience",
+    body: "Every cost decision is tested against what the guest will feel. The savings that show up in a review are not savings.",
   },
   {
     number: "04",
-    title: "Align every incentive",
-    body: "Partners and staff are among the largest investors in our own funds. We are paid when our clients are, and not before.",
+    title: "Report honestly to owners",
+    body: "Owners get the same numbers we use ourselves, on the same day, including the ones we would rather explain in person.",
   },
-];
-
-export const performance = [
-  { year: "2021", fund: 18.4, bench: 16.2 },
-  { year: "2022", fund: -6.1, bench: -18.1 },
-  { year: "2023", fund: 21.7, bench: 24.2 },
-  { year: "2024", fund: 15.9, bench: 13.4 },
-  { year: "2025", fund: 12.8, bench: 9.6 },
 ];
 
 export const insights = [
   {
-    slug: "the-cost-of-being-early",
-    category: "Market Commentary",
+    slug: "pre-opening-critical-path",
+    category: "Operations",
     date: "2026-08-14",
     readTime: "6 min",
-    title: "The cost of being early is indistinguishable from being wrong",
+    title: "The pre-opening decisions that quietly cost you year one",
     excerpt:
-      "Credit spreads have compressed to levels last seen in 2007. We look at what a decade of data says about where forward returns go from here — and why we are shortening duration.",
+      "Most opening-year underperformance is set in motion eighteen months earlier. A look at the five critical-path items owners consistently compress — and what each one costs later.",
   },
   {
-    slug: "private-credit-discipline",
-    category: "Strategy Note",
+    slug: "designing-for-operators",
+    category: "Development",
     date: "2026-06-02",
     readTime: "9 min",
-    title: "Private credit has grown up. Its underwriting has not.",
+    title: "Why back-of-house should be designed first",
     excerpt:
-      "The asset class has quadrupled in a decade. Covenant packages have thinned in lockstep. A field guide to the documentation terms that separate lending from hoping.",
+      "Service corridors, loading and staff flow shape labour cost for the life of the building. They are also the first things value-engineered out of a drawing set.",
   },
   {
-    slug: "inflation-linked-real-assets",
-    category: "Research",
+    slug: "turnaround-first-90-days",
+    category: "Turnaround",
     date: "2026-03-21",
     readTime: "11 min",
-    title: "What actually passes inflation through",
+    title: "The first ninety days of a hotel turnaround",
     excerpt:
-      "Not all real assets are real. We decompose fifteen years of cash flows across infrastructure, logistics and regulated utilities to find where the linkage genuinely holds.",
+      "What we look at, in what order, when taking over an underperforming asset — and why revenue management usually comes before any renovation conversation.",
   },
 ];
 
 export const team = [
-  { name: "Eleanor Vance", role: "Managing Partner, Chief Investment Officer", prior: "Previously Wellington Management", initials: "EV" },
-  { name: "Marcus Oyelaran", role: "Partner, Head of Private Credit", prior: "Previously Ares Management", initials: "MO" },
-  { name: "Sofia Renard", role: "Partner, Head of Real Assets", prior: "Previously Brookfield", initials: "SR" },
-  { name: "David Kimura", role: "Chief Risk Officer", prior: "Previously Federal Reserve Bank of NY", initials: "DK" },
+  { name: "Faisal Pervaiz", role: "Chairman", prior: "Two decades in hospitality development", initials: "FP" },
+  { name: "Ayesha Rahman", role: "Chief Operating Officer", prior: "Previously Hyatt International", initials: "AR" },
+  { name: "Omar Siddiqui", role: "Director, Development", prior: "Previously Accor South Asia", initials: "OS" },
+];
+
+export const faqs = [
+  {
+    q: "Does FP Global invest its own capital in projects?",
+    a: "We take selective equity positions alongside owners where the project fits our operating thesis. Most engagements, however, are advisory or management mandates.",
+  },
+  {
+    q: "At what stage should we bring you in?",
+    a: "As early as land acquisition. The decisions with the largest effect on returns — positioning, brand and building efficiency — are made long before construction starts.",
+  },
+  {
+    q: "Do you only work with international brands?",
+    a: "No. We operate under international brand agreements and also run independent and white-label properties where that produces a better return.",
+  },
+  {
+    q: "What size of asset do you take on?",
+    a: "Typically 80 keys and above, though we have taken on smaller boutique and serviced-apartment projects where the positioning is right.",
+  },
+  {
+    q: "Do you take over hotels that are already operating?",
+    a: "Yes — takeover and turnaround is one of our six service lines. We can assume management of an operating asset with a structured transition plan.",
+  },
+];
+
+export const jobs = [
+  { slug: "acquisition-advisor", title: "Acquisition Advisor", location: "Lahore, Pakistan", type: "Full time", team: "Development" },
+  { slug: "pre-opening-manager", title: "Pre-Opening Manager", location: "Lahore, Pakistan", type: "Full time", team: "Operations" },
+  { slug: "revenue-analyst", title: "Revenue Analyst", location: "Lahore, Pakistan", type: "Full time", team: "Commercial" },
+  { slug: "project-architect", title: "Project Architect", location: "Karachi, Pakistan", type: "Contract", team: "Design & Construction" },
+];
+
+export const footerColumns = [
+  {
+    heading: "What We Do",
+    links: services.map((s) => ({ label: s.short, href: `/services/${s.id}` })),
+  },
+  {
+    heading: "Company",
+    links: [
+      { label: "Who We Are", href: "/about" },
+      { label: "Our Team", href: "/team" },
+      { label: "Careers", href: "/careers" },
+      { label: "News & Insights", href: "/blogs" },
+      { label: "Hyatt Lahore", href: "/hyatt-lahore" },
+      { label: "Contact Us", href: "/contact" },
+    ],
+  },
 ];

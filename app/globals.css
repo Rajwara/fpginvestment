@@ -1,26 +1,25 @@
 @import "tailwindcss";
 
+/*
+ * Two themes, one token set. Every utility in the app resolves through the
+ * semantic names below, so switching themes only swaps these values —
+ * no component knows which theme is active.
+ *
+ * Dark is the default and is what renders before any JS runs.
+ */
 @theme {
-  /* Surfaces — near-black with a cool blue cast */
-  --color-ink-950: #07090c;
-  --color-ink-900: #0a0d13;
-  --color-ink-850: #0e131b;
-  --color-ink-800: #141a24;
-  --color-ink-700: #1d2531;
-  --color-ink-600: #2b3542;
+  --color-surface: #07090c;   /* page background */
+  --color-surface-2: #0a0d13; /* alternating sections, footer, cards */
+  --color-fg: #f6f4ef;        /* headings, strongest text */
+  --color-fg-2: #d6d2c8;      /* body text; also the base for hairlines */
+  --color-muted: #9a978f;     /* secondary prose */
+  --color-subtle: #74726c;    /* captions, eyebrow labels, legal */
 
-  /* Text — warm off-white, never pure white */
-  --color-bone-50: #f6f4ef;
-  --color-bone-200: #d6d2c8;
-  --color-bone-400: #9a978f;
-  --color-bone-500: #74726c;
-
-  /* Accent — restrained gold */
-  --color-gold-200: #f0dca8;
-  --color-gold-300: #e3c77e;
-  --color-gold-400: #cfae57;
-  --color-gold-500: #b28f33;
-  --color-gold-600: #8b6c1e;
+  --color-accent-200: #f0dca8;
+  --color-accent-300: #e3c77e;
+  --color-accent-400: #cfae57; /* brand gold — fills, borders, eyebrows */
+  --color-accent-500: #b28f33;
+  --color-accent-600: #8b6c1e;
 
   --font-display: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -29,7 +28,42 @@
 
   --animate-rise: rise 0.9s var(--ease-out-expo) both;
   --animate-fade: fade 1.2s var(--ease-out-expo) both;
-  --animate-ticker: ticker 48s linear infinite;
+}
+
+/*
+ * Light theme. The accent ramp inverts: on a light surface the pale golds are
+ * unreadable as text, so 200–400 darken and carry the contrast instead.
+ * Gold fills keep --color-surface as their text colour, which is near-white
+ * here — so buttons stay legible in both themes without a second class.
+ */
+:root[data-theme="light"] {
+  --color-surface: #faf9f6;
+  --color-surface-2: #f1efe8;
+  --color-fg: #10141a;
+  --color-fg-2: #2b313a;
+  --color-muted: #585d66;
+  --color-subtle: #7c8089;
+
+  --color-accent-200: #6f5510;
+  --color-accent-300: #8a6a15;
+  --color-accent-400: #96741a;
+  --color-accent-500: #a8821f;
+  --color-accent-600: #7d5f12;
+}
+
+/* Ambient glows are painted, not tinted, so they need per-theme values. */
+:root {
+  --glow-warm: rgba(207, 174, 87, 0.13);
+  --glow-cool: rgba(40, 70, 110, 0.28);
+  --glow-cta: rgba(207, 174, 87, 0.11);
+  --grid-line: rgba(214, 210, 200, 0.045);
+}
+
+:root[data-theme="light"] {
+  --glow-warm: rgba(180, 140, 40, 0.14);
+  --glow-cool: rgba(70, 110, 170, 0.14);
+  --glow-cta: rgba(180, 140, 40, 0.12);
+  --grid-line: rgba(30, 35, 45, 0.05);
 }
 
 @keyframes rise {
@@ -40,14 +74,14 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
-@keyframes ticker {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
 
 @layer base {
   :root {
     color-scheme: dark;
+  }
+
+  :root[data-theme="light"] {
+    color-scheme: light;
   }
 
   html {
@@ -57,18 +91,21 @@
   }
 
   body {
-    background-color: var(--color-ink-950);
-    color: var(--color-bone-200);
+    background-color: var(--color-surface);
+    color: var(--color-fg-2);
     font-family: var(--font-sans);
+    transition:
+      background-color 0.4s var(--ease-out-expo),
+      color 0.4s var(--ease-out-expo);
   }
 
   ::selection {
-    background-color: var(--color-gold-400);
-    color: var(--color-ink-950);
+    background-color: var(--color-accent-400);
+    color: var(--color-surface);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-gold-400);
+    outline: 2px solid var(--color-accent-400);
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -90,8 +127,19 @@
   font-weight: 500;
 }
 
-@utility hairline {
-  border-color: color-mix(in oklab, var(--color-bone-200) 12%, transparent);
+/* Ambient background washes used by the hero, page heroes and the CTA. */
+@utility glow-warm {
+  background-image: radial-gradient(circle, var(--glow-warm), transparent 65%);
+}
+@utility glow-cool {
+  background-image: radial-gradient(circle, var(--glow-cool), transparent 65%);
+}
+@utility glow-cta {
+  background-image: radial-gradient(ellipse, var(--glow-cta), transparent 68%);
+}
+@utility grid-lines {
+  background-image: linear-gradient(to right, var(--grid-line) 1px, transparent 1px);
+  background-size: 88px 100%;
 }
 
 /* Reveal-on-scroll: elements start hidden, IntersectionObserver adds data-shown */

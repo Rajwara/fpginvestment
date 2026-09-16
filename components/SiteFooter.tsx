@@ -1,68 +1,70 @@
 import Link from "next/link";
-import { site, strategies } from "@/lib/site";
+import { footerColumns, site } from "@/lib/site";
 import Logo from "./Logo";
-
-const columns = [
-  {
-    heading: "Strategies",
-    links: strategies.map((s) => ({
-      label: s.name,
-      href: `/strategies#${s.id}`,
-    })),
-  },
-  {
-    heading: "Firm",
-    links: [
-      { label: "Our approach", href: "/#approach" },
-      { label: "Leadership", href: "/firm" },
-      { label: "Insights", href: "/insights" },
-      { label: "Contact", href: "/contact" },
-    ],
-  },
-  {
-    heading: "Legal",
-    links: [
-      { label: "Form ADV", href: "/contact" },
-      { label: "Privacy notice", href: "/contact" },
-      { label: "Terms of use", href: "/contact" },
-      { label: "Regulatory disclosures", href: "/contact" },
-    ],
-  },
-];
+import SocialIcon from "./SocialIcon";
 
 export default function SiteFooter() {
   return (
-    <footer className="border-t border-bone-200/10 bg-ink-900">
+    <footer className="border-t border-fg-2/10 bg-surface-2">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
+        {/* Business-focused CTA in place of a newsletter sign-up */}
+        <div className="grid gap-8 border-b border-fg-2/10 pb-14 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-16">
+          <div>
+            <h2 className="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight tracking-tight text-fg">
+              Let&rsquo;s Create Something Exceptional
+            </h2>
+            <p className="mt-3 max-w-xl leading-relaxed text-muted">
+              Have a hospitality project, development opportunity or partnership
+              in mind?
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="group inline-flex w-fit items-center gap-2.5 rounded-full bg-accent-400 px-7 py-4 text-sm font-medium text-surface transition-colors hover:bg-accent-300"
+          >
+            Start a Conversation
+            <span
+              aria-hidden="true"
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            >
+              →
+            </span>
+          </Link>
+        </div>
+
+        <div className="grid gap-12 pt-14 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
+          {/* Column 1 — FP Global */}
           <div>
             <Logo />
-            <p className="mt-6 max-w-xs text-sm leading-relaxed text-bone-400">
+            <p className="mt-6 max-w-xs text-sm leading-relaxed text-muted">
               {site.description}
             </p>
-            <div className="mt-6 space-y-1 text-sm text-bone-400">
-              <p>{site.address.line1}</p>
-              <p>{site.address.line2}</p>
-              <p className="pt-2">
+            <div className="mt-6 flex gap-2.5">
+              {site.social.map((s) => (
                 <a
-                  href={`mailto:${site.email}`}
-                  className="text-bone-200 underline decoration-gold-400/40 underline-offset-4 transition-colors hover:text-gold-300"
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label={s.label}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-fg-2/15 text-fg-2 transition-colors hover:border-accent-400 hover:bg-accent-400 hover:text-surface"
                 >
-                  {site.email}
+                  <SocialIcon name={s.label} />
                 </a>
-              </p>
+              ))}
             </div>
           </div>
 
-          {columns.map((col) => (
+          {/* Columns 2 and 3 — What We Do, Company */}
+          {footerColumns.map((col) => (
             <div key={col.heading}>
-              <h2 className="eyebrow text-bone-500">{col.heading}</h2>
+              <h2 className="eyebrow text-subtle">{col.heading}</h2>
               <ul className="mt-5 space-y-3">
                 {col.links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-bone-200 transition-colors hover:text-gold-300"
+                      className="text-sm text-fg-2 transition-colors hover:text-accent-300"
                     >
                       {link.label}
                     </Link>
@@ -71,22 +73,59 @@ export default function SiteFooter() {
               </ul>
             </div>
           ))}
+
+          {/* Column 4 — Get In Touch */}
+          <div>
+            <h2 className="eyebrow text-subtle">Get In Touch</h2>
+            <ul className="mt-5 space-y-3 text-sm">
+              <li className="text-muted">
+                {site.address.line1}
+                <br />
+                {site.address.line2}
+              </li>
+              <li>
+                <a
+                  href={`mailto:${site.email}`}
+                  className="text-fg-2 transition-colors hover:text-accent-300"
+                >
+                  {site.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`tel:${site.phone.replace(/\s/g, "")}`}
+                  className="text-fg-2 transition-colors hover:text-accent-300"
+                >
+                  {site.phone}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.social[0].href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="text-fg-2 transition-colors hover:text-accent-300"
+                >
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div className="mt-16 border-t border-bone-200/10 pt-8">
-          <p className="max-w-4xl text-xs leading-relaxed text-bone-500">
-            This website is for informational purposes only and does not
-            constitute an offer to sell or a solicitation of an offer to buy any
-            security. Past performance is not indicative of future results. All
-            figures shown are illustrative. Investing involves risk, including
-            the possible loss of principal.
+        <div className="mt-14 flex flex-col gap-4 border-t border-fg-2/10 pt-8 text-xs text-subtle sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {new Date().getFullYear()} {site.name}. All Rights Reserved.
           </p>
-          <div className="mt-6 flex flex-col gap-4 text-xs text-bone-500 sm:flex-row sm:items-center sm:justify-between">
-            <p>
-              © {new Date().getFullYear()} {site.name}. All rights reserved.
-            </p>
-            <p>Registered investment adviser · New York · London · Singapore</p>
-          </div>
+          <p className="flex items-center gap-3">
+            <Link href="/privacy" className="transition-colors hover:text-accent-300">
+              Privacy Policy
+            </Link>
+            <span aria-hidden="true">|</span>
+            <Link href="/terms" className="transition-colors hover:text-accent-300">
+              Terms &amp; Conditions
+            </Link>
+          </p>
         </div>
       </div>
     </footer>

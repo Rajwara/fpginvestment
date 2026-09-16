@@ -5,6 +5,7 @@ import { site } from "@/lib/site";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import Reveal from "@/components/Reveal";
+import { themeInitScript } from "@/lib/theme";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -40,11 +41,20 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${instrumentSerif.variable}`}>
-      <body className="min-h-screen bg-ink-950 text-bone-200 antialiased">
+    <html
+      lang="en"
+      data-theme="dark"
+      className={`${inter.variable} ${instrumentSerif.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        {/* Applies the stored theme before first paint to avoid a flash. */}
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className="min-h-screen bg-surface text-fg-2 antialiased">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-gold-400 focus:px-5 focus:py-2 focus:text-sm focus:font-medium focus:text-ink-950"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-accent-400 focus:px-5 focus:py-2 focus:text-sm focus:font-medium focus:text-surface"
         >
           Skip to content
         </a>

@@ -1,18 +1,16 @@
 import Hero from "@/components/Hero";
-import Strategies from "@/components/Strategies";
+import Services from "@/components/Services";
 import Approach from "@/components/Approach";
-import Performance from "@/components/Performance";
-import Insights from "@/components/Insights";
+import BlogTeaser from "@/components/BlogTeaser";
 import CTA from "@/components/CTA";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <Strategies />
+      <Services />
       <Approach />
-      <Performance />
-      <Insights />
+      <BlogTeaser />
       <CTA />
     </>
   );

@@ -4,7 +4,7 @@ export default function Logo({ className = "" }: { className?: string }) {
   return (
     <Link
       href="/"
-      aria-label="FPG Investment — home"
+      aria-label="FP Global — home"
       className={`group flex items-center gap-3 ${className}`}
     >
       <span className="relative inline-flex h-9 w-9 items-center justify-center">
@@ -15,12 +15,12 @@ export default function Logo({ className = "" }: { className?: string }) {
             width="34"
             height="34"
             rx="3"
-            className="fill-none stroke-gold-400/60 transition-colors duration-500 group-hover:stroke-gold-300"
+            className="fill-none stroke-accent-400/60 transition-colors duration-500 group-hover:stroke-accent-300"
             strokeWidth="1"
           />
           <path
             d="M11 25V11h13M11 18h9"
-            className="stroke-bone-50"
+            className="stroke-fg"
             strokeWidth="1.6"
             strokeLinecap="square"
             fill="none"
@@ -28,11 +28,11 @@ export default function Logo({ className = "" }: { className?: string }) {
         </svg>
       </span>
       <span className="flex flex-col leading-none">
-        <span className="font-display text-[1.35rem] tracking-tight text-bone-50">
-          FPG
+        <span className="font-display text-[1.35rem] tracking-tight text-fg">
+          FP Global
         </span>
-        <span className="eyebrow mt-1 text-[0.5625rem] text-bone-500">
-          Investment
+        <span className="eyebrow mt-1 text-[0.5625rem] text-subtle">
+          Hospitality
         </span>
       </span>
     </Link>
