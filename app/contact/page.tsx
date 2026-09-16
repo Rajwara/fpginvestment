@@ -62,17 +62,17 @@ export default function ContactPage() {
 
       {/* Channel strip */}
       <section className="border-b border-fg-2/10 bg-surface-2">
-        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-10 sm:grid-cols-3 lg:px-10">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-12 sm:grid-cols-3 lg:px-10 lg:py-14">
           {channels.map((c) => {
             const body = (
               <>
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent text-on-accent">
-                  <ContactIcon name={c.icon} />
+                <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 text-on-accent lg:h-[4.5rem] lg:w-[4.5rem]">
+                  <ContactIcon name={c.icon} className="h-7 w-7 lg:h-8 lg:w-8" />
                 </span>
                 <span>
                   <span className="block text-sm text-subtle">{c.label}</span>
                   {c.lines.map((l) => (
-                    <span key={l} className="block text-fg-2">
+                    <span key={l} className="block text-lg text-fg-2">
                       {l}
                     </span>
                   ))}
@@ -83,12 +83,12 @@ export default function ContactPage() {
               <a
                 key={c.label}
                 href={c.href}
-                className="group flex items-center gap-4 transition-colors hover:text-accent-fg"
+                className="group flex items-center gap-5 transition-colors hover:text-accent-fg"
               >
                 {body}
               </a>
             ) : (
-              <div key={c.label} className="flex items-center gap-4">
+              <div key={c.label} className="flex items-center gap-5">
                 {body}
               </div>
             );
@@ -151,8 +151,8 @@ export default function ContactPage() {
             </svg>
 
             <div className="absolute inset-x-6 bottom-6 flex items-center gap-4 rounded-xl border border-fg-2/10 bg-surface/90 p-4 backdrop-blur-sm lg:inset-x-8 lg:bottom-8">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent text-on-accent">
-                <ContactIcon name="phone" className="h-4 w-4" />
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 text-on-accent">
+                <ContactIcon name="phone" className="h-5 w-5" />
               </span>
               <p className="text-sm leading-relaxed text-muted">
                 Call us at{" "}
