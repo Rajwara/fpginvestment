@@ -21,7 +21,7 @@ export default function TeamPage() {
           </>
         }
         lede="Meet the people behind FP Global. Everyone who advises on a project has run one."
-        image="/assets/images/fpginvestment_banner_img2.jpg"
+        image="/assets/images/fpginvestment_banner_img2-web.webp"
       />
 
       <TeamProfiles />

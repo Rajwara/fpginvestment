@@ -14,7 +14,7 @@ export default function TermsPage() {
       eyebrow="Legal"
       title="Terms & Conditions"
       lede="The terms on which you may use this website and the material published on it."
-      image="/assets/images/fpginvestment_banner_img2.jpg"
+      image="/assets/images/fpginvestment_banner_img2-web.webp"
       updated="16 September 2026"
       intro={`These terms govern your use of fpginvestment, operated by ${site.name} from ${site.address.line1}, ${site.address.line2}. Please read them before you rely on anything published here. If you do not accept them, please stop using the site.`}
       sections={[

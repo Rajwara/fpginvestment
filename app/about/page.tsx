@@ -23,7 +23,7 @@ export default function AboutPage() {
           </>
         }
         lede="FP Global is a full-service hospitality development and management company, partnering with owners and investors across every stage of the hotel lifecycle — from development strategy and design through pre-opening, commercial management and day-to-day operations."
-        image="/assets/images/fpginvestment_banner_img1.jpg"
+        image="/assets/images/fpginvestment_banner_img1-web.webp"
       />
 
       <ServicesFlex />

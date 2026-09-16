@@ -14,7 +14,7 @@ export default function PrivacyPage() {
       eyebrow="Legal"
       title="Privacy Policy"
       lede="How we collect, use and protect the information you share with us."
-      image="/assets/images/fpginvestment_banner_img1.jpg"
+      image="/assets/images/fpginvestment_banner_img1-web.webp"
       updated="16 September 2026"
       intro={`${site.name} is a hospitality development and management company based in ${site.address.line1}, ${site.address.line2}. This policy explains what personal information we collect through fpginvestment, why we collect it, how long we keep it and what you can ask us to do with it.`}
       sections={[

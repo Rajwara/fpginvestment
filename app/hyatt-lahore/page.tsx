@@ -109,7 +109,7 @@ export default function HyattLahorePage() {
           </>
         }
         lede="A premier hotel and club, developed and operated by FP Global — where culture meets comfort in the most spectacular way."
-        image="/assets/images/fpginvestment_banner_img1.jpg"
+        image="/assets/images/fpginvestment_banner_img1-web.webp"
       />
 
       <section data-reveal className="bg-surface pt-16 lg:pt-24">

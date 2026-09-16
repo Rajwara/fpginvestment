@@ -80,7 +80,7 @@ export default function BlogsPage() {
           </>
         }
         lede="What we learned developing, opening and running hotels — written up while it is still fresh."
-        image="/assets/images/fpginvestment_banner_img2.jpg"
+        image="/assets/images/fpginvestment_banner_img2-web.webp"
       />
 
       {/* Featured pair */}

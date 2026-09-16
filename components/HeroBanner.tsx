@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import Button from "./Button";
 
 const slides = [
-  { src: "/assets/images/fpginvestment_banner_img1.jpg" },
-  { src: "/assets/images/fpginvestment_banner_img2.jpg" },
+  { src: "/assets/images/fpginvestment_banner_img1-web.webp" },
+  { src: "/assets/images/fpginvestment_banner_img2-web.webp" },
 ];
 
 const SLIDE_MS = 7000;
