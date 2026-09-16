@@ -184,7 +184,6 @@ export const nav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about", mega: true },
   { label: "Our Team", href: "/team" },
-  { label: "Blogs", href: "/blogs" },
   { label: "Careers", href: "/careers" },
   {
     label: "Hyatt Lahore",
