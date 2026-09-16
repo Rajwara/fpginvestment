@@ -253,8 +253,9 @@ export default function ContactPage() {
 
       {/* Schedule a call */}
       <section data-reveal className="mx-auto max-w-7xl px-6 pb-20 lg:px-10 lg:pb-28">
-        <div className="reveal grid overflow-hidden rounded-2xl lg:grid-cols-2">
-          <div className="min-h-[18rem] bg-surface-2">
+        <div className="reveal grid gap-6 lg:grid-cols-[1.6fr_1fr]">
+          <div className="min-h-[18rem] overflow-hidden rounded-2xl bg-surface-2 lg:min-h-[26rem]">
+            {/* Placeholder scene — swap for a photograph of the team at work. */}
             <svg
               viewBox="0 0 600 400"
               preserveAspectRatio="xMidYMid slice"
@@ -269,34 +270,53 @@ export default function ContactPage() {
                 <circle cx="390" cy="165" r="44" />
                 <path d="M312 400c0-48 35-82 78-82s78 34 78 82Z" />
               </g>
-              <rect y="300" width="600" height="100" fill="var(--color-accent)" opacity="0.10" />
+              <rect y="300" width="600" height="100" fill="var(--color-accent)" opacity="0.1" />
             </svg>
           </div>
-          <div className="flex flex-col justify-between gap-10 bg-accent p-8 text-on-accent lg:p-12">
+
+          <div className="flex flex-col justify-between gap-10 rounded-2xl bg-gradient-to-br from-accent to-accent-2 p-8 text-on-accent lg:p-10">
             <div>
-              <span className="eyebrow w-fit rounded-full border border-on-accent/35 px-3 py-1.5">
-                Free Consultation
-              </span>
-              <h2 className="mt-6 font-display text-[clamp(1.75rem,3.2vw,2.5rem)] leading-tight tracking-[-0.015em]">
+              <div className="flex items-start justify-between gap-4">
+                <span className="eyebrow rounded-full border border-on-accent/35 px-3 py-1.5">
+                  Free Consultation
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="font-display text-3xl leading-none text-on-accent/80"
+                >
+                  ✳
+                </span>
+              </div>
+              <h2 className="mt-7 font-display text-[clamp(1.6rem,2.6vw,2.1rem)] leading-tight tracking-[-0.015em]">
                 Schedule a call with our development team
               </h2>
-              <p className="mt-4 max-w-md leading-relaxed text-on-accent/80">
+              <p className="mt-4 text-sm leading-relaxed text-on-accent/80">
                 Thirty minutes, no obligation. Bring a site, an operating asset
                 or an idea and we will tell you what it would take.
               </p>
             </div>
-            <MaskButton
+
+            {/* Split control: label block and arrow chip read as two pieces but
+                are one link. bg-surface inverts per theme, so it stays legible
+                on the purple card in both. */}
+            <a
               href={`mailto:${site.email}?subject=${encodeURIComponent("Consultation request")}`}
-              variant="onAccent"
-              size="lg"
-              className="w-fit"
-              arrow
+              className="group inline-flex w-fit items-stretch gap-2"
             >
-              Book a Consultation
-            </MaskButton>
+              <span className="flex items-center rounded-xl bg-surface px-6 py-3.5 text-sm font-medium text-accent-fg transition-opacity group-hover:opacity-90">
+                Book a Consultation
+              </span>
+              <span
+                aria-hidden="true"
+                className="flex w-12 items-center justify-center rounded-xl bg-surface text-accent-fg transition-all duration-300 group-hover:opacity-90 group-hover:-translate-y-0.5"
+              >
+                ↗
+              </span>
+            </a>
           </div>
         </div>
       </section>
+
     </>
   );
 }
