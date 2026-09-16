@@ -95,20 +95,22 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
                 <div
                   key={copy}
                   aria-hidden="true"
-                  className="marquee-track flex shrink-0 gap-3 pr-3"
+                  className="marquee-track flex shrink-0 gap-4 pr-4"
                 >
                   {[0, 1].map((set) =>
                     partners.map((partner) => (
                       <div
                         key={`${copy}-${set}-${partner.name}`}
-                        className="flex h-16 w-32 shrink-0 items-center justify-center rounded-xl bg-white px-4 ring-1 ring-fg-2/10"
+                        // Sized so three tiles fill the strip: any smaller and
+                        // the wordmarks stop being readable.
+                        className="flex h-24 w-40 shrink-0 items-center justify-center rounded-xl bg-white px-5 ring-1 ring-fg-2/10"
                       >
                         <Image
                           src={partner.logo}
                           alt=""
-                          width={160}
-                          height={72}
-                          className="h-8 w-full object-contain"
+                          width={180}
+                          height={80}
+                          className="h-14 w-full object-contain"
                         />
                       </div>
                     ))

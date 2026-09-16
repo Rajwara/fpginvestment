@@ -3,7 +3,6 @@ import Image from "next/image";
 import DarkPageHero from "@/components/DarkPageHero";
 import QuerySection from "@/components/QuerySection";
 import ServiceIcon from "@/components/ServiceIcon";
-import Button from "@/components/Button";
 
 export const metadata: Metadata = {
   title: "Hyatt Regency Lahore",
@@ -187,24 +186,6 @@ export default function HyattLahorePage() {
                 Three phases, run by one team, with the handover between them
                 happening inside the company rather than across a contract.
               </p>
-
-              <div className="mt-10 grid gap-8 sm:grid-cols-3">
-                {highlights.map((h, i) => (
-                  <div key={h.title} style={{ transitionDelay: `${i * 70}ms` }}>
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-surface shadow-lg shadow-fg/5 ring-1 ring-fg-2/5">
-                      <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent-2 text-on-accent">
-                        <ServiceIcon name={h.icon} className="h-4.5 w-4.5" />
-                      </span>
-                    </span>
-                    <h4 className="mt-5 font-display text-lg text-fg">
-                      {h.title}
-                    </h4>
-                    <p className="mt-2.5 text-sm leading-relaxed text-muted">
-                      {h.body}
-                    </p>
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="reveal relative aspect-[4/3] overflow-hidden rounded-3xl bg-surface">
@@ -217,27 +198,22 @@ export default function HyattLahorePage() {
               />
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Closing wide image and note. */}
-      <section data-reveal className="bg-surface py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <p className="reveal max-w-5xl leading-relaxed text-muted">
-            The hotel opened in 2024 and is trading. What we take from it is not
-            a case study so much as a working method: decide the hard things
-            early, keep the people who decided them on the project, and measure
-            the result against the case that justified the spend. That is the
-            way we would like to work on the next one.
-          </p>
-
-          <div className="reveal mt-12 flex flex-wrap gap-4">
-            <Button href="/about#services" arrow>
-              See what we do
-            </Button>
-            <Button href="/contact" variant="secondary" arrow>
-              Discuss a similar project
-            </Button>
+          {/* Full width, so the copy is not squeezed into a third of a column. */}
+          <div className="mt-12 grid gap-6 sm:grid-cols-3 lg:mt-16">
+            {highlights.map((h, i) => (
+              <div
+                key={h.title}
+                className="reveal rounded-2xl bg-surface p-8 shadow-lg shadow-fg/5 ring-1 ring-fg-2/5"
+                style={{ transitionDelay: `${i * 70}ms` }}
+              >
+                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-accent to-accent-2 text-on-accent">
+                  <ServiceIcon name={h.icon} className="h-7 w-7" />
+                </span>
+                <h4 className="mt-6 font-display text-xl text-fg">{h.title}</h4>
+                <p className="mt-3 leading-relaxed text-muted">{h.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
