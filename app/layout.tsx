@@ -43,7 +43,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-theme="dark"
+      data-theme="light"
       className={`${inter.variable} ${instrumentSerif.variable}`}
       suppressHydrationWarning
     >
@@ -54,7 +54,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-surface text-fg-2 antialiased">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-accent-400 focus:px-5 focus:py-2 focus:text-sm focus:font-medium focus:text-surface"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-accent focus:px-5 focus:py-2 focus:text-sm focus:font-medium focus:text-on-accent"
         >
           Skip to content
         </a>

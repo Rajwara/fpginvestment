@@ -1,25 +1,33 @@
 @import "tailwindcss";
 
 /*
- * Two themes, one token set. Every utility in the app resolves through the
- * semantic names below, so switching themes only swaps these values —
- * no component knows which theme is active.
+ * Brand: #604A9F (purple) and #000000 (black).
  *
- * Dark is the default and is what renders before any JS runs.
+ * Two themes share one set of role-based tokens, so no component knows which
+ * theme is active. Light is the default and is what renders before any JS.
+ *
+ * The accent is split by role rather than by a numeric ramp, because purple
+ * needs opposite lightness depending on the job:
+ *   --color-accent      a filled surface (button, swatch) — pairs with on-accent
+ *   --color-on-accent   text sitting ON that fill
+ *   --color-accent-fg   accent-coloured text/icons sitting on the page surface
+ * On black, #604A9F is too dark to read as text (3:1), so accent-fg lightens
+ * in the dark theme while the fill only lightens enough to clear 3:1 against
+ * the background.
  */
 @theme {
-  --color-surface: #07090c;   /* page background */
-  --color-surface-2: #0a0d13; /* alternating sections, footer, cards */
-  --color-fg: #f6f4ef;        /* headings, strongest text */
-  --color-fg-2: #d6d2c8;      /* body text; also the base for hairlines */
-  --color-muted: #9a978f;     /* secondary prose */
-  --color-subtle: #74726c;    /* captions, eyebrow labels, legal */
+  /* Light theme — the default */
+  --color-surface: #ffffff;
+  --color-surface-2: #f4f1fa;  /* pale tint of the brand purple */
+  --color-fg: #0a0a0a;
+  --color-fg-2: #2a2733;
+  --color-muted: #595568;
+  --color-subtle: #837f90;
 
-  --color-accent-200: #f0dca8;
-  --color-accent-300: #e3c77e;
-  --color-accent-400: #cfae57; /* brand gold — fills, borders, eyebrows */
-  --color-accent-500: #b28f33;
-  --color-accent-600: #8b6c1e;
+  --color-accent: #604a9f;       /* brand purple */
+  --color-accent-hover: #4e3c82;
+  --color-accent-fg: #604a9f;    /* 7.0:1 on white */
+  --color-on-accent: #ffffff;    /* 7.0:1 on the fill */
 
   --font-display: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -30,40 +38,33 @@
   --animate-fade: fade 1.2s var(--ease-out-expo) both;
 }
 
-/*
- * Light theme. The accent ramp inverts: on a light surface the pale golds are
- * unreadable as text, so 200–400 darken and carry the contrast instead.
- * Gold fills keep --color-surface as their text colour, which is near-white
- * here — so buttons stay legible in both themes without a second class.
- */
-:root[data-theme="light"] {
-  --color-surface: #faf9f6;
-  --color-surface-2: #f1efe8;
-  --color-fg: #10141a;
-  --color-fg-2: #2b313a;
-  --color-muted: #585d66;
-  --color-subtle: #7c8089;
+:root[data-theme="dark"] {
+  --color-surface: #000000;      /* brand black */
+  --color-surface-2: #0d0a14;    /* black carrying a trace of the purple */
+  --color-fg: #ffffff;
+  --color-fg-2: #d9d5e2;
+  --color-muted: #9d98aa;
+  --color-subtle: #6f6b7c;
 
-  --color-accent-200: #6f5510;
-  --color-accent-300: #8a6a15;
-  --color-accent-400: #96741a;
-  --color-accent-500: #a8821f;
-  --color-accent-600: #7d5f12;
+  --color-accent: #6e56b5;       /* 3.7:1 against black, so the fill reads */
+  --color-accent-hover: #8169c9;
+  --color-accent-fg: #a896d0;    /* 7.9:1 on black */
+  --color-on-accent: #ffffff;    /* 5.7:1 on the fill */
 }
 
 /* Ambient glows are painted, not tinted, so they need per-theme values. */
 :root {
-  --glow-warm: rgba(207, 174, 87, 0.13);
-  --glow-cool: rgba(40, 70, 110, 0.28);
-  --glow-cta: rgba(207, 174, 87, 0.11);
-  --grid-line: rgba(214, 210, 200, 0.045);
+  --glow-warm: rgba(96, 74, 159, 0.16);
+  --glow-cool: rgba(96, 74, 159, 0.08);
+  --glow-cta: rgba(96, 74, 159, 0.13);
+  --grid-line: rgba(42, 39, 51, 0.06);
 }
 
-:root[data-theme="light"] {
-  --glow-warm: rgba(180, 140, 40, 0.14);
-  --glow-cool: rgba(70, 110, 170, 0.14);
-  --glow-cta: rgba(180, 140, 40, 0.12);
-  --grid-line: rgba(30, 35, 45, 0.05);
+:root[data-theme="dark"] {
+  --glow-warm: rgba(110, 86, 181, 0.26);
+  --glow-cool: rgba(60, 48, 100, 0.34);
+  --glow-cta: rgba(110, 86, 181, 0.2);
+  --grid-line: rgba(217, 213, 226, 0.05);
 }
 
 @keyframes rise {
@@ -77,11 +78,11 @@
 
 @layer base {
   :root {
-    color-scheme: dark;
+    color-scheme: light;
   }
 
-  :root[data-theme="light"] {
-    color-scheme: light;
+  :root[data-theme="dark"] {
+    color-scheme: dark;
   }
 
   html {
@@ -100,12 +101,12 @@
   }
 
   ::selection {
-    background-color: var(--color-accent-400);
-    color: var(--color-surface);
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-accent-400);
+    outline: 2px solid var(--color-accent);
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -159,4 +160,10 @@
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; }
+}
+
+/* Theme-swapped assets: ship both, let CSS pick, so there is no flash. */
+:root[data-theme="dark"] .dark-hidden,
+:root:not([data-theme="dark"]) .light-hidden {
+  display: none;
 }

@@ -1,7 +1,7 @@
 export type Theme = "dark" | "light";
 
 export const THEME_STORAGE_KEY = "fpg-theme";
-export const DEFAULT_THEME: Theme = "dark";
+export const DEFAULT_THEME: Theme = "light";
 
 /**
  * Runs before first paint, inlined in <head>, so the stored theme is applied

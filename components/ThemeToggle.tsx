@@ -5,9 +5,9 @@ import { DEFAULT_THEME, THEME_STORAGE_KEY, type Theme } from "@/lib/theme";
 
 function readTheme(): Theme {
   if (typeof document === "undefined") return DEFAULT_THEME;
-  return document.documentElement.getAttribute("data-theme") === "light"
-    ? "light"
-    : "dark";
+  return document.documentElement.getAttribute("data-theme") === "dark"
+    ? "dark"
+    : "light";
 }
 
 export default function ThemeToggle({
@@ -43,7 +43,7 @@ export default function ThemeToggle({
       onClick={toggle}
       aria-label={label}
       title={label}
-      className={`flex h-10 w-10 items-center justify-center rounded-full border border-fg-2/15 text-fg-2 transition-colors duration-300 hover:border-accent-400/60 hover:text-accent-300 ${className}`}
+      className={`flex h-10 w-10 items-center justify-center rounded-full border border-fg-2/15 text-fg-2 transition-colors duration-300 hover:border-accent-fg/60 hover:text-accent-fg ${className}`}
     >
       {/* Until mounted the icon would be guesswork, so render neither. */}
       <span

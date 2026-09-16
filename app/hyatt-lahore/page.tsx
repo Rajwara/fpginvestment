@@ -74,7 +74,7 @@ export default function HyattLahorePage() {
         <div className="reveal mt-12">
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2 text-sm text-fg-2 transition-colors hover:text-accent-300"
+            className="group inline-flex items-center gap-2 text-sm text-fg-2 transition-colors hover:text-accent-fg"
           >
             Discuss a similar project
             <span

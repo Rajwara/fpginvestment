@@ -15,14 +15,14 @@ export default function Hero() {
       </div>
 
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <p className="eyebrow animate-fade text-accent-400">
+        <p className="eyebrow animate-fade text-accent-fg">
           Hospitality development &amp; management · Lahore
         </p>
 
         <h1 className="animate-rise mt-8 max-w-4xl font-display text-[clamp(2.75rem,8vw,6.5rem)] leading-[0.95] tracking-[-0.02em] text-fg">
           Redefining
           <br />
-          <span className="text-accent-300 italic">hospitality</span>, end to end.
+          <span className="text-accent-fg italic">hospitality</span>, end to end.
         </h1>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-end">
@@ -42,7 +42,7 @@ export default function Hero() {
           >
             <Link
               href="/about"
-              className="group inline-flex items-center gap-2.5 rounded-full bg-accent-400 px-7 py-3.5 text-sm font-medium text-surface transition-all duration-300 hover:bg-accent-300"
+              className="group inline-flex items-center gap-2.5 rounded-full bg-accent px-7 py-3.5 text-sm font-medium text-on-accent transition-all duration-300 hover:bg-accent-hover"
             >
               Explore our services
               <span

@@ -16,7 +16,7 @@ export default function PageHero({
         <div className="absolute left-1/2 top-[-16rem] h-[34rem] w-[34rem] -translate-x-1/2 rounded-full glow-warm blur-2xl" />
       </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <p className="animate-fade eyebrow text-accent-400">{eyebrow}</p>
+        <p className="animate-fade eyebrow text-accent-fg">{eyebrow}</p>
         <h1 className="animate-rise mt-6 max-w-3xl font-display text-[clamp(2.5rem,6vw,5rem)] leading-[1.0] tracking-[-0.02em] text-fg">
           {title}
         </h1>

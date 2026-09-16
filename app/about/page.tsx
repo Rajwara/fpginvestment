@@ -59,7 +59,7 @@ export default function AboutPage() {
               className="reveal bg-surface-2 p-8"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-fg-2/12 text-accent-400">
+              <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-fg-2/12 text-accent-fg">
                 <ServiceIcon name={service.icon} className="h-5 w-5" />
               </span>
               <h3 className="mt-5 font-display text-xl text-fg">
@@ -89,9 +89,9 @@ export default function AboutPage() {
               >
                 <span
                   aria-hidden="true"
-                  className="absolute -left-[2.25rem] top-2 h-2 w-2 rounded-full bg-accent-400"
+                  className="absolute -left-[2.25rem] top-2 h-2 w-2 rounded-full bg-accent"
                 />
-                <span className="font-display text-2xl text-accent-300">
+                <span className="font-display text-2xl text-accent-fg">
                   {m.year}
                 </span>
                 <p className="mt-2 max-w-xl leading-relaxed text-muted">
@@ -112,7 +112,7 @@ export default function AboutPage() {
               className="reveal bg-surface-2 p-8 lg:p-10"
               style={{ transitionDelay: `${i * 70}ms` }}
             >
-              <span className="font-display text-2xl text-accent-400/70">
+              <span className="font-display text-2xl text-accent-fg/70">
                 {p.number}
               </span>
               <h3 className="mt-4 text-xl text-fg">{p.title}</h3>

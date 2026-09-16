@@ -34,12 +34,12 @@ export default async function BlogPage({
     <article className="mx-auto max-w-3xl px-6 pt-36 pb-24 lg:pt-44 lg:pb-36">
       <Link
         href="/blogs"
-        className="eyebrow inline-flex items-center gap-2 text-subtle transition-colors hover:text-accent-300"
+        className="eyebrow inline-flex items-center gap-2 text-subtle transition-colors hover:text-accent-fg"
       >
         <span aria-hidden="true">←</span> All posts
       </Link>
 
-      <p className="eyebrow mt-10 text-accent-400">{post.category}</p>
+      <p className="eyebrow mt-10 text-accent-fg">{post.category}</p>
       <h1 className="mt-5 font-display text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.05] tracking-[-0.02em] text-fg">
         {post.title}
       </h1>
@@ -71,7 +71,7 @@ export default async function BlogPage({
         </p>
         <Link
           href="/contact"
-          className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent-400 px-6 py-3 text-sm font-medium text-surface transition-colors hover:bg-accent-300"
+          className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-on-accent transition-colors hover:bg-accent-hover"
         >
           Get in touch <span aria-hidden="true">→</span>
         </Link>

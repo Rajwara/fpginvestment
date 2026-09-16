@@ -30,12 +30,12 @@ export default function ContactPage() {
 
           <aside data-reveal className="reveal space-y-10">
             <div>
-              <h2 className="eyebrow text-accent-400">Direct</h2>
+              <h2 className="eyebrow text-accent-fg">Direct</h2>
               <div className="mt-4 space-y-2">
                 <p>
                   <a
                     href={`mailto:${site.email}`}
-                    className="text-lg text-fg underline decoration-accent-400/40 underline-offset-4 transition-colors hover:text-accent-300"
+                    className="text-lg text-fg underline decoration-accent-fg/40 underline-offset-4 transition-colors hover:text-accent-fg"
                   >
                     {site.email}
                   </a>
@@ -45,7 +45,7 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <h2 className="eyebrow text-accent-400">Office</h2>
+              <h2 className="eyebrow text-accent-fg">Office</h2>
               <ul className="mt-4 space-y-5">
                 {offices.map((o) => (
                   <li key={o.city} className="border-l border-fg-2/15 pl-4">

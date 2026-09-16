@@ -45,7 +45,7 @@ export default async function ServicePage({
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
         <div data-reveal className="grid gap-16 lg:grid-cols-[1fr_1.4fr] lg:gap-24">
           <div className="reveal">
-            <span className="flex h-14 w-14 items-center justify-center rounded-lg border border-accent-400/30 text-accent-400">
+            <span className="flex h-14 w-14 items-center justify-center rounded-lg border border-accent-fg/30 text-accent-fg">
               <ServiceIcon name={service.icon} className="h-6 w-6" />
             </span>
             <h2 className="mt-6 font-display text-3xl leading-tight text-fg">
@@ -61,7 +61,7 @@ export default async function ServicePage({
             <ul className="grid gap-px overflow-hidden rounded-xl border border-fg-2/10 bg-fg-2/10">
               {service.points.map((p, i) => (
                 <li key={p} className="bg-surface p-8">
-                  <span className="font-display text-xl text-accent-400/70">
+                  <span className="font-display text-xl text-accent-fg/70">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <p className="mt-3 text-lg text-fg">{p}</p>
@@ -80,10 +80,10 @@ export default async function ServicePage({
                   href={`/services/${s.id}`}
                   className="group flex h-full flex-col gap-4 bg-surface p-6 transition-colors hover:bg-surface-2"
                 >
-                  <span className="text-accent-400">
+                  <span className="text-accent-fg">
                     <ServiceIcon name={s.icon} className="h-5 w-5" />
                   </span>
-                  <span className="text-sm leading-snug text-fg transition-colors group-hover:text-accent-300">
+                  <span className="text-sm leading-snug text-fg transition-colors group-hover:text-accent-fg">
                     {s.short}
                   </span>
                 </Link>

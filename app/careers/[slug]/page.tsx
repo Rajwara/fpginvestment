@@ -59,7 +59,7 @@ export default async function JobPage({
       <article className="mx-auto max-w-3xl px-6 py-20 lg:py-28">
         <Link
           href="/careers"
-          className="eyebrow inline-flex items-center gap-2 text-subtle transition-colors hover:text-accent-300"
+          className="eyebrow inline-flex items-center gap-2 text-subtle transition-colors hover:text-accent-fg"
         >
           <span aria-hidden="true">←</span> All open roles
         </Link>
@@ -93,7 +93,7 @@ export default async function JobPage({
           </p>
           <a
             href={`mailto:${site.email}?subject=${encodeURIComponent(`Application — ${job.title}`)}`}
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent-400 px-6 py-3 text-sm font-medium text-surface transition-colors hover:bg-accent-300"
+            className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-on-accent transition-colors hover:bg-accent-hover"
           >
             Email your application <span aria-hidden="true">→</span>
           </a>

@@ -11,7 +11,7 @@ export default function Approach() {
             title="Four principles we have not revised since 2009."
             lede="Brands, budgets and markets change constantly. The way we work does not."
           />
-          <figure className="reveal mt-12 border-l border-accent-400/40 pl-6">
+          <figure className="reveal mt-12 border-l border-accent-fg/40 pl-6">
             <blockquote className="font-display text-2xl leading-snug text-fg">
               “A hotel is judged every single night, by people who did not
               read the brochure. That is the only standard that matters.”
@@ -30,7 +30,7 @@ export default function Approach() {
               style={{ transitionDelay: `${i * 80}ms` }}
             >
               <div className="flex gap-6 lg:gap-8">
-                <span className="font-display text-2xl text-accent-400/70">
+                <span className="font-display text-2xl text-accent-fg/70">
                   {p.number}
                 </span>
                 <div>

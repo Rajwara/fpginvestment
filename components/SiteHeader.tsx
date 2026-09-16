@@ -99,7 +99,7 @@ export default function SiteHeader() {
                   onFocus={openMega}
                   className={`group relative flex items-center gap-1.5 text-sm transition-colors ${
                     isActive(item.href) || megaOpen
-                      ? "text-accent-300"
+                      ? "text-accent-fg"
                       : "text-fg-2 hover:text-fg"
                   }`}
                 >
@@ -112,7 +112,7 @@ export default function SiteHeader() {
                   >
                     ▾
                   </span>
-                  <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-accent-400 transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:w-full" />
+                  <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-accent transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:w-full" />
                 </button>
               </div>
             ) : (
@@ -120,17 +120,17 @@ export default function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={`group relative flex items-center gap-2 text-sm transition-colors ${
-                  isActive(item.href) ? "text-accent-300" : "text-fg-2 hover:text-fg"
+                  isActive(item.href) ? "text-accent-fg" : "text-fg-2 hover:text-fg"
                 }`}
               >
                 {isActive(item.href) ? (
                   <span
                     aria-hidden="true"
-                    className="h-1.5 w-1.5 rounded-full bg-accent-400"
+                    className="h-1.5 w-1.5 rounded-full bg-accent"
                   />
                 ) : null}
                 {item.label}
-                <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-accent-400 transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:w-full" />
+                <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-accent transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:w-full" />
               </Link>
             )
           )}
@@ -140,7 +140,7 @@ export default function SiteHeader() {
           <ThemeToggle />
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-full border border-accent-400/40 px-5 py-2.5 text-sm text-accent-200 transition-all duration-300 hover:border-accent-400 hover:bg-accent-400 hover:text-surface"
+            className="inline-flex items-center gap-2 rounded-full border border-accent-fg/40 px-5 py-2.5 text-sm text-accent-fg transition-all duration-300 hover:border-accent hover:bg-accent hover:text-on-accent"
           >
             Start a Conversation
             <span aria-hidden="true">→</span>
@@ -214,7 +214,7 @@ export default function SiteHeader() {
                             ? "Hide service links"
                             : "Show service links"
                         }
-                        className="flex h-9 w-9 items-center justify-center rounded-full border border-fg-2/15 text-accent-400"
+                        className="flex h-9 w-9 items-center justify-center rounded-full border border-fg-2/15 text-accent-fg"
                       >
                         <span
                           aria-hidden="true"
@@ -249,7 +249,7 @@ export default function SiteHeader() {
                     className="flex items-center justify-between py-4 font-display text-2xl text-fg"
                   >
                     {item.label}
-                    <span aria-hidden="true" className="text-accent-400">
+                    <span aria-hidden="true" className="text-accent-fg">
                       →
                     </span>
                   </Link>
@@ -260,7 +260,7 @@ export default function SiteHeader() {
           <Link
             href="/contact"
             onClick={() => setMobileOpen(false)}
-            className="mt-6 flex w-full items-center justify-center rounded-full bg-accent-400 px-6 py-3.5 text-sm font-medium text-surface"
+            className="mt-6 flex w-full items-center justify-center rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-on-accent"
           >
             Start a Conversation
           </Link>

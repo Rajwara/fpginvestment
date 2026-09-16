@@ -47,30 +47,42 @@ the mega menu, the service pages, the footer and the blog list together.
 
 ## Design system
 
-The site ships two themes. **Dark is the default** and is what renders before
-any JavaScript runs; a visitor's choice is stored in `localStorage` and applied
-by an inline script in `<head>` so there is no flash on load.
+Brand colours are **#604A9F** (purple) and **#000000** (black). The site ships
+two themes. **Light is the default** and is what renders before any JavaScript
+runs; a visitor's choice is stored in `localStorage` and applied by an inline
+script in `<head>` so there is no flash on load.
 
-Both themes share one set of semantic tokens, declared with Tailwind v4's
+Both themes share one set of role-based tokens, declared with Tailwind v4's
 `@theme` block in `app/globals.css` and re-declared under
-`:root[data-theme="light"]`. No component knows which theme is active.
+`:root[data-theme="dark"]`. No component knows which theme is active.
 
 | Token | Role |
 | --- | --- |
-| `surface`, `surface-2` | Page background and alternating sections |
+| `surface`, `surface-2` | Page background and alternating sections (`surface-2` is a pale tint of the brand purple in light, a purple-black in dark) |
 | `fg`, `fg-2` | Headings and body text (`fg-2` also bases the hairlines) |
 | `muted`, `subtle` | Secondary prose and captions |
-| `accent-200` … `accent-600` | Gold ramp — fills, borders, eyebrows |
+| `accent` | A filled surface — buttons, swatches |
+| `on-accent` | Text sitting on an accent fill |
+| `accent-fg` | Accent-coloured text and icons on the page surface |
 | `font-display` / `font-sans` | Instrument Serif headlines / Inter body |
 
-The accent ramp inverts between themes: on a light surface the pale golds are
-unreadable as text, so `accent-200`–`accent-400` darken to carry contrast. Gold
-fills use `--color-surface` as their text colour, which is near-white in light
-mode, so buttons stay legible in both without a second class.
+The accent is split by role rather than into a numeric ramp because purple
+needs opposite lightness depending on the job. On black, #604A9F only reaches
+3:1 as text, so `accent-fg` lightens to #A896D0 (7.9:1) in the dark theme
+while `accent` lightens just enough to clear 3:1 against the background.
+Every pairing above meets WCAG AA.
 
 Sections animate in on scroll: mark a container `data-reveal` and its children
 `reveal`. `components/Reveal.tsx` sets `data-shown` via `IntersectionObserver`,
 and the whole effect is disabled under `prefers-reduced-motion`.
+
+## Logo
+
+`public/assets/images/` holds both lockups, named for the background they sit
+on: `logo-on-light.webp` (dark ink) and `logo-on-dark.webp` (white ink).
+`components/Logo.tsx` ships both and swaps them with CSS rather than
+JavaScript, so the right one is painted on the first frame.
+
 
 ## Navigation
 

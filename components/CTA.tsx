@@ -15,7 +15,7 @@ export default function CTA() {
       </div>
 
       <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">
-        <p className="reveal eyebrow text-accent-400">Work with us</p>
+        <p className="reveal eyebrow text-accent-fg">Work with us</p>
         <h2 className="reveal mt-6 font-display text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[1.02] tracking-[-0.02em] text-fg">
           Let&rsquo;s create something exceptional.
         </h2>
@@ -27,7 +27,7 @@ export default function CTA() {
         <div className="reveal mt-10 flex flex-wrap items-center justify-center gap-4">
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2.5 rounded-full bg-accent-400 px-8 py-4 text-sm font-medium text-surface transition-all duration-300 hover:bg-accent-300"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-accent px-8 py-4 text-sm font-medium text-on-accent transition-all duration-300 hover:bg-accent-hover"
           >
             Start a Conversation
             <span

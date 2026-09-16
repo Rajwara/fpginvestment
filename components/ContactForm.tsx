@@ -11,7 +11,7 @@ const enquiryTypes = [
 ];
 
 const fieldClass =
-  "w-full rounded-lg border border-fg-2/15 bg-surface px-4 py-3.5 text-fg placeholder:text-subtle transition-colors focus:border-accent-400/60 focus:outline-none";
+  "w-full rounded-lg border border-fg-2/15 bg-surface px-4 py-3.5 text-fg placeholder:text-subtle transition-colors focus:border-accent-fg/60 focus:outline-none";
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -20,11 +20,11 @@ export default function ContactForm() {
     return (
       <div
         role="status"
-        className="rounded-xl border border-accent-400/30 bg-surface-2 p-10 text-center"
+        className="rounded-xl border border-accent-fg/30 bg-surface-2 p-10 text-center"
       >
         <span
           aria-hidden="true"
-          className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-accent-400/40 text-accent-300"
+          className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-accent-fg/40 text-accent-fg"
         >
           ✓
         </span>
@@ -37,7 +37,7 @@ export default function ContactForm() {
         <button
           type="button"
           onClick={() => setSent(false)}
-          className="mt-6 text-sm text-fg-2 underline decoration-accent-400/40 underline-offset-4 transition-colors hover:text-accent-300"
+          className="mt-6 text-sm text-fg-2 underline decoration-accent-fg/40 underline-offset-4 transition-colors hover:text-accent-fg"
         >
           Send another enquiry
         </button>
@@ -138,7 +138,7 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-accent-400 px-8 py-4 text-sm font-medium text-surface transition-colors hover:bg-accent-300 sm:w-auto"
+        className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-accent px-8 py-4 text-sm font-medium text-on-accent transition-colors hover:bg-accent-hover sm:w-auto"
       >
         Send enquiry
         <span

@@ -21,7 +21,7 @@ export default function BlogTeaser() {
         />
         <Link
           href="/blogs"
-          className="reveal group inline-flex items-center gap-2 text-sm text-fg-2 transition-colors hover:text-accent-300"
+          className="reveal group inline-flex items-center gap-2 text-sm text-fg-2 transition-colors hover:text-accent-fg"
         >
           All insights
           <span
@@ -45,14 +45,14 @@ export default function BlogTeaser() {
               className="group grid gap-4 py-8 transition-colors lg:grid-cols-[auto_1fr_auto] lg:items-baseline lg:gap-10 lg:py-10"
             >
               <div className="flex items-center gap-4 lg:w-52 lg:flex-col lg:items-start lg:gap-2">
-                <span className="eyebrow text-accent-400">{post.category}</span>
+                <span className="eyebrow text-accent-fg">{post.category}</span>
                 <span className="text-xs text-subtle">
                   {formatDate(post.date)} · {post.readTime}
                 </span>
               </div>
 
               <div>
-                <h3 className="font-display text-2xl leading-snug tracking-tight text-fg transition-colors group-hover:text-accent-200 lg:text-3xl">
+                <h3 className="font-display text-2xl leading-snug tracking-tight text-fg transition-colors group-hover:text-accent-fg lg:text-3xl">
                   {post.title}
                 </h3>
                 <p className="mt-3 max-w-2xl leading-relaxed text-muted">
@@ -62,7 +62,7 @@ export default function BlogTeaser() {
 
               <span
                 aria-hidden="true"
-                className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-full border border-fg-2/15 text-fg-2 transition-all duration-300 group-hover:border-accent-400 group-hover:bg-accent-400 group-hover:text-surface lg:flex"
+                className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-full border border-fg-2/15 text-fg-2 transition-all duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-on-accent lg:flex"
               >
                 →
               </span>

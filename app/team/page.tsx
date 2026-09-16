@@ -33,7 +33,7 @@ export default function TeamPage() {
             >
               <span
                 aria-hidden="true"
-                className="flex h-16 w-16 items-center justify-center rounded-full border border-accent-400/30 font-display text-xl text-accent-300"
+                className="flex h-16 w-16 items-center justify-center rounded-full border border-accent-fg/30 font-display text-xl text-accent-fg"
               >
                 {person.initials}
               </span>

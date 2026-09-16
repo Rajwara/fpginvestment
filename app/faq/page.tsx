@@ -25,12 +25,12 @@ export default function FaqPage() {
               className="reveal"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
-              <details className="group rounded-xl border border-fg-2/10 bg-surface-2 p-6 transition-colors open:border-accent-400/30">
+              <details className="group rounded-xl border border-fg-2/10 bg-surface-2 p-6 transition-colors open:border-accent-fg/30">
                 <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-lg text-fg marker:content-none">
                   {item.q}
                   <span
                     aria-hidden="true"
-                    className="mt-1 shrink-0 text-accent-400 transition-transform duration-300 group-open:rotate-45"
+                    className="mt-1 shrink-0 text-accent-fg transition-transform duration-300 group-open:rotate-45"
                   >
                     +
                   </span>

@@ -17,8 +17,8 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
     <div className="grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.5fr)_minmax(0,0.75fr)]">
       {/* Left — who we are */}
       <div className="border-fg-2/10 p-8 lg:border-r lg:p-10">
-        <p className="eyebrow flex items-center gap-2.5 text-accent-400">
-          <span aria-hidden="true" className="h-px w-6 bg-accent-400/50" />
+        <p className="eyebrow flex items-center gap-2.5 text-accent-fg">
+          <span aria-hidden="true" className="h-px w-6 bg-accent-fg/50" />
           {megaFeature.eyebrow}
         </p>
 
@@ -32,8 +32,8 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
           >
             <defs>
               <linearGradient id="mm-sky" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="var(--color-accent-400)" stopOpacity="0.20" />
-                <stop offset="100%" stopColor="var(--color-accent-600)" stopOpacity="0.05" />
+                <stop offset="0%" stopColor="var(--color-accent)" stopOpacity="0.20" />
+                <stop offset="100%" stopColor="var(--color-accent-hover)" stopOpacity="0.05" />
               </linearGradient>
             </defs>
             <rect width="400" height="300" fill="url(#mm-sky)" />
@@ -43,7 +43,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
               <rect x="242" y="140" width="58" height="160" />
               <rect x="316" y="96" width="46" height="204" />
             </g>
-            <g fill="var(--color-accent-300)" opacity="0.45">
+            <g fill="var(--color-accent-fg)" opacity="0.45">
               {Array.from({ length: 7 }).map((_, row) =>
                 Array.from({ length: 4 }).map((__, col) => (
                   <rect
@@ -68,7 +68,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
         <Link
           href={megaFeature.href}
           onClick={onNavigate}
-          className="group mt-5 inline-flex items-center gap-2 text-sm text-fg-2 transition-colors hover:text-accent-300"
+          className="group mt-5 inline-flex items-center gap-2 text-sm text-fg-2 transition-colors hover:text-accent-fg"
         >
           {megaFeature.cta}
           <span
@@ -91,11 +91,11 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
                 onClick={onNavigate}
                 className="group flex items-start gap-3.5 rounded-lg px-3 py-3 transition-colors hover:bg-fg-2/5"
               >
-                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-fg-2/12 text-accent-400 transition-colors group-hover:border-accent-400/50 group-hover:bg-accent-400/10">
+                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-fg-2/12 text-accent-fg transition-colors group-hover:border-accent-fg/50 group-hover:bg-accent-fg/10">
                   <ServiceIcon name={s.icon} />
                 </span>
                 <span className="min-w-0">
-                  <span className="block text-sm leading-snug text-fg transition-colors group-hover:text-accent-300">
+                  <span className="block text-sm leading-snug text-fg transition-colors group-hover:text-accent-fg">
                     {s.name}
                   </span>
                   <span className="mt-1 block text-xs leading-relaxed text-subtle">
@@ -127,7 +127,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
 
         <div className="mt-6 space-y-6">
           <div className="flex items-start gap-3.5">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-accent-400/12 text-accent-400">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-accent-fg/12 text-accent-fg">
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                 <path d="M4.5 5.5c0 7.5 6.5 14 14 14l2-3.5-4-2-2 2a14 14 0 0 1-6.5-6.5l2-2-2-4-3.5 2Z" />
               </svg>
@@ -137,7 +137,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
               <a
                 href={`tel:${site.phone.replace(/\s/g, "")}`}
                 onClick={onNavigate}
-                className="mt-1 block text-sm text-muted transition-colors hover:text-accent-300"
+                className="mt-1 block text-sm text-muted transition-colors hover:text-accent-fg"
               >
                 {site.phone}
               </a>
@@ -145,7 +145,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
           </div>
 
           <div className="flex items-start gap-3.5">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-accent-400/12 text-accent-400">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-accent-fg/12 text-accent-fg">
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                 <rect x="3" y="5.5" width="18" height="13" rx="2" />
                 <path d="m3.5 7 8.5 6 8.5-6" />
@@ -156,7 +156,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
               <a
                 href={`mailto:${site.email}`}
                 onClick={onNavigate}
-                className="mt-1 block truncate text-sm text-muted transition-colors hover:text-accent-300"
+                className="mt-1 block truncate text-sm text-muted transition-colors hover:text-accent-fg"
               >
                 {site.email}
               </a>
@@ -164,7 +164,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
           </div>
 
           <div className="flex items-start gap-3.5">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-accent-400/12 text-accent-400">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-accent-fg/12 text-accent-fg">
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                 <path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z" />
                 <circle cx="12" cy="10" r="2.5" />
@@ -187,7 +187,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
               target="_blank"
               rel="noreferrer noopener"
               aria-label={s.label}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-fg-2/15 text-fg-2 transition-colors hover:border-accent-400 hover:bg-accent-400 hover:text-surface"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-fg-2/15 text-fg-2 transition-colors hover:border-accent hover:bg-accent hover:text-on-accent"
             >
               <SocialIcon name={s.label} />
             </a>
@@ -197,7 +197,7 @@ export default function MegaMenu({ onNavigate }: { onNavigate?: () => void }) {
         <Link
           href="/contact"
           onClick={onNavigate}
-          className="mt-8 flex items-center justify-center gap-2 rounded-full bg-accent-400 px-5 py-3 text-sm font-medium text-surface transition-colors hover:bg-accent-300"
+          className="mt-8 flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-medium text-on-accent transition-colors hover:bg-accent-hover"
         >
           Start a Conversation <span aria-hidden="true">→</span>
         </Link>

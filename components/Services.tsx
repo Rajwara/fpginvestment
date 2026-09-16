@@ -20,7 +20,7 @@ export default function Services() {
             className="reveal group relative scroll-mt-28 bg-surface p-8 transition-colors duration-500 hover:bg-surface-2 lg:p-10"
             style={{ transitionDelay: `${i * 60}ms` }}
           >
-            <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-fg-2/12 text-accent-400 transition-colors group-hover:border-accent-400/50 group-hover:bg-accent-400/10">
+            <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-fg-2/12 text-accent-fg transition-colors group-hover:border-accent-fg/50 group-hover:bg-accent-fg/10">
               <ServiceIcon name={s.icon} className="h-5 w-5" />
             </span>
 
@@ -34,7 +34,7 @@ export default function Services() {
                 <li key={p} className="flex items-start gap-3 text-sm text-fg-2">
                   <span
                     aria-hidden="true"
-                    className="mt-[0.45rem] h-1 w-1 shrink-0 rounded-full bg-accent-400"
+                    className="mt-[0.45rem] h-1 w-1 shrink-0 rounded-full bg-accent"
                   />
                   {p}
                 </li>
@@ -43,7 +43,7 @@ export default function Services() {
 
             <Link
               href={`/services/${s.id}`}
-              className="mt-8 inline-flex items-center gap-2 text-sm text-fg-2 transition-colors hover:text-accent-300"
+              className="mt-8 inline-flex items-center gap-2 text-sm text-fg-2 transition-colors hover:text-accent-fg"
             >
               Learn more
               <span

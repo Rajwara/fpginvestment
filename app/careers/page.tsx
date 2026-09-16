@@ -32,7 +32,7 @@ export default function CareersPage() {
                   className="group grid gap-3 py-8 lg:grid-cols-[1.5fr_1fr_1fr_auto] lg:items-center lg:gap-8"
                 >
                   <div>
-                    <h3 className="font-display text-2xl leading-snug text-fg transition-colors group-hover:text-accent-300">
+                    <h3 className="font-display text-2xl leading-snug text-fg transition-colors group-hover:text-accent-fg">
                       {job.title}
                     </h3>
                     <p className="mt-1 text-sm text-subtle lg:hidden">
@@ -43,7 +43,7 @@ export default function CareersPage() {
                   <p className="hidden text-sm text-muted lg:block">
                     {job.location}
                   </p>
-                  <span className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-full border border-fg-2/15 text-fg-2 transition-all duration-300 group-hover:border-accent-400 group-hover:bg-accent-400 group-hover:text-surface lg:flex">
+                  <span className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-full border border-fg-2/15 text-fg-2 transition-all duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-on-accent lg:flex">
                     <span aria-hidden="true">→</span>
                   </span>
                 </Link>

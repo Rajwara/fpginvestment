@@ -31,8 +31,8 @@ export function SectionHeading({
 }) {
   return (
     <div className="reveal max-w-3xl">
-      <p className="eyebrow flex items-center gap-3 text-accent-400">
-        <span aria-hidden="true" className="h-px w-8 bg-accent-400/50" />
+      <p className="eyebrow flex items-center gap-3 text-accent-fg">
+        <span aria-hidden="true" className="h-px w-8 bg-accent-fg/50" />
         {eyebrow}
       </p>
       <h2 className="mt-6 font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05] tracking-[-0.015em] text-fg">

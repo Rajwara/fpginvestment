@@ -20,7 +20,7 @@ export default function SiteFooter() {
           </div>
           <Link
             href="/contact"
-            className="group inline-flex w-fit items-center gap-2.5 rounded-full bg-accent-400 px-7 py-4 text-sm font-medium text-surface transition-colors hover:bg-accent-300"
+            className="group inline-flex w-fit items-center gap-2.5 rounded-full bg-accent px-7 py-4 text-sm font-medium text-on-accent transition-colors hover:bg-accent-hover"
           >
             Start a Conversation
             <span
@@ -47,7 +47,7 @@ export default function SiteFooter() {
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label={s.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-fg-2/15 text-fg-2 transition-colors hover:border-accent-400 hover:bg-accent-400 hover:text-surface"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-fg-2/15 text-fg-2 transition-colors hover:border-accent hover:bg-accent hover:text-on-accent"
                 >
                   <SocialIcon name={s.label} />
                 </a>
@@ -64,7 +64,7 @@ export default function SiteFooter() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-fg-2 transition-colors hover:text-accent-300"
+                      className="text-sm text-fg-2 transition-colors hover:text-accent-fg"
                     >
                       {link.label}
                     </Link>
@@ -86,7 +86,7 @@ export default function SiteFooter() {
               <li>
                 <a
                   href={`mailto:${site.email}`}
-                  className="text-fg-2 transition-colors hover:text-accent-300"
+                  className="text-fg-2 transition-colors hover:text-accent-fg"
                 >
                   {site.email}
                 </a>
@@ -94,7 +94,7 @@ export default function SiteFooter() {
               <li>
                 <a
                   href={`tel:${site.phone.replace(/\s/g, "")}`}
-                  className="text-fg-2 transition-colors hover:text-accent-300"
+                  className="text-fg-2 transition-colors hover:text-accent-fg"
                 >
                   {site.phone}
                 </a>
@@ -104,7 +104,7 @@ export default function SiteFooter() {
                   href={site.social[0].href}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="text-fg-2 transition-colors hover:text-accent-300"
+                  className="text-fg-2 transition-colors hover:text-accent-fg"
                 >
                   LinkedIn
                 </a>
@@ -118,11 +118,11 @@ export default function SiteFooter() {
             © {new Date().getFullYear()} {site.name}. All Rights Reserved.
           </p>
           <p className="flex items-center gap-3">
-            <Link href="/privacy" className="transition-colors hover:text-accent-300">
+            <Link href="/privacy" className="transition-colors hover:text-accent-fg">
               Privacy Policy
             </Link>
             <span aria-hidden="true">|</span>
-            <Link href="/terms" className="transition-colors hover:text-accent-300">
+            <Link href="/terms" className="transition-colors hover:text-accent-fg">
               Terms &amp; Conditions
             </Link>
           </p>
