@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import DarkPageHero from "@/components/DarkPageHero";
+import Eyebrow from "@/components/Eyebrow";
 import QuerySection from "@/components/QuerySection";
 import ServiceIcon from "@/components/ServiceIcon";
 
 export const metadata: Metadata = {
   title: "Hyatt Regency Lahore",
   description:
-    "Hyatt Regency Lahore — FP Global's flagship development and management mandate, from site to operating asset.",
+    "Hyatt Regency Hotel & Club, Lahore — FP Global's flagship mandate. Banqueting, six dining venues, sport and wellness, under one accountable team.",
 };
 
-/** Reads as the listing's taxonomy in the reference: which lines the project ran through. */
-const tags = ["Development", "Pre-Opening", "Operations"];
+const tags = ["Hotel & Club", "Hyatt Regency", "Lahore"];
 
 const facts = [
   { label: "Keys", value: "284" },
@@ -20,7 +20,45 @@ const facts = [
   { label: "Role", value: "Developer & Operator" },
 ];
 
-const highlights = [
+/** The property's own offer, drawn from the club brochure. */
+const amenities = [
+  {
+    icon: "concierge",
+    title: "Spaces that make a statement",
+    body: "A grand banquet hall, a captivating main atrium and an auditorium seating up to 200 — the club sets the stage for the occasions worth marking.",
+  },
+  {
+    icon: "megaphone",
+    title: "Six places to eat",
+    body: "All-day dining venues, specialty restaurants, a cosy lobby lounge, the exclusive Regency Club, and The Market — a café-style gem for whenever a snack calls.",
+  },
+  {
+    icon: "refresh",
+    title: "Room to recharge",
+    body: "Separate fitness centres and swimming pools for gentlemen and ladies, designed around comfort rather than around what would fit.",
+  },
+];
+
+const vacation = [
+  {
+    icon: "key",
+    title: "Play",
+    body: "An indoor gaming arena for friendly competition, plus tennis and badminton courts, squash courts and the swimming pool when you would rather show off a back-hand.",
+  },
+  {
+    icon: "concierge",
+    title: "Celebrate",
+    body: "Flexible spaces and a grand banquet hall that turn a wedding or a school reunion into a house-full party, with a BBQ area for the smaller gatherings.",
+  },
+  {
+    icon: "compass",
+    title: "Park without a thought",
+    body: "A loading deck for 550 vehicles, so neither residents nor guests spend the first ten minutes of an evening circling for a space.",
+  },
+];
+
+/** FP Global's own role, which is why the property sits on this site at all. */
+const mandate = [
   {
     icon: "compass",
     title: "Development",
@@ -38,6 +76,47 @@ const highlights = [
   },
 ];
 
+type Item = { icon: string; title: string; body: string };
+
+function Cards({ items }: { items: Item[] }) {
+  return (
+    <div className="mt-12 grid gap-6 sm:grid-cols-3 lg:mt-16">
+      {items.map((item, i) => (
+        <div
+          key={item.title}
+          className="reveal rounded-2xl bg-surface p-8 shadow-lg shadow-fg/5 ring-1 ring-fg-2/5"
+          style={{ transitionDelay: `${i * 70}ms` }}
+        >
+          <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-accent to-accent-2 text-on-accent">
+            <ServiceIcon name={item.icon} className="h-7 w-7" />
+          </span>
+          <h4 className="mt-6 font-display text-xl text-fg">{item.title}</h4>
+          <p className="mt-3 leading-relaxed text-muted">{item.body}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/**
+ * The brochure spreads carry their own headline and the brand arc, so they run
+ * full bleed and the section headings alongside them are written not to repeat
+ * what the artwork already says.
+ */
+function Spread({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="reveal relative aspect-[16/6] overflow-hidden rounded-3xl bg-surface-2">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(min-width: 1280px) 1216px, 100vw"
+        className="object-cover"
+      />
+    </div>
+  );
+}
+
 export default function HyattLahorePage() {
   return (
     <>
@@ -48,27 +127,19 @@ export default function HyattLahorePage() {
             Hyatt Regency <span className="text-hero-accent">Lahore</span>
           </>
         }
-        lede="Our flagship mandate and the clearest expression of what FP Global does — a property we developed, opened and operate."
+        lede="A premier hotel and club, developed and operated by FP Global — where culture meets comfort in the most spectacular way."
         image="/assets/images/fpginvestment_banner_img1.jpg"
       />
 
-      {/* Featured image, edge to edge under the banner. */}
       <section data-reveal className="bg-surface pt-16 lg:pt-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="reveal relative aspect-[16/7] overflow-hidden rounded-3xl bg-surface-2">
-            <Image
-              src="/assets/images/hyatt-pool.jpg"
-              alt="The indoor pool and lobby lounge at Hyatt Regency Lahore"
-              fill
-              sizes="(min-width: 1280px) 1216px, 100vw"
-              preload
-              className="object-cover"
-            />
-          </div>
+          <Spread
+            src="/assets/images/hyatt-lahore/hyatt-project-01-1.jpg"
+            alt="The hotel grounds at Hyatt Regency Hotel & Club, Lahore"
+          />
         </div>
       </section>
 
-      {/* Opening: tags, headline, the long-form introduction. */}
       <section data-reveal className="bg-surface py-16 lg:py-20">
         <div className="reveal mx-auto max-w-7xl px-6 lg:px-10">
           <ul className="flex flex-wrap items-center gap-x-7 gap-y-2">
@@ -87,43 +158,32 @@ export default function HyattLahorePage() {
           </ul>
 
           <h2 className="mt-6 font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05] tracking-[-0.015em] text-fg">
-            Concept to operating asset
+            Crafted for the discerning traveller
           </h2>
           <p className="mt-6 max-w-5xl text-lg leading-relaxed text-muted">
-            Hyatt Regency Lahore is the project we point to when someone asks
-            what FP Global actually does, because it ran through every one of
-            our six service lines. We assembled the site, built the feasibility
-            case, negotiated the brand agreement, held the line on programme and
-            cost through construction, recruited and trained the team, and we
-            run the hotel today. One accountable party from the first site visit
-            to this morning&rsquo;s occupancy report.
+            Hyatt Regency Hotel &amp; Club redefines luxury through opulent
+            design, exclusive experiences, refined service and world-class
+            hospitality. Every detail is curated to offer a stay that reflects
+            elegance and prestige.
           </p>
-
-          <h3 className="mt-14 font-display text-[clamp(1.5rem,2.6vw,2rem)] leading-tight tracking-tight text-fg">
-            Why a single mandate mattered here
-          </h3>
           <p className="mt-5 max-w-5xl leading-relaxed text-muted">
-            On most developments the people who model the returns, the people
-            who sign the drawings and the people who eventually staff the
-            building never meet. Assumptions get made in the feasibility study
-            that nobody is left to defend, back-of-house circulation gets
-            value-engineered by someone who will never walk it at 6am, and the
-            operator inherits a building they have to work around. Holding all
-            of it under one roof meant the decisions taken in year one were
-            still being argued for in year four, by the same people who would
-            have to live with them.
+            It is also the clearest expression of what FP Global does. We
+            assembled the site, built the feasibility case, negotiated the brand
+            agreement, held the line on programme and cost through construction,
+            recruited and trained the team — and we run the hotel today. One
+            accountable party from the first site visit to this
+            morning&rsquo;s occupancy report.
           </p>
         </div>
       </section>
 
-      {/* Image and the project's facts, as the reference pairs an image with counters. */}
       <section data-reveal className="bg-surface pb-16 lg:pb-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
             <div className="reveal relative aspect-[4/3] overflow-hidden rounded-3xl bg-surface-2">
               <Image
                 src="/assets/images/hyatt-terrace.jpg"
-                alt="The pool terrace at Hyatt Regency Lahore"
+                alt="The pool terrace at Hyatt Regency Hotel & Club"
                 fill
                 sizes="(min-width: 1024px) 45vw, 100vw"
                 className="object-cover"
@@ -160,18 +220,58 @@ export default function HyattLahorePage() {
               </dl>
             </div>
           </div>
-
-          <p className="reveal mt-16 max-w-5xl leading-relaxed text-muted">
-            The brand agreement was negotiated on the understanding that we
-            would be the operator, which changes what you argue for at the
-            table. Technical services, pre-opening support and the fee structure
-            were all weighed against what they would cost to live with over the
-            term, not against what they looked like on signing day.
-          </p>
         </div>
       </section>
 
-      {/* The three lines the project ran through, against a second image. */}
+      <section
+        data-reveal
+        className="border-t border-fg-2/10 bg-surface-2 py-20 lg:py-28"
+      >
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <Spread
+            src="/assets/images/hyatt-lahore/family-rendezvous-web.jpg"
+            alt="A family arriving at their room at Hyatt Regency Hotel & Club"
+          />
+
+          <div className="reveal mt-14 max-w-3xl">
+            <Eyebrow>The Club</Eyebrow>
+            <h2 className="mt-6 font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05] tracking-[-0.015em] text-fg">
+              Create lasting memories every day
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-muted">
+              The club sets an amazing stage for everything that celebrates
+              life — and a hotel is only as good as the reasons people have to
+              be in it.
+            </p>
+          </div>
+
+          <Cards items={amenities} />
+        </div>
+      </section>
+
+      <section data-reveal className="bg-surface py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <Spread
+            src="/assets/images/hyatt-lahore/active-living-web.jpg"
+            alt="The tennis courts at Hyatt Regency Hotel & Club"
+          />
+
+          <div className="reveal mt-14 max-w-3xl">
+            <Eyebrow>An Ideal Vacation</Eyebrow>
+            <h2 className="mt-6 font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05] tracking-[-0.015em] text-fg">
+              Unmatched convenience meets endless adventures
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-muted">
+              A hospitality experience that redefines comfort and community.
+              Every amenity here was specified to surpass what a guest expects
+              to find, not to meet a minimum.
+            </p>
+          </div>
+
+          <Cards items={vacation} />
+        </div>
+      </section>
+
       <section
         data-reveal
         className="border-t border-fg-2/10 bg-surface-2 py-20 lg:py-28"
@@ -190,8 +290,8 @@ export default function HyattLahorePage() {
 
             <div className="reveal relative aspect-[4/3] overflow-hidden rounded-3xl bg-surface">
               <Image
-                src="/assets/images/ProfessionalGuidanceimg-03.jpg"
-                alt=""
+                src="/assets/images/hyatt-pool.jpg"
+                alt="The indoor pool and lobby lounge at Hyatt Regency Hotel & Club"
                 fill
                 sizes="(min-width: 1024px) 45vw, 100vw"
                 className="object-cover"
@@ -199,22 +299,16 @@ export default function HyattLahorePage() {
             </div>
           </div>
 
-          {/* Full width, so the copy is not squeezed into a third of a column. */}
-          <div className="mt-12 grid gap-6 sm:grid-cols-3 lg:mt-16">
-            {highlights.map((h, i) => (
-              <div
-                key={h.title}
-                className="reveal rounded-2xl bg-surface p-8 shadow-lg shadow-fg/5 ring-1 ring-fg-2/5"
-                style={{ transitionDelay: `${i * 70}ms` }}
-              >
-                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-accent to-accent-2 text-on-accent">
-                  <ServiceIcon name={h.icon} className="h-7 w-7" />
-                </span>
-                <h4 className="mt-6 font-display text-xl text-fg">{h.title}</h4>
-                <p className="mt-3 leading-relaxed text-muted">{h.body}</p>
-              </div>
-            ))}
-          </div>
+          <Cards items={mandate} />
+        </div>
+      </section>
+
+      <section data-reveal className="bg-surface py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <Spread
+            src="/assets/images/hyatt-lahore/cultural-capital-web.jpg"
+            alt="Mughal architecture in Lahore"
+          />
         </div>
       </section>
 
