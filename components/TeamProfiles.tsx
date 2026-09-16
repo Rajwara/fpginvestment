@@ -32,13 +32,25 @@ function Portrait({ person, align }: { person: Person; align: "left" | "right" }
   return (
     <div className="relative flex min-h-[22rem] items-center justify-center bg-accent lg:min-h-[40rem]">
       {person.photo ? (
-        <Image
-          src={person.photo}
-          alt=""
-          width={385}
-          height={365}
-          className="h-auto w-full max-w-[26rem]"
-        />
+        person.photoBleed ? (
+          <Image
+            src={person.photo}
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover"
+          />
+        ) : (
+          // Studio cutout already on brand purple, so it is capped at its own
+          // size and left to sit on the panel rather than stretched across it.
+          <Image
+            src={person.photo}
+            alt=""
+            width={385}
+            height={365}
+            className="h-auto w-full max-w-[26rem]"
+          />
+        )
       ) : (
         <span
           aria-hidden="true"

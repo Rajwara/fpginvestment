@@ -407,6 +407,7 @@ export const team = [
     tagline: "Entrepreneurial vision. Lasting presence.",
     /** Portraits and personal profile links to follow. */
     photo: "/assets/images/about_Pervez%20Iqbal.webp",
+    photoBleed: false,
     linkedin: "",
     bio: [
       "Pervaiz Iqbal Shahid journey to become the Chairman initiated in November 2013, having entrepreneurship skills and utmost dedication, it was a challenging task to take the first step and mold the company into a functional organization. He always carried a vision to shine in Dubai\u2019s vibrant real estate sector, worked tirelessly and consistently over the years to grow, strengthen and make his company\u2019s presence noticeable in Dubai\u2019s flamboyant real estate market.",
@@ -420,7 +421,9 @@ export const team = [
     role: "Managing Partner",
     initials: "AY",
     tagline: "Three decades of management. Global alliances.",
-    photo: "/assets/images/about_Abid%20Yousaf.webp",
+    photo: "/assets/images/teampage_Abid%20Yousaf-opt.webp",
+    /** Bleeds to the panel edges: a location shot, not a cutout on brand purple. */
+    photoBleed: true,
     linkedin: "",
     bio: [
       "Abid Yousaf carries over three decades of experience in Management covering areas of corporate strategy formulation, financial management, projects feasibility study, budgeting and business development, as well as product design, distribution, public relations, and human resources. Throughout his career, he developed businesses, grown market share, and improved operations. His key accomplishments include:",
@@ -442,6 +445,7 @@ export const team = [
     initials: "SA",
     tagline: "Four decades of command. Delivery at scale.",
     photo: "/assets/images/about_Saeed%20Ahmed.webp",
+    photoBleed: false,
     linkedin: "",
     bio: [
       "Brigadier Saeed Ahmed (Retd), SI (M) brings over four decades of distinguished service with a military background, specializing in project management, supply chain operations, and logistics management. During his service, he held directorial roles at critical military and government institutions, overseeing the execution and operations of key strategic infrastructures projects and supply networks at national scale.",
