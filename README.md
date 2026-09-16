@@ -144,8 +144,9 @@ vertical titles. Below `lg` the same panels become a stacked accordion, whose
 height animates from `grid-rows-[0fr]` to `[1fr]` so the content decides its
 own height.
 
-Each service carries an `image` in `lib/site.ts`. Those are currently reused
-from the banner and mission sets — swap them for service photography.
+Each service carries an `image` in `lib/site.ts`, drawn from the
+`ProfessionalGuidanceimg-*` set. Only five were supplied for six services, so
+Hotel Management reuses the first; give it its own path when one exists.
 
 ## Mission section
 
