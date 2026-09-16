@@ -33,8 +33,10 @@ export default function QuerySection() {
     <section
       id="enquiry"
       data-reveal
-      className="relative overflow-hidden bg-surface-2 py-24 lg:py-36"
+      className="relative bg-surface-2 py-24 lg:py-36"
     >
+      {/* inset-0, so it needs no clip on the section — and overflow-hidden
+          there would stop the left column from sticking. */}
       <div aria-hidden="true" className="dot-field pointer-events-none absolute inset-0" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
