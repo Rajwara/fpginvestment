@@ -13,21 +13,21 @@ in a path has to be percent-encoded everywhere it is referenced
 `banner-web.webp` is the page banner on /premium-luxury, and also the banner
 on /concept-and-design. Leave it in place.
 
-The six quality sections below it are waiting on a new set. Each one wants a
-single landscape image; drop them in here named after the quality and I will
-wire them up:
+The six quality sections below it each carry a mood board, wired up in
+`luxuryPillars` in `lib/site.ts`:
 
-| Section | File to upload |
-| --- | --- |
-| 01 Exclusive | `exclusive.jpg` |
-| 02 World-Class | `world-class.jpg` |
-| 03 Opulent | `opulent.jpg` |
-| 04 Refined | `refined.jpg` |
-| 05 Scenic | `scenic.jpg` |
-| 06 Intricate artistry | `intricate-artistry.jpg` |
+| Section | Upload | Served copy |
+| --- | --- | --- |
+| 01 Exclusive | `Exclusive.webp` | `exclusive-web.webp` |
+| 02 World-Class | `World-Class.webp` | `world-class-web.webp` |
+| 03 Opulent | `Opulent.webp` | `opulent-web.webp` |
+| 04 Refined | `Refined.webp` | `refined-web.webp` |
+| 05 Scenic | `Scenic.webp` | `scenic-web.webp` |
+| 06 Intricate artistry | `Intricate artistry.webp` | `intricate-artistry-web.webp` |
 
-Until they land the page draws a brand tile in each slot, so it still reads
-end to end.
+The page reads the `-web` copy. Replacing a section's artwork means dropping
+the new file in and re-encoding it to that name — the upload itself is never
+referenced, so its own name does not matter.
 
 ## Format
 

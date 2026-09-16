@@ -320,47 +320,46 @@ export const amenitySpaces = [
 /**
  * The Premium & Luxury division's six qualities, in page order.
  *
- * The artwork came off while a new set is prepared, so `image` is empty and
- * the page draws a brand tile in its place. Put the path back on each entry
- * as the files land in public/assets/images/premium-luxury/ — the page picks
- * them up with no other change.
+ * Each image is a mood board rather than a single photograph, and each is a
+ * true 4:3 — the same ratio as the frames on the page, so object-cover crops
+ * nothing off the edges of a collage that was composed to be read whole.
  */
 export const luxuryPillars = [
   {
     id: "exclusive",
     title: "Exclusive",
     body: "Captures the feeling of privileged access — where guests enjoy personalised service, private spaces, and a sense of belonging to an elite experience not available to everyone.",
-    image: "",
+    image: "/assets/images/premium-luxury/exclusive-web.webp",
   },
   {
     id: "world-class",
     title: "World-Class",
     body: "Positions the brand on a global stage, offering exceptional standards, internationally recognised hospitality, and memorable experiences that rival the best in the world.",
-    image: "",
+    image: "/assets/images/premium-luxury/world-class-web.webp",
   },
   {
     id: "opulent",
     title: "Opulent",
     body: "Reflects lavish interiors, rich textures, and extravagant surroundings that offer guests a sense of indulgence and splendour the moment they arrive.",
-    image: "",
+    image: "/assets/images/premium-luxury/opulent-web.webp",
   },
   {
     id: "refined",
     title: "Refined",
     body: "Speaks to the elegance in every detail — from the curated decor to the service style — showcasing taste, sophistication and timeless quality throughout the guest journey.",
-    image: "",
+    image: "/assets/images/premium-luxury/refined-web.webp",
   },
   {
     id: "scenic",
     title: "Scenic",
     body: "Step into a home surrounded by lush green lawns that enhance both beauty and serenity.",
-    image: "",
+    image: "/assets/images/premium-luxury/scenic-web.webp",
   },
   {
     id: "intricate-artistry",
     title: "Intricate artistry",
     body: "Every corner of our space is a testament to intricate artistry, where timeless design meets masterful craftsmanship.",
-    image: "",
+    image: "/assets/images/premium-luxury/intricate-artistry-web.webp",
   },
 ];
 
