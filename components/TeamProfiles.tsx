@@ -28,7 +28,15 @@ function LinkedInPill({
   );
 }
 
-function Portrait({ person, align }: { person: Person; align: "left" | "right" }) {
+function Portrait({
+  person,
+  align,
+  className = "",
+}: {
+  person: Person;
+  align: "left" | "right";
+  className?: string;
+}) {
   return (
     /*
       Below lg the column is full width, so a fixed height turned this into a
@@ -37,7 +45,9 @@ function Portrait({ person, align }: { person: Person; align: "left" | "right" }
       portrait at any width; lg and up the height comes from the copy beside
       it, which is always taller than square.
     */
-    <div className="relative flex aspect-[4/5] items-center justify-center bg-accent sm:aspect-[4/3] lg:aspect-auto lg:min-h-[40rem]">
+    <div
+      className={`relative flex aspect-[4/5] items-center justify-center bg-accent sm:aspect-[4/3] lg:aspect-auto lg:min-h-[40rem] ${className}`}
+    >
       {person.photo ? (
         <Image
           src={person.photo}
@@ -61,13 +71,21 @@ function Portrait({ person, align }: { person: Person; align: "left" | "right" }
   );
 }
 
-function Details({ person, dark }: { person: Person; dark: boolean }) {
+function Details({
+  person,
+  dark,
+  className = "",
+}: {
+  person: Person;
+  dark: boolean;
+  className?: string;
+}) {
   const [first, ...rest] = person.bio;
   return (
     <div
       className={`flex flex-col justify-center px-6 py-14 sm:px-10 lg:px-14 lg:py-20 ${
         dark ? "bg-black text-white" : "bg-surface-2 text-fg-2"
-      }`}
+      } ${className}`}
     >
       <p
         className={`eyebrow flex items-center gap-3 ${
@@ -144,17 +162,22 @@ export default function TeamProfiles() {
             data-reveal
             className="reveal grid lg:grid-cols-2"
           >
-            {flipped ? (
-              <>
-                <Details person={person} dark />
-                <Portrait person={person} align="right" />
-              </>
-            ) : (
-              <>
-                <Portrait person={person} align="left" />
-                <Details person={person} dark={false} />
-              </>
-            )}
+            {/*
+              The portrait always comes first in the source and the flip is
+              done with `order` from lg. Swapping the elements themselves put
+              two portraits next to each other once the rows stacked — the
+              flipped row ended on its picture and the next row opened on one.
+            */}
+            <Portrait
+              person={person}
+              align={flipped ? "right" : "left"}
+              className={flipped ? "lg:order-2" : ""}
+            />
+            <Details
+              person={person}
+              dark={flipped}
+              className={flipped ? "lg:order-1" : ""}
+            />
           </section>
         );
       })}
