@@ -349,7 +349,7 @@ export default function SiteHeader() {
                                 ? "Hide service links"
                                 : "Show service links"
                             }
-                            className="flex h-11 w-11 items-center justify-center rounded-full border border-fg-2/15 text-accent-fg"
+                            className="flex h-9 w-9 items-center justify-center rounded-full border border-fg-2/15 text-accent-fg"
                           >
                             {/*
                               Drawn rather than set as a ▾ glyph: at the size
@@ -362,14 +362,14 @@ export default function SiteHeader() {
                               viewBox="0 0 12 8"
                               aria-hidden="true"
                               fill="none"
-                              className={`h-3 w-[1.125rem] transition-transform duration-300 ${
+                              className={`h-2 w-3 transition-transform duration-300 ${
                                 mobileServicesOpen ? "rotate-180" : ""
                               }`}
                             >
                               <path
                                 d="M1 1.5 6 6.5 11 1.5"
                                 stroke="currentColor"
-                                strokeWidth="1.75"
+                                strokeWidth="2"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
                               />
