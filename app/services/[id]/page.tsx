@@ -72,11 +72,20 @@ export default async function ServicePage({
               {service.sections[0].body}
             </p>
 
+            {/*
+              One grid holds the pair and the list that follows them, so the
+              order can differ by width. Stacked on a phone the two pictures
+              ran back to back, which is a lot of photograph before the next
+              thing to read; the list now sits between them. From sm the pair
+              is side by side again and the list returns below, spanning both.
+            */}
             <div className="mt-10 grid gap-5 sm:grid-cols-2">
-              {service.gallery.map((src) => (
+              {service.gallery.map((src, i) => (
                 <div
                   key={src}
-                  className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-surface-2"
+                  className={`relative aspect-[4/3] overflow-hidden rounded-2xl bg-surface-2 ${
+                    i === 0 ? "order-1" : "order-3 mt-3 sm:order-2 sm:mt-0"
+                  }`}
                 >
                   <Image
                     src={src}
@@ -87,26 +96,28 @@ export default async function ServicePage({
                   />
                 </div>
               ))}
+
+              <div className="order-2 mt-7 sm:order-3 sm:col-span-2">
+                <h3 className="font-display text-2xl leading-tight text-fg">
+                  What this covers
+                </h3>
+                <p className="mt-3 leading-relaxed text-muted">
+                  Every engagement is scoped to the asset. These are the
+                  components that appear in most of them.
+                </p>
+
+                <ul className="mt-8 space-y-4">
+                  {service.points.map((p) => (
+                    <li key={p} className="flex gap-4">
+                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/12 text-accent-fg">
+                        <CheckIcon className="h-3.5 w-3.5" />
+                      </span>
+                      <span className="leading-relaxed text-fg-2">{p}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-
-            <h3 className="mt-12 font-display text-2xl leading-tight text-fg">
-              What this covers
-            </h3>
-            <p className="mt-3 leading-relaxed text-muted">
-              Every engagement is scoped to the asset. These are the components
-              that appear in most of them.
-            </p>
-
-            <ul className="mt-8 space-y-4">
-              {service.points.map((p) => (
-                <li key={p} className="flex gap-4">
-                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/12 text-accent-fg">
-                    <CheckIcon className="h-3.5 w-3.5" />
-                  </span>
-                  <span className="leading-relaxed text-fg-2">{p}</span>
-                </li>
-              ))}
-            </ul>
 
             <h3 className="mt-12 font-display text-2xl leading-tight text-fg">
               {service.sections[1].title}
