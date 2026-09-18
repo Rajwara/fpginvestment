@@ -286,16 +286,22 @@ export default function SiteHeader() {
                 aria-label={mobileOpen ? "Close menu" : "Open menu"}
                 className={`flex h-10 w-10 items-center justify-center rounded-full border ${overHero ? "border-white/25" : "border-fg-2/15"}`}
               >
+                {/*
+                  The bars follow the ring above: white while the bar is glass
+                  over a hero photograph, near-black once it docks to the solid
+                  surface. Opening the menu docks the bar, so the close cross
+                  is always the dark one.
+                */}
                 <span className="relative block h-3 w-4">
                   <span
-                    className={`absolute left-0 block h-px w-4 bg-fg transition-transform duration-300 ${
-                      mobileOpen ? "top-1.5 rotate-45" : "top-0"
-                    }`}
+                    className={`absolute left-0 block h-px w-4 transition-transform duration-300 ${
+                      overHero ? "bg-white" : "bg-fg"
+                    } ${mobileOpen ? "top-1.5 rotate-45" : "top-0"}`}
                   />
                   <span
-                    className={`absolute left-0 block h-px w-4 bg-fg transition-transform duration-300 ${
-                      mobileOpen ? "top-1.5 -rotate-45" : "top-3"
-                    }`}
+                    className={`absolute left-0 block h-px w-4 transition-transform duration-300 ${
+                      overHero ? "bg-white" : "bg-fg"
+                    } ${mobileOpen ? "top-1.5 -rotate-45" : "top-3"}`}
                   />
                 </span>
               </button>
