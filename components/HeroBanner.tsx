@@ -87,8 +87,14 @@ export default function HeroBanner() {
           commercial strategy and long-term asset performance.
         </p>
 
+        {/*
+          One column on a phone, where the two labels are different lengths
+          and a ragged pair reads like a mistake — a grid stretches both to
+          the column, so they match without either being given a fixed width.
+          From `sm` up there is room to sit side by side at their own widths.
+        */}
         <div
-          className="animate-rise mt-10 flex flex-wrap items-center gap-4"
+          className="animate-rise mt-10 grid gap-4 sm:flex sm:flex-wrap sm:items-center"
           style={{ animationDelay: "220ms" }}
         >
           <Button href="/contact" size="lg" arrow>
