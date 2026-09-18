@@ -76,6 +76,21 @@
     text-rendering: optimizeLegibility;
   }
 
+  /*
+    A <select> on a dark panel is set in white, and on Windows the native
+    dropdown that opens is a white sheet whose <option>s inherit that colour —
+    white on white, every row invisible except the highlighted one.
+
+    Pin the option colours to the page's own light surface so they never track
+    the control's foreground. Set here rather than per-option so a select added
+    later cannot reintroduce it. macOS draws the popup itself and ignores most
+    of this, which is fine: it has never inherited the colour either.
+  */
+  option {
+    background-color: var(--color-surface);
+    color: var(--color-fg);
+  }
+
   body {
     background-color: var(--color-surface);
     color: var(--color-fg-2);
