@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { nav, services } from "@/lib/site";
+import { megaFeature, nav, services } from "@/lib/site";
 import { isPhotoHeroRoute } from "@/lib/heroRoutes";
 import { DARK_HERO_EVENT } from "./DarkHeroFlag";
 import Logo from "./Logo";
@@ -336,7 +336,7 @@ export default function SiteHeader() {
                           <Link
                             href={item.href}
                             onClick={() => setMobileOpen(false)}
-                            className="flex-1 py-4 font-display text-2xl text-fg"
+                            className="flex-1 py-4 font-display text-xl text-fg"
                           >
                             {item.label}
                           </Link>
@@ -349,26 +349,65 @@ export default function SiteHeader() {
                                 ? "Hide service links"
                                 : "Show service links"
                             }
-                            className="flex h-9 w-9 items-center justify-center rounded-full border border-fg-2/15 text-accent-fg"
+                            className="flex h-11 w-11 items-center justify-center rounded-full border border-fg-2/15 text-accent-fg"
                           >
-                            <span
+                            {/*
+                              Drawn rather than set as a ▾ glyph: at the size
+                              this sits, the character rendered as a faint
+                              smudge that read as an empty circle. A stroked
+                              path keeps its weight at any size and takes the
+                              button's colour.
+                            */}
+                            <svg
+                              viewBox="0 0 12 8"
                               aria-hidden="true"
-                              className={`text-[0.6rem] transition-transform duration-300 ${
+                              fill="none"
+                              className={`h-3 w-[1.125rem] transition-transform duration-300 ${
                                 mobileServicesOpen ? "rotate-180" : ""
                               }`}
                             >
-                              ▾
-                            </span>
+                              <path
+                                d="M1 1.5 6 6.5 11 1.5"
+                                stroke="currentColor"
+                                strokeWidth="1.75"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
                           </button>
                         </div>
                         {mobileServicesOpen ? (
                           <ul className="mb-4 space-y-1 border-l border-fg-2/10 pl-4">
+                            {/*
+                              The mega panel's two feature links come first.
+                              Only the six services were listed here, so on a
+                              phone these were reachable from the footer and
+                              nowhere else — the panel that carries them on
+                              desktop does not render below xl.
+                            */}
+                            {[
+                              { href: megaFeature.href, label: megaFeature.cta },
+                              {
+                                href: megaFeature.secondaryHref,
+                                label: megaFeature.secondaryCta,
+                              },
+                            ].map((link) => (
+                              <li key={link.href}>
+                                <Link
+                                  href={link.href}
+                                  onClick={() => setMobileOpen(false)}
+                                  className="block py-2 text-sm text-muted transition-colors hover:text-accent-fg"
+                                >
+                                  {link.label}
+                                </Link>
+                              </li>
+                            ))}
                             {services.map((s) => (
                               <li key={s.id}>
                                 <Link
                                   href={`/services/${s.id}`}
                                   onClick={() => setMobileOpen(false)}
-                                  className="block py-2 text-sm text-muted"
+                                  className="block py-2 text-sm text-muted transition-colors hover:text-accent-fg"
                                 >
                                   {s.name}
                                 </Link>
@@ -382,7 +421,7 @@ export default function SiteHeader() {
                         <Link
                           href={item.href}
                           onClick={() => setMobileOpen(false)}
-                          className="flex items-center justify-between py-4 font-display text-2xl text-fg"
+                          className="flex items-center justify-between py-4 font-display text-xl text-fg"
                         >
                           {item.label}
                           <span aria-hidden="true" className="text-accent-fg">
@@ -408,7 +447,7 @@ export default function SiteHeader() {
                       <Link
                         href={item.href}
                         onClick={() => setMobileOpen(false)}
-                        className="flex items-center justify-between py-4 font-display text-2xl text-fg"
+                        className="flex items-center justify-between py-4 font-display text-xl text-fg"
                       >
                         {item.label}
                         <span aria-hidden="true" className="text-accent-fg">
