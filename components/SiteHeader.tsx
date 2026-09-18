@@ -336,7 +336,7 @@ export default function SiteHeader() {
                           <Link
                             href={item.href}
                             onClick={() => setMobileOpen(false)}
-                            className="flex-1 py-4 font-display text-xl text-fg"
+                            className="flex-1 py-4 font-display text-base text-fg"
                           >
                             {item.label}
                           </Link>
@@ -421,7 +421,7 @@ export default function SiteHeader() {
                         <Link
                           href={item.href}
                           onClick={() => setMobileOpen(false)}
-                          className="flex items-center justify-between py-4 font-display text-xl text-fg"
+                          className="flex items-center justify-between py-4 font-display text-base text-fg"
                         >
                           {item.label}
                           <span aria-hidden="true" className="text-accent-fg">
@@ -447,7 +447,7 @@ export default function SiteHeader() {
                       <Link
                         href={item.href}
                         onClick={() => setMobileOpen(false)}
-                        className="flex items-center justify-between py-4 font-display text-xl text-fg"
+                        className="flex items-center justify-between py-4 font-display text-base text-fg"
                       >
                         {item.label}
                         <span aria-hidden="true" className="text-accent-fg">
