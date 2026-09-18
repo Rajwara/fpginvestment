@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 /** Somewhere useful to go next, rather than a dead end. */
 const elsewhere = [
-  { label: "About Us", href: "/about" },
+  { label: "About Us", href: "/about-us" },
   { label: "Our Team", href: "/team" },
   { label: "Blogs", href: "/blogs" },
   { label: "Careers", href: "/careers" },

@@ -24,6 +24,15 @@ const nextConfig: NextConfig = {
      */
     unoptimized: true,
   },
+  /*
+   * The About page moved from /about to /about-us. Anyone holding the old
+   * link — a client, a bookmark, a search result — lands on the new one
+   * instead of a 404. Permanent, so crawlers transfer the old URL's standing
+   * rather than treating the two as rival pages.
+   */
+  async redirects() {
+    return [{ source: "/about", destination: "/about-us", permanent: true }];
+  },
 };
 
 export default nextConfig;

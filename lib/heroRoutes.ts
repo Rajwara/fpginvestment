@@ -5,7 +5,7 @@
  */
 export const photoHeroRoutes = [
   "/",
-  "/about",
+  "/about-us",
   "/team",
   "/faq",
   "/privacy",

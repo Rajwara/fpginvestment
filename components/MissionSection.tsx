@@ -172,7 +172,7 @@ export default function MissionSection() {
             </ul>
           </div>
 
-          <Button href="/about" size="lg" className="mt-10" arrow>
+          <Button href="/about-us" size="lg" className="mt-10" arrow>
             Get Started
           </Button>
         </div>

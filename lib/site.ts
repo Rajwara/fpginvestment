@@ -253,7 +253,7 @@ type NavItem = {
 
 export const nav: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about", mega: true },
+  { label: "About Us", href: "/about-us", mega: true },
   { label: "Our Team", href: "/team" },
   { label: "Careers", href: "/careers" },
   {
@@ -449,7 +449,7 @@ export const megaFeature = {
   image: "/assets/images/mega-feature-web.webp",
   title: "A hospitality company built by operators.",
   body: "Two decades of developing, opening and running hotels across Pakistan and the region.",
-  href: "/about",
+  href: "/about-us",
   cta: "About FP Global",
   secondaryHref: "/premium-luxury",
   secondaryCta: "Premium & Luxury",
@@ -893,7 +893,7 @@ export const footerColumns = [
   {
     heading: "Company",
     links: [
-      { label: "Who We Are", href: "/about" },
+      { label: "Who We Are", href: "/about-us" },
       { label: "Our Team", href: "/team" },
       { label: "Careers", href: "/careers" },
       { label: "News & Insights", href: "/blogs" },
