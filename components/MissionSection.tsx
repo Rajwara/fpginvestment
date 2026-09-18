@@ -62,10 +62,15 @@ export default function MissionSection() {
             ))}
           </div>
 
-          {/* Rotating seal */}
+          {/*
+            Rotating seal. Sits on the crossing point of the 2x2 collage, which
+            is a two-column grid at every width, so it lands correctly on a
+            phone too — it is only smaller there, enough that the ring text
+            stays readable without swallowing the photographs behind it.
+          */}
           <div
             aria-hidden="true"
-            className="absolute left-1/2 top-1/2 hidden h-36 w-36 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-fg-2/10 bg-surface shadow-lg shadow-fg/10 lg:flex"
+            className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-fg-2/10 bg-surface shadow-lg shadow-fg/10 lg:h-36 lg:w-36"
           >
             <svg viewBox="0 0 120 120" className="seal-spin absolute h-full w-full">
               <defs>
@@ -99,12 +104,12 @@ export default function MissionSection() {
             </svg>
             {/* Smaller than the old photo crop: a logo needs clear space
                 between the mark and the ring text. */}
-            <span className="relative h-12 w-12">
+            <span className="relative h-9 w-9 lg:h-12 lg:w-12">
               <Image
                 src="/assets/images/home/seal-logo-web.webp"
                 alt=""
                 fill
-                sizes="48px"
+                sizes="(min-width: 1024px) 48px, 36px"
                 className="object-contain"
               />
             </span>
