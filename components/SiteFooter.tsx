@@ -143,7 +143,7 @@ export default function SiteFooter() {
           </p>
           <p className="flex items-center gap-3">
             <Link
-              href="/privacy"
+              href="/privacy-policy"
               className="inline-block py-1.5 transition-colors hover:text-white"
             >
               Privacy Policy
@@ -152,7 +152,7 @@ export default function SiteFooter() {
               |
             </span>
             <Link
-              href="/terms"
+              href="/terms-and-conditions"
               className="inline-block py-1.5 transition-colors hover:text-white"
             >
               Terms &amp; Conditions
